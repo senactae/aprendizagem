@@ -10,6 +10,7 @@
     <!-- libs -->
     <link href="../assets/js/libs/bootstrap-5.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/js/libs/fontawesome-5.11.2/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/js/libs/video-js-7.9.5/video-js.min.css" rel="stylesheet">
 
     <!-- layout -->
     <link href="../assets/css/style.min.css" rel="stylesheet" type="text/css">
@@ -80,108 +81,96 @@
     <div class="wrapper">
         <div class="container">
             <div class="row">
-                <div class="verticalCenter vcTab mb20">
-                    <div class="col-6 col-sm-4 col-lg-3">
-                        <img src="img/imgAlvo.png" class="img-fluid d-block img-template" />
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="verticalCenter vcTab mb30">
+                            <div class="col-6 col-sm-4 col-lg-3">
+                                <img src="img/imgAlvo.png" class="img-fluid d-block img-template" />
+                            </div>
+
+                            <div class="col-sm-8 col-lg-9">
+                                <p>A seguir, você conhecerá:</p>
+
+                                <ul>
+                                    <li>detalhes de como serão as aulas no Senac;</li>
+                                    <li>as Unidades Curriculares, o material didático e a forma de avaliação do curso;</li>
+                                    <li>como funciona a prática profissional na empresa.</li>
+                                </ul>
+
+                                <p class="mb0">Vamos lá?</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-sm-8 col-lg-9">
-                        <p>A seguir, você conhecerá:</p>
+                    <h3>O Programa Aprendizagem</h3>
 
-                        <ul>
-                            <li>o que significa um plano de desenvolvimento;</li>
-                            <li>as contribuições das Unidades Curriculares do curso para sua elaboração.</li>
-                        </ul>
+                    <p>Como você já sabe, o curso <strong>Aprendizagem Profissional em Comércio de bens</strong>, <strong>Serviços</strong> e <strong>Turismo</strong> compreende <strong>atividades que são realizadas no Senac</strong> e na <strong>empresa que o contratou</strong>. Observe o infográfico: você, como aprendiz, ficará sempre com um pé na empresa e outro no Senac. Agora, arraste para ver mais detalhes do curso.</p>
 
-                        <p class="mb0">Vamos lá?</p>
+                    <div class="jusxtapose-wrapper" tabindex="-1">
+                        <div class="juxtapose d-none d-md-block" id="hDemo" data-startingposition="33%">
+                            <img src="img/img03_01_01.png" class="img-fluid left" alt="Original Image">
+                            <img src="img/img03_01_02.png" class="img-fluid right" alt="Modified Image">
+                        </div>
+
+                        <div class="juxtapose d-block d-md-none" id="vDemo" data-startingposition="0%" data-mode="vertical">
+                            <img src="img/img03_01_02_xs.png" class="img-fluid right" alt="Modified Image">
+                            <img src="img/img03_01_01_xs.png" class="img-fluid left" alt="Original Image">
+                        </div>
                     </div>
+
+                    <img src="img/img03_01_01.png" class="visuallyhidden" tabindex="0" aria-labelledby="imgSenac_Info">
+                    <img src="img/img03_01_02.png" class="visuallyhidden" tabindex="0" aria-labelledby="imgEmpresa_Info">
+                    <p class="visuallyhidden" id="imgSenac_Info">A imagem enfatiza que a carga horária da aprendizagem no Senac será de 480 horas e mostra um jovem aprendiz no ambiente da instituição. #noSenac No Senac, acontece a sua formação, a partir de atividades relacionadas ao seu desenvolvimento pessoal e profissional. Há uma equipe que irá orientá-lo, a fim de que você possa desenvolver um olhar crítico e perceber grandes oportunidades que podem surgir ao longo da sua trajetória. Durante as aulas do Senac, você pode compartilhar suas experiências profissionais na empresa e aprender com outros aprendizes, que nem sempre estão realizando as mesmas atividades que você! #integração #senacnaempresa</p>
+                    <p class="visuallyhidden" id="imgEmpresa_Info">A imagem enfatiza que a carga horária da aprendizagem na empresa será de 1080 horas e mostra um jovem aprendiz no ambiente da empresa. #naEmpresa A prática profissional acontece na empresa. Esse pode ser o seu primeiro emprego, portanto ouça a voz da experiência. Assista aos vídeos a seguir e conheça a rotina de trabalho na visão de outros aprendizes! #atenção! E não é porque você está na empresa que o Senac está fora de jogo. O Senac acompanhará suas atividades de perto e tudo o que for discutido nas aulas você poderá utilizar no seu dia a dia de trabalho! #integração #senaceempresa</p>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="blocoPadrao noPaper">
-                        <div class="contentBloco">
-                            <div class="row">
-                                <div class="col-sm-12 col-md-4">
-                                    <img src="img/imgQuiz.png" class="img-fluid d-block" />
-                                </div>
+                    <p>O curso em que você está matriculado tem a <strong>carga horária total de 1560 horas</strong>, <strong>considerando empresa</strong> e <strong>Senac</strong>. Parece muita coisa, mas passará voando! A seguir, vamos conhecer a estrutura do curso e os desafios que você terá durante esse período! #iniciando #desafios</p>
 
-                                <div class="col-sm-12 col-md-8">
-                                    <h2>Seu plano de desenvolvimento</h2>
-                                    <p>Você acabou de chegar e já estamos pensando no seu futuro! Durante o curso, você será convidado a desenvolver um <strong>Plano de Desenvolvimento Pessoal e Profissional</strong>. Para elaborá-lo, você poderá contar com algumas contribuições ao longo das Unidades Curriculares cursadas. Mas, o que é isso afinal?</p>
+                    <h3>Como assim rotina de trabalho?</h3>
 
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="quest-radio">
-                                                <input id="optionsRadio0" type="radio" class="opRadio mb0" name="optionsRadio" value="1">
-                                                <label role="radio" aria-checked="false" id="labelRadio0" for="optionsRadio0" class="labelOption">Um plano de carreira.</label>
-                                            </div>
+                    <p>Sabemos que a rotina profissional pode ser algo novo para você. Portanto, ouça o que os aprendizes Letícia e Lucas têm a dizer sobre isso. #rotina #trabalhando</p>
+                </div>
+            </div>
 
-                                            <div class="quest-radio">
-                                                <input id="optionsRadio1" type="radio" class="opRadio mb0" name="optionsRadio" value="1">
-                                                <label role="radio" aria-checked="false" id="labelRadio1" for="optionsRadio1" class="labelOption">Um plano de negócios.</label>
-                                            </div>
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-0">
+                    <div class="player">
+                        <video id="example_video_1" class="video-js" controls preload="none" data-setup='{ "html5" : { "nativeTextTracks" : false } }' poster="videos/capaVideo_Amarelo.jpg">
 
-                                            <div class="quest-radio">
-                                                <input id="optionsRadio2" type="radio" class="opRadio mb0" name="optionsRadio" value="1">
-                                                <label role="radio" aria-checked="false" id="labelRadio2" for="optionsRadio2" class="labelOption">Um plano de futuro.</label>
-                                            </div>
+                            <source src="videos/U03_V02_Rotina_Leticia_720p.mp4" type="video/mp4">
+                            <track kind="captions" src="videos/U03_V02_Rotina_Leticia.vtt" srclang="pt-br" label="Portugues" default>
 
-                                            <div class="quest-radio">
-                                                <input id="optionsRadio3" type="radio" class="opRadio mb0" name="optionsRadio" value="1">
-                                                <label role="radio" aria-checked="false" id="labelRadio3" for="optionsRadio3" class="labelOption">Ainda não sei.</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                        </video>
+                    </div>
+                </div>
+
+                <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-0">
+                    <div class="player">
+                        <video id="example_video_2" class="video-js" controls preload="none" data-setup='{ "html5" : { "nativeTextTracks" : false } }' poster="videos/capaVideo_Amarelo.jpg">
+
+                            <source src="videos/U03_V01_Rotina_Lucas_720p.mp4" type="video/mp4">
+                            <track kind="captions" src="videos/U03_V01_Rotina_Lucas.vtt" srclang="pt-br" label="Portugues" default>
+
+                            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                        </video>
                     </div>
                 </div>
             </div>
 
-            <div id="feed1" class="d-none">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h3>Entenda um pouco mais...</h3>
-                        <p>É um compromisso com o seu desenvolvimento. Trata-se de um plano que <strong>organiza diversas ações</strong> a serem tomadas para a conquista de seus objetivos pessoais e profissionais. <strong>Em outras palavras</strong>: é você se conhecer um pouco mais, reconhecer suas potencialidades, seus desejos, percursos de formação e, assim, elaborar novas perspectivas para o seu futuro. #protagonismo</p>
-
-                        <img src="img/img04_01_01.png" class="img-fluid d-block mb30" />
-
-                        <h3 class="azul">A contribuição das Unidades Curriculares</h3>
-                        <p>A construção do Plano de Desenvolvimento Pessoal e Profissional será realizada em diálogo com cada uma das Unidades Curriculares: <strong>Mundo do Trabalho</strong>, <strong>Desenvolvimento Pessoal</strong> e <strong>Participação Social</strong>. <span class="d-none">Clique em cada uma delas para saber mais.</span></p>
-                    </div>
-                </div>
-
-                <div class="row d-none d-md-block">
-                    <div class="col-sm-12">
-                        <img id="svg-interactive" class="interactive int1 d-none" src="img/interativo04_01.svg" data-desktop="img/interativo04_01.svg" data-tablet="img/interativo04_01_sm.svg" data-phone="img/interativo04_01_xs.svg" />
-                        <div class="divInteractive_Container">
-                            <div class="divInteractive" id="d_svg-interactive"></div>
+            <div class="blocoPadrao blocoDiario">
+                <div class="contentBloco">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3">
+                            <img src="img/icoDiario.png" class="img-fluid d-block img-template" />
                         </div>
-                    </div>
-                </div>
 
-                <div class="row d-block d-md-none">
-                    <div class="col-12">
-                        <img src="img/img04_01_02_xs.png" class="img-fluid d-block" />
-                        <img src="img/img04_01_03_xs.png" class="img-fluid d-block" />
-                        <img src="img/img04_01_04_xs.png" class="img-fluid d-block" />
-                    </div>
-                </div>
-
-                <div class="blocoPadrao blocoDiario mt40">
-                    <div class="contentBloco">
-                        <div class="row">
-                            <div class="col-sm-12 col-md-3">
-                                <img src="img/icoDiario.png" class="img-fluid d-block img-template" />
-                            </div>
-
-                            <div class="col-sm-12 col-md-9">
-                                <h3>Diário de Bordo <span>O que você descobriu?</span></h3>
-                                <p>Veja lá na página 9 do seu diário de bordo qual é a atividade que você deve realizar agora.</p>
-                            </div>
+                        <div class="col-sm-12 col-md-9">
+                            <h3>Diário de Bordo <span>Quais são suas expectativas em relação ao Senac e à empresa?</span></h3>
+                            <p>Verifique a página 5 do seu diário de bordo: tem atividade lá para você fazer.</p>
                         </div>
                     </div>
                 </div>
@@ -197,35 +186,40 @@
     <script src="../assets/js/libs/jquery-3.5.1.min.js"></script>
     <script src="../assets/js/libs/jquery-migrate-1.2.1.min.js"></script>
     <script src="../assets/js/libs/bootstrap-5.0.0/js/bootstrap.min.js"></script>
+    <script src="../assets/js/libs/video-js-7.9.5/video.min.js"></script>
 
     <script src="../assets/js/libs/preloadjs.min.js"></script>
+    <script src="../assets/js/scripts/svgLoader.js"></script>
 
     <!-- script -->
     <script src="../assets/js/scripts/index.js"></script>
     <script src="../assets/js/scripts/recursos.js"></script>
+
+    <script src="../assets/js/libs/audiojs/audio.js"></script>
+    <script src="../assets/js/scripts/audioPlayer.js"></script>
     <script>
         var indexLoad;
-        var svgLoad;
 
         $(document).ready(function (e) {
             indexLoad = new Index();
 
-            loadObj = $('.interactive');
-            svgLoad = new svgLoader();
-            svgLoad.loadContent(loadObj, botaoFunc);
+            var $juxtapose = $('.juxtapose');
 
-            function botaoFunc() {
-                $('#d_svg-interactive').find('.botao').each(function (i, v) {
-                    $(this).bind('click', function () {
-                        $name = $(this).attr('id');
-                        $btn = $name.substr($name.length - 2, 2);
+            $juxtapose.each(function (index, element) {
+                var $juxtaposeContainer = $juxtapose.parent();
+                var juxtaposeRatio;
 
-                        $('#d_svg-interactive').find('.feedSvg').fadeOut(600);
-                        $('#d_svg-interactive').find('#Feed_' + $btn).delay(600).fadeIn(600);
-                    });
+                $(window).on('load', function (event) {
+                    juxtaposeRatio = $(element).outerHeight() / $(element).outerWidth();
                 });
-            }
-        });
+
+                $(window).on('resize', function (event) {
+                    var newWidth = $juxtaposeContainer.outerWidth();
+                    var newHeight = newWidth * juxtaposeRatio;
+                    $(element).css({ width: newWidth, height: newHeight });
+                });
+            });
+        });    
     </script>
 
     <!-- Google Tag Manager -->
