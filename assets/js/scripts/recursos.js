@@ -37,3 +37,8 @@ function flipCard() {
 $(".card-selector .fcard").on("click", function () {
   $(this).toggleClass("active");
 });
+
+// SVG
+if ($(".svgInterativo").length != 0) {
+  $(".svgInterativo").svgLoader();
+}

@@ -1,103 +1,107 @@
-/* CHECKBOX & RADIO */ 
-input[type=checkbox]:not(old),
-input[type=radio]:not(old) {
+/* CHECKBOX & RADIO */
+input[type="checkbox"]:not(old),
+input[type="radio"]:not(old) {
+  cursor: pointer;
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  width: 1px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+
+  + label {
+    color: $corTexto;
     cursor: pointer;
-    margin: 0;
-    opacity: 0;
-    padding: 0;
-    width: 1px; 
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: none;
+    display: flex;
+    align-items: center;
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin: 0 0 15px;
+    height: auto;
+    max-width: 100%;
+    padding: 0 0 0 45px;
+    position: relative;
 
+    &::before {
+      background: #f5f6fa;
+      border: solid 3px $cor3;
+      border-radius: 4px;
+      color: #fff;
+      content: " ";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 30px;
+      height: 30px;
+
+      @include transform(translateY(-50%));
+      @include transition(all 0.4s);
+    }
+
+    &::after {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' style='enable-background:new 0 0 30 30;' preserveAspectRatio='none'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;stroke:%2388ebb5;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cpolyline class='st0' points='4.56,14.1 12.12,21.66 25.44,8.34 '/%3E%3C/svg%3E");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      content: " ";
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      width: 22px;
+      height: 22px;
+      opacity: 0;
+
+      @include transform(translateY(-50%));
+      @include transition(all 0.4s);
+    }
+  }
+
+  &:checked + label {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &[disabled] {
     + label {
-        color: $corTexto;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 18px;
-        font-weight: 300;
-        line-height: 1.4;
-        margin: 0 0 15px;
-        height: auto;
-        max-width: 100%;
-        padding: 0 0 0 45px; 
-        position: relative;
-    
-        &::before {
-            background: #F5F6FA;
-            border: solid 3px $cor3;
-            border-radius: 4px;
-            color: #FFF;
-            content: ' ';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            width: 30px;
-            height: 30px;
-    
-            @include transform(translateY(-50%));
-            @include transition(all 0.4s);
-        }
-    
-        &::after {
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30' style='enable-background:new 0 0 30 30;' preserveAspectRatio='none'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:none;stroke:%2388ebb5;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cpolyline class='st0' points='4.56,14.1 12.12,21.66 25.44,8.34 '/%3E%3C/svg%3E");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 100%;
-            content: ' ';
-            position: absolute;
-            left: 4px;
-            top: 50%;
-            width: 22px;
-            height: 22px;
-            opacity: 0;
-    
-            @include transform(translateY(-50%));
-            @include transition(all 0.4s);
-        }
+      cursor: default;
     }
+  }
 
-    &:checked + label {
-        &::after { opacity: 1; }
-    }
+  @media #{$bp-tablet} {
+  }
 
-    &[disabled] {
-        + label  { cursor: default; }
+  @media #{$bp-minTablet} {
+    + label {
+      font-size: 15px;
     }
-
-    @media #{$bp-tablet} {
-    }
-
-    @media #{$bp-phone} {
-        + label {
-            font-size: 15px;
-        }
-    }
+  }
 }
 
 /* TEXTAREA */
 .textBox {
-    border: solid 1px black;
-    color: $corTexto;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    padding: 10px 15px;
-    width: 100%;
-    outline: none;
-    resize: none;
+  border: solid 1px black;
+  color: $corTexto;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 10px 15px;
+  width: 100%;
+  outline: none;
+  resize: none;
 }
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }

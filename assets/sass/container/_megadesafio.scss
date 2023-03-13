@@ -1,2330 +1,2717 @@
 .megaBody {
+  position: relative;
+
+  &::before {
+    background: linear-gradient(to bottom, #009ea5, #ff8a41);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+  }
+
+  .borderSection {
+    background: #fff;
+    position: fixed;
+    height: 100%;
+    margin: 0 auto;
+    width: 1170px;
+    left: 50%;
+    z-index: 1;
+    //border-left: 5px solid #d1d3d4;
+
+    @include transform(translateX(-50%));
+    @include box-shadow(0px 0px 50px 10px rgba(0, 0, 0, 0.25));
+  }
+
+  header {
+    height: auto;
     position: relative;
+    z-index: 2;
 
-    &::before {
-        background: linear-gradient(to bottom,#009ea5, #ff8a41);
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        content: '';
-        display: block;
+    .container {
+      background: #fff url("../img/bg_mega.png") center top no-repeat;
+      //border-left: 5px solid #d1d3d4;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+  }
 
-    .borderSection {
-        background: #FFF;
-        position: fixed;
-        height: 100%;
-        margin: 0 auto;
-        width: 1170px;
-        left: 50%;
-        z-index: 1;
-        //border-left: 5px solid #d1d3d4;
+  .wrapper {
+    position: relative;
+    z-index: 3;
 
-        @include transform(translateX(-50%));
-        @include box-shadow(0px 0px 50px 10px rgba(0,0,0,0.25));
-    }
+    .fases {
+      position: absolute;
+      width: 76px;
+      height: 160px;
+      left: -43px;
+      top: 40px;
 
-    header {
-        height: auto;
-        position: relative;
-        z-index: 2;
+      @for $i from 1 through 3 {
+        .f#{$i} {
+          background: transparent
+            url("../img/bg_fase#{$i}.png")
+            center
+            no-repeat;
+          height: 42px;
+          width: 76px;
+          margin-bottom: 15px;
+          position: relative;
 
-        .container {
-            background: #FFF url('../img/bg_mega.png') center top no-repeat;
-            //border-left: 5px solid #d1d3d4;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-    }
+          @include box-shadow(4px 4px 6px 0px rgba(173, 173, 173, 0.5));
 
-    .wrapper {
-        position: relative;
-        z-index: 3;
-
-        .fases {
+          &::after {
+            background: rgba(173, 173, 173, 0.5);
+            content: "";
+            height: 3px;
+            width: 3px;
+            bottom: 0;
+            right: 0;
             position: absolute;
-            width: 76px;
-            height: 160px;
-            left: -43px;
-            top: 40px;
+          }
 
-            @for $i from 1 through 3 {
-                .f#{$i} { 
-                    background: transparent url('../img/bg_fase#{$i}.png') center no-repeat; 
-                    height: 42px;
-                    width: 76px;
-                    margin-bottom: 15px;
-                    position: relative;
+          &.active {
+            background: url("../img/bg_fase#{$i}a.png") center no-repeat;
+          }
 
-                    @include box-shadow(4px 4px 6px 0px rgba(173,173,173,0.5));
-
-                    &::after {
-                        background: rgba(173,173,173,0.5);
-                        content: '';
-                        height: 3px;
-                        width: 3px;
-                        bottom: 0;
-                        right: 0;
-                        position: absolute;
-                    }
-
-                    &.active { background: url('../img/bg_fase#{$i}a.png') center no-repeat; }
-
-                    &.completed {
-                        background: url('../img/bg_fase#{$i}a.png') center no-repeat; 
-
-                        &::before {
-                            background: url('../img/bg_fase_check.png') center no-repeat;
-                            content: '';
-                            height: 22px;
-                            width: 22px;
-                            top: -8px;
-                            right: -11px;
-                            position: absolute;
-                        }
-                    }
-                }
-            }
-        }
-
-        .atividade {
-            padding: 0 0 30px;
-        }
-
-        .botoesGrupo {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .faixaPesquisa {
-            background: linear-gradient(to bottom, #ff8a41, #f46036);
-            border-radius: 12px;
-            display: none;
-            padding: 10px 25px;
-            position: relative;
-            margin: 15px 0 35px;
-
-            .row { 
-                background: #e6e7e8; 
-                border-radius: 12px; 
-                padding: 40px 75px; 
-                position: relative;
-
-                &::before {
-                    background: transparent url('../img/bg_faixaMega_P.png') left -15px top repeat-y;
-                    border-top-left-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    content: ' ';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    width: 150px;
-                    height: auto;
-                    pointer-events: none;
-    
-                    z-index: 1;
-                }
-    
-                &::after {
-                    background: transparent url('../img/bg_faixaMega_P.png') left -15px top repeat-y;
-                    border-top-left-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    content: ' ';
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                    width: 150px;
-                    height: auto;
-                    pointer-events: none;
-                    z-index: 1;
-            
-                    @include transform(rotate(180deg));
-                }
-            }
-
-            p,
-            ul li { color: #58595b; position: relative; z-index: 2; }
-            img { position: relative; z-index: 2; }
-            strong { color: #009da3; }
-        }
-
-        .faixaFeed {
-            background: #d5eef4;
-            display: none;
-            padding: 40px 15px;
-            position: relative;
-            margin: 30px -15px;
-
-            p { 
-                color: #58595b; 
-                display: none; 
-            
-                &.fonteMaior {
-                    font-size: 20px;
-                    margin-bottom: 15px;
-
-                    strong { color: #58595b; }
-                }
-            }
-            strong { color: #009da3; }
-
-            .row { position: relative; z-index: 2; }
+          &.completed {
+            background: url("../img/bg_fase#{$i}a.png") center no-repeat;
 
             &::before {
-                background: transparent url('../img/bg_faixaMega_F.png') left top repeat-y;
-                content: ' ';
+              background: url("../img/bg_fase_check.png") center no-repeat;
+              content: "";
+              height: 22px;
+              width: 22px;
+              top: -8px;
+              right: -11px;
+              position: absolute;
+            }
+          }
+        }
+      }
+    }
+
+    .atividade {
+      padding: 0 0 30px;
+    }
+
+    .botoesGrupo {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .faixaPesquisa {
+      background: linear-gradient(to bottom, #ff8a41, #f46036);
+      border-radius: 12px;
+      display: none;
+      padding: 10px 25px;
+      position: relative;
+      margin: 15px 0 35px;
+
+      .row {
+        background: #e6e7e8;
+        border-radius: 12px;
+        padding: 40px 75px;
+        position: relative;
+
+        &::before {
+          background: transparent url("../img/bg_faixaMega_P.png") left -15px top
+            repeat-y;
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+          content: " ";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 150px;
+          height: auto;
+          pointer-events: none;
+
+          z-index: 1;
+        }
+
+        &::after {
+          background: transparent url("../img/bg_faixaMega_P.png") left -15px top
+            repeat-y;
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+          content: " ";
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 150px;
+          height: auto;
+          pointer-events: none;
+          z-index: 1;
+
+          @include transform(rotate(180deg));
+        }
+      }
+
+      p,
+      ul li {
+        color: #58595b;
+        position: relative;
+        z-index: 2;
+      }
+      img {
+        position: relative;
+        z-index: 2;
+      }
+      strong {
+        color: #009da3;
+      }
+    }
+
+    .faixaFeed {
+      background: #d5eef4;
+      display: none;
+      padding: 40px 15px;
+      position: relative;
+      margin: 30px -15px;
+
+      p {
+        color: #58595b;
+        display: none;
+
+        &.fonteMaior {
+          font-size: 20px;
+          margin-bottom: 15px;
+
+          strong {
+            color: #58595b;
+          }
+        }
+      }
+      strong {
+        color: #009da3;
+      }
+
+      .row {
+        position: relative;
+        z-index: 2;
+      }
+
+      &::before {
+        background: transparent url("../img/bg_faixaMega_F.png") left top
+          repeat-y;
+        content: " ";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 180px;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      &::after {
+        background: transparent url("../img/bg_faixaMega_F.png") left top
+          repeat-y;
+        content: " ";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 180px;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        @include transform(rotate(180deg));
+      }
+
+      .tabelaFeed {
+        margin: 0 auto 30px;
+
+        .row {
+          margin: 0;
+
+          .col-sm-4 {
+            padding: 0;
+          }
+        }
+
+        .tituloTabela {
+          background: #4180a1;
+          color: #fff;
+          font-family: "Open Sans", sans-serif;
+          font-size: 18px;
+          font-weight: 700;
+          display: block;
+          padding: 8px 0;
+          text-align: center;
+
+          &.center {
+            border-right: solid 2px #fff;
+            border-left: solid 2px #fff;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .itemTabela {
+          background: #ffffff;
+          border-top: solid 3px #d5eef4;
+
+          display: flex;
+          align-items: center;
+          height: 160px;
+          padding: 0 20px;
+
+          p {
+            color: #58595b;
+            font-family: "Open Sans", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+          }
+        }
+
+        .persona {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 160px;
+          position: relative;
+
+          &::before {
+            content: "";
+            display: block;
+            position: relative;
+            height: 160px;
+            width: 160px;
+            left: 0;
+          }
+
+          p {
+            color: #3a627a;
+            font-family: "Khand", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+            text-transform: uppercase;
+          }
+
+          &.p1 {
+            background: linear-gradient(
+              to top,
+              rgba(241, 205, 85, 1),
+              rgba(241, 205, 83, 0)
+            );
+
+            &::before {
+              background: url("../img/Mega02/Persona_01.png") center bottom
+                no-repeat;
+            }
+          }
+
+          &.p2 {
+            background: linear-gradient(
+              to top,
+              rgba(81, 195, 197, 1),
+              rgba(81, 195, 197, 0)
+            );
+
+            &::before {
+              background: url("../img/Mega02/Persona_02.png") center bottom
+                no-repeat;
+            }
+          }
+
+          &.p3 {
+            background: linear-gradient(
+              to top,
+              rgba(166, 208, 98, 1),
+              rgba(166, 208, 98, 0)
+            );
+
+            &::before {
+              background: url("../img/Mega02/Persona_03.png") center bottom
+                no-repeat;
+            }
+          }
+
+          &.p4 {
+            background: linear-gradient(
+              to top,
+              rgba(246, 137, 69, 1),
+              rgba(246, 137, 69, 0)
+            );
+
+            &::before {
+              background: url("../img/Mega02/Persona_04.png") center bottom
+                no-repeat;
+            }
+          }
+
+          @for $i from 1 through 4 {
+            &.sele#{$i} {
+              border: solid 3px #d5eef4;
+              border-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .box-imagem {
+      background: #009ea5;
+      border-radius: 12px;
+      margin: 20px auto 30px;
+      padding: 20px 20px 40px;
+      position: relative;
+
+      h3 {
+        background: transparent url("../img/bg_tituloBoxLaranja.png") center
+          no-repeat;
+        border-radius: 0;
+        color: #ffffff;
+        font-size: 25px;
+        font-weight: 700;
+        height: 44px;
+        width: 208px;
+        margin: 0;
+        padding: 3px 0 0;
+        position: absolute;
+        text-transform: uppercase;
+        text-align: center;
+        text-shadow: none;
+        z-index: 2;
+
+        top: -24px;
+        left: 50%;
+        @include transform(translateX(-50%));
+
+        &::before,
+        &::after {
+          display: none;
+        }
+
+        span {
+          padding: 0 0 0 10px;
+        }
+      }
+
+      .imagem {
+        position: relative;
+        height: 450px;
+        overflow: hidden;
+
+        &::before {
+          background: transparent url("../img/Mega04/BG_imgB.png") center top
+            no-repeat;
+          background-size: cover;
+          content: "";
+          position: absolute;
+          height: 130px;
+          left: 0;
+          top: 0;
+          right: 0;
+          z-index: 2;
+        }
+
+        &::after {
+          background: transparent url("../img/Mega04/BG_imgA.png") center top
+            no-repeat;
+          background-size: cover;
+          content: "";
+          height: 130px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          z-index: 2;
+        }
+
+        .loadImg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+
+          height: 100%;
+          width: 100%;
+          //@include transition(all 1s);
+
+          &.img1 {
+            background: url("../../img/mega04/panorama1.jpg") center no-repeat;
+            background-size: 100%;
+            opacity: 1;
+            &.zoom1 {
+              background-size: 250%;
+            }
+            &.zoom2 {
+              background-size: 500%;
+            }
+
+            &.some {
+              opacity: 0;
+
+              @include transform(scale(1.5));
+              @include transition(all 2s);
+            }
+            &.aparece {
+              opacity: 1;
+
+              @include transform(scale(1));
+              @include transition(all 1.5s);
+            }
+          }
+          &.img2 {
+            background: url("../../img/mega04/panorama2.jpg") center bottom
+              no-repeat;
+            background-size: 100%;
+            &.zoom1 {
+              background-size: 250%;
+            }
+            &.zoom2 {
+              background-size: 500%;
+            }
+            @include transform(scale(0.5));
+
+            &.some {
+              opacity: 0;
+
+              @include transform(scale(1.5));
+              @include transition(all 2s);
+            }
+            &.aparece {
+              opacity: 1;
+
+              @include transform(scale(1));
+              @include transition(all 1.5s);
+            }
+            &.diminuiSome {
+              opacity: 0;
+
+              @include transform(scale(0.5));
+              @include transition(all 2s);
+            }
+          }
+          &.img3 {
+            background: url("../../img/mega04/panorama3.jpg") left center
+              no-repeat;
+            background-size: 100%;
+            &.zoom1 {
+              background-size: 250%;
+            }
+            &.zoom2 {
+              background-size: 500%;
+            }
+            @include transform(scale(0.5));
+
+            &.some {
+              opacity: 0;
+
+              @include transform(scale(1.5));
+              @include transition(all 2s);
+            }
+            &.aparece {
+              opacity: 1;
+
+              @include transform(scale(1));
+              @include transition(all 1.5s);
+            }
+            &.diminuiSome {
+              opacity: 0;
+
+              @include transform(scale(0.5));
+              @include transition(all 2s);
+            }
+          }
+        }
+      }
+
+      .botoes {
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        bottom: -15px;
+        left: 30%;
+        width: 40%;
+
+        .botaoZoom {
+          background: transparent;
+          height: 70px;
+          width: 90px;
+          padding-bottom: 15px;
+          position: relative;
+
+          &::before {
+            background: transparent url("../img/Mega04/BG_botaoB.png") center
+              top no-repeat;
+            content: "";
+            border-radius: 50%;
+            height: 70px;
+            width: 90px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 3;
+          }
+
+          &::after {
+            background: linear-gradient(to bottom, #ff8a41, #f46036);
+            content: "";
+            display: flex;
+            border-radius: 50%;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            font-family: "Khand", sans-serif;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 1;
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            left: 20px;
+            top: 0;
+            z-index: 4;
+
+            @include transition(all 0.4s);
+          }
+
+          &:hover {
+            &::after {
+              background: linear-gradient(to bottom, #f46036, #f46036);
+            }
+          }
+
+          i {
+            color: #fff;
+            font-size: 1.5em;
+            position: relative;
+            z-index: 5;
+
+            &::before {
+              text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+          }
+
+          &[disabled] {
+            pointer-events: none;
+            padding-bottom: 11px;
+
+            &::after {
+              background: linear-gradient(to bottom, #ddd, #ddd);
+              width: 52px;
+              height: 52px;
+              left: 19px;
+              top: 3px;
+            }
+            i {
+              color: #aaa;
+
+              &::before {
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+              }
+            }
+          }
+        }
+      }
+
+      .universo {
+        position: relative;
+        height: 560px;
+
+        &::before {
+          background: transparent url("../img/Mega04/BG_imgB.png") center top
+            no-repeat;
+          background-size: cover;
+          content: "";
+          position: absolute;
+          height: 110px;
+          left: 0;
+          top: 0;
+          right: 0;
+          z-index: 2;
+        }
+
+        &::after {
+          background: transparent url("../img/Mega04/BG_imgA.png") center top
+            no-repeat;
+          background-size: cover;
+          content: "";
+          height: 130px;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          z-index: 2;
+        }
+
+        .star {
+          position: relative;
+          cursor: default;
+
+          &.sol {
+            background: transparent url("../img/Mega02/BG_Sol.png") center top
+              no-repeat;
+            width: 350px;
+            height: 350px;
+            display: block;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            z-index: 10;
+
+            &.active {
+              cursor: pointer;
+
+              &:hover {
+                &::before {
+                  opacity: 0.4;
+                }
+              }
+            }
+
+            &::before {
+              background: transparent url("../img/Mega02/BG_SolH.png") center
+                top no-repeat;
+              content: "";
+              position: absolute;
+              width: 350px;
+              height: 350px;
+              left: 0;
+              top: 0;
+              opacity: 0;
+              z-index: 2;
+
+              @include transition(all 0.4s);
+            }
+          }
+
+          &.terra {
+            background: transparent url("../img/Mega02/BG_Terra.png") center top
+              no-repeat;
+            width: 170px;
+            height: 170px;
+
+            display: block;
+            position: absolute;
+            top: 320px;
+            left: 22%;
+            z-index: 10;
+
+            &.active {
+              cursor: pointer;
+
+              &:hover {
+                &::before {
+                  opacity: 0.4;
+                }
+              }
+            }
+
+            &::before {
+              background: transparent url("../img/Mega02/BG_TerraH.png") center
+                top no-repeat;
+              content: "";
+              position: absolute;
+              width: 170px;
+              height: 170px;
+              left: 0;
+              top: 0;
+              opacity: 0;
+              z-index: 2;
+
+              @include transition(all 0.4s);
+            }
+          }
+
+          &.lua {
+            background: transparent url("../img/Mega02/BG_Lua.png") center top
+              no-repeat;
+            width: 120px;
+            height: 120px;
+            display: block;
+            position: absolute;
+            bottom: 20px;
+            left: 48%;
+            z-index: 10;
+
+            &.active {
+              cursor: pointer;
+
+              &:hover {
+                &::before {
+                  opacity: 0.4;
+                }
+              }
+            }
+
+            &::before {
+              background: transparent url("../img/Mega02/BG_LuaH.png") center
+                top no-repeat;
+              content: "";
+              position: absolute;
+              width: 120px;
+              height: 120px;
+              left: 0;
+              top: 0;
+              opacity: 0;
+              z-index: 10;
+
+              @include transition(all 0.4s);
+            }
+          }
+
+          &.saturno {
+            background: transparent url("../img/Mega02/BG_Saturno.png") center
+              top no-repeat;
+            width: 260px;
+            height: 170px;
+            display: block;
+            position: absolute;
+            bottom: 50px;
+            right: 5%;
+            z-index: 10;
+
+            &.active {
+              cursor: pointer;
+
+              &:hover {
+                &::before {
+                  opacity: 0.4;
+                }
+              }
+            }
+
+            &::before {
+              background: transparent url("../img/Mega02/BG_SaturnoH.png")
+                center top no-repeat;
+              content: "";
+              position: absolute;
+              width: 260px;
+              height: 170px;
+              left: 0;
+              top: 0;
+              opacity: 0;
+
+              @include transition(all 0.4s);
+            }
+          }
+
+          &.cometa {
+            background: transparent url("../img/Mega02/BG_Cometa.png") center
+              top no-repeat;
+            width: 170px;
+            height: 120px;
+
+            display: block;
+            position: absolute;
+            top: 120px;
+            left: 60%;
+            z-index: 10;
+
+            &.active {
+              cursor: pointer;
+
+              &:hover {
+                &::before {
+                  opacity: 0.4;
+                }
+              }
+            }
+
+            &::before {
+              background: transparent url("../img/Mega02/BG_CometaH.png") center
+                top no-repeat;
+              content: "";
+              position: absolute;
+              width: 170px;
+              height: 120px;
+              left: 0;
+              top: 0;
+              opacity: 0;
+              z-index: 2;
+
+              @include transition(all 0.4s);
+            }
+          }
+        }
+
+        .popup {
+          &.lua {
+            background: transparent url("../img/Mega02/Pop_Lua.png") center top
+              no-repeat;
+            width: 340px;
+            height: 110px;
+            display: none;
+            position: absolute;
+            bottom: 20px;
+            left: 14%;
+            z-index: 11;
+          }
+
+          &.sol {
+            background: transparent url("../img/Mega02/Pop_Sol.png") center top
+              no-repeat;
+            width: 270px;
+            height: 150px;
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 23%;
+            z-index: 10;
+
+            &.active {
+              display: block;
+            }
+          }
+
+          &.saturno {
+            background: transparent url("../img/Mega02/Pop_Saturno.png") center
+              top no-repeat;
+            width: 280px;
+            height: 170px;
+            display: none;
+            position: absolute;
+            top: 225px;
+            right: 8%;
+            z-index: 11;
+
+            &.active {
+              display: block;
+            }
+          }
+
+          &.cometa {
+            background: transparent url("../img/Mega02/Pop_Cometa.png") center
+              top no-repeat;
+            width: 300px;
+            height: 150px;
+            display: none;
+            position: absolute;
+            top: 25px;
+            right: 3%;
+            z-index: 10;
+
+            &.active {
+              display: block;
+            }
+          }
+
+          &.terra {
+            background: transparent url("../img/Mega02/Pop_Terra.png") center
+              top no-repeat;
+            width: 230px;
+            height: 150px;
+            display: none;
+            position: absolute;
+            top: 240px;
+            left: 30%;
+            z-index: 11;
+
+            &.active {
+              display: block;
+            }
+          }
+
+          .btnFechar {
+            background: transparent url("../img/btnFechar.png") center no-repeat;
+            position: absolute;
+            top: -5px;
+            right: 5px;
+            width: 22px;
+            height: 22px;
+          }
+        }
+      }
+    }
+
+    .borderImg {
+      border: solid 2px #58595b;
+    }
+
+    &.mega1 {
+      h4 {
+        font-size: 22px;
+        padding: 10px 0 0;
+        margin: 0 0 5px;
+        text-transform: inherit;
+      }
+
+      .divIngredientes {
+        background: linear-gradient(to bottom, #ff8a41, #f46036);
+        border-radius: 12px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 60px 15px;
+        padding: 15px;
+        margin: 60px auto 30px;
+
+        .ingrediente {
+          background: #e6e7e8;
+          border-radius: 12px;
+          font-size: 21px;
+          text-align: center;
+          position: relative;
+          padding: 0 0;
+          width: 100%;
+
+          @include box-shadow(3px 3px 5px 2px rgba(0, 0, 0, 0.25));
+
+          span {
+            background: transparent
+              url("../img/Mega01/bg_tituloIngrediente.png") center no-repeat;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            font-family: "Khand", sans-serif;
+            font-size: 19px;
+            font-weight: 500;
+            height: 45px;
+            line-height: 1;
+            width: 100%;
+            margin: -38px auto 15px;
+            padding: 12px 0 0;
+            position: relative;
+            text-transform: capitalize;
+            z-index: 2;
+          }
+
+          .taxa {
+            background: linear-gradient(
+              to bottom,
+              rgba(231, 232, 233, 0.5) 0%,
+              rgba(231, 232, 233, 0) 30%,
+              rgba(255, 255, 255, 0) 70%,
+              rgba(255, 255, 255, 0.5) 100%
+            );
+            border: solid 1px rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+            color: #58595b;
+            display: block;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.2;
+            position: relative;
+            width: 80%;
+            margin: 15px auto;
+            padding: 8px 10px;
+          }
+
+          &.sel {
+            background: #ffe49e;
+
+            .taxa {
+              &::before {
+                background: transparent url("../img/Mega01/imgCheck.png") center
+                  no-repeat;
+                content: "";
+                width: 50px;
+                height: 40px;
                 position: absolute;
-                left: 0;
-                top: 0;
-                width: 180px;
-                height: 100%;
-                pointer-events: none;
-                z-index: 1;
+                top: -25px;
+                right: -10px;
+              }
+            }
+          }
+
+          &[disabled] {
+            pointer-events: none;
+            background: #cac7c7;
+
+            span {
+              background: transparent
+                url("../img/Mega01/bg_tituloIngrediente_d.png") center no-repeat;
+            }
+            .taxa {
+              background: #cac7c7;
+              color: #fff;
+            }
+
+            img {
+              filter: grayscale(100%);
+            }
+          }
+
+          &.off {
+            cursor: default;
+          }
+        }
+
+        &.extras {
+          background: #009ea5;
+          display: none;
+
+          &.mostra {
+            display: grid;
+          }
+        }
+      }
+
+      .dicasChef {
+        background: #009ea5;
+        border-radius: 12px;
+        display: none;
+        padding: 40px 30px;
+        position: relative;
+        margin: 0 auto 30px;
+
+        &::before {
+          background: #e6e7e8 url("../img/bg_faixaMega_P.png") left -25px top repeat-y;
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+          content: " ";
+          position: absolute;
+          left: 15px;
+          top: 15px;
+          bottom: 15px;
+          width: 50%;
+          height: auto;
+          pointer-events: none;
+
+          z-index: 1;
+        }
+
+        &::after {
+          background: #e6e7e8 url("../img/bg_faixaMega_P.png") left -25px top repeat-y;
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+          content: " ";
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          bottom: 15px;
+          width: 50%;
+          height: auto;
+          pointer-events: none;
+          z-index: 1;
+
+          @include transform(rotate(180deg));
+        }
+
+        .dica {
+          background: linear-gradient(
+            to bottom,
+            rgba(200, 200, 202, 0.75) 0%,
+            rgba(231, 232, 233, 0) 20%,
+            rgba(255, 255, 255, 0) 70%,
+            rgba(255, 255, 255, 0.5) 100%
+          );
+          border: solid 1px rgba(255, 255, 255, 0.5);
+          border-radius: 12px;
+          color: #58595b;
+          display: none;
+          font-size: 15px;
+          font-weight: 700;
+          text-align: center;
+          margin: 0 auto 15px;
+          padding: 20px 45px;
+          position: relative;
+          width: 90%;
+          z-index: 2;
+
+          &:last-child {
+            margin: 0 auto;
+          }
+
+          &:nth-child(1) {
+            &::before {
+              background: transparent url("../img/Mega01/bg_saleiro.png") center
+                no-repeat;
+              content: " ";
+              position: absolute;
+              left: -30px;
+              top: 50%;
+              height: 84px;
+              width: 60px;
+              z-index: 10;
+
+              @include transform(translateY(-50%));
+            }
+          }
+
+          &:nth-child(2) {
+            z-index: 10;
+            &::before {
+              background: transparent url("../img/Mega01/bg_pimenta.png") center
+                no-repeat;
+              content: " ";
+              position: absolute;
+              right: -25px;
+              top: 50%;
+              height: 114px;
+              width: 50px;
+              z-index: 13;
+
+              @include transform(translateY(-50%));
+            }
+          }
+
+          &:nth-child(3) {
+            &::before {
+              background: transparent url("../img/Mega01/bg_palito.png") center
+                no-repeat;
+              content: " ";
+              position: absolute;
+              left: -30px;
+              top: 50%;
+              height: 84px;
+              width: 60px;
+              z-index: 12;
+
+              @include transform(translateY(-50%));
+            }
+          }
+        }
+      }
+
+      .quadroCritico {
+        background: #009ea5;
+        border-radius: 12px;
+        display: block;
+        position: relative;
+        padding: 0 40px;
+        margin: 30px auto 30px;
+        min-height: 290px;
+
+        &::before {
+          background: #e6e7e8 url("../img/bg_faixaMega_P.png") left -25px top repeat-y;
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+          content: " ";
+          position: absolute;
+          left: 15px;
+          top: 15px;
+          bottom: 15px;
+          width: 50%;
+          height: auto;
+          pointer-events: none;
+
+          z-index: 1;
+        }
+
+        &::after {
+          background: #e6e7e8 url("../img/bg_faixaMega_P.png") left -25px top repeat-y;
+          border-top-left-radius: 12px;
+          border-bottom-left-radius: 12px;
+          content: " ";
+          position: absolute;
+          right: 15px;
+          top: 15px;
+          bottom: 15px;
+          width: 50%;
+          height: auto;
+          pointer-events: none;
+          z-index: 1;
+
+          @include transform(rotate(180deg));
+        }
+
+        &.ajuda {
+          display: none;
+          margin: 0 auto;
+          min-height: inherit;
+          padding: 40px;
+          position: relative;
+          top: -25px;
+
+          p {
+            font-size: 16px;
+          }
+        }
+
+        span {
+          background: transparent url("../img/Mega01/bg_tituloChefe.png") center
+            no-repeat;
+          color: #ffffff;
+          display: flex;
+          justify-content: center;
+          font-family: "Khand", sans-serif;
+          font-size: 23px;
+          font-weight: 500;
+          height: 50px;
+          line-height: 1;
+          width: 100%;
+          margin: 0 auto;
+          padding: 12px 0 0;
+          position: relative;
+          top: -28px;
+          text-transform: capitalize;
+          z-index: 3;
+        }
+
+        .imgCritico {
+          max-width: 140px;
+          display: block;
+          position: relative;
+          z-index: 3;
+          float: left;
+          margin: 0 20px 5px 0;
+        }
+
+        p {
+          font-size: 15px;
+          margin: 0;
+          line-height: 1.7;
+          position: relative;
+          z-index: 3;
+        }
+
+        @media #{$bp-desktop} {
+          min-height: 360px;
+        }
+      }
+
+      .introducaoPrato,
+      .ajudaCritico,
+      .montagemPrato {
+        display: none;
+      }
+
+      .contadorIngredientes {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+
+        .boxContador {
+          position: relative;
+          display: flex;
+
+          .textoItem {
+            background: #3dbac4 url("../img/Mega01/bg_afterAzul.png") left top
+              repeat-x;
+            border-top-left-radius: 9px;
+            border-bottom-left-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: 50px;
+            width: 220px;
+            @include box-shadow(inset 0px -3px 0 0 rgba(0, 158, 165, 1));
+
+            &.full {
+              background: #88a4a7 url("../img/Mega01/bg_afterAzul.png") left top
+                repeat-x;
+              @include box-shadow(inset 0px -3px 0 0 rgba(71, 125, 128, 1));
+            }
+
+            span {
+              color: #fff;
+              font-family: "Khand", sans-serif;
+              font-size: 18px;
+              font-weight: 600;
+              line-height: 1;
+              text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            }
+          }
+
+          .dataItem {
+            background: #e6e7e8;
+            border-top-right-radius: 9px;
+            border-bottom-right-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #6e707f;
+            font-family: "Khand", sans-serif;
+            font-size: 21px;
+            font-weight: 600;
+            line-height: 1;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            height: 50px;
+            width: 80px;
+            @include box-shadow(inset 0px -3px 0 0 rgba(188, 190, 192, 1));
+
+            span {
+              //background: linear-gradient(to bottom, rgba(200, 200, 202, 0.75) 0%,rgba(231,232,233,0) 20%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.5) 100%);
+              //border: solid 1px rgba(255,255,255,0.5);
+              //border-radius: 6px;
+              color: #6e707f;
+              display: block;
+              font-family: "Khand", sans-serif;
+              font-size: 21px;
+              font-weight: 600;
+              line-height: 1;
+              position: relative;
+              text-align: center;
+              width: 94%;
+              margin: 0 auto;
+              padding: 5px 10px 2px;
+            }
+          }
+        }
+      }
+
+      .blocoContador {
+        position: relative;
+        display: flex;
+        margin: 0 auto 30px;
+
+        .textoItem {
+          background: #3dbac4 url("../img/Mega01/bg_afterAzul.png") left top
+            repeat-x;
+          border-top-left-radius: 9px;
+          border-bottom-left-radius: 9px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          height: 50px;
+          width: 60%;
+          @include box-shadow(inset 0px -3px 0 0 rgba(0, 158, 165, 1));
+
+          span {
+            color: #fff;
+            font-family: "Khand", sans-serif;
+            font-size: 21px;
+            font-weight: 600;
+            line-height: 1;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+          }
+        }
+
+        .dataItem {
+          background: #e6e7e8;
+          border-top-right-radius: 9px;
+          border-bottom-right-radius: 9px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          height: 50px;
+          width: 40%;
+          @include box-shadow(inset 0px -3px 0 0 rgba(188, 190, 192, 1));
+
+          span {
+            background: linear-gradient(
+              to bottom,
+              rgba(200, 200, 202, 0.75) 0%,
+              rgba(231, 232, 233, 0) 20%,
+              rgba(255, 255, 255, 0) 70%,
+              rgba(255, 255, 255, 0.5) 100%
+            );
+            border: solid 1px rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+            color: #6e707f;
+            display: block;
+            font-family: "Khand", sans-serif;
+            font-size: 26px;
+            font-weight: 600;
+            line-height: 1;
+            position: relative;
+            text-align: center;
+            width: 94%;
+            margin: 15px auto;
+            padding: 5px 10px 2px;
+          }
+        }
+
+        &#blocoDica {
+          .dataItem {
+            &::before {
+              background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
+              border-radius: 50%;
+              content: "+";
+              color: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-family: "Khand", sans-serif;
+              font-size: 40px;
+              font-weight: 500;
+              line-height: 1;
+              position: absolute;
+              bottom: -35px;
+              height: 40px;
+              width: 40px;
+              z-index: 10;
+              text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+              @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
+            }
+          }
+        }
+
+        &#blocoIngrediente {
+          .textoItem {
+            border-radius: 9px;
+            width: 55%;
+            margin-right: 5%;
+          }
+
+          .dataItem {
+            border-radius: 9px;
+
+            &::before {
+              background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
+              border-radius: 50%;
+              content: "–";
+              color: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-family: "Khand", sans-serif;
+              font-size: 40px;
+              font-weight: 500;
+              line-height: 1;
+              position: absolute;
+              left: -35px;
+              top: 50%;
+              height: 40px;
+              width: 40px;
+              text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+              z-index: 10;
+
+              @include transform(translateY(-50%));
+              @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
             }
 
             &::after {
-                background: transparent url('../img/bg_faixaMega_F.png') left top repeat-y;
-                content: ' ';
-                position: absolute;
-                right: 0;
-                top: 0;
-                width: 180px;
-                height: 100%;
-                pointer-events: none;
-                z-index: 1;
-                @include transform(rotate(180deg));
+              background: linear-gradient(to right, #6058bc, #9e77de);
+              content: "";
+              position: absolute;
+              top: -16px;
+              left: 0;
+              height: 2px;
+              width: 100%;
+              z-index: 10;
             }
+          }
+        }
+      }
 
-            .tabelaFeed {
-                margin: 0 auto 30px;
+      .blocoContadorFinal {
+        background: #756fb3;
+        border-radius: 9px;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        font-family: "Khand", sans-serif;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 1;
+        margin: 0 auto 30px;
+        height: 50px;
+        width: 100%;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        @include box-shadow(inset 0px -3px 0 0 rgba(97, 91, 168, 1));
 
-                .row { 
-                    margin: 0; 
-                
-                    .col-sm-4 { padding: 0; }
-                }
-
-                .tituloTabela {
-                    background: #4180a1;
-                    color: #FFF;
-                    font-family: 'Open Sans', sans-serif;
-                    font-size: 18px;
-                    font-weight: 700;
-                    display: block;
-                    padding: 8px 0;
-                    text-align: center;
-
-                    &.center { 
-                        border-right: solid 2px #fff; 
-                        border-left: solid 2px #fff; 
-                    }
-
-                    &:focus { outline: none; }
-                }
-
-                .itemTabela {
-                    background: #ffffff;
-                    border-top: solid 3px #d5eef4;
-
-                    display: flex;
-                    align-items: center;
-                    height: 160px;
-                    padding: 0 20px;
-                    
-                    p {
-                        color: #58595b;
-                        font-family: 'Open Sans', sans-serif;
-                        font-size: 16px;
-                        font-weight: 700;
-                        margin: 0;
-                    }
-                }
-
-                .persona {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    height: 160px;
-                    position: relative;
-
-                    &::before {
-                        content: '';
-                        display: block;
-                        position: relative;
-                        height: 160px;
-                        width: 160px;
-                        left: 0;
-                    }
-
-                    p {
-                        color: #3a627a;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 24px;
-                        font-weight: 700; 
-                        margin: 0;
-                        text-transform: uppercase;
-                    }
-
-                    &.p1 {
-                        background: linear-gradient(to top, rgba(241, 205, 85, 1), rgba(241, 205, 83, 0));
-
-                        &::before { background: url('../img/Mega02/Persona_01.png') center bottom no-repeat; }
-                    }
-
-                    &.p2 {
-                        background: linear-gradient(to top, rgba(81, 195, 197, 1), rgba(81, 195, 197, 0));
-
-                        &::before { background: url('../img/Mega02/Persona_02.png') center bottom no-repeat; }
-                    }
-
-                    &.p3 {
-                        background: linear-gradient(to top, rgba(166, 208, 98, 1), rgba(166, 208, 98, 0));
-
-                        &::before { background: url('../img/Mega02/Persona_03.png') center bottom no-repeat; }
-                    }
-
-                    &.p4 {
-                        background: linear-gradient(to top, rgba(246, 137, 69, 1), rgba(246, 137, 69, 0));
-
-                        &::before { background: url('../img/Mega02/Persona_04.png') center bottom no-repeat; }
-                    }
-
-                    @for $i from 1 through 4 {
-                        &.sele#{$i} { 
-                            border: solid 3px #d5eef4;
-                            border-bottom: 0;
-                        }
-                    }
-                }
-            }
+        span {
+          display: inline-block;
+          margin: 0 6px;
         }
 
-        .box-imagem {
-            background: #009ea5;
-            border-radius: 12px;
-            margin: 20px auto 30px;
-            padding: 20px 20px 40px;
+        &::before {
+          background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
+          border-radius: 50%;
+          content: "=";
+          color: #fff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: "Khand", sans-serif;
+          font-size: 42px;
+          font-weight: 500;
+          line-height: 1;
+          position: absolute;
+          left: -40px;
+          top: 50%;
+          height: 45px;
+          width: 45px;
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+          z-index: 10;
+
+          @include transform(translateY(-50%));
+          @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
+        }
+      }
+
+      .botaoAjuda {
+        margin: -30px auto 0;
+        text-transform: capitalize;
+        z-index: 20;
+
+        &[disabled] {
+          pointer-events: none;
+          background: url("../img/bg_botaoMega.png") center top no-repeat;
+          color: #fff;
+        }
+      }
+
+      .botaoPrato {
+        width: 100%;
+
+        &::before {
+          left: 50%;
+          @include transform(translateX(-53%));
+        }
+
+        &::after {
+          background: linear-gradient(
+            to right,
+            #615ba8 0%,
+            #615ba8 35%,
+            rgba(255, 255, 255, 1) 35%,
+            rgba(255, 255, 255, 1) 65%,
+            #615ba8 65%
+          );
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          height: 1px;
+          width: 100%;
+          z-index: -1;
+          pointer-events: none;
+
+          @include transform(translateY(-50%));
+        }
+      }
+
+      .dicaExtra {
+        color: #009ea5;
+        display: none;
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      .faixaFeed {
+        padding: 0 15px 30px;
+
+        .feed {
+          display: none;
+
+          p {
+            display: block;
+            margin-bottom: 10px;
+
+            strong {
+              color: #58595b;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        .row-img {
+          background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0) 50%
+          );
+
+          img {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+
+    &.mega2 {
+      .boxLaranja {
+        background: linear-gradient(to bottom, #ff8a41, #f46036);
+        border-radius: 12px;
+        padding: 10px 25px;
+        position: relative;
+        margin: 15px 0 0;
+
+        .row {
+          background: #e6e7e8;
+          border-radius: 12px;
+          padding: 40px 75px 50px;
+          position: relative;
+
+          &::before {
+            background: transparent url("../img/bg_faixaMega_P.png") left -15px top
+              repeat-y;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            height: auto;
+            pointer-events: none;
+
+            z-index: 1;
+          }
+
+          &::after {
+            background: transparent url("../img/bg_faixaMega_P.png") left -15px top
+              repeat-y;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            content: " ";
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            height: auto;
+            pointer-events: none;
+            z-index: 1;
+
+            @include transform(rotate(180deg));
+          }
+
+          .col-sm-12 {
             position: relative;
-
-            h3 {
-                background: transparent url('../img/bg_tituloBoxLaranja.png') center no-repeat;
-                border-radius: 0;
-                color: #ffffff;
-                font-size: 25px;
-                font-weight: 700;
-                height: 44px;
-                width: 208px;
-                margin: 0;
-                padding: 3px 0 0;
-                position: absolute;
-                text-transform: uppercase;
-                text-align: center;
-                text-shadow: none;
-                z-index: 2;
-
-                top: -24px;
-                left: 50%;
-                @include transform(translateX(-50%));
-
-                &::before, &::after { display: none; }
-
-                span { padding: 0 0 0 10px; }
-            }
-
-            .imagem {
-                position: relative;
-                height: 450px;
-                overflow: hidden;
-
-                &::before {
-                    background: transparent url('../img/Mega04/BG_imgB.png') center top no-repeat;
-                    background-size: cover;
-                    content: '';
-                    position: absolute;
-                    height: 130px;
-                    left: 0;
-                    top: 0;
-                    right: 0;
-                    z-index: 2;
-                }
-    
-                &::after {
-                    background: transparent url('../img/Mega04/BG_imgA.png') center top no-repeat;
-                    background-size: cover;
-                    content: '';
-                    height: 130px;
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    z-index: 2;
-                }
-
-                .loadImg {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    opacity: 0;
-
-                    height: 100%;
-                    width: 100%;
-                    //@include transition(all 1s);
-
-                    &.img1 {
-                        background: url('../../img/mega04/panorama1.jpg') center no-repeat;
-                        background-size: 100%;
-                        opacity: 1;
-                        &.zoom1 { background-size: 250%; }
-                        &.zoom2 { background-size: 500%; }
-
-                        &.some { 
-                            opacity: 0; 
-
-                            @include transform(scale(1.5));
-                            @include transition(all 2s); 
-                        }
-                        &.aparece {
-                            opacity: 1; 
-
-                            @include transform(scale(1));
-                            @include transition(all 1.5s);
-                        }
-                    }
-                    &.img2 {
-                        background: url('../../img/mega04/panorama2.jpg') center bottom no-repeat;
-                        background-size: 100%;
-                        &.zoom1 { background-size: 250%; }
-                        &.zoom2 { background-size: 500%; }
-                        @include transform(scale(0.5));
-
-                        &.some { 
-                            opacity: 0; 
-
-                            @include transform(scale(1.5));
-                            @include transition(all 2s); 
-                        }
-                        &.aparece {
-                            opacity: 1; 
-
-                            @include transform(scale(1));
-                            @include transition(all 1.5s);
-                        }
-                        &.diminuiSome {
-                            opacity: 0; 
-
-                            @include transform(scale(0.5));
-                            @include transition(all 2s); 
-                        }
-                    }
-                    &.img3 {
-                        background: url('../../img/mega04/panorama3.jpg') left center no-repeat;
-                        background-size: 100%;
-                        &.zoom1 { background-size: 250%; }
-                        &.zoom2 { background-size: 500%; }
-                        @include transform(scale(0.5));
-
-                        &.some { 
-                            opacity: 0; 
-
-                            @include transform(scale(1.5));
-                            @include transition(all 2s); 
-                        }
-                        &.aparece {
-                            opacity: 1; 
-
-                            @include transform(scale(1));
-                            @include transition(all 1.5s);
-                        }
-                        &.diminuiSome {
-                            opacity: 0; 
-
-                            @include transform(scale(0.5));
-                            @include transition(all 2s); 
-                        }
-                    }
-                }
-            }
-
-            .botoes {
-                position: absolute;
-                display: flex;
-                justify-content: space-around;
-                bottom: -15px;
-                left: 30%;
-                width: 40%;
-
-                .botaoZoom { 
-                    background: transparent;
-                    height: 70px;
-                    width: 90px;
-                    padding-bottom: 15px;
-                    position: relative;
-
-                    &::before {
-                        background: transparent url('../img/Mega04/BG_botaoB.png') center top no-repeat;
-                        content: '';
-                        border-radius: 50%;
-                        height: 70px;
-                        width: 90px;
-                        position: absolute;
-                        left: 0;
-                        bottom: 0;
-                        z-index: 3;
-                    }
-                    
-                    &::after {
-                        background: linear-gradient(to bottom, #ff8a41, #f46036);
-                        content: '';
-                        display: flex;
-                        border-radius: 50%;
-                        color: #FFF;
-                        align-items: center;
-                        justify-content: center;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 40px;
-                        font-weight: 600;
-                        line-height: 1;
-                        height: 50px;
-                        width: 50px;
-                        position: absolute;
-                        left: 20px;
-                        top: 0;
-                        z-index: 4;
-
-                        @include transition(all 0.4s);
-                    }
-
-                    &:hover {
-                        &::after { background: linear-gradient(to bottom, #f46036, #f46036); }
-                    }
-
-                    i {
-                        color: #FFF;
-                        font-size: 1.5em;
-                        position: relative;
-                        z-index: 5;
-
-                        &::before {
-                            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-                        }
-                    }
-
-                    &[disabled] {
-                        pointer-events: none;
-                        padding-bottom: 11px;
-
-                        &::after { 
-                            background: linear-gradient(to bottom, #ddd, #ddd); 
-                            width: 52px;
-                            height: 52px;
-                            left: 19px;
-                            top: 3px;
-                        }
-                        i { 
-                            color: #aaa; 
-                            
-                            &::before {
-                                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
-                            }
-                        }
-                    }
-                }
-            }
-
-            .universo {
-                position: relative;
-                height: 560px;
-
-                &::before {
-                    background: transparent url('../img/Mega04/BG_imgB.png') center top no-repeat;
-                    background-size: cover;
-                    content: '';
-                    position: absolute;
-                    height: 110px;
-                    left: 0;
-                    top: 0;
-                    right: 0;
-                    z-index: 2;
-                }
-    
-                &::after {
-                    background: transparent url('../img/Mega04/BG_imgA.png') center top no-repeat;
-                    background-size: cover;
-                    content: '';
-                    height: 130px;
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    right: 0;
-                    z-index: 2;
-                }
-
-                .star {
-                    position: relative;
-                    cursor: default;
-
-                    &.sol {
-                        background: transparent url('../img/Mega02/BG_Sol.png') center top no-repeat;
-                        width: 350px;
-                        height: 350px;
-                        display: block;
-                        position: absolute;
-                        top: 10px;
-                        left: 20px;
-                        z-index: 10;
-
-                        &.active { 
-                            cursor: pointer; 
-                        
-                            &:hover { &::before { opacity: 0.4; }}
-                        }
-
-                        &::before {
-                            background: transparent url('../img/Mega02/BG_SolH.png') center top no-repeat;
-                            content: '';
-                            position: absolute;
-                            width: 350px;
-                            height: 350px;
-                            left: 0;
-                            top: 0;
-                            opacity: 0;
-                            z-index: 2;
-
-                            @include transition(all 0.4s);
-                        }
-                    }
-
-                    &.terra {
-                        background: transparent url('../img/Mega02/BG_Terra.png') center top no-repeat;
-                        width: 170px;
-                        height: 170px;
-
-                        display: block;
-                        position: absolute;
-                        top: 320px;
-                        left: 22%;
-                        z-index: 10;
-
-                        &.active { 
-                            cursor: pointer; 
-                        
-                            &:hover { &::before { opacity: 0.4; }}
-                        }
-
-                        &::before {
-                            background: transparent url('../img/Mega02/BG_TerraH.png') center top no-repeat;
-                            content: '';
-                            position: absolute;
-                            width: 170px;
-                            height: 170px;
-                            left: 0;
-                            top: 0;
-                            opacity: 0;
-                            z-index: 2;
-
-                            @include transition(all 0.4s);
-                        }
-                    }
-
-                    &.lua {
-                        background: transparent url('../img/Mega02/BG_Lua.png') center top no-repeat;
-                        width: 120px;
-                        height: 120px;
-                        display: block;
-                        position: absolute;
-                        bottom: 20px;
-                        left: 48%;
-                        z-index: 10;
-
-                        &.active { 
-                            cursor: pointer; 
-                        
-                            &:hover { &::before { opacity: 0.4; }}
-                        }
-
-                        &::before {
-                            background: transparent url('../img/Mega02/BG_LuaH.png') center top no-repeat;
-                            content: '';
-                            position: absolute;
-                            width: 120px;
-                            height: 120px;
-                            left: 0;
-                            top: 0;
-                            opacity: 0;
-                            z-index: 10;
-
-                            @include transition(all 0.4s);
-                        }
-                    }
-
-                    &.saturno { 
-                        background: transparent url('../img/Mega02/BG_Saturno.png') center top no-repeat;
-                        width: 260px;
-                        height: 170px;
-                        display: block;
-                        position: absolute;
-                        bottom: 50px;
-                        right: 5%;
-                        z-index: 10;
-
-                        &.active { 
-                            cursor: pointer; 
-                        
-                            &:hover { &::before { opacity: 0.4; }}
-                        }
-
-                        &::before {
-                            background: transparent url('../img/Mega02/BG_SaturnoH.png') center top no-repeat;
-                            content: '';
-                            position: absolute;
-                            width: 260px;
-                            height: 170px;
-                            left: 0;
-                            top: 0;
-                            opacity: 0;
-
-                            @include transition(all 0.4s);
-                        }
-                    }
-
-                    &.cometa { 
-                        background: transparent url('../img/Mega02/BG_Cometa.png') center top no-repeat;
-                        width: 170px;
-                        height: 120px;
-
-                        display: block;
-                        position: absolute;
-                        top: 120px;
-                        left: 60%;
-                        z-index: 10;
-
-                        &.active { 
-                            cursor: pointer; 
-                        
-                            &:hover { &::before { opacity: 0.4; }}
-                        }
-
-                        &::before {
-                            background: transparent url('../img/Mega02/BG_CometaH.png') center top no-repeat;
-                            content: '';
-                            position: absolute;
-                            width: 170px;
-                            height: 120px;
-                            left: 0;
-                            top: 0;
-                            opacity: 0;
-                            z-index: 2;
-
-                            @include transition(all 0.4s);
-                        }
-                    }
-                }
-
-                .popup {
-                    &.lua {
-                        background: transparent url('../img/Mega02/Pop_Lua.png') center top no-repeat;
-                        width: 340px;
-                        height: 110px;
-                        display: none;
-                        position: absolute;
-                        bottom: 20px;
-                        left: 14%;
-                        z-index: 11;
-                    }
-
-                    &.sol {
-                        background: transparent url('../img/Mega02/Pop_Sol.png') center top no-repeat;
-                        width: 270px;
-                        height: 150px;
-                        display: none;
-                        position: absolute;
-                        top: 20px;
-                        left: 23%;
-                        z-index: 10;
-
-                        &.active { display: block; }
-                    }
-
-                    &.saturno { 
-                        background: transparent url('../img/Mega02/Pop_Saturno.png') center top no-repeat;
-                        width: 280px;
-                        height: 170px;
-                        display: none;
-                        position: absolute;
-                        top: 225px;
-                        right: 8%;
-                        z-index: 11;
-
-                        &.active { display: block; }
-                    }
-
-                    &.cometa { 
-                        background: transparent url('../img/Mega02/Pop_Cometa.png') center top no-repeat;
-                        width: 300px;
-                        height: 150px;
-                        display: none;
-                        position: absolute;
-                        top: 25px;
-                        right: 3%;
-                        z-index: 10;
-
-                        &.active { display: block; }
-                    }
-
-                    &.terra {
-                        background: transparent url('../img/Mega02/Pop_Terra.png') center top no-repeat;
-                        width: 230px;
-                        height: 150px;
-                        display: none;
-                        position: absolute;
-                        top: 240px;
-                        left: 30%;
-                        z-index: 11;
-
-                        &.active { display: block; }
-                    }
-
-                    .btnFechar { 
-                        background: transparent url('../img/btnFechar.png') center no-repeat;
-                        position: absolute;
-                        top: -5px;
-                        right: 5px;
-                        width: 22px;
-                        height: 22px;
-                    }
-                }
-            }
+            z-index: 2;
+          }
         }
 
-        .borderImg { 
-            border: solid 2px #58595b;
+        p {
+          color: #58595b;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
 
-        &.mega1 {
-            h4 { font-size: 22px; padding: 10px 0 0; margin: 0 0 5px; text-transform: inherit; }
+        strong {
+          color: #009da3;
+        }
+      }
 
-            .divIngredientes {
-                background: linear-gradient(to bottom, #ff8a41, #f46036);
-                border-radius: 12px;
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: 60px 15px;
-                padding: 15px;
-                margin: 60px auto 30px;
-            
-                .ingrediente { 
-                    background: #e6e7e8;
-                    border-radius: 12px;
-                    font-size: 21px;
-                    text-align: center;
-                    position: relative;
-                    padding: 0 0;
-                    width: 100%;
+      .boxVerde {
+        background: #e6e7e8;
+        border: solid 10px #009ea5;
+        border-radius: 16px;
+        padding: 0 0 40px;
+        position: relative;
+        margin: 30px 0 0;
 
-                    @include box-shadow(3px 3px 5px 2px rgba(0,0,0,0.25));
+        &::before {
+          background: transparent url("../img/bg_faixaMega_P.png") left -15px top
+            repeat-y;
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          content: " ";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 150px;
+          height: auto;
+          pointer-events: none;
 
-                    span { 
-                        background: transparent url('../img/Mega01/bg_tituloIngrediente.png') center no-repeat;
-                        color: #ffffff;
-                        display: flex;
-                        justify-content: center;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 19px;
-                        font-weight: 500;
-                        height: 45px;
-                        line-height: 1;
-                        width: 100%;
-                        margin: -38px auto 15px;
-                        padding: 12px 0 0;
-                        position: relative;
-                        text-transform: capitalize;
-                        z-index: 2;
-                    }
-
-                    .taxa {
-                        background: linear-gradient(to bottom, rgba(231,232,233,.5) 0%,rgba(231,232,233,0) 30%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.5) 100%);
-                        border: solid 1px rgba(255,255,255,0.5);
-                        border-radius: 6px;
-                        color: #58595b;
-                        display: block;
-                        font-size: 15px;
-                        font-weight: 700;
-                        line-height: 1.2;
-                        position: relative;
-                        width: 80%;
-                        margin: 15px auto;
-                        padding: 8px 10px;
-                    }
-
-                    &.sel {
-                        background: #ffe49e;
-
-                        .taxa {
-                            &::before {
-                                background: transparent url('../img/Mega01/imgCheck.png') center no-repeat;
-                                content: '';
-                                width: 50px;
-                                height: 40px;
-                                position: absolute;
-                                top: -25px;
-                                right: -10px;
-                            }
-                        }
-                    }
-
-                    &[disabled] {
-                        pointer-events: none;
-                        background: #cac7c7;
-
-                        span { background: transparent url('../img/Mega01/bg_tituloIngrediente_d.png') center no-repeat; }
-                        .taxa {
-                            background: #cac7c7;
-                            color: #FFF; }
-
-                        img { filter: grayscale(100%); }
-                    }
-
-                    &.off { cursor: default; }
-                }
-
-                &.extras {
-                    background: #009ea5;
-                    display: none;
-
-                    &.mostra { display: grid; }
-                }
-            }
-
-            .dicasChef {
-                background: #009ea5;
-                border-radius: 12px;
-                display: none;
-                padding: 40px 30px;
-                position: relative;
-                margin: 0 auto 30px;
-
-                &::before {
-                    background: #e6e7e8 url('../img/bg_faixaMega_P.png') left -25px top repeat-y;
-                    border-top-left-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    content: ' ';
-                    position: absolute;
-                    left: 15px;
-                    top: 15px;
-                    bottom: 15px;
-                    width: 50%;
-                    height: auto;
-                    pointer-events: none;
-    
-                    z-index: 1;
-                }
-    
-                &::after {
-                    background: #e6e7e8 url('../img/bg_faixaMega_P.png') left -25px top repeat-y;
-                    border-top-left-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    content: ' ';
-                    position: absolute;
-                    right: 15px;
-                    top: 15px;
-                    bottom: 15px;
-                    width: 50%;
-                    height: auto;
-                    pointer-events: none;
-                    z-index: 1;
-            
-                    @include transform(rotate(180deg));
-                }
-            
-                .dica { 
-                    background: linear-gradient(to bottom, rgba(200, 200, 202, 0.75) 0%,rgba(231,232,233,0) 20%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.5) 100%);
-                    border: solid 1px rgba(255,255,255,0.5);
-                    border-radius: 12px;
-                    color: #58595b;
-                    display: none;
-                    font-size: 15px;
-                    font-weight: 700;
-                    text-align: center;
-                    margin: 0 auto 15px;
-                    padding: 20px 45px;
-                    position: relative;
-                    width: 90%;
-                    z-index: 2;
-
-                    &:last-child { margin: 0 auto; }
-
-                    &:nth-child(1) {
-                        &::before {
-                            background: transparent url('../img/Mega01/bg_saleiro.png') center no-repeat;
-                            content: ' ';
-                            position: absolute;
-                            left: -30px;
-                            top: 50%;
-                            height: 84px;
-                            width: 60px;
-                            z-index: 10;
-
-                            @include transform(translateY(-50%));
-                        }
-                    }
-
-                    &:nth-child(2) {
-                        z-index: 10;
-                        &::before {
-                            background: transparent url('../img/Mega01/bg_pimenta.png') center no-repeat;
-                            content: ' ';
-                            position: absolute;
-                            right: -25px;
-                            top: 50%;
-                            height: 114px;
-                            width: 50px;
-                            z-index: 13;
-
-                            @include transform(translateY(-50%));
-                        }
-                    }
-
-                    &:nth-child(3) {
-                        &::before {
-                            background: transparent url('../img/Mega01/bg_palito.png') center no-repeat;
-                            content: ' ';
-                            position: absolute;
-                            left: -30px;
-                            top: 50%;
-                            height: 84px;
-                            width: 60px;
-                            z-index: 12;
-
-                            @include transform(translateY(-50%));
-                        }
-                    }
-                }
-            }
-
-            .quadroCritico {
-                background: #009ea5;
-                border-radius: 12px;
-                display: block;
-                position: relative;
-                padding: 0 40px;
-                margin: 30px auto 30px;
-                min-height: 290px;
-
-                &::before {
-                    background: #e6e7e8 url('../img/bg_faixaMega_P.png') left -25px top repeat-y;
-                    border-top-left-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    content: ' ';
-                    position: absolute;
-                    left: 15px;
-                    top: 15px;
-                    bottom: 15px;
-                    width: 50%;
-                    height: auto;
-                    pointer-events: none;
-    
-                    z-index: 1;
-                }
-    
-                &::after {
-                    background: #e6e7e8 url('../img/bg_faixaMega_P.png') left -25px top repeat-y;
-                    border-top-left-radius: 12px;
-                    border-bottom-left-radius: 12px;
-                    content: ' ';
-                    position: absolute;
-                    right: 15px;
-                    top: 15px;
-                    bottom: 15px;
-                    width: 50%;
-                    height: auto;
-                    pointer-events: none;
-                    z-index: 1;
-            
-                    @include transform(rotate(180deg));
-                }
-                
-                &.ajuda {
-                    display: none;
-                    margin: 0 auto;
-                    min-height: inherit;
-                    padding: 40px;
-                    position: relative;
-                    top: -25px;
-
-                    p { font-size: 16px; }
-                }
-
-                span { 
-                    background: transparent url('../img/Mega01/bg_tituloChefe.png') center no-repeat;
-                    color: #ffffff;
-                    display: flex;
-                    justify-content: center;
-                    font-family: 'Khand', sans-serif;
-                    font-size: 23px;
-                    font-weight: 500;
-                    height: 50px;
-                    line-height: 1;
-                    width: 100%;
-                    margin: 0 auto;
-                    padding: 12px 0 0;
-                    position: relative;
-                    top: -28px;
-                    text-transform: capitalize;
-                    z-index: 3;
-                }
-
-                .imgCritico {
-                    max-width: 140px;
-                    display: block;
-                    position: relative;
-                    z-index: 3;
-                    float: left;
-                    margin: 0 20px 5px 0;
-                }
-
-                p { font-size: 15px; margin: 0; line-height: 1.7; position: relative; z-index: 3; }
-
-                @media #{$bp-minDesktop} { 
-                    min-height: 360px;
-                }
-            }
-
-            .introducaoPrato,
-            .ajudaCritico,
-            .montagemPrato { display: none; }
-
-            .contadorIngredientes {
-                display: flex;
-                justify-content: flex-end;
-                margin-bottom: 20px;
-                
-                .boxContador {
-                    position: relative;
-                    display: flex;
-
-                    .textoItem {
-                        background: #3dbac4 url('../img/Mega01/bg_afterAzul.png') left top repeat-x;
-                        border-top-left-radius: 9px;
-                        border-bottom-left-radius: 9px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin: 0;
-                        height: 50px;
-                        width: 220px;
-                        @include box-shadow(inset 0px -3px 0 0 rgba(0,158,165,1));
-
-                        &.full {
-                            background: #88a4a7 url('../img/Mega01/bg_afterAzul.png') left top repeat-x;
-                            @include box-shadow(inset 0px -3px 0 0 rgba(71, 125, 128, 1));
-                        }
-    
-                        span {
-                            color: #FFF;
-                            font-family: 'Khand', sans-serif;
-                            font-size: 18px;
-                            font-weight: 600;
-                            line-height: 1;
-                            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                        }
-                    }
-    
-                    .dataItem {
-                        background: #e6e7e8;
-                        border-top-right-radius: 9px;
-                        border-bottom-right-radius: 9px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        color: #6e707f;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 21px;
-                        font-weight: 600;
-                        line-height: 1;
-                        margin: 0;
-                        padding: 0;
-                        position: relative;
-                        height: 50px;
-                        width: 80px;
-                        @include box-shadow(inset 0px -3px 0 0 rgba(188,190,192,1));
-                        
-                        span {
-                            //background: linear-gradient(to bottom, rgba(200, 200, 202, 0.75) 0%,rgba(231,232,233,0) 20%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.5) 100%);
-                            //border: solid 1px rgba(255,255,255,0.5);
-                            //border-radius: 6px;
-                            color: #6e707f;
-                            display: block;
-                            font-family: 'Khand', sans-serif;
-                            font-size: 21px;
-                            font-weight: 600;
-                            line-height: 1;
-                            position: relative;
-                            text-align: center;
-                            width: 94%;
-                            margin: 0 auto;
-                            padding: 5px 10px 2px;
-                        }
-                    }
-                }
-            }
-
-            .blocoContador {
-                position: relative;
-                display: flex;
-                margin: 0 auto 30px;
-
-                .textoItem {
-                    background: #3dbac4 url('../img/Mega01/bg_afterAzul.png') left top repeat-x;
-                    border-top-left-radius: 9px;
-                    border-bottom-left-radius: 9px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0;
-                    height: 50px;
-                    width: 60%;
-                    @include box-shadow(inset 0px -3px 0 0 rgba(0,158,165,1));
-
-                    span {
-                        color: #FFF;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 21px;
-                        font-weight: 600;
-                        line-height: 1;
-                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                    }
-                }
-
-                .dataItem {
-                    background: #e6e7e8;
-                    border-top-right-radius: 9px;
-                    border-bottom-right-radius: 9px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0;
-                    position: relative;
-                    height: 50px;
-                    width: 40%;
-                    @include box-shadow(inset 0px -3px 0 0 rgba(188,190,192,1));
-                    
-                    span {
-                        background: linear-gradient(to bottom, rgba(200, 200, 202, 0.75) 0%,rgba(231,232,233,0) 20%, rgba(255,255,255,0) 70%, rgba(255,255,255,0.5) 100%);
-                        border: solid 1px rgba(255,255,255,0.5);
-                        border-radius: 6px;
-                        color: #6e707f;
-                        display: block;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 26px;
-                        font-weight: 600;
-                        line-height: 1;
-                        position: relative;
-                        text-align: center;
-                        width: 94%;
-                        margin: 15px auto;
-                        padding: 5px 10px 2px;
-                    }
-                }
-
-                &#blocoDica {
-                    .dataItem {
-                        &::before {
-                            background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
-                            border-radius: 50%;
-                            content: '+';
-                            color: #FFF;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-family: 'Khand', sans-serif;
-                            font-size: 40px;
-                            font-weight: 500;
-                            line-height: 1;
-                            position: absolute;
-                            bottom: -35px;
-                            height: 40px;
-                            width: 40px;
-                            z-index: 10;
-                            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                            @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
-                        }
-                    }
-                }
-
-                &#blocoIngrediente {
-                    .textoItem {
-                        border-radius: 9px;
-                        width: 55%;
-                        margin-right: 5%;
-                    }
-
-                    .dataItem {
-                        border-radius: 9px;
-
-                        &::before {
-                            background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
-                            border-radius: 50%;
-                            content: '–';
-                            color: #FFF;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            font-family: 'Khand', sans-serif;
-                            font-size: 40px;
-                            font-weight: 500;
-                            line-height: 1;
-                            position: absolute;
-                            left: -35px;
-                            top: 50%;
-                            height: 40px;
-                            width: 40px;
-                            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                            z-index: 10;
-
-                            @include transform(translateY(-50%));
-                            @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
-                        }
-
-                        &::after {
-                            background: linear-gradient(to right, #6058bc, #9e77de);
-                            content: '';
-                            position: absolute;
-                            top: -16px;
-                            left: 0;
-                            height: 2px;
-                            width: 100%;
-                            z-index: 10;
-                        }
-                    }
-                }
-            }
-
-            .blocoContadorFinal { 
-                background: #756fb3;
-                border-radius: 9px;
-                color: #FFF;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                font-family: 'Khand', sans-serif;
-                font-size: 21px;
-                font-weight: 600;
-                line-height: 1;
-                margin: 0 auto 30px;
-                height: 50px;
-                width: 100%;
-                text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                @include box-shadow(inset 0px -3px 0 0 rgba(97,91,168,1));
-
-                span { display: inline-block; margin: 0 6px; }
-
-                &::before {
-                    background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
-                    border-radius: 50%;
-                    content: '=';
-                    color: #FFF;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-family: 'Khand', sans-serif;
-                    font-size: 42px;
-                    font-weight: 500;
-                    line-height: 1;
-                    position: absolute;
-                    left: -40px;
-                    top: 50%;
-                    height: 45px;
-                    width: 45px;
-                    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                    z-index: 10;
-
-                    @include transform(translateY(-50%));
-                    @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
-                }
-            }
-
-            .botaoAjuda { 
-                margin: -30px auto 0; 
-                text-transform: capitalize; 
-                z-index: 20;
-            
-                &[disabled] {
-                    pointer-events: none;
-                    background: url('../img/bg_botaoMega.png') center top no-repeat;
-                    color: #FFF;
-                }
-            }
-
-            .botaoPrato {
-                width: 100%;
-
-                &::before {
-                    left: 50%;
-                    @include transform(translateX(-53%));
-                }
-
-                &::after {
-                    background: linear-gradient(to right, #615ba8 0%, #615ba8 35%, rgba(255,255,255,1) 35%, rgba(255,255,255,1) 65%, #615ba8 65%);
-                    content: '';
-                    display: block;
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    height: 1px;
-                    width: 100%;
-                    z-index: -1;
-                    pointer-events: none;
-
-                    @include transform(translateY(-50%));
-                }
-            }
-
-            .dicaExtra { 
-                color: #009ea5;
-                display: none;
-                font-weight: 700;
-                text-decoration: underline;
-            }
-
-            .faixaFeed {
-                padding: 0 15px 30px;
-
-                .feed {
-                    display: none;
-    
-                    p { 
-                        display: block; 
-                        margin-bottom: 10px;
-                        
-                        strong { color: #58595b; }
-
-                        &:last-child { margin-bottom: 0; }
-                    }
-                }
-
-                .row-img { 
-                    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%);
-
-                    img { margin-bottom: 20px; }
-                }
-            }
+          z-index: 1;
         }
 
-        &.mega2 { 
-            .boxLaranja {
-                background: linear-gradient(to bottom, #ff8a41, #f46036);
-                border-radius: 12px;
-                padding: 10px 25px;
-                position: relative;
-                margin: 15px 0 0;
-    
-                .row { 
-                    background: #e6e7e8; 
-                    border-radius: 12px; 
-                    padding: 40px 75px 50px; 
-                    position: relative;
-    
-                    &::before {
-                        background: transparent url('../img/bg_faixaMega_P.png') left -15px top repeat-y;
-                        border-top-left-radius: 12px;
-                        border-bottom-left-radius: 12px;
-                        content: ' ';
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        bottom: 0;
-                        width: 150px;
-                        height: auto;
-                        pointer-events: none;
-        
-                        z-index: 1;
-                    }
-        
-                    &::after {
-                        background: transparent url('../img/bg_faixaMega_P.png') left -15px top repeat-y;
-                        border-top-left-radius: 12px;
-                        border-bottom-left-radius: 12px;
-                        content: ' ';
-                        position: absolute;
-                        right: 0;
-                        top: 0;
-                        bottom: 0;
-                        width: 150px;
-                        height: auto;
-                        pointer-events: none;
-                        z-index: 1;
-                
-                        @include transform(rotate(180deg));
-                    }
-    
-                    .col-sm-12 { position: relative; z-index: 2; }
-                }
-    
-                p { 
-                    color: #58595b;
-                    
-                    &:last-child { margin-bottom: 0; }
-                }
-                
-                strong { color: #009da3; }
-            }
-            
-            .boxVerde {
-                background: #e6e7e8;
-                border: solid 10px #009ea5;
-                border-radius: 16px;
-                padding: 0 0 40px;
-                position: relative;
-                margin: 30px 0 0;
+        &::after {
+          background: transparent url("../img/bg_faixaMega_P.png") left -15px top
+            repeat-y;
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          content: " ";
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 150px;
+          height: auto;
+          pointer-events: none;
+          z-index: 1;
 
-                &::before {
-                    background: transparent url('../img/bg_faixaMega_P.png') left -15px top repeat-y;
-                    border-top-left-radius: 8px;
-                    border-bottom-left-radius: 8px;
-                    content: ' ';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    width: 150px;
-                    height: auto;
-                    pointer-events: none;
-
-                    z-index: 1;
-                }
-
-                &::after {
-                    background: transparent url('../img/bg_faixaMega_P.png') left -15px top repeat-y;
-                    border-top-left-radius: 8px;
-                    border-bottom-left-radius: 8px;
-                    content: ' ';
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                    width: 150px;
-                    height: auto;
-                    pointer-events: none;
-                    z-index: 1;
-            
-                    @include transform(rotate(180deg));
-                }
-
-                h3 {
-                    background: transparent url('../img/bg_tituloBoxVerde.png') center no-repeat;
-                    border-radius: 0;
-                    color: #ffffff;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 25px;
-                    font-weight: 700;
-                    height: 44px;
-                    line-height: 1;
-                    max-width: 208px;
-                    margin: -45px auto 30px;
-                    padding: 3px 0 0;
-                    position: relative;
-                    text-transform: uppercase;
-                    text-shadow: none;
-                    z-index: 2;
-
-                    &::before, &::after { display: none; }
-                }
-
-                .row { position: relative; z-index: 2; }
-
-                &.min140 { height: 140px; }
-
-                hr { 
-                    border-top: solid 1px #a7a9ac; 
-                    margin: 10px 0 10px 25%;
-                    max-width: 75%;
-                }
-
-                .flex {
-                    .blocoImagem { 
-                        width: 25%; 
-                        min-height: 140px; 
-                        display: flex;
-                        align-items: center;
-                        justify-content: flex-start;
-                        padding: 10px 0; 
-                    }
-                    .blocoTexto { 
-                        display: block;
-                        width: 75%;
-                        padding: 0;
-
-                        p { margin-bottom: 0; }
-                    }
-                }
-
-                p { 
-                    color: #58595b;
-                    margin-bottom: 0;
-
-                    &.titulo {
-                        color: #3a627a;
-                        font-size: 21px;
-                        font-weight: 700;
-                        margin-bottom: 5px;
-                    }
-
-                    &.textoBox {
-                        color: #3a627a;
-                        font-size: 18px;
-                        font-weight: 700;
-                        margin-bottom: 0;;
-                    }
-                }
-                
-                strong { color: #009da3; }
-
-                .tituloVerde {
-                    background: transparent url('../img/bg_boxVerde_ttlLaranja.png') center no-repeat;
-                    border-radius: 0;
-                    border-bottom: 3px #c74d28 solid;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-                    height: 70px;
-                    max-width: 386px;
-                    margin: -70px auto 40px;
-                    padding: 5px 0 0;
-                    position: relative;
-                    z-index: 2;
-
-                    h3 {
-                        background: transparent;
-                        border-radius: 0;
-                        color: #ffffff;
-                        display: block;
-                        font-size: 25px;
-                        font-weight: 600;
-                        height: auto;
-                        max-width: initial;
-                        margin: 0 auto;
-                        padding: 0;
-                        position: relative;
-                        text-align: center;
-                        text-transform: initial;
-                        text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
-                        z-index: 2;
-
-                        strong { color: #FFF;}
-        
-                        &::before, &::after { display: none; }
-
-                        &:focus {
-                            outline: 5px auto -webkit-focus-ring-color;
-                            outline-offset: -2px; 
-                        }
-                    }
-
-                    p {
-                        color: #FFF;
-                        margin: 0;
-                        text-align: center;
-                        text-shadow: 1px 1px 1px rgba(0,0,0,0.25);
-
-                        &:focus {
-                            outline: none;
-                        }
-                    }
-                }
-
-                .boxInstrucao {
-                    opacity: 0;
-                    position: absolute;
-                    width: 100%;
-                    z-index: 10;
-
-                    &.showBox {
-                        opacity: 1;
-                        
-                        @include transition(all 0.5s 1s);
-
-                        &.first { @include transition(none); }
-                    }
-
-                    &.hiddenBox {
-                        opacity: 0;
-
-                        @include transition(all 1s);
-                    }
-                }
-
-                .botaoSeta {
-                    background: transparent url('../img/Mega02/btnSeta.png') center no-repeat;
-                    font-size: 1px;
-                    color: rgba(0,0,0,0);
-                    border: 0;
-                    height: 40px;
-                    width: 24px;
-                }
-            }
-
-            .boxPodcast {
-                background: #e6e7e8;
-                border: solid 10px #009ea5;
-                border-radius: 16px;
-                padding: 0 0 40px;
-                position: relative;
-                margin: 59px auto 0;
-                max-width: 940px;
-    
-                &::before {
-                    background: transparent url('../img/bg_faixaMega_P.png') left -15px top repeat-y;
-                    border-top-left-radius: 8px;
-                    border-bottom-left-radius: 8px;
-                    content: ' ';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    bottom: 0;
-                    width: 150px;
-                    height: auto;
-                    pointer-events: none;
-    
-                    z-index: 1;
-                }
-    
-                &::after {
-                    background: transparent url('../img/bg_faixaMega_P.png') left -15px top repeat-y;
-                    border-top-left-radius: 8px;
-                    border-bottom-left-radius: 8px;
-                    content: ' ';
-                    position: absolute;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                    width: 150px;
-                    height: auto;
-                    pointer-events: none;
-                    z-index: 1;
-            
-                    @include transform(rotate(180deg));
-                }
-    
-                .row { position: relative; z-index: 3; }
-    
-                h3 {
-                    background: transparent url('../img/bg_tituloBoxLaranja.png') center no-repeat;
-                    border-radius: 0;
-                    color: #ffffff;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    font-size: 25px;
-                    font-weight: 700;
-                    height: 44px;
-                    line-height: 1;
-                    max-width: 208px;
-                    margin: -45px auto 0;
-                    padding: 3px 0 0;
-                    position: relative;
-                    text-transform: uppercase;
-                    text-shadow: none;
-                    z-index: 2;
-    
-                    &::before, &::after { display: none; }
-                }
-    
-                &.bg1 { 
-                    margin: 80px auto 0;
-                    min-height: 608px; 
-    
-                    .bgImg {
-                        background: transparent url('../img/Mega02/BG_Pod01.png') left top -6px no-repeat;
-                        background-size: 100%;
-                    }
-                }
-                &.bg2 { 
-                    display: none;
-                    min-height: 707px; 
-                
-                    .bgImg {
-                        background: transparent url('../img/Mega02/BG_Pod02.png') left top -3px no-repeat;
-                        background-size: 100%;
-                        top: -80px;
-                    }
-                }
-                &.bg3 { 
-                    display: none;
-                    min-height: 680px; 
-                
-                    .bgImg {
-                        background: transparent url('../img/Mega02/BG_Pod03.png') left bottom 10px no-repeat;
-                        background-size: 100%;
-                        top: -80px;
-                    }
-                }
-                &.bg4 { 
-                    display: none;
-                    min-height: 680px; 
-                
-                    .bgImg {
-                        background: transparent url('../img/Mega02/BG_Pod04.png') left bottom 10px no-repeat;
-                        background-size: 100%;
-                        top: -80px;
-                    }
-                }
-    
-                .bgImg {
-                    position: absolute;
-                    top: -10px;
-                    left: 0;
-                    bottom: -10px;
-                    right: 0;
-                    z-index: 2;
-                }
-    
-                .blocoMega_Podcast {
-                    padding: 50px 45px 15px;
-                    position: relative;
-                    
-                    h4 { color: #3a627a; }
-    
-                    .form-mega {
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            width: 50px;
-                            height: 40px;
-                        }
-    
-                        &.acerto { 
-                            &::before { background: transparent url('../img/Mega02/acerto.png') center no-repeat; }
-                        }
-    
-                        &.erro { 
-                            &::before { background: transparent url('../img/Mega02/erro.png') center no-repeat; }
-                        }
-                    }
-                }
-    
-                &:first-child { 
-                    .blocoMega_Podcast { padding: 30px 45px 15px; }
-                }
-            }
+          @include transform(rotate(180deg));
         }
 
-        &.mega3 {
-            h4 { color: #615ba8; font-size: 22px; padding: 10px 0 0; margin: 0 0 5px; text-transform: inherit; }
+        h3 {
+          background: transparent url("../img/bg_tituloBoxVerde.png") center
+            no-repeat;
+          border-radius: 0;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 25px;
+          font-weight: 700;
+          height: 44px;
+          line-height: 1;
+          max-width: 208px;
+          margin: -45px auto 30px;
+          padding: 3px 0 0;
+          position: relative;
+          text-transform: uppercase;
+          text-shadow: none;
+          z-index: 2;
 
-            ul { 
-                margin: 0 0 10px;
-                padding: 0 0 0 15px;
-            
-                li {
-                    &::before { color: #e66227; }
-                }
+          &::before,
+          &::after {
+            display: none;
+          }
+        }
+
+        .row {
+          position: relative;
+          z-index: 2;
+        }
+
+        &.min140 {
+          height: 140px;
+        }
+
+        hr {
+          border-top: solid 1px #a7a9ac;
+          margin: 10px 0 10px 25%;
+          max-width: 75%;
+        }
+
+        .flex {
+          .blocoImagem {
+            width: 25%;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px 0;
+          }
+          .blocoTexto {
+            display: block;
+            width: 75%;
+            padding: 0;
+
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        p {
+          color: #58595b;
+          margin-bottom: 0;
+
+          &.titulo {
+            color: #3a627a;
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 5px;
+          }
+
+          &.textoBox {
+            color: #3a627a;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 0;
+          }
+        }
+
+        strong {
+          color: #009da3;
+        }
+
+        .tituloVerde {
+          background: transparent url("../img/bg_boxVerde_ttlLaranja.png")
+            center no-repeat;
+          border-radius: 0;
+          border-bottom: 3px #c74d28 solid;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          height: 70px;
+          max-width: 386px;
+          margin: -70px auto 40px;
+          padding: 5px 0 0;
+          position: relative;
+          z-index: 2;
+
+          h3 {
+            background: transparent;
+            border-radius: 0;
+            color: #ffffff;
+            display: block;
+            font-size: 25px;
+            font-weight: 600;
+            height: auto;
+            max-width: initial;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+            text-align: center;
+            text-transform: initial;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+            z-index: 2;
+
+            strong {
+              color: #fff;
             }
 
-            .botaoPadraoMega {
-                background: url('../img/bg_botaoMega_Med.png') center top no-repeat;
-                height: 65px;
-                padding: 0 20px;
-
-                &::before {
-                    border-radius: 16px;
-                    width: 204px;
-                    height: 44px;
-                    top: 9px;
-                    left: 14px;
-                }
-
-                &[disabled] {
-                    pointer-events: none;
-                    background: url('../img/bg_botaoMega_MedD.png') center top no-repeat;
-                    color: #ccc;
-                }
-
-                &.extend {
-                    background: url('../img/bg_botaoMega_MedExt.png') center top no-repeat;
-                    width: 368px;
-
-                    &::before {
-                        width: 344px;
-                        left: 12px;
-                    }
-
-                    &[disabled] {
-                        background: url('../img/bg_botaoMega_MedExtD.png') center top no-repeat;
-                    }
-                }
-
-                &.minFont { font-size: 20px; }
+            &::before,
+            &::after {
+              display: none;
             }
 
-            .dicasCaminho {
-                background: transparent url('../img/Mega03/bg_dicas.png') center top no-repeat;
-                display: none;
-                padding: 0;
-                align-items: center;
-                flex-direction: column;
-                justify-content: center;
-                height: 220px;
-                position: relative;
-                margin: 0 auto 30px;
+            &:focus {
+              outline: 5px auto -webkit-focus-ring-color;
+              outline-offset: -2px;
+            }
+          }
 
-                &.extend {
-                    background: transparent url('../img/Mega03/bg_dicas2.png') center top no-repeat;
-                    height: 380px;
-                }
-            
-                .dica { 
-                    color: #975f3d;
-                    display: none;
-                    font-family: 'Khand', sans-serif;
-                    font-size: 21px;
-                    font-weight: 600;
-                    line-height: 1;
-                    text-align: center;
-                    margin: 0 auto 25px;
-                    padding: 0;
-                    position: relative;
-                    width: 68%;
-                    z-index: 2;
+          p {
+            color: #fff;
+            margin: 0;
+            text-align: center;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
 
-                    &::before {
-                        background: transparent url('../img/Mega03/bg_divisorDicas.png') center bottom no-repeat;
-                        content: '';
-                        height: 20px;
-                        display: block;
-                        position: absolute;
-                        bottom: -20px;
-                        left: 50%;
-                        margin: 0 auto;
-                        width: 200px;
+            &:focus {
+              outline: none;
+            }
+          }
+        }
 
-                        @include transform(translateX(-50%));
-                    }
+        .boxInstrucao {
+          opacity: 0;
+          position: absolute;
+          width: 100%;
+          z-index: 10;
 
-                    &:last-child { margin: 0 auto; &::before { display: none; }}
+          &.showBox {
+            opacity: 1;
 
-                    @media #{$bp-minDesktop} { 
-                        width: 84%;
-                    }
-                }
+            @include transition(all 0.5s 1s);
+
+            &.first {
+              @include transition(none);
+            }
+          }
+
+          &.hiddenBox {
+            opacity: 0;
+
+            @include transition(all 1s);
+          }
+        }
+
+        .botaoSeta {
+          background: transparent url("../img/Mega02/btnSeta.png") center
+            no-repeat;
+          font-size: 1px;
+          color: rgba(0, 0, 0, 0);
+          border: 0;
+          height: 40px;
+          width: 24px;
+        }
+      }
+
+      .boxPodcast {
+        background: #e6e7e8;
+        border: solid 10px #009ea5;
+        border-radius: 16px;
+        padding: 0 0 40px;
+        position: relative;
+        margin: 59px auto 0;
+        max-width: 940px;
+
+        &::before {
+          background: transparent url("../img/bg_faixaMega_P.png") left -15px top
+            repeat-y;
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          content: " ";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 150px;
+          height: auto;
+          pointer-events: none;
+
+          z-index: 1;
+        }
+
+        &::after {
+          background: transparent url("../img/bg_faixaMega_P.png") left -15px top
+            repeat-y;
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+          content: " ";
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 150px;
+          height: auto;
+          pointer-events: none;
+          z-index: 1;
+
+          @include transform(rotate(180deg));
+        }
+
+        .row {
+          position: relative;
+          z-index: 3;
+        }
+
+        h3 {
+          background: transparent url("../img/bg_tituloBoxLaranja.png") center
+            no-repeat;
+          border-radius: 0;
+          color: #ffffff;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 25px;
+          font-weight: 700;
+          height: 44px;
+          line-height: 1;
+          max-width: 208px;
+          margin: -45px auto 0;
+          padding: 3px 0 0;
+          position: relative;
+          text-transform: uppercase;
+          text-shadow: none;
+          z-index: 2;
+
+          &::before,
+          &::after {
+            display: none;
+          }
+        }
+
+        &.bg1 {
+          margin: 80px auto 0;
+          min-height: 608px;
+
+          .bgImg {
+            background: transparent url("../img/Mega02/BG_Pod01.png") left top -6px
+              no-repeat;
+            background-size: 100%;
+          }
+        }
+        &.bg2 {
+          display: none;
+          min-height: 707px;
+
+          .bgImg {
+            background: transparent url("../img/Mega02/BG_Pod02.png") left top -3px
+              no-repeat;
+            background-size: 100%;
+            top: -80px;
+          }
+        }
+        &.bg3 {
+          display: none;
+          min-height: 680px;
+
+          .bgImg {
+            background: transparent url("../img/Mega02/BG_Pod03.png") left
+              bottom 10px no-repeat;
+            background-size: 100%;
+            top: -80px;
+          }
+        }
+        &.bg4 {
+          display: none;
+          min-height: 680px;
+
+          .bgImg {
+            background: transparent url("../img/Mega02/BG_Pod04.png") left
+              bottom 10px no-repeat;
+            background-size: 100%;
+            top: -80px;
+          }
+        }
+
+        .bgImg {
+          position: absolute;
+          top: -10px;
+          left: 0;
+          bottom: -10px;
+          right: 0;
+          z-index: 2;
+        }
+
+        .blocoMega_Podcast {
+          padding: 50px 45px 15px;
+          position: relative;
+
+          h4 {
+            color: #3a627a;
+          }
+
+          .form-mega {
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 50px;
+              height: 40px;
             }
 
-            .opcaoCaminhos {
-                width: 290px;
-                height: 280px;
-                position: relative;
-                color: transparent;
-                font-size: 1px;
-                margin: 0 auto 30px;
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                }
-
-                &::after {
-                    background: transparent url('../img/Mega01/imgCheck.png') center no-repeat;
-                    display: none;
-                    content: '';
-                    width: 50px;
-                    height: 40px;
-                    position: absolute;
-                    top: 15px;
-                    right: 10px;
-                }
-
-                &#caminho1 { background: transparent url('../img/Mega03/bg_caminho1.png') center no-repeat; }
-                &#caminho2 { background: transparent url('../img/Mega03/bg_caminho2.png') center no-repeat; }
-                &#caminho3 { background: transparent url('../img/Mega03/bg_caminho3.png') center no-repeat; }
-
-                &.sel {
-                    &::after { display: block; }
-
-                    &#caminho1 { 
-                        &::before { background: transparent url('../img/Mega03/bg_caminho1_sombra.png') center no-repeat; }
-                    }
-                    &#caminho2 { 
-                        &::before { background: transparent url('../img/Mega03/bg_caminho2_sombra.png') center no-repeat; }
-                    }
-                    &#caminho3 {
-                        &::before { background: transparent url('../img/Mega03/bg_caminho3_sombra.png') center no-repeat; }
-                    }
-                }
+            &.acerto {
+              &::before {
+                background: transparent url("../img/Mega02/acerto.png") center
+                  no-repeat;
+              }
             }
 
-            .divRecursos {
-                background: #436d7f;
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px 15px;
-                padding: 80px 9.83% 70px;
-                position: relative;
-                margin: 0 -15px 30px;
+            &.erro {
+              &::before {
+                background: transparent url("../img/Mega02/erro.png") center
+                  no-repeat;
+              }
+            }
+          }
+        }
 
-                &::before {
-                    background: #ffffff url('../img/Mega03/bg_recursosTop.png') center bottom no-repeat;
-                    content: ' ';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 50px;
-                    pointer-events: none;
-    
-                    z-index: 1;
-                }
-    
-                &::after {
-                    background: #ffffff url('../img/Mega03/bg_recursosBottom.png') center top no-repeat;
-                    content: ' ';
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    width: 100%;
-                    height: 40px;
-                    pointer-events: none;
-                }
-            
-                .recurso { 
-                    background: transparent;
-                    cursor: pointer;
-                    position: relative;
-                    padding: 0;
-                    height: 320px;
-                    width: 100%;
+        &:first-child {
+          .blocoMega_Podcast {
+            padding: 30px 45px 15px;
+          }
+        }
+      }
+    }
 
-                    &::before {
-                        content: ' ';
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        height: 100%;
-                        pointer-events: none;
-        
-                        z-index: 1;
-                    }
+    &.mega3 {
+      h4 {
+        color: #615ba8;
+        font-size: 22px;
+        padding: 10px 0 0;
+        margin: 0 0 5px;
+        text-transform: inherit;
+      }
 
-                    &::after {
-                        background: transparent url('../img/Mega03/imgCheck.png') center no-repeat;
-                        display: none;
-                        content: '';
-                        width: 50px;
-                        height: 40px;
-                        position: absolute;
-                        top: 50px;
-                        right: 40px;
-                        z-index: 4;
-                    }
+      ul {
+        margin: 0 0 10px;
+        padding: 0 0 0 15px;
 
-                    &.tipo1 { &::before { background: transparent url('../img/Mega03/bg_recurso1.png') center no-repeat; }}
-                    &.tipo2 { &::before { background: transparent url('../img/Mega03/bg_recurso2.png') center no-repeat; }}
-                    &.tipo3 { &::before { background: transparent url('../img/Mega03/bg_recurso3.png') center no-repeat; }}
+        li {
+          &::before {
+            color: #e66227;
+          }
+        }
+      }
 
-                    span { 
-                        background: transparent url('../img/Mega03/bg_tituloRecurso.png') center no-repeat;
-                        color: #ffffff;
-                        display: flex;
-                        justify-content: center;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 19px;
-                        font-weight: 500;
-                        height: 50px;
-                        line-height: 1;
-                        width: 220px;
-                        position: absolute;
-                        top: 0;
-                        left: 47px;
-                        padding: 9px 0 0;
-                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                        text-transform: capitalize;
-                        z-index: 2;
-                    }
+      .botaoPadraoMega {
+        background: url("../img/bg_botaoMega_Med.png") center top no-repeat;
+        height: 65px;
+        padding: 0 20px;
 
-                    img { position: relative; z-index: 3; }
+        &::before {
+          border-radius: 16px;
+          width: 204px;
+          height: 44px;
+          top: 9px;
+          left: 14px;
+        }
 
-                    &.sel {
-                        &::after { display: block; }
+        &[disabled] {
+          pointer-events: none;
+          background: url("../img/bg_botaoMega_MedD.png") center top no-repeat;
+          color: #ccc;
+        }
 
-                        &.tipo1 { background: transparent url('../img/Mega03/bg_recurso1_sombra.png') center no-repeat;}
-                        &.tipo2 { background: transparent url('../img/Mega03/bg_recurso2_sombra.png') center no-repeat; }
-                        &.tipo3 { background: transparent url('../img/Mega03/bg_recurso3_sombra.png') center no-repeat; }
-                    }
+        &.extend {
+          background: url("../img/bg_botaoMega_MedExt.png") center top no-repeat;
+          width: 368px;
 
-                    &[disabled] {
-                        pointer-events: none;
-                        
-                        &.tipo1 { &::before { background: transparent url('../img/Mega03/bg_recurso1D.png') center no-repeat; }}
-                        &.tipo2 { &::before { background: transparent url('../img/Mega03/bg_recurso2D.png') center no-repeat; }}
-                        &.tipo3 { &::before { background: transparent url('../img/Mega03/bg_recurso3D.png') center no-repeat; }}
+          &::before {
+            width: 344px;
+            left: 12px;
+          }
 
-                        span { background: transparent url('../img/Mega03/bg_tituloRecursoD.png') center no-repeat; color: #CCC; }
+          &[disabled] {
+            background: url("../img/bg_botaoMega_MedExtD.png") center top
+              no-repeat;
+          }
+        }
 
-                        img { filter: grayscale(100%); }
-                    }
-                }
+        &.minFont {
+          font-size: 20px;
+        }
+      }
+
+      .dicasCaminho {
+        background: transparent url("../img/Mega03/bg_dicas.png") center top
+          no-repeat;
+        display: none;
+        padding: 0;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 220px;
+        position: relative;
+        margin: 0 auto 30px;
+
+        &.extend {
+          background: transparent url("../img/Mega03/bg_dicas2.png") center top
+            no-repeat;
+          height: 380px;
+        }
+
+        .dica {
+          color: #975f3d;
+          display: none;
+          font-family: "Khand", sans-serif;
+          font-size: 21px;
+          font-weight: 600;
+          line-height: 1;
+          text-align: center;
+          margin: 0 auto 25px;
+          padding: 0;
+          position: relative;
+          width: 68%;
+          z-index: 2;
+
+          &::before {
+            background: transparent url("../img/Mega03/bg_divisorDicas.png")
+              center bottom no-repeat;
+            content: "";
+            height: 20px;
+            display: block;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            margin: 0 auto;
+            width: 200px;
+
+            @include transform(translateX(-50%));
+          }
+
+          &:last-child {
+            margin: 0 auto;
+            &::before {
+              display: none;
+            }
+          }
+
+          @media #{$bp-desktop} {
+            width: 84%;
+          }
+        }
+      }
+
+      .opcaoCaminhos {
+        width: 290px;
+        height: 280px;
+        position: relative;
+        color: transparent;
+        font-size: 1px;
+        margin: 0 auto 30px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+
+        &::after {
+          background: transparent url("../img/Mega01/imgCheck.png") center
+            no-repeat;
+          display: none;
+          content: "";
+          width: 50px;
+          height: 40px;
+          position: absolute;
+          top: 15px;
+          right: 10px;
+        }
+
+        &#caminho1 {
+          background: transparent url("../img/Mega03/bg_caminho1.png") center
+            no-repeat;
+        }
+        &#caminho2 {
+          background: transparent url("../img/Mega03/bg_caminho2.png") center
+            no-repeat;
+        }
+        &#caminho3 {
+          background: transparent url("../img/Mega03/bg_caminho3.png") center
+            no-repeat;
+        }
+
+        &.sel {
+          &::after {
+            display: block;
+          }
+
+          &#caminho1 {
+            &::before {
+              background: transparent
+                url("../img/Mega03/bg_caminho1_sombra.png") center no-repeat;
+            }
+          }
+          &#caminho2 {
+            &::before {
+              background: transparent
+                url("../img/Mega03/bg_caminho2_sombra.png") center no-repeat;
+            }
+          }
+          &#caminho3 {
+            &::before {
+              background: transparent
+                url("../img/Mega03/bg_caminho3_sombra.png") center no-repeat;
+            }
+          }
+        }
+      }
+
+      .divRecursos {
+        background: #436d7f;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 15px;
+        padding: 80px 9.83% 70px;
+        position: relative;
+        margin: 0 -15px 30px;
+
+        &::before {
+          background: #ffffff url("../img/Mega03/bg_recursosTop.png") center
+            bottom no-repeat;
+          content: " ";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 50px;
+          pointer-events: none;
+
+          z-index: 1;
+        }
+
+        &::after {
+          background: #ffffff url("../img/Mega03/bg_recursosBottom.png") center
+            top no-repeat;
+          content: " ";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 40px;
+          pointer-events: none;
+        }
+
+        .recurso {
+          background: transparent;
+          cursor: pointer;
+          position: relative;
+          padding: 0;
+          height: 320px;
+          width: 100%;
+
+          &::before {
+            content: " ";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+
+            z-index: 1;
+          }
+
+          &::after {
+            background: transparent url("../img/Mega03/imgCheck.png") center
+              no-repeat;
+            display: none;
+            content: "";
+            width: 50px;
+            height: 40px;
+            position: absolute;
+            top: 50px;
+            right: 40px;
+            z-index: 4;
+          }
+
+          &.tipo1 {
+            &::before {
+              background: transparent url("../img/Mega03/bg_recurso1.png")
+                center no-repeat;
+            }
+          }
+          &.tipo2 {
+            &::before {
+              background: transparent url("../img/Mega03/bg_recurso2.png")
+                center no-repeat;
+            }
+          }
+          &.tipo3 {
+            &::before {
+              background: transparent url("../img/Mega03/bg_recurso3.png")
+                center no-repeat;
+            }
+          }
+
+          span {
+            background: transparent url("../img/Mega03/bg_tituloRecurso.png")
+              center no-repeat;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            font-family: "Khand", sans-serif;
+            font-size: 19px;
+            font-weight: 500;
+            height: 50px;
+            line-height: 1;
+            width: 220px;
+            position: absolute;
+            top: 0;
+            left: 47px;
+            padding: 9px 0 0;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            text-transform: capitalize;
+            z-index: 2;
+          }
+
+          img {
+            position: relative;
+            z-index: 3;
+          }
+
+          &.sel {
+            &::after {
+              display: block;
             }
 
-            .jogoCaminho,
-            .resultadoCaminho { display: none; }
+            &.tipo1 {
+              background: transparent
+                url("../img/Mega03/bg_recurso1_sombra.png") center no-repeat;
+            }
+            &.tipo2 {
+              background: transparent
+                url("../img/Mega03/bg_recurso2_sombra.png") center no-repeat;
+            }
+            &.tipo3 {
+              background: transparent
+                url("../img/Mega03/bg_recurso3_sombra.png") center no-repeat;
+            }
+          }
 
-            .caminhoEscolhido {
-                position: relative;
-                margin: 0 auto 30px;
-                height: 280px;
+          &[disabled] {
+            pointer-events: none;
 
-                &#caminho1 { .caminhoImg { background: transparent url('../img/Mega03/bg_caminho1.png') center no-repeat; }}
-                &#caminho2 { .caminhoImg { background: transparent url('../img/Mega03/bg_caminho2.png') center no-repeat; }}
-                &#caminho3 { .caminhoImg { background: transparent url('../img/Mega03/bg_caminho3.png') center no-repeat; }}
-
-                .caminhoImg { 
-                    //background: transparent url('../img/Mega03/bg_caminho1.png') center no-repeat; 
-                    height: 280px;
-                    width: 290px;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    z-index: 10;
-                }
-
-                .caminhoTexto {
-                    background: transparent url('../img/Mega03/bg_caminhoEscolhido.png') center no-repeat; 
-                    width: 680px;
-                    height: 200px;
-                    padding: 0 80px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    position: absolute;
-                    top: 50%;
-                    left: 250px;
-                    z-index: 9;
-
-                    @include transform(translateY(-50%));
-
-                    p { 
-                        color: #463e22;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 20px;
-                        font-weight: 600;
-                        line-height: 1.4;
-                        text-align: center;
-                        margin: 0 auto; 
-                        width: 85%;
-                    }
-                }
+            &.tipo1 {
+              &::before {
+                background: transparent url("../img/Mega03/bg_recurso1D.png")
+                  center no-repeat;
+              }
+            }
+            &.tipo2 {
+              &::before {
+                background: transparent url("../img/Mega03/bg_recurso2D.png")
+                  center no-repeat;
+              }
+            }
+            &.tipo3 {
+              &::before {
+                background: transparent url("../img/Mega03/bg_recurso3D.png")
+                  center no-repeat;
+              }
             }
 
-            .blocoContador {
-                position: relative;
-                display: grid;
-                grid-template-columns: 340px 290px;
-                justify-content: center;
-                margin: 0 auto 20px;
-
-                .textoItem {
-                    background: transparent url('../img/Mega03/bg_contadorL.png') right top no-repeat;
-                    display: flex;
-                    justify-content: center;
-                    align-items: flex-start;
-                    margin: 0;
-                    height: 70px;
-                    width: 340px;
-
-                    span {
-                        color: #FFF;
-                        padding-top: 13px;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 24px;
-                        font-weight: 600;
-                        line-height: 1;
-                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-                    }
-                }
-
-                .dataItem {
-                    background: transparent url('../img/Mega03/bg_contadorR.png') left top no-repeat;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0;
-                    position: relative;
-                    height: 70px;
-                    width: 290px;
-                    
-                    span {
-                        color: #6e707f;
-                        display: block;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 28px;
-                        font-weight: 600;
-                        line-height: 1;
-                        position: relative;
-                        text-align: center;
-                        width: 94%;
-                        margin: 15px auto;
-                        padding: 5px 10px 2px;
-                        text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
-                    }
-
-                    &::before {
-                        background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
-                        border-radius: 50%;
-                        content: '+';
-                        color: #FFF;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 45px;
-                        font-weight: 500;
-                        line-height: 1;
-                        position: absolute;
-                        bottom: -30px;
-                        height: 46px;
-                        width: 46px;
-                        z-index: 10;
-                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                        @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
-                    }
-                }
-
-                &#blocoItem{ 
-                    .dataItem { 
-                        &::before { display: none; }
-                    }
-                }
+            span {
+              background: transparent url("../img/Mega03/bg_tituloRecursoD.png")
+                center no-repeat;
+              color: #ccc;
             }
 
-            .blocoContadorFinal { 
-                position: relative;
-                display: grid;
-                grid-template-columns: 340px 290px;
-                justify-content: center;
-                margin: 0 auto 20px;
+            img {
+              filter: grayscale(100%);
+            }
+          }
+        }
+      }
 
-                .textoFinal {
-                    background: transparent url('../img/Mega03/bg_contadorFL.png') left top no-repeat;
-                    display: flex;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    margin: 0;
-                    height: 80px;
-                    width: 340px;
+      .jogoCaminho,
+      .resultadoCaminho {
+        display: none;
+      }
 
-                    span {
-                        color: #FFF;
-                        padding: 18px 0 0 55px;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 24px;
-                        font-weight: 600;
-                        line-height: 1;
-                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-                    }
-                }
+      .caminhoEscolhido {
+        position: relative;
+        margin: 0 auto 30px;
+        height: 280px;
 
-                .dataFinal {
-                    background: transparent url('../img/Mega03/bg_contadorFR.png') left top no-repeat;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    margin: 0;
-                    padding: 0;
-                    position: relative;
-                    height: 70px;
-                    width: 290px;
-                    
-                    span {
-                        color: #ffffff;
-                        display: block;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 28px;
-                        font-weight: 600;
-                        line-height: 1;
-                        position: relative;
-                        text-align: center;
-                        width: 94%;
-                        margin: 15px auto;
-                        padding: 5px 10px 2px;
-                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
-                    }
+        &#caminho1 {
+          .caminhoImg {
+            background: transparent url("../img/Mega03/bg_caminho1.png") center
+              no-repeat;
+          }
+        }
+        &#caminho2 {
+          .caminhoImg {
+            background: transparent url("../img/Mega03/bg_caminho2.png") center
+              no-repeat;
+          }
+        }
+        &#caminho3 {
+          .caminhoImg {
+            background: transparent url("../img/Mega03/bg_caminho3.png") center
+              no-repeat;
+          }
+        }
 
-                    &::before {
-                        background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
-                        border-radius: 50%;
-                        content: '=';
-                        color: #FFF;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-family: 'Khand', sans-serif;
-                        font-size: 42px;
-                        font-weight: 500;
-                        line-height: 1;
-                        position: absolute;
-                        left: -30px;
-                        top: 50%;
-                        height: 46px;
-                        width: 46px;
-                        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-                        z-index: 10;
+        .caminhoImg {
+          //background: transparent url('../img/Mega03/bg_caminho1.png') center no-repeat;
+          height: 280px;
+          width: 290px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 10;
+        }
 
-                        @include transform(translateY(-50%));
-                        @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
-                    }
+        .caminhoTexto {
+          background: transparent url("../img/Mega03/bg_caminhoEscolhido.png")
+            center no-repeat;
+          width: 680px;
+          height: 200px;
+          padding: 0 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 50%;
+          left: 250px;
+          z-index: 9;
 
-                    &::after {
-                        background: linear-gradient(to right, #6058bc, #9e77de);
-                        content: '';
-                        position: absolute;
-                        top: -10px;
-                        left: 0;
-                        height: 2px;
-                        width: 100%;
-                        z-index: 10;
-                    }
-                }
+          @include transform(translateY(-50%));
+
+          p {
+            color: #463e22;
+            font-family: "Khand", sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.4;
+            text-align: center;
+            margin: 0 auto;
+            width: 85%;
+          }
+        }
+      }
+
+      .blocoContador {
+        position: relative;
+        display: grid;
+        grid-template-columns: 340px 290px;
+        justify-content: center;
+        margin: 0 auto 20px;
+
+        .textoItem {
+          background: transparent url("../img/Mega03/bg_contadorL.png") right
+            top no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          margin: 0;
+          height: 70px;
+          width: 340px;
+
+          span {
+            color: #fff;
+            padding-top: 13px;
+            font-family: "Khand", sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+          }
+        }
+
+        .dataItem {
+          background: transparent url("../img/Mega03/bg_contadorR.png") left top
+            no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          height: 70px;
+          width: 290px;
+
+          span {
+            color: #6e707f;
+            display: block;
+            font-family: "Khand", sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1;
+            position: relative;
+            text-align: center;
+            width: 94%;
+            margin: 15px auto;
+            padding: 5px 10px 2px;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+          }
+
+          &::before {
+            background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
+            border-radius: 50%;
+            content: "+";
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Khand", sans-serif;
+            font-size: 45px;
+            font-weight: 500;
+            line-height: 1;
+            position: absolute;
+            bottom: -30px;
+            height: 46px;
+            width: 46px;
+            z-index: 10;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
+          }
+        }
+
+        &#blocoItem {
+          .dataItem {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+
+      .blocoContadorFinal {
+        position: relative;
+        display: grid;
+        grid-template-columns: 340px 290px;
+        justify-content: center;
+        margin: 0 auto 20px;
+
+        .textoFinal {
+          background: transparent url("../img/Mega03/bg_contadorFL.png") left
+            top no-repeat;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin: 0;
+          height: 80px;
+          width: 340px;
+
+          span {
+            color: #fff;
+            padding: 18px 0 0 55px;
+            font-family: "Khand", sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+          }
+        }
+
+        .dataFinal {
+          background: transparent url("../img/Mega03/bg_contadorFR.png") left
+            top no-repeat;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          padding: 0;
+          position: relative;
+          height: 70px;
+          width: 290px;
+
+          span {
+            color: #ffffff;
+            display: block;
+            font-family: "Khand", sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            line-height: 1;
+            position: relative;
+            text-align: center;
+            width: 94%;
+            margin: 15px auto;
+            padding: 5px 10px 2px;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+          }
+
+          &::before {
+            background: linear-gradient(to right, #f46036 0%, #ff8a41 90%);
+            border-radius: 50%;
+            content: "=";
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Khand", sans-serif;
+            font-size: 42px;
+            font-weight: 500;
+            line-height: 1;
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            height: 46px;
+            width: 46px;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+
+            @include transform(translateY(-50%));
+            @include box-shadow(inset 0px -3px 0 0 rgba(177, 66, 35, 1));
+          }
+
+          &::after {
+            background: linear-gradient(to right, #6058bc, #9e77de);
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: 0;
+            height: 2px;
+            width: 100%;
+            z-index: 10;
+          }
+        }
+      }
+
+      .faixaFeed {
+        padding: 0 15px 30px;
+
+        .feed {
+          display: none;
+
+          p {
+            display: block;
+            margin-bottom: 10px;
+
+            strong {
+              color: #58595b;
             }
 
-            .faixaFeed {
-                padding: 0 15px 30px;
-
-                .feed {
-                    display: none;
-    
-                    p { 
-                        display: block; 
-                        margin-bottom: 10px;
-                        
-                        strong { color: #58595b; }
-
-                        &:last-child { margin-bottom: 0; }
-                    }
-                }
-
-                .row-img { 
-                    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%);
-
-                    img { margin-bottom: 20px; }
-                }
+            &:last-child {
+              margin-bottom: 0;
             }
-/*
+          }
+        }
+
+        .row-img {
+          background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0) 50%
+          );
+
+          img {
+            margin-bottom: 20px;
+          }
+        }
+      }
+      /*
             .botaoAjuda { 
                 margin: -30px auto 0; 
                 text-transform: capitalize; 
@@ -2369,294 +2756,316 @@
             }
 
             */
-        }
     }
+  }
 
-    footer {
-        display: none;
-        height: auto;
-        position: relative;
-        z-index: 2;
+  footer {
+    display: none;
+    height: auto;
+    position: relative;
+    z-index: 2;
 
-        .container {
-            background: #FFF url('../img/bg_megaFooter.png') center top no-repeat;
-            //border-left: 5px solid #d1d3d4;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .container {
+      background: #fff url("../img/bg_megaFooter.png") center top no-repeat;
+      //border-left: 5px solid #d1d3d4;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+  }
 }
-
 
 // ADD ZERO
 @function pwr($b, $n) {
-    $f: if($n <= 0, 1, $b);
+  $f: if($n <= 0, 1, $b);
 
-    @while $n > 1 {
-      $f: $f * $b;
-      $n: $n - 1;
-    }
+  @while $n > 1 {
+    $f: $f * $b;
+    $n: $n - 1;
+  }
 
-    @return $f;
+  @return $f;
 }
-@function addZero($i, $n){
-    $f: pwr(10, $n - 1);
-    $out: null;
+@function addZero($i, $n) {
+  $f: pwr(10, $n - 1);
+  $out: null;
 
-    @while $f >= 1 {
-      $out: $out#{floor($i / $f)};
-      $i: $i - floor($i / $f) * $f;
-      $f: $f / 10;
-    }
+  @while $f >= 1 {
+    $out: $out#{floor($i / $f)};
+    $i: $i - floor($i / $f) * $f;
+    $f: $f / 10;
+  }
 
-    @return $out;
+  @return $out;
 }
 
 /* MEGA DESAFIO 01 */
 // DRAG
 .dragGroup {
-    margin: 15px auto 20px;
+  margin: 15px auto 20px;
 
-    .dragRow {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        height: 120px;
-        width: 100%;
+  .dragRow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 120px;
+    width: 100%;
 
-        &.dr1 {
-            @for $i from 1 through 16 {
-                $i: addZero($i,2);
-                #drag#{$i} { 
-                    background: url('../../img/mega01/01_azulejo#{$i}.png'); 
-                    background-size: 100%;
-                }
-            }
+    &.dr1 {
+      @for $i from 1 through 16 {
+        $i: addZero($i, 2);
+        #drag#{$i} {
+          background: url("../../img/mega01/01_azulejo#{$i}.png");
+          background-size: 100%;
         }
-
-        &.dr2 {
-            @for $i from 21 through 36 {
-                $i: addZero($i,2);
-                #drag#{$i} { 
-                    background: url('../../img/mega01/02_azulejo#{$i}.png'); 
-                    background-size: 100%;
-                }
-            }
-        }
+      }
     }
+
+    &.dr2 {
+      @for $i from 21 through 36 {
+        $i: addZero($i, 2);
+        #drag#{$i} {
+          background: url("../../img/mega01/02_azulejo#{$i}.png");
+          background-size: 100%;
+        }
+      }
+    }
+  }
 }
 
 .dragPuzzle {
-    height: 100px;
-    width: 100px;
-    border-radius: 6px;
-    @include box-shadow(0px 0px 10px 5px rgba(0,0,0,0.25));
+  height: 100px;
+  width: 100px;
+  border-radius: 6px;
+  @include box-shadow(0px 0px 10px 5px rgba(0, 0, 0, 0.25));
 
-    &.dragZero { 
-        position: inherit !important; 
-        top: 0 !important; 
-        left: 0 !important; 
-        height: 135px;
-        width: 135px;
-    }
+  &.dragZero {
+    position: inherit !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 135px;
+    width: 135px;
+  }
 
-    &.disable { opacity: 0;}
+  &.disable {
+    opacity: 0;
+  }
 }
 
 // DROP
-.dropGroup { 
-    background: transparent url('../img/bg_mega1_quadro.png');
-    position: relative;
-    height: 545px;
-    width: 545px;
-    padding: 20px 35px;
-    margin: 0 auto 40px;
-    float: right;
+.dropGroup {
+  background: transparent url("../img/bg_mega1_quadro.png");
+  position: relative;
+  height: 545px;
+  width: 545px;
+  padding: 20px 35px;
+  margin: 0 auto 40px;
+  float: right;
 
-    &::after {
-        content: '';
-        clear: both;
-        display: table;
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .dropRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 168px;
+    width: 100%;
+
+    .dropPuzzle {
+      position: relative;
+      height: 135px;
+      width: 135px;
+      border: 1px dashed gray;
+      display: inline-block;
+      margin: 0;
+
+      &.dropped {
+        border-color: transparent;
+      }
     }
 
-    .dropRow {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 168px;
-        width: 100%;
-
-        .dropPuzzle {
-            position:relative;
-            height: 135px;
-            width: 135px;
-            border: 1px dashed gray;
-            display: inline-block;
-            margin: 0;
-
-            &.dropped { border-color: transparent; }
+    &.dr1 {
+      @for $i from 1 through 16 {
+        $i: addZero($i, 2);
+        #drag#{$i} {
+          background: url("../../img/mega01/01_azulejo#{$i}.png");
+          background-size: 100%;
         }
-
-        &.dr1 {
-            @for $i from 1 through 16 {
-                $i: addZero($i,2);
-                #drag#{$i} { 
-                    background: url('../../img/mega01/01_azulejo#{$i}.png'); 
-                    background-size: 100%;
-                }
-            }
-        }
-
-        &.dr2 {
-            @for $i from 21 through 36 {
-                $i: addZero($i,2);
-                #drag#{$i} { 
-                    background: url('../../img/mega01/02_azulejo#{$i}.png'); 
-                    background-size: 100%;
-                }
-            }
-        }
+      }
     }
 
-    &.dg2 { float: none; }
+    &.dr2 {
+      @for $i from 21 through 36 {
+        $i: addZero($i, 2);
+        #drag#{$i} {
+          background: url("../../img/mega01/02_azulejo#{$i}.png");
+          background-size: 100%;
+        }
+      }
+    }
+  }
+
+  &.dg2 {
+    float: none;
+  }
 }
 
 ////////////////
 // HACK FOR IE
-_:-ms-fullscreen, :root .megaBody {
-    .wrapper {
-        &.mega1 {
-            .divIngredientes {
-                display: -ms-grid;
-                padding: 15px 5px;
-            
-                .ingrediente { 
-                    @for $i from 1 through 5 {
-                        &:nth-child(#{$i}) {
-                            -ms-grid-column: #{$i};
-                            grid-column: #{$i};
-                            -ms-grid-row: 1;
-                            grid-row: 1;
-                            margin: 0 auto 60px;
-                            display: block;
-                            width: 90%;
-                        }
+_:-ms-fullscreen,
+:root .megaBody {
+  .wrapper {
+    &.mega1 {
+      .divIngredientes {
+        display: -ms-grid;
+        padding: 15px 5px;
 
-                        $j: $i + 5;
-                        &:nth-child(#{$j}) {
-                            -ms-grid-column: #{$i};
-                            grid-column: #{$i};
-                            -ms-grid-row: 2;
-                            grid-row: 2;
-                            margin: 0 auto;
-                            display: block;
-                            width: 90%;
-                        }
-                    }
-                }
-
-                &.extras {
-                    display: none;
-
-                    &.mostra { display: -ms-grid; }
-
-                    .ingrediente {
-                        @for $i from 1 through 5 {
-                            &:nth-child(#{$i}) {
-                                margin: 0 auto;
-                            }
-                        }
-                    }
-                }
+        .ingrediente {
+          @for $i from 1 through 5 {
+            &:nth-child(#{$i}) {
+              -ms-grid-column: #{$i};
+              grid-column: #{$i};
+              -ms-grid-row: 1;
+              grid-row: 1;
+              margin: 0 auto 60px;
+              display: block;
+              width: 90%;
             }
 
-            .blocoContador {
-                .dataItem {
-                    span {
-                        margin: 15px 0;
-                    }
-                }
+            $j: $i + 5;
+            &:nth-child(#{$j}) {
+              -ms-grid-column: #{$i};
+              grid-column: #{$i};
+              -ms-grid-row: 2;
+              grid-row: 2;
+              margin: 0 auto;
+              display: block;
+              width: 90%;
             }
+          }
         }
 
-        &.mega2 { 
-            .boxPodcast {
-                .blocoMega_Podcast {
-                    .playerAudio { height: inherit; }
-                }
+        &.extras {
+          display: none;
+
+          &.mostra {
+            display: -ms-grid;
+          }
+
+          .ingrediente {
+            @for $i from 1 through 5 {
+              &:nth-child(#{$i}) {
+                margin: 0 auto;
+              }
             }
+          }
         }
+      }
 
-        &.mega3 {
-            .divRecursos {
-                display: -ms-grid;
-
-                .recurso { 
-                    @for $i from 1 through 3 {
-                        &:nth-child(#{$i}) {
-                            -ms-grid-column: #{$i};
-                            grid-column: #{$i};
-                            -ms-grid-row: 1;
-                            grid-row: 1;
-                            margin: 0 auto 50px;
-                        }
-
-                        $j: $i + 3;
-                        &:nth-child(#{$j}) {
-                            -ms-grid-column: #{$i};
-                            grid-column: #{$i};
-                            -ms-grid-row: 2;
-                            grid-row: 2;
-                            margin: 0 auto 50px;
-                        }
-
-                        $k: $i + 6;
-                        &:nth-child(#{$k}) {
-                            -ms-grid-column: #{$i};
-                            grid-column: #{$i};
-                            -ms-grid-row: 3;
-                            grid-row: 3;
-                            margin: 0 auto;
-                        }
-                    }
-                }
-            }
-
-            .caminhoEscolhido {
-                .caminhoTexto {
-                    padding: 0 100px;
-
-                    p { width: inherit; }
-                }
-            }
-
-            .blocoContador {
-                padding: 0 10%;
-                .textoItem { -ms-grid-column: 1; }
-                .dataItem {  -ms-grid-column: 2; }
-            }
-
-            .blocoContadorFinal { 
-                padding: 0 10%;
-                .textoFinal { -ms-grid-column: 1; }
-                .dataFinal {  -ms-grid-column: 2; }
-            }
+      .blocoContador {
+        .dataItem {
+          span {
+            margin: 15px 0;
+          }
         }
+      }
     }
+
+    &.mega2 {
+      .boxPodcast {
+        .blocoMega_Podcast {
+          .playerAudio {
+            height: inherit;
+          }
+        }
+      }
+    }
+
+    &.mega3 {
+      .divRecursos {
+        display: -ms-grid;
+
+        .recurso {
+          @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+              -ms-grid-column: #{$i};
+              grid-column: #{$i};
+              -ms-grid-row: 1;
+              grid-row: 1;
+              margin: 0 auto 50px;
+            }
+
+            $j: $i + 3;
+            &:nth-child(#{$j}) {
+              -ms-grid-column: #{$i};
+              grid-column: #{$i};
+              -ms-grid-row: 2;
+              grid-row: 2;
+              margin: 0 auto 50px;
+            }
+
+            $k: $i + 6;
+            &:nth-child(#{$k}) {
+              -ms-grid-column: #{$i};
+              grid-column: #{$i};
+              -ms-grid-row: 3;
+              grid-row: 3;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+
+      .caminhoEscolhido {
+        .caminhoTexto {
+          padding: 0 100px;
+
+          p {
+            width: inherit;
+          }
+        }
+      }
+
+      .blocoContador {
+        padding: 0 10%;
+        .textoItem {
+          -ms-grid-column: 1;
+        }
+        .dataItem {
+          -ms-grid-column: 2;
+        }
+      }
+
+      .blocoContadorFinal {
+        padding: 0 10%;
+        .textoFinal {
+          -ms-grid-column: 1;
+        }
+        .dataFinal {
+          -ms-grid-column: 2;
+        }
+      }
+    }
+  }
 }
 
 // HACK FOR EDGE
-_:-ms-lang(x), .megaBody {
-    .wrapper {
-
-        &.mega2 { 
-            .boxPodcast {
-                .blocoMega_Podcast {
-                    .playerAudio { height: inherit; }
-                }
-            }
+_:-ms-lang(x),
+.megaBody {
+  .wrapper {
+    &.mega2 {
+      .boxPodcast {
+        .blocoMega_Podcast {
+          .playerAudio {
+            height: inherit;
+          }
         }
+      }
     }
+  }
 }

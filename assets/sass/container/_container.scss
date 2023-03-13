@@ -1,146 +1,166 @@
-
 .menuHeader {
-    background-image: linear-gradient(to bottom, #009DA3, #3A627A);
-    display: block;
+  background-image: linear-gradient(to bottom, #009da3, #3a627a);
+  display: block;
+  position: relative;
+  height: 306px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 900;
+
+  &.min {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .logo {
+    background: transparent url("../img/logoCompetencias.png") 0 0 no-repeat;
     position: relative;
-    height: 306px;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 900;
-
-    &.min { height: auto; padding: 30px 0;}
-
-    .logo {
-        background: transparent url("../img/logoCompetencias.png") 0 0 no-repeat;
-        position: relative;
-        margin:  0 auto;
-        height: 180px;
-        width: 350px;
-    }
+    margin: 0 auto;
+    height: 180px;
+    width: 350px;
+  }
 }
 
 .wrapper {
+  position: relative;
+  padding-top: 0;
+  height: auto;
+  width: 100%;
+  overflow-x: hidden;
+
+  .borderSection {
+    position: fixed;
+    height: 100%;
+    margin: 0 auto;
+    width: 1170px;
+    left: 50%;
+    z-index: 1;
+
+    @include transform(translateX(-50%));
+    @include box-shadow(0px 0px 50px 10px rgba(0, 0, 0, 0.25));
+  }
+
+  .section {
     position: relative;
-    padding-top: 0;
-    height: auto;
-    width: 100%;
-    overflow-x: hidden;
+    z-index: 2;
 
-    .borderSection {
-        position: fixed;
-        height: 100%;
-        margin: 0 auto;
-        width: 1170px;
-        left: 50%;
-        z-index: 1;
-
-        @include transform(translateX(-50%));
-        @include box-shadow(0px 0px 50px 10px rgba(0,0,0,0.25));
+    .container {
+      padding: 40px 15px;
     }
-
-    .section {
-        position: relative;
-        z-index: 2;
-        
-        .container { padding: 40px 15px; }
-    }
+  }
 }
 
 /* SVG */
-.divInteractive_Container { 
-    display: block; 
-    margin: 30px auto;
+.divInteractive_Container {
+  display: block;
+  margin: 30px auto;
 
-	.divInteractive {
-		position: relative; 
-		height: 0; 
-		width: 100%; 
-		padding: 0;
-		padding-bottom: 92%;
-	
-		svg {
-			position: absolute; 
-			height: 100%; 
-			width: 100%; 
-			left: 0; 
-            top: 0;
-            outline: 0;
+  .divInteractive {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 92%;
 
-            .botao { 
-                cursor: pointer; 
-                opacity: 0; 
-                @include transition(all 0.4s);
+    svg {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      outline: 0;
 
-                &.ativo { cursor: default; opacity: 0.3; }
-            
-                &:hover { opacity: 0.3; }
-            }
+      .botao {
+        cursor: pointer;
+        opacity: 0;
+        @include transition(all 0.4s);
 
-            .botaoFooter { 
-                cursor: pointer; 
-                opacity: 0; 
-                @include transition(all 0.4s);
-            
-                &:hover { opacity: 0.1; }
-            }
+        &.ativo {
+          cursor: default;
+          opacity: 0.3;
+        }
 
-            .feedSvg {
-                display: none;
-            }
-		}
+        &:hover {
+          opacity: 0.3;
+        }
+      }
+
+      .botaoFooter {
+        cursor: pointer;
+        opacity: 0;
+        @include transition(all 0.4s);
+
+        &:hover {
+          opacity: 0.1;
+        }
+      }
+
+      .feedSvg {
+        display: none;
+      }
     }
-    
-    @media #{$bp-phone} {
-        margin: 15px auto;
-    }
+  }
+
+  @media #{$bp-minTablet} {
+    margin: 15px auto;
+  }
 }
 
 /****************/
 
 .conteudo {
-    section {
-        &:nth-child(1){ padding-top: 0; }
-        
-        .topo-h4{
-            margin-top: -25px;
-            margin-bottom: 20px;
-
-            img, h4 { display: inline-block; }
-            h4 {
-                position: absolute;
-                bottom: 0;
-                margin-left: 20px;
-            }
-        }
+  section {
+    &:nth-child(1) {
+      padding-top: 0;
     }
+
+    .topo-h4 {
+      margin-top: -25px;
+      margin-bottom: 20px;
+
+      img,
+      h4 {
+        display: inline-block;
+      }
+      h4 {
+        position: absolute;
+        bottom: 0;
+        margin-left: 20px;
+      }
+    }
+  }
 }
 
 /* FLEX BOX*/
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* PLAYER */
-.player { 
-	margin: 0 auto 40px;
-    padding-bottom: 40px;
-    position: relative; 
+.player {
+  margin: 0 auto 40px;
+  padding-bottom: 40px;
+  position: relative;
 }
 
 /*****************************************/
 /* MEDIA QUERIES *************************/
 /*****************************************/
-@media #{$bp-minDesktop} {
-    body { overflow-x: hidden; }
-    .topo{background-size: cover;}
-    
+@media #{$bp-desktop} {
+  body {
+    overflow-x: hidden;
+  }
+  .topo {
+    background-size: cover;
+  }
 }
 @media #{$bp-tablet} {
-
 }
-@media #{$bp-phone} { 
-    .container { width: 100%; }
+@media #{$bp-minTablet} {
+  .container {
+    width: 100%;
+  }
 }
