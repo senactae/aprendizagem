@@ -1,0 +1,34 @@
+/* CONTAINER */
+@import "container/_mixins";
+@import "container/_fonts";
+@import "container/_producao";
+@import "container/_container";
+@import "container/_textos";
+@import "container/_header"; 
+@import "container/_footer";
+@import "container/_menu";
+
+@import "container/_sections";
+
+/* INTERAÇÕES */
+@import "interacoes/_accordion";
+@import "interacoes/_blocos";
+@import "interacoes/_botoes";
+@import "interacoes/_carousel";
+@import "interacoes/_flipcard";
+@import "interacoes/_form";
+@import "interacoes/_hq";
+@import "interacoes/_image";
+@import "interacoes/_popup";
+@import "interacoes/_postIt";
+@import "interacoes/_quiz";
+@import "interacoes/_select";
+@import "interacoes/_tabs";
+@import "interacoes/_video";
+
+@import "interacoes/_plugin_aos";
+
+@import "interacoes/_custom";
+
+/* TEMPLATE */
+@import "interacoes/_template";

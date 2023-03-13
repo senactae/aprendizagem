@@ -1,0 +1,62 @@
+/* entire container, keeps perspective */
+.cardFlip {
+    position: relative;
+	perspective: 1000px;
+    transform-style: preserve-3d;
+
+    max-width: 760px;
+    width: 100%;
+    height: 560px;
+    margin-bottom: 30px;
+    z-index: 10;
+
+    .frenteCard, .versoCard {
+        backface-visibility: hidden;
+        transform-style: preserve-3d;
+    
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include transition(0.5s);
+    }
+
+    .frenteCard {
+        z-index: 2;
+        @include transform(rotateY(0deg));
+    }
+    
+    .versoCard {
+        @include transform(rotateY(-180deg));
+    }
+
+    &.giraCarta {
+        .frenteCard { @include transform(rotateY(180deg)); }
+        .versoCard { @include transform(rotateY(0deg)); }
+    }
+
+    &.vertical {
+        .versoCard { @include transform(rotateX(-180deg)); }
+       
+        &.giraCarta {
+            .frenteCard { @include transform(rotateX(180deg)); }
+            .versoCard { @include transform(rotateX(0deg)); }
+        }
+    }
+
+    @media #{$bp-minDesktop} {
+        height: 450px;
+    }
+
+    @media #{$bp-tablet} {
+        height: 520px;
+    }
+
+    @media #{$bp-phone} {
+        height: 260px;
+        margin-bottom: 10px;
+    }
+}

@@ -1,0 +1,161 @@
+{
+	"curso": {
+		"titulo": "",
+		"template": "",
+		"path": "telas/",
+		"conteudo": {
+			"telas": [
+				{
+					"unidade": "",
+					"url": "index.html",
+					"titulo": "Apresentação",
+					"template": ""
+				},
+				{
+					"unidade": "1",
+					"url": "page01_01.html",
+					"titulo": "Que tal conhecer o Senac?",
+					"template": "azul"
+				},
+				{
+					"unidade": "1",
+					"url": "page01_02.html",
+					"titulo": "",
+					"template": "azul"
+				},
+				{
+					"unidade": "1",
+					"url": "page01_03.html",
+					"titulo": "",
+					"template": "azul"
+				},
+				{
+					"unidade": "2",
+					"url": "page02_01.html",
+					"titulo": "Entenda o seu contrato de trabalho",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "2",
+					"url": "page02_02.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "2",
+					"url": "page02_03.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "2",
+					"url": "page02_04.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "2",
+					"url": "page02_05.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "2",
+					"url": "page02_06.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_01.html",
+					"titulo": "Descubra como é o curso",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_02.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_03.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_04.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_05.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_06.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_07.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_08.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_09.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_10.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_11.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_12.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				{
+					"unidade": "4",
+					"url": "page04_01.html",
+					"titulo": "Bora planejar o seu desenvolvimento?",
+					"template": "verde"
+				},
+				{
+					"unidade": "4",
+					"url": "page04_02.html",
+					"titulo": "",
+					"template": "verde"
+				},
+				{
+					"unidade": "4",
+					"url": "page04_03.html",
+					"titulo": "",
+					"template": "verde"
+				}
+			]
+		}
+	}
+}

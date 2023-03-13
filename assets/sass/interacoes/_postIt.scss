@@ -1,0 +1,87 @@
+.PostIt {
+	background: transparent url(../img/PostIt.png) center no-repeat;
+	background-size: contain;
+	position: relative;
+	display: block;
+	padding: 75px 0;
+	margin: 0 0 30px;
+	width: 100%;
+
+	&::before {
+		background: transparent url(../img/PostIt_Before.png) center no-repeat;
+		background-size: contain;
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	.contentPost {
+		position: relative;
+		margin: 0 auto;
+		width: 60%;
+		display: grid;
+		align-items: center;
+		min-height: 320px;
+		
+		@include transform(rotate(3deg));
+
+		p { 
+			color: $corTexto;
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-size: 19px;
+			line-height: 1.5;
+			margin: 0 0 10px;
+	
+			&:last-child { margin: 0; }
+		}
+
+		strong { 
+			background: transparent;
+			padding: 0;
+			
+			&::before { display: none; }
+		}
+	}
+
+	@media #{$bp-minDesktop} { 
+		padding: 85px 0 95px;
+
+		.contentPost {
+			min-height: 260px;
+			width: 60%;
+			
+			p { font-size: 21px; }
+		}
+	}
+	@media #{$bp-tablet} {
+		.contentPost {
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			min-height: 180px;
+		}
+	}
+	@media #{$bp-phone} { 
+		padding: 60px 0 70px;
+
+		.contentPost {
+			width: 63%;
+			min-height: 180px;
+			
+			p { font-size: 16px; }
+		}
+	}	
+}
+
+////////////////
+// HACK FOR IE
+_:-ms-fullscreen, :root .PostIt {
+	padding: 105px 0;
+
+	.contentPost {
+		p { font-size: 18px; }
+	}
+}

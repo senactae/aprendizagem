@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<questoes>	
+	<!-- questao 1 -->
+	<questao>
+		<categoria>1</categoria>
+		<interacao>
+			<tipo>audio</tipo>
+			<caminho>audio/podcast_01</caminho>
+			<titulo><![CDATA[A FUNCIONÁRIA NOVA]]></titulo>
+			<desc><![CDATA[Lucinda trabalha no Senac há alguns anos. Ela está ajudando Maria, que praticamente acabou de chegar na instituição. Clique no play e acompanhe uma conversa entre as duas.]]></desc>
+		</interacao>
+		<enunciado><![CDATA[Lucinda e Maria são funcionárias do Senac. Confira abaixo uma parte de seu dia a dia.]]></enunciado>
+		
+		<pergunta><![CDATA[Como Lucinda pode mudar sua situação?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Lucinda pensa sobre seus objetivos de desenvolvimento e solicita um feedback para seu gestor.</alternativa>
+			<alternativa id="2">Lucinda volta a se inscrever nos cursos de educação corporativa e se matricula na academia do bairro. A saúde também é importante.</alternativa>
+			<alternativa id="3">Lucinda sabe de seu valor e, por isso, decide se posicionar para o gestor. Além disso, resolve conversar com Maria para falar o que pensa da área.</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Lucinda começa a repensar sua carreira. Solicita uma conversa com seu gestor buscando entender o que ele pensa sobre seu desempenho durante a realização de suas atividades. Porém, mais do que isso, ela mesma decide fazer uma autoavaliação e analisar as possibilidades de carreira que tem para discutir com o coordenador da área. Há tempos ela não se sentia tão no controle de sua vida profissional.</positivo>
+			<neutro>Lucinda reflete e decide que é o momento de voltar a investir em seu desenvolvimento: ela pesquisa os cursos da educação corporativa que mais se adéquam ao seu trabalho e se inscreve, torcendo para conseguir uma vaga. Além disso, resolve, finalmente, começar a fazer exercícios físicos. Fazia tempo que o médico estava recomendando isso, mas ela sempre acabava adiando.</neutro>
+			<negativo>Lucinda considera-se injustiçada. Ela se sente invisível, parece que ninguém valoriza seu trabalho, muito menos seu gestor, que nem olha para ela. Por conta de tudo isso, ela se sente sem perspectivas. Parece que o destino só da oportunidades para outras pessoas: na vida dela não acontece nada de bom! Ela decidiu falar com seu gestor e “mostrar seu valor”. E vai contar tudo para Maria. Afinal, ela merece saber a “verdade sobre a área”.</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>27</numero>
+				<nome><![CDATA[Gilson]]></nome>
+				<desc><![CDATA[Coordenador da área]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Lucinda mudou de atitude: pediu um feedback, está mais proativa, repensando sua carreira. Tomara que ela continue assim!</feedPositivo>
+					<feedNeutro class="neutro">Lucinda estava muito desanimada, mas agora começou a mudar sua atitude: voltou a se inscrever nos cursos, parece que está indo na academia. Vamos ver no que vai dar.</feedNeutro>
+					<feedNegativo class="negativo">Com a chegada da Maria, achei que Lucinda também ia mudar de atitude, teria novas perspectivas. Mas parece que ela desanimou ainda mais e passa o dia inteiro reclamando em vez de focar suas atividades. Pediu para conversar comigo, mas quase não me deixou falar, pois estava nervosa e agressiva.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>11</numero>
+				<nome><![CDATA[Joana]]></nome>
+				<desc><![CDATA[Colega de trabalho]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Lucinda está muito mais proativa no trabalho, se oferecendo sempre para ajudar. Ela mudou sua postura: está até pedindo opinião para a gente.</feedPositivo>
+					<feedNeutro class="neutro">Lucinda está mais animadinha ultimamente. Quem sabe ela não passe a contribuir mais com a equipe? Ela está aqui há bastante tempo.</feedNeutro>
+					<feedNegativo class="negativo">Não aguento mais a Lucinda! Ela tá reclamando demais e atrapalha nosso trabalho. É muito desânimo: a gente apresenta alguma coisa para ela e tudo está ruim. Além disso, quem não ajuda, muito atrapalha: ela não tem contribuído com nada.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>1</numero>
+				<nome><![CDATA[Lucinda]]></nome>
+				<desc><![CDATA[A própria]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Já devia ter pedido para ter essa conversa há muito tempo. Agora, tenho mais clareza do que tenho que fazer para atingir meus objetivos e sinto que tenho ajuda de todos.</feedPositivo>
+					<feedNeutro class="positivo">Estou otimista, comecei a fazer as primeiras mudanças.</feedNeutro>
+					<feedNegativo class="negativo">Tá vendo? Minha carreira não vai para a frente mesmo. Estou aqui há anos e não sou valorizada. Falei com o coordenador, mas não adiantou nada.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>34</numero>
+				<nome><![CDATA[Maria]]></nome>
+				<desc><![CDATA[Nova na área]]></desc>
+				<feedback>
+					<feedPositivo class="neutro">No começo, achei que Lucinda era meio acomodada aqui no trabalho. Mas parece que não. Será que me enganei?</feedPositivo>
+					<feedNeutro class="neutro">A Lucinda comentou comigo que conseguiu se inscrever em um curso de educação corporativa que eu também vou fazer. Ela parece mais animada.</feedNeutro>
+					<feedNegativo class="neutro">Resolvi não dar ouvidos para a conversa da Lucinda. É muito pessimismo e eu acabei de chegar aqui.</feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>Observe que você escolheu a opção na qual a atitude de Lucinda causa mais reações positivas em seu ambiente de trabalho. Afinal, ela sai da postura passiva e passa a agir para atingir seus objetivos.</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>Pode melhorar!</strong></p><p>A opção que você escolheu é um movimento inicial na direção de mudança, mas ainda nada muito concreto. Embora beneficie a própria Lucinda, não chega a causar muitos impactos positivos em seu ambiente de trabalho. As pessoas percebem que ela está mais animada, porém ainda não sentem que esse novo “estado de espírito” ajuda muito no trabalho.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>Estresse!</strong></p><p>Definitivamente, essa atitude atrapalha mais do que ajuda e a equipe não teve uma boa reação. Lucinda precisa definir o que ela quer da vida e parar de reclamar.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Quem nunca conheceu uma pessoa como Lucinda?</p><p>É fundamental ter uma postura protagonista na busca do autoconhecimento. Para isso, é importante:</p><ul><li>solicitar feedback para seu gestor e seus pares com o objetivo de desenvolver-se e alinhar expectativas;</li><li>planejar seu futuro assumindo responsabilidade por suas escolhas;</li><li>se cuidar! O ser humano é um ser integral, por isso, é importante o autocuidado com sua saúde física, emocional e intelectual. Assim, você terá mais equilíbrio para lidar com as pressões do dia a dia.</li></ul>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Reflita sobre seu desempenho no dia a dia de trabalho na seguinte competência:</p><p>Buscar o autoconhecimento e a autonomia no desenvolvimento pessoal e profissional, assumindo responsabilidade sobre suas escolhas, procurando o equilíbrio e o alinhamento com suas aspirações e valores pessoais.</p>]]></desenvolvimento>
+
+		<mega>false</mega>
+
+		<principal>Lucinda</principal>
+	</questao>
+
+	<!-- questao 2 -->
+	<questao>
+		<categoria>2</categoria>
+		<interacao>
+			<tipo>video</tipo>
+			<caminho>05_animacao_720p</caminho>
+			<titulo><![CDATA[]]></titulo>
+			<desc>capaVideo_01</desc>
+		</interacao>
+		<enunciado><![CDATA[Maria é conhecida por sempre propor ideias novas nos projetos. Gilson, o gestor da área, conversa com o coordenador da equipe, Fabrício, para tomar uma decisão: já está na hora de mudar processos para ganhar agilidade no serviço e garantir a satisfação dos alunos e ambos concordam que Maria é a melhor pessoa para ficar à frente dessa iniciativa! Assista aqui sua saga para vencer esse desafio.]]></enunciado>
+		
+		<pergunta><![CDATA[Como Maria pode conduzir essa situação da melhor maneira possível?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Maria decide ir em frente: o novo processo será implementado. Antes de começar, porém, ela identificou a necessidade de ouvir algumas pessoas e agendar uma conversa com seu gestor e demais integrantes da equipe para combinar alguns detalhes, o que possivelmente atrasará o cronograma.</alternativa>
+			<alternativa id="2">Maria analisa as soluções viáveis e, por conta dos inúmeros impactos e articulações necessárias para viabilizar o projeto, ela decide continuar estudando para encontrar outras soluções.</alternativa>
+			<alternativa id="3">Maria mapeia as possíveis soluções e decide não mudar a atividade: são muitos impactos e a atividade, de fato, é bastante complexa.</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Apesar do grande impacto e das inúmeras dificuldades, Maria decidiu implementar o novo processo. Seu principal argumento para isso são os benefícios que essa inovação trará para o aluno. Entretanto, ela percebeu que ainda é necessário alinhar alguns pontos de atenção com seu gestor e a equipe para minimizar as dificuldades. Para fazer isso, ela marca conversas de alinhamento com os envolvidos e também busca ouvir o usuário final, que será o grande impactado pelas mudanças do projeto. Com essas ações, ela acabou ganhando assertividade, apresentou versões intermediárias de soluções do projeto, ajustou os pontos levantados pelo usuário, garantiu alinhamento e, no final, os prazos foram atendidos.</positivo>
+			<neutro>Maria entende que é necessário implementar a iniciativa por conta das melhorias que trará para o aluno. Porém, por conta dos inúmeros impactos e articulações necessárias, ela decide que este ainda não é o momento de inovar. Vai ser um balde de água fria, mas Maria decide estudar mais opções antes de alterar esse processo.</neutro>
+			<negativo>Maria mapeou todas as soluções e decide não implementar o novo processo. São tantas áreas, pessoas e atividades envolvidas que ela teme criar mais problemas do que soluções. Ela não está totalmente segura de que este é o melhor momento na instituição e considera que inovar pode ser uma medida muito drástica diante do cenário apresentado.</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>31</numero>
+				<nome><![CDATA[Fabrício]]></nome>
+				<desc><![CDATA[Coordenador da equipe]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Sabia que Maria dava conta! Inovar pode ser um desafio, mas ela busca referências externas e está sempre atualizada, então, suas propostas são muito pertinentes. Temos conseguido ótimos resultados com essa postura. O fato de ela ter ouvido as necessidades do aluno e envolvido a equipe na construção da solução fez total diferença.</feedPositivo>
+					<feedNeutro class="neutro">Nossa, está demorando muito esse processo… Sei que são muitas instâncias envolvidas, mas achei que seria mais rápido. Será que poderíamos realizar alguns testes e implantar por fases?</feedNeutro>
+					<feedNegativo class="negativo">Escolhi a Maria justamente para quebrar paradigmas. E, no final, ela acabou demonstrando uma postura mais conservadora.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>3</numero>
+				<nome><![CDATA[Rafael]]></nome>
+				<desc><![CDATA[Colega de trabalho]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Ainda bem que Maria insistiu: de fato, é necessário ousar para agilizar e modernizar esse processo.</feedPositivo>
+					<feedNeutro class="neutro">Isso é sempre assim: esses projetos são longos mesmo.</feedNeutro>
+					<feedNegativo class="negativo">Sabia que ia ficar tudo igual: esse negócio de inovar só dá certo nos livros.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>12</numero>
+				<nome><![CDATA[Enzo]]></nome>
+				<desc><![CDATA[Aluno]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Nossa, como o Senac é moderno: sempre pensa na gente. Eu tinha tanto trabalho com isso, mas agora ficou tão simples. Fiquei sabendo que alguns colegas foram ouvidos e nossas necessidades vão finalmente ser atendidas.</feedPositivo>
+					<feedNeutro class="negativo">Que processo difícil do Senac! Ouvi dizer que eles iam mudar, mas até agora nada.</feedNeutro>
+					<feedNegativo class="negativo">Esse processo é muito ruim para a gente. O Senac precisa mudar. Eu fiz curso em outras escolas e as coisas funcionavam de um jeito bem diferente.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>14</numero>
+				<nome><![CDATA[Bianca]]></nome>
+				<desc><![CDATA[Funcionária de outra área]]></desc>
+				<feedback>
+					<feedPositivo class="neutro">Parece que desta vez o projeto vai! Apesar de a minha área não estar envolvida nessa primeira etapa, vi que o projeto já está dando resultado.</feedPositivo>
+					<feedNeutro class="neutro">Adiou mais uma vez? Ainda bem que não criei expectativas.</feedNeutro>
+					<feedNegativo class="neutro">Acho que eles não têm noção do quanto é difícil para a gente. Mas, para mim, não faz tanta diferença. Se eu não me engano, minha área não estava contemplada.</feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>Apesar do receio inicial com o atraso no cronograma e as inúmeras dificuldades para inovar nesse processo, você fez o certo: é preciso seguir em frente e inovar. Observe que até os alunos tiveram uma reação positiva em relação a sua atitude.</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>Nada muda!</strong></p><p>Neste caso, observe que a maioria das pessoas não se surpreende nem de maneira positiva, nem de maneira negativa. Parece que todos estão acostumados com a situação e não têm boas perspectivas.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>Decepção!</strong></p><p>A reação não poderia ser pior. Todos estavam esperando que o processo mudasse, nem que fosse apenas uma fase dele. Como o projeto é complexo, Maria poderia ter definido uma escala de priorização e realizado entregas faseadas. É preciso propor ideias buscando melhorar a qualidade do serviço do Senac.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Às vezes, é difícil mudar os processos com os quais já estamos acostumados, não é mesmo?</p><p>No mundo de hoje, no qual novas informações e formas de fazer surgem a cada instante, temos que buscar nos atualizar constantemente. Isso nos ajudará a ter consistência para criar experiências mais relevantes para os clientes e propor melhorias nos processos já implementados. A competência da inovação é desafiadora, por isso, quanto mais você se prepara para esse processo, mais seguro e preparado estará para recomendar melhorias.</p>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Reflita sobre seu desempenho nesta competência:</p><p>Propor ideias e ações em serviços, produtos, processos e demais oportunidades com foco no cliente (interno e externo), a fim de gerar inovações que sustentem o propósito do negócio Senac.</p>]]></desenvolvimento>
+
+		<mega>true</mega>
+
+		<principal>Maria</principal>
+	</questao>
+
+	<!-- questao 3 -->
+	<questao>
+		<categoria>3</categoria>
+		<interacao>
+			<tipo>video</tipo>
+			<caminho>06_animacao_720p</caminho>
+			<titulo><![CDATA[ABRAÇANDO O MUNDO!]]></titulo>
+			<desc>capaVideo_02</desc>
+		</interacao>
+		<enunciado><![CDATA[Antônio já tinha ouvido falar sobre a iniciativa na qual Maria está trabalhando para mobilizar algumas mudanças em um processo na instituição. Ele só não tinha ideia de que participaria de um grupo de trabalho sobre isso. Maria identificou a necessidade de envolver outras áreas para tratar de uma ação crucial sobre as mudanças. Ela informou seu gestor, Gilson, dessa necessidade, e ele solicitou aos gestores das outras áreas a participação de um funcionário de cada área para atender a essa demanda. E cá está Antônio, para participar do grupo representando sua área. Será que deu certo? Descubra <span>aqui</span>.]]></enunciado>
+		
+		<pergunta><![CDATA[Como Antônio pode ajudar o grupo a chegar à melhor solução?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Antônio sugere que todos os prós e contras das ideias sejam analisados novamente, visando descobrir uma nova solução.</alternativa>
+			<alternativa id="2">Como o tempo está passando e eles precisam de uma solução, Antônio sugere que o grupo acione seus gestores.</alternativa>
+			<alternativa id="3">Antônio sugere aumentar a frequência das reuniões para que eles voltem a avaliar as ideias de cada membro do grupo com mais tempo.</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Antônio observa que, sem uma mudança de atitude, o grupo não conseguirá formular uma solução. Todos já estão convencidos de que a ideia que trabalharam em seu setor é a melhor. Se as pessoas não se escutarem e considerarem os conhecimentos específicos e as experiências de cada um, não chegarão a uma solução que atenda aos objetivos da instituição. Por conta disso, ele propõe que o grupo tente encontrar uma nova solução, considerando as ideias que eles trouxeram, mas com abertura para construírem uma nova solução, desenhada por esse grupo. Antônio enfatiza que, se o grupo não tiver abertura e espaço para o diálogo, o trabalho não vai dar em nada.</positivo>
+			<neutro>Antônio observa que, infelizmente, as pessoas não estão se escutando e considerando os conhecimentos das outras. Elas estão mais preocupadas em defender suas ideias do que compartilhar seus conhecimentos e se colocar na posição do outro. Assim, ele não vê outra alternativa a não ser sugerir que o grupo acione os gestores para escolher a estratégia que eles devem adotar.</neutro>
+			<negativo>Antônio está muito preocupado, uma vez que o grupo não consegue chegar a um consenso. As reuniões estão sendo cada vez mais longas porque todos querem mostrar os benefícios de sua ideia, apesar de que, às vezes, Antônio observa que a maioria não está prestando a devida atenção. Assim, como o grupo está tendo muita dificuldade, Antônio faz a proposta de aumentar a frequência dos encontros para que eles tenham mais tempo de discutir todas as ideias com profundidade. Quem sabe as pessoas não começam a se escutar mais?</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>17</numero>
+				<nome><![CDATA[Lucia]]></nome>
+				<desc><![CDATA[Coordenadora da área onde Antônio trabalha]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Sabia que eles conseguiriam! Ficou ótimo, tenho certeza de que nossos alunos vão adorar!</feedPositivo>
+					<feedNeutro class="neutro">Nossa, um grupo tão bom… Achei que eles iam conseguir nos surpreender e trazer algo muito novo. Vamos conversar com eles e enfatizar que eles podem dar soluções melhores que as nossas.</feedNeutro>
+					<feedNegativo class="negativo">Isso não acaba mais: um grupo tão bom não consegue chegar a um consenso.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>22</numero>
+				<nome><![CDATA[João]]></nome>
+				<desc><![CDATA[Participante do grupo de trabalho]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">No começo foi difícil, mas aprendi muito com esse processo, afinal, em grupo, conseguimos muito mais do que individualmente.</feedPositivo>
+					<feedNeutro class="negativo">Estou frustrado porque não conseguimos chegar a um consenso. Talvez, se começarmos a nos escutar em vez de simplesmente defender nossa ideia, podemos evoluir no projeto.</feedNeutro>
+					<feedNegativo class="negativo">Não aguento mais participar desta discussão: ninguém se ouve e não se chega a lugar nenhum. Já são tantas reuniões que meu trabalho está ficando atrasado.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>26</numero>
+				<nome><![CDATA[William]]></nome>
+				<desc><![CDATA[Colega de trabalho]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">A solução é ótima! E até que eles não demoraram muito para resolver o problema.</feedPositivo>
+					<feedNeutro class="neutro">Nossa, já participei de outros grupos e conseguimos chegar a outro resultado. Precisamos mudar nossa postura.</feedNeutro>
+					<feedNegativo class="negativo">O João não fica mais na mesa: está sempre nas reuniões desse tal grupo de trabalho e eu estou tendo que fazer tudo sozinho.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>4</numero>
+				<nome><![CDATA[Bruna]]></nome>
+				<desc><![CDATA[Integrante da equipe de Maria]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Nossa, eles arrasaram! A solução ficou melhor que o esperado! Esse grupo é muito bom.</feedPositivo>
+					<feedNeutro class="negativo">Nossa, os gestores vão ter que decidir? O que será que aconteceu? Vou avisar a Maria.</feedNeutro>
+					<feedNegativo class="negativo">O grupo já extrapolou o prazo duas vezes. Isso porque estão fazendo mais reuniões do que o planejado. Vou ter que falar com a Maria sobre isso.</feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>A atitude escolhida facilitou muito o trabalho do grupo e provocou reações positivas na maioria das pessoas. Eles precisavam, de fato, parar de defender uma ideia fixa e passar a escutar um ao outro.</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>Não houve consenso!</strong></p><p>Observe que, neste caso, a formação do grupo de trabalho não impacta o projeto. O problema é solucionado não pelo grupo, mas, sim, pelos gestores.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>O problema aumenta!</strong></p><p>Aumentar a frequência das reuniões causa uma reação negativa se as pessoas não mudarem de atitude. Na verdade, só aumenta o problema, porque haverá mais tempo para discussões e para cada um “defender” sua ideia. Além disso, o grupo não consegue chegar a uma solução, atrasando o cronograma do projeto.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Quem nunca passou por uma situação igual à do Antônio?</p><p>Para trabalhar de forma colaborativa, é muito importante:</p><ul><li>compartilhar seus conhecimentos com os demais;</li><li>considerar os diferentes pontos de vista para desenvolver as melhores soluções para o Senac.</li></ul>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Pense sobre seu trabalho e reflita se suas atitudes demonstram a seguinte competência:</p><p>Trabalhar de forma colaborativa, criando soluções integradas com os públicos com os quais se relaciona para o alcance dos objetivos comuns.</p>]]></desenvolvimento>
+
+		<mega>false</mega>
+
+		<principal>Antônio</principal>
+	</questao>
+
+	<!-- questao 4 -->
+	<questao>
+		<categoria>4</categoria>
+		<interacao>
+			<tipo>video</tipo>
+			<caminho>04_animacao_720p</caminho>
+			<titulo><![CDATA[]]></titulo>
+			<desc>capaVideo_03</desc>
+		</interacao>
+		<enunciado><![CDATA[Antônio está correndo, pois precisa se reunir com seus colegas para compartilhar informações sobre problemas que vêm acontecendo nos processos de trabalho e que precisam de solução. Como ele lidará com tudo isso? Acompanhe <span>aqui</span>.]]></enunciado>
+		
+		<pergunta><![CDATA[Qual é a melhor forma de Antônio sair dessa situação?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Antônio aproveita que estão todos juntos para apresentar os objetivos da conversa, esclarecer dúvidas sobre as informações que serão necessárias e solicitar o que cada colega deve providenciar. Ele também solicita que Marcos encaminhe o relatório a respeito da última reunião da equipe, especificando e checando o entendimento a respeito dele.</alternativa>
+			<alternativa id="2">Antônio remarca a conversa com os colegas, comprometendo-se a enviar o relatório correto e informações mais detalhadas e se coloca à disposição para mais esclarecimentos.</alternativa>
+			<alternativa id="3">Antônio segue com a conversa, pois se comprometeu com seu gestor e as decisões são urgentes e precisam ser tomadas com as informações que ele tem em mãos.</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Antônio percebeu que o relatório distribuído não era correspondente àquele que ele gostaria de conversar com os colegas. Rapidamente, ele retomou a conversa com os objetivos e o alinhamento para a próxima conversa e aproveitou para tirar as dúvidas dos colegas. Assim, ele percebeu que, apesar do equívoco, não poderia deixar de aproveitar o momento para deixar todos atualizados.</positivo>
+			<neutro>Antônio remarca a conversa, porém a equipe já havia se organizado para participar desse momento. Todos entendem o motivo e concordam com a decisão do Antonio, mas alguns tiveram que remarcar outros compromissos para estarem presentes neste dia. Além disso, a atividade prevista não teve andamento e continuou na mesma. Marcos sente que prejudicou a agenda dos colegas.</neutro>
+			<negativo>Antônio percebeu que o relatório distribuído não era aquele a respeito do qual ele gostaria de conversar com a equipe. No entanto, mesmo assim, ele seguiu com a pauta, afinal, considera que não pode adiar as decisões. A consequência disso é que a resolução dos problemas não avança e os colegas de equipe não conseguem contribuir porque não tiveram acesso aos dados necessários.</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>15</numero>
+				<nome><![CDATA[Marcos]]></nome>
+				<desc><![CDATA[Aquela que está em dúvida]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Nossa! Ainda bem que Antônio resolveu iniciar a conversa esclarecendo todos os pontos. Fiquei com receio de que o andamento dela fosse prejudicado, devido à má impressão gerada pelo relatório errado e pelo fato de não estarmos com as informações necessárias em mãos. Isso ajudou muito na assertividade para encaminharmos as soluções.</feedPositivo>
+					<feedNeutro class="neutro">Nossa, deveria ter confirmado com Antônio de que relatório ele precisava de fato. Fica como aprendizado para que, na próxima vez, eu confirme essas informações antes de realizar as tarefas.</feedNeutro>
+					<feedNegativo class="negativo">Nossa, percebo que prejudiquei o andamento desta atividade. Além disso, Antônio não foi claro e fiquei com muitas dúvidas sobre como encaminharemos a discussão sobre os problemas identificados.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>18</numero>
+				<nome><![CDATA[Ivete]]></nome>
+				<desc><![CDATA[Faz parte da equipe de Antônio e Marcos]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">A conversa foi ótima! Antônio aproveitou o momento do “relatório errado” para esclarecer os problemas que estão acontecendo, levantar dúvidas e gerar senso de urgência em todos na busca de soluções.</feedPositivo>
+					<feedNeutro class="neutro">Apesar de ter desmarcado outros compromissos para estar aqui, realmente era necessário adiar. Mas vou ter que ligar para Antônio. Não entendi o que vamos discutir na próxima reunião.</feedNeutro>
+					<feedNegativo class="negativo">Tive que remarcar outros compromissos para conseguir estar aqui. E outra: não entendi nada sobre os dados que o Antônio apresentou e qual o impacto que tudo isso está causando.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>32</numero>
+				<nome><![CDATA[Antônio]]></nome>
+				<desc><![CDATA[Confiante na resolução dos problemas identificados]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Deu tudo certo! Apesar da confusão inicial, a conversa foi produtiva e conseguimos alinhar as expectativas e deixar todo mundo atualizado. É preciso ser mais claro quando passar informações para as pessoas.</feedPositivo>
+					<feedNeutro class="neutro">Eu estava muito confiante na busca de soluções com o grupo, mas agora fiquei bem inseguro. Todo mundo ficou confuso e, sei lá, acho que eu poderia ter resolvido de outra maneira. Preciso melhorar minha comunicação.</feedNeutro>
+					<feedNegativo class="negativo">Houve um ruído muito grande de comunicação nessa conversa. Muito provavelmente, terei problemas no encaminhamento com o grupo. Preciso melhorar minha comunicação!</feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>Chegar a um entendimento é fundamental para o desempenho das atividades.</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>A intenção foi boa, mas comunicação é fundamental!</strong></p><p>Observe que, neste caso, a intenção e a proatividade do Marcos foram muito boas, porém é necessário que tenhamos o máximo de informações para conseguir desempenhar uma atividade da maneira correta, minimizando os possíveis problemas. Além disso, Antônio poderia ter confirmado as informações para não gerar desentendimentos na reunião previamente agendada com a equipe.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>Problemas em diversas instâncias!</strong></p><p>Antônio poderia ter dado mais informações a Marcos, no entanto, Marcos também poderia ter confirmado qual era o relatório correto com Antonio. A reunião não poderia ter seguido com a mesma pauta, afinal os integrantes da equipe precisavam das informações corretas para auxiliá-los na tomada de decisão.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Quem nunca teve problemas de comunicação?</p><p>Apesar de nos comunicarmos o tempo todo, essa é uma competência muito difícil de ser plenamente desenvolvida. É preciso expressar-se com clareza e objetividade, checando o entendimento do interlocutor e manifestando seus pontos de vista de maneira respeitosa.</p>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Reflita sobre a competência abaixo e avalie como tem se comunicado com as outras pessoas ultimamente:</p><p>Escutar ativamente e expressar pensamentos de maneira clara e objetiva, ajustando a linguagem escrita e oral às características dos diversos públicos de modo alinhado às diretrizes, princípios e valores do Senac.</p>]]></desenvolvimento>
+
+		<mega>false</mega>
+
+		<principal>Antônio</principal>
+	</questao>
+
+	<!-- questao 5 -->
+	<questao>
+		<categoria>5</categoria>
+		<interacao>
+			<tipo>audio</tipo>
+			<caminho>audio/podcast_02</caminho>
+			<titulo><![CDATA[TODO MUNDO COM PRESSA]]></titulo>
+			<desc><![CDATA[Paulo está em um dia de trabalho muito corrido. Confira clicando no play!]]></desc>
+		</interacao>
+		<enunciado><![CDATA[Paulo, funcionário da área administrativa, trabalha no Senac há três anos. Acompanhe abaixo um pouco do seu dia a dia.]]></enunciado>
+		
+		<pergunta><![CDATA[Qual é a melhor maneira de Paulo ajudar a cliente?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Orientá-la a se dirigir ao setor de atendimento para que suas necessidades sejam identificadas corretamente.</alternativa>
+			<alternativa id="2">Percebendo que a cliente está com pressa e não ficará para aguardar o atendimento, entregar um fôlder com os cursos da unidade e orientá-la a fazer a matrícula pelo site ou entrar em contato pelo telefone.</alternativa>
+			<alternativa id="3">Perguntar para ela qual curso gostaria de fazer e informar as datas das próximas turmas da unidade.</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Paulo percebeu que a cliente estava com pressa, porém, orientá-la a conversar com o atendimento é sempre a melhor opção. Às vezes, nem o próprio cliente sabe identificar o que pode melhor atender a suas necessidades, por isso, é muito importante que o atendimento tenha a oportunidade de identificá-las dialogando com a cliente sobre suas expectativas. Ter esse olhar contribui para a permanência dos nossos alunos na instituição, afinal, quem nunca conheceu um aluno que acabou desistindo de um curso porque não era o que ele estava esperando?</positivo>
+			<neutro>Paulo observou que a cliente estava com muita pressa e não sabia como estava a fila no atendimento, por isso, decidiu entregar um fôlder e orientá-la a se matricular pela internet ou entrar em contato pelo telefone. Dessa forma, ela não se atrasaria para voltar ao trabalho. Paulo sabe que há um grande risco de a cliente não voltar mais, porém pelo menos ele falou do site do Senac. Ele também está ciente da importância de encaminhá-la para o atendimento para que ela tenha um atendimento completo, porém, isso nem sempre é possível.</neutro>
+			<negativo>Paulo foi rápido no atendimento! A cliente estava com muita pressa, por isso, ele mesmo perguntou que curso ela gostaria de fazer e aproveitou para já informar as próximas datas em que ele será ofertado na unidade. Por sorte, uma turma vai começar na semana que vem. Ele informou a cliente de que ela pode fazer a matrícula pela internet. A cliente estava tão decidida que ele tem certeza de que ela nem precisaria passar pelo atendimento.</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>25</numero>
+				<nome><![CDATA[Eliana]]></nome>
+				<desc><![CDATA[A cliente]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Uau! Neste atendimento, realmente estão compreendendo o que eu preciso. Cheguei aqui imaginando fazer uma coisa, mas, depois dessa conversa com o atendente, ficou claro qual é o curso que preciso fazer.</feedPositivo>
+					<feedNeutro class="neutro">Pensando melhor, meu pai está desempregado, talvez seja melhor esperar até ele conseguir um emprego, aí não vai ficar tão difícil fazer os pagamentos.</feedNeutro>
+					<feedNegativo class="negativo">As aulas acabaram de começar, mas acho que não acertei no curso. Já desisti. Imaginei que o curso fosse ser sobre uma coisa, mas estou vendo, agora, que é outra. Vou deixar para o ano que vem, até que eu tenha certeza do que eu preciso.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>35</numero>
+				<nome><![CDATA[Osmar]]></nome>
+				<desc><![CDATA[Atendente da Unidade]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Nossa, aparentemente, ela estava tão decidida! Que bom, no entanto, que pudemos conversar mais a fundo e chegar à melhor solução para ela.</feedPositivo>
+					<feedNeutro class=""></feedNeutro>
+					<feedNegativo class=""></feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>30</numero>
+				<nome><![CDATA[Fábio]]></nome>
+				<desc><![CDATA[Técnico de área]]></desc>
+				<feedback>
+					<feedPositivo class=""></feedPositivo>
+					<feedNeutro class=""></feedNeutro>
+					<feedNegativo class="negativo">A cliente parecia tão animada! Por que será que ela desistiu? Precisamos ficar atentos aos motivos que a levaram a desistir.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>8</numero>
+				<nome><![CDATA[Francisco]]></nome>
+				<desc><![CDATA[Pai da cliente]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">O Senac é muito bacana. Queria muito que minha filha estudasse, porém, como estou desempregado, teria muita dificuldade para pagar. Mas o atendente foi tão bacana que mostrou para ela até mesmo a possibilidade de conseguir uma bolsa de estudos!</feedPositivo>
+					<feedNeutro class="neutro">Poxa, que pena que estou desempregado! Queria muito que minha filha tivesse mais oportunidades que eu tive.</feedNeutro>
+					<feedNegativo class="negativo">Como estou desempregado, ia fazer um esforço para ela estudar. Mas como ela ainda não tem certeza do que quer, melhor deixar para depois mesmo. Ia ficar difícil pagar as parcelas.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>23</numero>
+				<nome><![CDATA[Juliana]]></nome>
+				<desc><![CDATA[Amiga da cliente]]></desc>
+				<feedback>
+					<feedPositivo class="neutro">A Ju conseguiu uma bolsa de estudos no Senac. Vou lá ver isso também.</feedPositivo>
+					<feedNeutro class=""></feedNeutro>
+					<feedNegativo class=""></feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>Observe que essa opção teve um grande impacto positivo. O atendente sugeriu até uma bolsa de estudos para ela. Portanto, por mais pressa que a cliente tenha, é fundamental conversar e entender suas reais necessidades.</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>Não faz diferença!</strong></p><p>Paulo teve a melhor das intenções, porém, como você pode ver, sua atitude não gerou os resultados desejados. Faltou uma coisa fundamental: conversar com a cliente para saber um pouco mais sobre ela e seus interesses.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>Evasão!</strong></p><p>A reação à atitude de Paulo foi bem negativa. A cliente desistiu e até o pai dela desanimou. Aí está um exemplo da importância de entender as reais necessidades do cliente.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Por mais pressa que a cliente tenha, é preciso identificar sua real necessidade!</p><p>Nem sempre a solução que os clientes identificam como a melhor para seu problema é, de fato, a melhor. Por isso, é tão importante assumir uma postura educadora, dialogando com o cliente para identificar qual é sua real necessidade. Além disso, em uma perspectiva educadora, é fundamental estimular a autonomia e o desenvolvimento dos indivíduos para gerar experiências mais relevantes para clientes externos e internos.</p>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Acredita que tem atuado com uma postura educadora nas interações, tanto com clientes externos como com os internos? Leia a redação dessa competência abaixo e reflita sobre seu desempenho:</p><p>Assegurar a satisfação dos clientes impactados no processo de prestação de serviços, considerando o contexto educacional em que atuamos, o perfil das pessoas e das empresas e o ambiente presencial e digital no qual o serviço é entregue.</p>]]></desenvolvimento>
+
+		<mega>true</mega>
+
+		<principal>Paulo</principal>
+	</questao>
+
+	<!-- questao 6 -->
+	<questao>
+		<categoria>6</categoria>
+		<interacao>
+			<tipo>hq</tipo>
+			<caminho>img/hq3.png</caminho>
+			<titulo><![CDATA[ABRAÇANDO O MUNDO!]]></titulo>
+			<desc><![CDATA[Começo da HQ. Mateus está tomando água e café em copo plástico. Carla vê a cena e pensa: - Por que será que Mateus está tomando água e café em copo plástico? Carla pergunta para Mateus: Mateus, aconteceu alguma coisa com sua caneca? Ele responde: - Ela quebrou e eu ainda não tive tempo de comprar outra. Carla continua: - Temos um quadro com canecas de uso coletivo para essas ocasiões. - Os copos plásticos ainda estão disponíveis, mas só devem ser utilizados em último caso. Mateus responde sem paciência: - Ai, Carla... Para com essa conversa! Se ainda temos copos plásticos, é para isso mesmo... Ricardo está entrando na sala. Carla continua: - Reflita sobre isso... Apesar de os copos serem recicláveis, além do impacto no meio ambiente, há também impacto nos recursos da instituição... Mateus fica ofendido e diz: - Carla, assim você vai denegrir minha imagem... Não fale isso! Carla responde: Você está usando um termo que pode ter conotação racista, sabia? Embora não haja consenso em estudos históricos e sociais, a palavra “denegrir” significa escurecer, tornar negro e ao usar esse termo você atribui, ao negro, coisas ruins. O que você acha de substituir esse termo por "difamar", por exemplo? Ricardo e um cliente ouvem toda a conversa. Fim da HQ]]></desc>
+		</interacao>
+		<enunciado><![CDATA[Ricardo, Carla e Mateus trabalham na mesma unidade do Senac há um bom tempo. Observe <span>aqui</span> uma parte de seu dia a dia.]]></enunciado>
+		
+		<pergunta><![CDATA[Como Ricardo deve proceder diante do que observa?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Ricardo intervém na conversa entre os dois para orientar Mateus, pois, embora esse termo seja utilizado por muitas pessoas, tem uma conotação racista. Além disso, ressalta a importância da utilização sustentável dos recursos, que foi o que iniciou a conversa.</alternativa>
+			<alternativa id="2">Ricardo, depois de assistir à cena, procura seu gestor e relata a situação para que ele possa fazer uma intervenção em nome da instituição.</alternativa>
+			<alternativa id="3">Ricardo chama Mateus em particular, afinal, precisa dar uma dica para o colega, dizendo que quer dar um conselho, pois deve ter mais cuidado com as coisas que fala por aí.</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Ricardo decidiu agir rápido nesta situação. De fato, era necessário fazer uma intervenção assertiva sobre a utilização daquele termo. Além disso, Mateus também não estava utilizando os recursos de maneira sustentável. Ricardo espera, dessa forma, que Carla tenha se sentido apoiada na situação.</positivo>
+			<neutro>Ricardo assistiu à cena e ficou paralisado com a situação. Ele não sabia o que dizer. Na verdade, ficou em dúvida se poderia falar alguma coisa. Então, decidiu falar com seu gestor. Com certeza, ele vai saber o que fazer neste tipo de situação.</neutro>
+			<negativo>Ricardo assistiu à cena perplexo. Jamais imaginou que Mateus fosse fazer um comentário desse tipo. Por isso, decidiu chamá-lo para conversar em particular e alertá-lo sobre sua postura.</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>36</numero>
+				<nome><![CDATA[Carla]]></nome>
+				<desc><![CDATA[Funcionária da Unidade]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Que bom que o Ricardo me apoiou. Estou me sentindo acolhida e respeitada! Vale a pena falar em nome da instituição e reforçar os princípios da empresa. Afinal, valorizamos a diversidade e é de extrema importância fazer uso adequado dos recursos ambientais e financeiros.</feedPositivo>
+					<feedNeutro class="neutro">Poxa, seria importante ter o respaldo da instituição quando essas coisas acontecem. Vi que Ricardo foi contar para o gestor, o que será que ele vai fazer? Espero receber apoio, pois a preocupação com os recursos e a diversidade são temas que ele sempre reforça para nós.</feedNeutro>
+					<feedNegativo class="negativo">Estou me sentindo abandonada e discriminada. Estou fazendo o correto, preocupada com o uso consciente dos recursos, da maneira como fui orientada, e não recebo apoio. Nunca mais falo nada.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>9</numero>
+				<nome><![CDATA[Bruno]]></nome>
+				<desc><![CDATA[Cliente]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Tenho certeza de que escolhi o melhor lugar para estudar. O Senac é uma empresa com valores, aplica tudo aquilo que divulga para o mercado. Aqui serei reconhecido e valorizado!</feedPositivo>
+					<feedNeutro class=""></feedNeutro>
+					<feedNegativo class="negativo">Estou indo embora! Essa não é a instituição em que eu quero estudar. Fazem propaganda de umas coisas, colocam essas coisas todas em cartazes na parede, como esse da ecoeficiência, mas na prática não é bem assim. Além de tudo, ainda é bem possível que eu venha a sofrer preconceito aqui.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>2</numero>
+				<nome><![CDATA[Mateus]]></nome>
+				<desc><![CDATA[Funcionário da Unidade]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Estou envergonhado da minha postura. Está mais do que na hora de refletir e mudar minhas atitudes e pensar no que estou dizendo antes de sair falando e fazendo.</feedPositivo>
+					<feedNeutro class=""></feedNeutro>
+					<feedNegativo class="negativo">É muito desagradável ter a atenção chamada por um colega. Ele está se intrometendo em uma conversa a que não foi chamado. Deve estar querendo me boicotar.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>33</numero>
+				<nome><![CDATA[Roberta]]></nome>
+				<desc><![CDATA[Gestora de Carla]]></desc>
+				<feedback>
+					<feedPositivo class=""></feedPositivo>
+					<feedNeutro class="neutro">Todos nós somos educadores! Quando qualquer um de nós presenciar uma situação contrária aos nossos valores, como o desperdício de recursos e a falta de respeito com a diversidade, é preciso intervir e conversar com os envolvidos. Vamos chamá-los para conversar!</feedNeutro>
+					<feedNegativo class=""></feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>7</numero>
+				<nome><![CDATA[Alexandre]]></nome>
+				<desc><![CDATA[Aluno]]></desc>
+				<feedback>
+					<feedPositivo class=""></feedPositivo>
+					<feedNeutro class=""></feedNeutro>
+					<feedNegativo class="negativo">Vou falar com o coordenador responsável pelo curso que faço. Onde já se viu esse tipo de atitude? É tudo muito diferente do que nosso professor fala na sala de aula. Sem falar no impacto para o meio ambiente.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>21</numero>
+				<nome><![CDATA[Diego]]></nome>
+				<desc><![CDATA[Aluno]]></desc>
+				<feedback>
+					<feedPositivo class=""></feedPositivo>
+					<feedNeutro class=""></feedNeutro>
+					<feedNegativo class="negativo">É muito desagradável ter a atenção chamada por um colega. Ele está se intrometendo em uma conversa a que não foi chamado. Deve estar querendo me boicotar.</feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>Ricardo se posicionou.</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>Ajudou, mas nem tanto!</strong></p><p>Ricardo poderia ter se posicionado no momento em que a situação aconteceu.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>A decisão foi negativa!</strong></p><p>Ricardo decidiu falar com Mateus sobre o ocorrido. Entretanto, ninguém soube disso, então, as pessoas ficaram com a impressão de que ninguém fez nada. E, numa situação como essa, isso não poderia ser pior.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Você conhece os elementos da sustentabilidade?</p><p>A sustentabilidade visa ao bom uso dos recursos no que diz respeito aos impactos ambientais, econômicos e sociais a curto, médio e longo prazo. Essa competência também abrange uma questão muito importante: a interação com as demais pessoas respeitando a diversidade e contribuindo, assim, para a criação de um ambiente colaborativo.</p>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Leia a competência abaixo e reflita sobre seu desempenho:</p><p>Adotar a sustentabilidade como um modo de pensar e agir, considerando impactos no curto, médio e longo prazo nas dimensões econômica, financeira, social e ambiental para a obtenção de resultados sustentáveis.</p>]]></desenvolvimento>
+
+		<mega>false</mega>
+
+		<principal>Ricardo</principal>
+	</questao>
+
+	<!-- questao 7 -->
+	<questao>
+		<categoria>7</categoria>
+		<interacao>
+			<tipo>audio</tipo>
+			<caminho>audio/podcast_03</caminho>
+			<titulo><![CDATA[ABRAÇANDO O MUNDO!]]></titulo>
+			<desc><![CDATA[Marina está sempre atarefada fazendo várias atividades ao mesmo tempo. Clique no play e confira uma dessas situações.]]></desc>
+		</interacao>
+		<enunciado><![CDATA[Marina trabalha no Senac há alguns anos e sempre é muito elogiada por seus pares e pela sua gestora. Agora, ela está quase saindo de férias e está com uma lista de coisas para fazer. Como ela está dando conta de tudo? Veja a seguir.]]></enunciado>
+		
+		<pergunta><![CDATA[Qual é a melhor maneira de Marina lidar com essa situação?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Marina se planeja e conversa com sua gestora para combinar e priorizar a execução das atividades.</alternativa>
+			<alternativa id="2">Marina decide se organizar e pede ajuda para os colegas com a realização das atividades.</alternativa>
+			<alternativa id="3">Marina não vê outra alternativa a não ser tentar fazer tudo.</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Marina fica muito apreensiva, pois sabe que esse projeto é prioridade para a área. Ela faz uma análise das tarefas que ainda precisa realizar e chega à conclusão de que não conseguirá fazer tudo. Ela chama a gestora para conversar e apresentar as atividades que ainda precisa fazer antes das merecidas férias.</positivo>
+			<neutro>Marina chega à conclusão de que não conseguirá fazer tudo o que precisa antes das férias. Porém, ela não gostaria de falar para sua coordenadora que não conseguirá fazer essa demanda, pois sabe da importância do projeto para a área e não conseguirá levantar as informações que foram solicitadas a ela com qualidade. Por conta disso, ela chama seus colegas e pede ajuda. Como a demanda de sua coordenadora leva um dia inteiro para ser feita, Marina acaba por distribuí-la para três colegas da equipe. É muita coisa para fazer!</neutro>
+			<negativo>Marina analisa suas atividades e tem certeza de que não conseguirá fazer tudo. Entretanto, ela também tem consciência da importância desse projeto para sua área e não vê outra opção a não ser finalizar suas atividades o mais rápido possível para poder se dedicar a levantar as informações solicitadas. Por mais que ela não consiga fazer a tarefa com a qualidade a que está acostumada, Marina entende que é melhor não deixar de entregar nada. Sua coordenadora está contando com ela!</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>20</numero>
+				<nome><![CDATA[Roberta]]></nome>
+				<desc><![CDATA[Coordenadora da área onde Marina trabalha]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Eu sabia que Marina estava fazendo muita coisa, mas não tinha noção de que era tanto, afinal, ela é sempre muito eficiente e entrega tudo no prazo e com qualidade. Que bom que ela conversou comigo, pois vou priorizar esta atividade, que é muito importante para nossa área, e repassar as pendências para outras pessoas da equipe.</feedPositivo>
+					<feedNeutro class="neutro">Fiquei sabendo que Marina pediu ajuda para vários colegas e acabou que a atividade que eu considerava mais importante não foi feita por ela. E era justamente onde eu mais gostaria das contribuições dela. Se ela tivesse conversado comigo, poderíamos ter nos planejado melhor para delegar o que eu considerava menos urgente e importante. Vou conversar com ela quando voltar de férias.</feedNeutro>
+					<feedNegativo class="negativo">Não sabia que Marina estava tão cheia de coisa. Se ela tivesse conversado comigo antes de sair de férias, teria reorganizado as atividades. Ela entregou o que solicitei, mas não com a qualidade a que estamos acostumados. Teremos que refazer algumas coisas.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>29</numero>
+				<nome><![CDATA[Marcelo]]></nome>
+				<desc><![CDATA[Colega de trabalho]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Nossa! Vi que Marina estava ficando louca! E ela é sempre tão eficiente… Que bom que poderei contribuir com ela e, assim, me desenvolver em outras atividades.</feedPositivo>
+					<feedNeutro class="positivo">Fizemos um bom trabalho em equipe, conseguimos entregar tudo dentro do prazo, e Marina conseguiu sair de férias tranquila.</feedNeutro>
+					<feedNegativo class="neutro">Marina não pede ajuda nunca. A gente vê que ela está atarefada e oferece ajuda, mas ela sempre quer fazer tudo sozinha.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>10</numero>
+				<nome><![CDATA[Marina]]></nome>
+				<desc><![CDATA[A atarefada]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Ufa! Que bom que conversei com a minha gestora e ela me apoiou no planejamento e na priorização das minhas atividades.</feedPositivo>
+					<feedNeutro class="neutro">Ainda bem que pedi ajuda. Deu tudo certo e conseguimos entregar no prazo. Pena que eu não consegui fazer o levantamento das informação para o projeto. Era algo de que eu queria me apropriar, dada a importância para a área.</feedNeutro>
+					<feedNegativo class="negativo">Achei que ia infartar! Consegui fazer, mas, com certeza, não com a qualidade a que estou acostumada.</feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>Sua opção foi certeira. Marina é uma só e não seria possível dar conta de tudo. A alternativa que você escolheu era, de fato, a melhor!</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>Faltou foco.</strong></p><p>Marina achou um jeito de dar conta do recado, mas, mesmo assim, não foi a melhor opção. Faltou foco no resultado no momento de distribuição das tarefas. Observe que, se ela tivesse conversado com seu gestor, isso não teria acontecido.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>Retrabalho!</strong></p><p>Que pena! Observe que optar por esse caminho trouxe mais reações negativas do que positivas. Marina fez uma lista de tarefas, mas se esqueceu da qualidade dos resultados.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Muito trabalho × pouco tempo: o que fazer?</p><p>Para trabalhar com foco no resultado, precisamos estar atentos ao cronograma e cumprir as atividades dentro do prazo e com a qualidade esperada,  buscando oportunidades de melhoria e priorizando o foco no cliente. Além disso, sempre que necessário, é fundamental conversar com seu gestor para alinhar seu trabalho às prioridades e às necessidades do setor em que se trabalha.</p>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Pense sobre seu trabalho e se suas atitudes demonstram a seguinte competência:</p><p>Realizar suas entregas conforme acordos e prazos estabelecidos, comprometendo-se com o planejamento e a execução com excelência das atividades e entregas, utilizando os recursos disponíveis com eficiência e demonstrando foco no atendimento às expectativas dos clientes internos e externos.</p>]]></desenvolvimento>
+
+		<mega>true</mega>
+
+		<principal>Marina</principal>
+	</questao>
+
+	<!-- questao 8 -->
+	<questao>
+		<categoria>8</categoria>
+		<interacao>
+			<tipo>hq</tipo>
+			<caminho>img/hq1.png</caminho>
+			<titulo><![CDATA[]]></titulo>
+			<desc><![CDATA[Começo da HQ. O orçamento. Márcio precisa aprovar o orçamento para um projeto. Ele está trabalhando em sua mesa e pensa: “Passei a tarde inteira analisando este orçamento, mas tenho dúvidas. Vou chamar a equipe para que me explique melhor alguns pontos”. Com a equipe reunida, Márcia diz: “Pessoal, os impactos deste projeto são enormes. Por isso, ainda preciso que vocês me ajudem a entender alguns pontos”. Uma pessoa da equipe responde: “Claro, vamos explicar novamente”. A imagem mostra um relógio simbolizando que passou uma hora após o início da reunião. A equipe finaliza a explicação: - Então, por tudo isso, nós avaliamos todas as possibilidades e, apesar dos impactos, esta é a melhor alternativa. Então, Márcio responde: - Agora, acho que entendi melhor a proposta do projeto. Mas ainda não estou totalmente convencido de alguns pontos. E se eu levar mais alguns dias para aprovar? A equipe responde: Personagem 1 - Hoje vence o prazo para aprovar o orçamento. Se isso não acontecer, não conseguiremos cumprir o cronograma de entregas do projeto. Personagem 2 - Também perderemos o prazo administrativo do orçamento. Personagem 3 - Se não for hoje, vai causar muitos problemas para o andamento do projeto. Fim da HQ]]></desc>
+		</interacao>
+		<enunciado><![CDATA[Mário é gestor de uma área que está responsável por um projeto estratégico para o Senac. A equipe trabalhou intensamente buscando informações para compor a proposta do projeto e, agora, precisa da aprovação de Mário para dar andamento às atividades. Chegou o momento de decidir. Observe a seguir a saga de Mário neste momento.]]></enunciado>
+		
+		<pergunta><![CDATA[Como Mário deve prosseguir com a decisão sobre o projeto?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Mário considera as opiniões e dados apresentados pela equipe, avalia os possíveis impactos, riscos e consequências para todos os envolvidos e toma a decisão ao final da reunião.</alternativa>
+			<alternativa id="2">Mário reorganiza sua agenda e prioriza esse projeto, mas ainda precisará conversar com colegas de outras áreas. Apesar de estar consciente do impacto de prazo e orçamento, informa que dará o retorno o mais rápido possível.</alternativa>
+			<alternativa id="3">Mário decide pesquisar mais sobre o projeto e dá algumas tarefas para a equipe, pois os impactos são grandes e é necessário ter certeza de que este é o melhor caminho. Muita coisa está em jogo!</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Mário analisou as soluções apresentadas e optou pelo orçamento mais baixo. Afinal, não há mais tempo para estudar as alternativas e a equipe precisa de uma resposta. O projeto tem que começar e a aprovação era uma das últimas pendências para isso acontecer.</positivo>
+			<neutro>Mário confia em sua equipe, porém opta por adiar novamente a decisão sobre o orçamento do projeto. Infelizmente, são muitos impactos envolvidos, então, ele decide conversar novamente com seu gestor e seus pares para analisar as alternativas e voltar a conversar com a equipe. Mário tem consciência de que adiar a decisão prejudicará o cronograma do projeto, mas ele não se sente seguro para dar esse passo antes de realizar essas novas conversas.</neutro>
+			<negativo>Infelizmente, será necessário adiar novamente a decisão sobre o orçamento do projeto. Mário sabe que todos estão esperando, porém, os impactos são muito significativos e ele precisará de muito mais tempo para estudar e analisar as possibilidades. Portanto, isso é o melhor a fazer. A equipe pode continuar trabalhando na proposta, porém, sem previsão para implementá-la.</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>13</numero>
+				<nome><![CDATA[Mario]]></nome>
+				<desc><![CDATA[O próprio]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Mesmo com o risco envolvido, estou confiante. Minha equipe é muito competente e me apresentou todas as informações de que eu precisava. Avaliei o cenário e os impactos e tenho certeza de que o projeto trará muitos benefícios para nós.</feedPositivo>
+					<feedNeutro class="neutro">Geralmente, quando vou tomar uma decisão, além de refletir sobre ela o tempo necessário, sempre converso com algumas pessoas de minha confiança. Melhor esperar para fazer alguma coisa.</feedNeutro>
+					<feedNegativo class=""></feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>6</numero>
+				<nome><![CDATA[Alberta]]></nome>
+				<desc><![CDATA[Gestora do Mário]]></desc>
+				<feedback>
+					<feedPositivo class=""></feedPositivo>
+					<feedNeutro class=""></feedNeutro>
+					<feedNegativo class="negativo">Mário deveria ter me acionado antes em relação a este projeto. Havia muita expectativa em relação aos prazos de entrega e precisaríamos ter tomado essa decisão antes. Agora precisaremos reformular alguns pontos e readequar a equipe de atuação.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>24</numero>
+				<nome><![CDATA[Rodrigo]]></nome>
+				<desc><![CDATA[Integrante da equipe]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Fizemos um bom trabalho! Tínhamos todas as informações solicitadas por nosso gestor e temos certeza de que cobrimos todas as possibilidades. Nosso gestor confia na nossa competência e isso nos dá confiança para seguir com o projeto.</feedPositivo>
+					<feedNeutro class="negativo">Precisamos pensar em uma alternativa caso o projeto não seja aprovado ou leve mais tempo para conseguirmos sua aprovação. Provavelmente, precisaremos ajustar etapas e renegociar o orçamento. Fiquei muito preocupado!</feedNeutro>
+					<feedNegativo class="negativo">Estávamos tão empolgados e confiantes com o projeto! O que podemos melhorar para atender às expectativas do nosso gestor?</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>16</numero>
+				<nome><![CDATA[Tereza]]></nome>
+				<desc><![CDATA[Cliente do projeto]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Ouvi dizer que o projeto vai começar. Estou aguardando. A empresa está buscando constantemente melhorias e inovação e todos nós ganharemos com essa iniciativa.</feedPositivo>
+					<feedNeutro class="neutro">Estou ansiosa para ter informações do projeto. Soube que estava em etapa de aprovação, mas até agora não tive sinais de que de fato será iniciado. Precisamos muito das soluções que o projeto vai trazer, pois elas são fundamentais para a melhoria dos nossos processos.</feedNeutro>
+					<feedNegativo class="negativo">Que pena que o projeto foi “engavetado”! A empresa perdeu uma oportunidade de inovar! Agora, é possível que os concorrentes o façam e em prazo menor.</feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>Veja que as reações, até mesmo do próprio Mário, foram positivas. Há situações nas quais não há mais tempo para postergar uma decisão, é preciso analisar o cenário e assumir riscos em busca do novo e do melhor.</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>O status do projeto continua como pendente.</strong></p><p>Nada muda. As pessoas continuam esperando pela aprovação e por notícias do projeto. Não era o momento de postergar mais uma vez essa decisão.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>Decepção!</strong></p><p>Muita gente frustrada com essa decisão! Todos estavam esperando a decisão de Mário para o projeto andar. Analisar o cenário e considerar diferentes percepções são ações importantes, mas, neste caso, essa fase já passou. Era hora de ter tomado uma decisão.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Decidir nem sempre é simples e fácil.</p><p>Na perspectiva desta competência, tomar decisões envolve analisar o cenário considerando as diferentes percepções e visões para ampliar seu entendimento sobre o tema. Outro ponto fundamental é não procrastinar o momento de decidir. É preciso assumir riscos na busca de novas e melhores soluções!</p>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Reflita sobre as últimas vezes em que tomou decisões no trabalho: você postergou esse momento? Analisou as alternativas, avaliou os impactos e assumiu os riscos? Faça uma autoavaliação nesta perspectiva:</p><p>Analisar e selecionar alternativas apropriadas para a solução de problemas, considerando os impactos de forma sistêmica, identificando limites e riscos para subsidiar e viabilizar a tomada de decisão.</p>]]></desenvolvimento>
+
+		<mega>false</mega>
+
+		<principal>Mário</principal>
+	</questao>
+
+	<!-- questao 9 -->
+	<questao>
+		<categoria>9</categoria>
+		<interacao>
+			<tipo>hq</tipo>
+			<caminho>img/hq2.png</caminho>
+			<titulo><![CDATA[ABRAÇANDO O MUNDO!]]></titulo>
+			<desc><![CDATA[Começo da HQ. A equipe. Carolina chega a seu novo local de trabalho e seu novo gestor reúne a equipe, composta por sete pessoas, e conta a novidade: ela será a nova coordenadora da área. Em seguida, o gestor diz para Carolina: Agora, vamos conversar, que tenho muita coisa para repassar para você. Ela responde: - Ok! O gestor fala sobre a equipe para Carolina: Quatro pessoas da equipe têm bastante experiência com esse tipo de projeto. São referência no que fazem e podem ajudar muito você. Ela responde: Maravilha! O gestor continua: - Já estas estão com muita energia para trabalhar com novos projetos, pois querem conhecer coisas novas. A imagem mostra um relógio simbolizando que passou quatro horas após o início da reunião. O gestor finaliza a explicação: - Bom, contei tudo sobre a equipe. Agora, você já pode fazer seu plano de trabalho. Você pode me entregar na próxima semana? Carolina responde: Claro! Carolina está com expressão apreensiva e pensa: - Não sei como vou fazer isso. Mas vou entregar! Fim da HQ]]></desc>
+		</interacao>
+		<enunciado><![CDATA[Carolina já trabalha no Senac há alguns anos e, por conta de seu excelente desempenho, foi convidada a assumir a coordenação de uma nova área, com a proposta de trazer mudanças significativas. Acompanhe aqui a sua primeira semana de trabalho.]]></enunciado>
+		
+		<pergunta><![CDATA[Como Carolina pode promover esse trabalho com a equipe?]]></pergunta>
+		<alternativas>
+			<alternativa id="1">Carolina decide conversar individualmente com cada integrante da equipe antes de elaborar seu plano de gestão.</alternativa>
+			<alternativa id="2">Carolina acolhe a percepção do gestor e, com base nas interações iniciais que teve com a equipe, formou seu parecer. A partir disso, define seu plano de gestão para a área e o comunica a todos.</alternativa>
+			<alternativa id="3">Com base nas informações sobre os pontos fortes de cada um, obtida na conversa de Carolina com o gestor, ela define a nova distribuição de atividades para cada integrante e a comunica à equipe.</alternativa>
+		</alternativas>
+
+		<impactos>
+			<positivo>Carolina teve uma ótima conversa com seu gestor! Ele contou o histórico da área e informações que farão a diferença em sua gestão. Em seguida, ela conversou com cada um da equipe para entender seus talentos e competências e conhecer seus objetivos individuais de desenvolvimento. Com todas essas informações, ela consegue tomar uma decisão sobre a redistribuição das atividades da equipe, considerando tanto as demandas da área como os objetivos de cada um.</positivo>
+			<neutro>Carolina confia muito em seu gestor, por isso, conversou várias vezes com ele para definir seu plano de gestão para a área. Em seguida, ela se reuniu com toda a equipe para apresentá-lo. Considerou que foi um sucesso! Porém, sentiu que precisa conhecer melhor cada integrante da equipe para ter sua própria percepção de cada um. Assim, decide chamá-los para uma conversa individual. Dessa forma, ela também já aproveita para incentivá-los a elaborar um plano de desenvolvimento conforme as competências esperadas para a sua função.</neutro>
+			<negativo>Carolina conversou várias vezes com seu gestor, sente que conhece bem toda a equipe e decide não perder tempo: elabora seu plano de gestão para a área, contemplando inclusive a nova distribuição de atividades que considera mais adequadas para cada integrante da equipe. Ela ficou tão animada que chamou todo mundo para uma grande reunião para apresentar a nova forma de trabalho da área. Sentiu que nem todo mundo ficou feliz, mas paciência… Com o tempo, eles vão se acostumar.</negativo>
+		</impactos>
+
+		<personagens>
+			<personagem>
+				<numero>28</numero>
+				<nome><![CDATA[Carolina]]></nome>
+				<desc><![CDATA[A nova gestora]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Foi muito bom ter essa conversa com cada um deles. Sinto que me aproximei, tenho mais informação sobre cada um, suas experiências e talentos e seus objetivos de desenvolvimento. Estou confiante de que faremos um ótimo trabalho como equipe e também de que poderei apoiar cada um de acordo com sua necessidade e as demandas da área.</feedPositivo>
+					<feedNeutro class="neutro">Foi muito importante conhecer a equipe. Agora, preciso de algum tempo para formar a imagem sobre cada um, mas já tenho alguns pontos de partida para pensar em organização da área e redistribuição de atividades.</feedNeutro>
+					<feedNegativo class="neutro">Começo a perceber alguns incômodos da equipe, me parece que não estão receptivos às mudanças propostas! Preciso estar mais próxima das pessoas que têm mais conhecimento sobre a área para que me ajudem a compreender os processos e trocar ideias sobre como melhorar. Quero ajudá-los.</feedNegativo>
+				</feedback>
+			</personagem>
+			
+			<personagem>
+				<numero>5</numero>
+				<nome><![CDATA[Rita]]></nome>
+				<desc><![CDATA[Trabalha no Senac há anos]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">Não conhecia a Carolina, mas foi muito bom poder compartilhar algumas reflexões com ela. Há algum tempo já me questionava sobre caminhos para desenvolvimento e sinto que ela poderá contribuir com meu desenvolvimento aqui. Além disso, percebo já por estes primeiros dias que ela confia no meu trabalho, pois sempre pergunta minha opinião quando levo alguma dúvida. Tenho mais autonomia para dar andamento aos projetos que já faço e ela me acompanha mais de perto nos novos.</feedPositivo>
+					<feedNeutro class="positivo">A nova gestora demonstrou interesse em conhecer mais sobre o trabalho da equipe, sobre tudo o que eu já fiz na área aqui na empresa e minhas experiências. Tomara que leve isso em consideração para as mudanças que está fazendo, pois sei que muita gente gostaria de aproveitar esta nova oportunidade para se desenvolver em outros temas.</feedNeutro>
+					<feedNegativo class="negativo">Com a chegada da nova coordenadora, preciso consultá-la para realizar atividades que eu sempre tive autonomia para dar andamento. Parece que ela não confia nem em coisas muito simples que eu sempre fiz e estão na minha rotina. Estava tão motivada a assumir novos desafios e, no final, estou fazendo as mesmas coisas que antes.</feedNegativo>
+				</feedback>
+			</personagem>
+
+			<personagem>
+				<numero>19</numero>
+				<nome><![CDATA[Gabriel]]></nome>
+				<desc><![CDATA[Acabou de chegar no Senac]]></desc>
+				<feedback>
+					<feedPositivo class="positivo">A nova coordenadora me trouxe mais segurança. Por eu não conhecer muito sobre as práticas da empresa, ficava inseguro em relação a alguns procedimentos, mas com ela posso contar. Também se disponibilizou a me apoiar nos objetivos de desenvolvimento, estou bastante animado.</feedPositivo>
+					<feedNeutro class="neutro">A nova gestora demonstrou interesse em conhecer mais sobre minha visão da área, considerando que acabei de chegar e tenho experiência e muitas ideias do que poderíamos fazer diferente. Espero que ela leve isso em consideração para as mudanças que está fazendo na área.</feedNeutro>
+					<feedNegativo class="negativo">Estou me sentindo perdido! Fui contratado para uma atividade e agora devo fazer outras coisas, mas não recebi nenhuma informação sobre as expectativas em relação ao meu trabalho e também não recebo orientações.</feedNegativo>
+				</feedback>
+			</personagem>
+		</personagens>
+
+		<feedbacks>
+			<positivo><![CDATA[<p><strong>Boa escolha!</strong></p><p>Conversar com cada integrante individualmente auxilia Carolina a identificar o estágio de desenvolvimento da equipe e adaptar seu estilo de liderança, além de ter mais informações para apoiá-los nos planos de desenvolvimento individual.</p>]]></positivo>
+			<neutro><![CDATA[<p><strong>Quase na mesma.</strong></p><p>Carolina baseou suas decisões na fala de seu gestor e na sua percepção inicial da equipe como um todo. Porém, o que faria toda diferença nessa decisão seria conhecer melhor os integrantes da equipe. Ela poderia ter falado com cada um para já considerar seus planos de desenvolvimento individuais, alinhando-os, quando possível, com o novo plano de trabalho para a área.</p>]]></neutro>
+			<negativo><![CDATA[<p><strong>Desconfiança!</strong></p><p>Observe que o impacto não poderia ser mais negativo. O clima na equipe ficou ruim, as pessoas estão desconfiadas. Basear todas as decisões apenas na conversa com o gestor não foi um bom caminho e até Carolina percebe que as pessoas não estão receptivas.</p>]]></negativo>
+		</feedbacks>
+
+		<autoavaliacao><![CDATA[<p>Carolina tem um grande desafio pela frente!</p><p>Na perspectiva da liderança de pessoas proposta pelo Senac, é fundamental que o líder conheça sua equipe e forme sua própria opinião sobre cada um. Assim, conseguirá fazer um diagnóstico do estágio de desenvolvimento individual, que possibilite que ele adapte seu estilo de liderança, tenha conversas de feedback mais assertivas e ofereça apoio na elaboração de planos de desenvolvimento alinhados com a gestão da área para que as pessoas desenvolvam seus potenciais.</p>]]></autoavaliacao>
+
+		<desenvolvimento><![CDATA[<p>E você?</p><p>Como tem praticado a liderança? Reflita sobre seu desempenho na perspectiva da competência a seguir:</p><p>Liderar pessoas de modo a garantir a formação e o desenvolvimento de equipes integradas e inspiradas em um propósito comum por meio de uma liderança educadora, que estimula e promova um ambiente de aprendizagem organizacional.</p>]]></desenvolvimento>
+
+		<mega>true</mega>
+
+		<principal>Carolina</principal>
+	</questao>
+</questoes>

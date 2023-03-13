@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Language" content="pt-br">
+    <title>Programa Senac de Aprendizagem</title>
+    <!-- libs -->
+    <link href="../assets/js/libs/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/js/libs/fontawesome-5.11.2/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../assets/js/libs/video-js-7.9.5/video-js.min.css" rel="stylesheet">
+    
+    <!-- layout -->
+    <link href="../assets/css/style.min.css" rel="stylesheet" type="text/css">
+        
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="initOverflow">
+    <div class="loadingContent">
+        <div class="loaderLapis">
+            <div class="lapisWrapper">
+                <div class="objLapis">
+                    <div class="borracha"></div>
+                </div>
+            </div>
+
+            <div class="textoLoader">Carregando...</div>
+            <div class="linhaLapis"></div>
+        </div>
+    </div>
+    
+    <header class="min">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="menuCurso">
+                        <button class="botaoMenu">
+                            <div class="tracoBotao">
+                                <span></span>
+                            </div>
+                        </button>
+
+                        <div class="conteudoMenu">
+                            <ul class="listaMenu">
+                                
+                            </ul>
+                        </div>
+
+                        <div class="menuBG"></div>
+                    </div>
+
+                    <div class="logo" role="Logo" aria-label="Programa Senac de Aprendizagem"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-1 col-sm-1">
+                    <button class="setaNavegacao esq" id="setaEsquerda" data-page="ant"><i class="sL" aria-hidden="true"></i></button>
+                </div>
+                <div class="col-xs-10 col-sm-10">
+                    <p class="pageInfo"></p>
+                </div>
+                <div class="col-xs-1 col-sm-1">
+                    <button class="setaNavegacao dir" id="setaDireita" data-page="prox"><i class="sR" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>E como é o certificado?</h2>
+                    
+                    <p>Ao final do curso, você terá direito a um certificado de conclusão. Vamos conhecê-lo? Clique nele para ver o verso. #formado #certificação</p>
+                </div>
+            </div>
+
+            <div class="row verticalCenter">
+                <div class="col-xs-12 col-sm-12 col-md-8">
+                    <div class="cardFlip" tabindex="0" aria-labelledby="imgCertificado">
+                        <div class="frenteCard">
+                            <img src="img/img03_12_01.jpg" class="img-responsive center-block" tabindex="-1" />
+                        </div>
+        
+                        <div class="versoCard">
+                            <img src="img/img03_12_02.jpg" class="img-responsive center-block" tabindex="-1" />
+                        </div>
+                    </div> 
+                    <p class="visuallyhidden" id="imgCertificado">A imagem apresenta o certificado do Senac. Na frente dele, constam as seguintes informações: nome do curso, unidade onde o aluno cursou o Programa Aprendizagem, nome do diretor ou diretora da unidade e os seguintes dados do aluno: nome, data de nascimento, número do RG e ano no qual ele concluiu o curso. A imagem apresenta o verso do certificado. Nele consta o Perfil Profissional e Conclusão do aluno.</p>
+                </div>
+
+                <div class="col-xs-10 col-sm-6 col-md-4">
+                    <div class="PostIt">
+                        <div class="contentPost">
+                            <p>O certificado ficará disponível no Portal do Aluno, fácil para você baixar. Assim como, a secretaria poderá imprimir para você.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blocoPadrao blocoAtencao">
+                <div class="contentBloco">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-3">
+                            <img src="img/icoAtencao.png" class="img-responsive center-block img-template" tabindex="-1" />
+                        </div>
+        
+                        <div class="col-sm-12 col-md-9">
+                            <h3>Atenção</h3>
+                            <p>Seu desenvolvimento no curso será muito importante para que você receba o certificado com êxito, por isso não falte às aulas e à empresa, participe das propostas e seja protagonista de sua história.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Clique no próximo tema que gostaria de estudar.</p>
+                </div>
+            </div>
+
+            <div class="row hidden-xs">
+                <div class="col-sm-10 col-sm-offset-1">
+                    <img id="svg-interactive" class="interactive int1 hidden" src="img/interativoIndex.svg" data-desktop="img/interativoIndex.svg" data-tablet="img/interativoIndex.svg" data-phone="img/interativoIndex_xs.svg" />
+                    <div class="divInteractive_Container mv0" tabindex="-1">
+                        <div class="divInteractive" id="d_svg-interactive"></div>
+                    </div>
+
+                    <div class="visuallyhidden">
+                        <a href="page01_01.html">Que tal conhecer o Senac?</a>
+                        <a href="page02_01.html">Entenda o seu contrato de trabalho!</a>
+                        <a href="page03_01.html">Descubra como é o curso!</a>
+                        <a href="page04_01.html">Bora planejar o seu desenvolvimento?!</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row visible-xs">
+                <div class="col-xs-12">
+                    <div class="menuInterativo" id="menuInt_1">
+                        <img src="img/menuInterativo_xs.png" class="img-responsive center-block img-modelo" tabindex="-1" />
+
+                        <div class="menuBlock" id="menu_xs">
+                            <img id="menu_xs_bg" src="img/menuInterativo_xs_BG.png" class="menuLink" />
+                            <a id="menu_xs_lnk1" class="menuLink" href="page01_01.html" title="Que tal conhecer o Senac?"><img src="img/menuInterativo_xs_1.png" /></a>
+                            <a id="menu_xs_lnk2" class="menuLink" href="page02_01.html" title="Entenda seu contrato de trabalho!"><img src="img/menuInterativo_xs_2.png" /></a>
+                            <a id="menu_xs_lnk3" class="menuLink" href="page03_01.html" title="Descubra como é o curso!"><img src="img/menuInterativo_xs_3.png" /></a>
+                            <a id="menu_xs_lnk4" class="menuLink" href="page04_01.html" title="Bora planejar seu desenvolvimento?"><img src="img/menuInterativo_xs_4.png" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logoRodape" aria-label="Programa Senac de Aprendizagem"></div>
+    </footer>
+
+    <!-- core -->
+    <script src="../assets/js/libs/jquery-1.12.3.min.js"></script>
+    <script src="../assets/js/libs/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../assets/js/libs/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/libs/video-js-7.9.5/video.min.js"></script>
+
+    <script src="../assets/js/libs/preloadjs.min.js"></script>
+
+    <!-- script -->
+    <script src="../assets/js/scripts/index.js"></script>
+    <script src="../assets/js/scripts/recursos.js"></script>
+    <script>
+        var svgLoad;
+        var indexLoad;
+ 
+        $(document).ready(function(e) {
+            indexLoad = new Index();
+
+            loadObj = $('.interactive');
+            svgLoad = new svgLoader();
+            svgLoad.loadContent(loadObj, textoFunc);
+            function textoFunc() {
+                $('#d_svg-interactive').find('.botao').each(function(i, v) {
+                    $(this).bind('click', function(){ 
+                        $name = $(this).attr('id');
+                        $btn = $name.substr($name.length - 2, 2);
+                        window.location = 'page' +  $btn + '_01.html';
+                    });
+                });
+            }
+        });
+    </script>
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PT2MQSF');</script>
+    <!-- End Google Tag Manager -->
+</body>
+</html>

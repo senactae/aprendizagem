@@ -1,0 +1,88 @@
+/*****************************************/
+/* CAROUSEL ******************************/
+/*****************************************/
+.sliderAnimado { 
+	height: 100%;
+	position: relative;
+	
+	.divEtapa { 
+		display: none;
+
+		.titleEtapa {
+			position: relative;
+			height: 90px;
+			display: flex;
+
+			h4 {
+				background: transparent url('../img/BG_Slider_titleL.png') left bottom no-repeat;
+				color: $cor7;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				width: 35%;
+				font-size: 32px;
+				text-transform: uppercase;
+			}
+			h5 {
+				background: transparent url('../img/BG_Slider_titleR.png') right bottom no-repeat;
+				color: $corTexto;
+				font-family: 'Open Sans', sans-serif;
+				font-size: 22px;
+				font-weight: 600;
+				height: 100%;
+				width: 65%;
+				display: flex;
+				align-items: center;
+				padding-left: 30px;
+				text-transform: inherit;
+			}
+		}
+
+		.contentEtapa {
+			background: transparent url('../img/BG_Slider.png') center bottom no-repeat;
+			background-size: 100%;
+			padding: 40px 80px;
+			position: relative;
+			top: -3px;
+
+			p {
+				&:last-child { margin: 0; }
+			}
+		}
+
+		&.active { 
+			display: block; 
+		}
+	}
+
+	/* CONTROLS */
+	.setaControle {
+		background-color: transparent;
+		margin: 0;
+		opacity: 1;
+		padding: 0;
+		position: absolute;
+		top: 90px;
+		height: 50%;
+		height: calc(100% - 100px);
+		width: 60px;
+		text-align: center;
+		z-index: 16;
+
+		@include transition(all 0.4s);
+
+		i { 
+			display: block; 
+			background: transparent url(../img/btnSetaSlider.png) center no-repeat;
+			height: 60px;
+			width: 40px;
+			margin: 0 auto;
+
+			&.sCR { @include transform(scaleX(-1)); }
+		}
+
+		&.esq { left: 0; }
+		&.dir { right: 0; }
+	}
+}

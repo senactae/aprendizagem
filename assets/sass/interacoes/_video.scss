@@ -1,0 +1,34 @@
+.player { 
+    background-color: $cor7;
+    border: solid 3px $cor5;
+    border-radius: 8px;
+    margin: 30px auto 60px;
+    overflow: hidden;
+    padding: 56.25% 0 0;
+    position: relative;
+    width: 100%;
+    z-index: 901;
+    
+    @include box-shadow(-5px 5px 15px 0px rgba(147,147,147,0.5));
+
+    .video-js {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .vjs-poster { background-color: $cor7; }
+
+        .vjs-texttrack-settings { display: none };
+    }
+}
+
+//~EDGE HACK
+_:-ms-lang(x), _:-webkit-full-screen, .player {
+    video { 
+        height: 100% !important;
+        width: 100% !important;
+        transform: translate(-50%, -50%) scale(1) !important;
+    }
+}

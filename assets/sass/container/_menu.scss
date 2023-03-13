@@ -1,0 +1,505 @@
+/* MENU */
+$largura-menu: 0; //largura do menu fechado.
+$largura-menuA: 100%; //largura do menu aberto.
+
+.menuCurso {
+    background: transparent;
+    position: absolute;
+    height: 100%;
+    top: 8px;
+    left: 0;
+	z-index: 950;
+	width: 100%;
+
+    .menuBG {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(#000,0.05);
+        z-index: -1;
+        display: none;
+    }
+
+    .botaoMenu {
+        background: transparent;
+        border: 0;
+        border-radius: 1px;
+        cursor: pointer;
+        display: table;
+		position: absolute;
+		outline: none;
+        top: 0;
+        left: 15px;
+        height: 40px;
+        width: 40px;
+        z-index: 100;
+
+        &::before {
+            content: 'Menu';
+            display: block;
+            position: absolute;
+            bottom: -26px;
+            width: 100%;
+            color: #1d5fbd;
+            text-transform: uppercase;
+            font-family: 'Saira Semi Condensed', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            text-align: center;
+            opacity: 1;
+
+            @include transition(all 600ms ease 300ms);
+        }
+        
+        .tracoBotao {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40px;
+            @include transform(translate(-50%, -50%) rotate(0deg)); 
+            
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+				border-radius: 0;
+                display: block;
+                float: none;
+                top: -13px; 
+                left: 0;
+                width: 100%;
+                height: 10px;
+				background: transparent url(../img/tracoMenu.png) center no-repeat;
+    
+                @include transform(none);				
+                @include transition(all 600ms cubic-bezier(1,-1.63,.56,1.83));
+            }
+            &::after {
+                top: 13px;
+                left: 0; 
+            }
+            span {
+                position: relative;
+				display: block;
+                width: 100%;
+                height: 10px;
+                background: transparent url(../img/tracoMenu.png) center no-repeat;
+                border-radius: 0;
+                opacity: 1;
+    
+                @include transform(scaleX(1) rotate(180deg));
+            }
+        }
+    
+        &.ativo {
+            &::before { opacity: 0; }
+
+            .tracoBotao {
+                &::before {
+                    top: 0;
+                    @include transform(rotate(-45deg));
+                }
+    
+                &::after {
+                    top: 0;
+                    @include transform(rotate(45deg));
+                }
+    
+                span {
+                    opacity: 0;
+                    @include transform(scaleX(0) rotate(180deg));
+                }
+            }
+        }
+    }
+
+    .conteudoMenu {
+		background: transparent url(../img/BG_Menu.png) left top repeat-y;
+        position: relative;
+        top: 140px;
+        opacity: 0;
+        overflow: hidden;
+		height: 0;
+		left: 0;
+        width: 100%;
+        
+        @include box-shadow(0px 0px 10px 5px rgba(0,0,0,0.35));
+		
+		ul {
+			display: block;
+			margin: 0;
+			padding: 43px 40px 43px 90px;
+			position: relative;
+			top: 0;
+			width: 100%;
+			
+			@include transition(all 0.4s ease-in-out);	
+	
+			li {
+                list-style: none;
+                display: grid;
+                align-items: center;
+                min-height: 45px;
+                margin: 0;
+                padding: 0 0 0 35px;
+                position: relative;
+                width: 100%;
+                
+                &::before {
+                    background: transparent url(../img/BG_liMenu.png) center no-repeat;
+                    content: " ";
+                    display: block;
+                    line-height: 1;
+                    position: absolute;
+                    width: 20px;
+                    min-height: 45px;
+                    top: 0;
+                    left: 0;
+                }
+	
+				a { 
+					color: $corTexto;
+					display: block;
+					font-family: 'Open Sans Condensed', sans-serif;
+                    font-size: 21px;
+                    font-weight: 300;
+                    line-height: 1.6;
+                    margin: 0;
+					text-decoration: none; 
+					text-transform: inherit;
+					width: 100%;
+				
+					@include transition(all 500ms ease);
+					
+					&:hover { color: $cor2; }
+	
+					&.active { color: $cor2; font-weight: 600; }
+                }
+			}
+        }
+
+        &::before {
+            background: #f5f6fa;
+            border-radius: 6px;
+            content: " ";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: -15px;
+            left: 20px;
+
+            @include transform(rotate(45deg));
+        }
+        
+        &::after {
+            background: transparent url(../img/Durex.png) center no-repeat;
+            content: " ";
+            position: absolute;
+            opacity: 0;
+            width: 260px;
+            height: 200px;
+            bottom: -50px;
+            right: -50px;
+        }
+    }
+
+	// Abre e Fecha Menu
+	&.menu-aberto {
+		.menuBG { display: block; }
+        
+		.conteudoMenu { 
+            @include animation(conteudo-on 600ms ease-in-out forwards); 
+
+            &::after { @include animation(alpha-scale-on 600ms ease 450ms forwards); }
+        }
+		
+		.botaoMenu {
+            .tracoBotao {
+                span { @include transition(all 300ms ease-in-out 650ms); }
+            }
+        }
+	}
+	&.menu-fechado {
+        .conteudoMenu { @include animation(conteudo-off 600ms ease forwards); }
+		
+		.botaoMenu {
+            .tracoBotao {
+                @include transition(all 500ms ease-in-out);
+            }
+        }
+	}
+    
+    @include keyframes(conteudo-on){
+        0% { height: 0; overflow: hidden; opacity: 1; }
+       75% { height: 310px + 30; }
+       99% { height: 310px; }
+      100% { height: 310px; height: auto; overflow: visible; opacity: 1; }
+    }
+    @include keyframes(conteudo-off){
+         0% { height: 310px; overflow: hidden; opacity: 1; }
+        25% { height: 310px + 30; opacity: 1; }
+       100% { height: 0; opacity: 0; }
+    }
+    @include keyframes(alpha-scale-on){
+        0% { opacity: 0; @include transform(scale(1.5)); }
+      100% { opacity: 1; @include transform(scale(1)); }
+    }
+
+    @media #{$bp-minDesktop} { 
+        .botaoMenu { left: 70px; }
+        
+        .conteudoMenu {
+            width: 90%;
+            top: 155px;
+            left: 5%;
+            
+            &::after {
+                background-size: 100%;
+                width: 200px;
+                height: 155px;
+                bottom: -35px;
+                right: -35px;
+            }
+        }
+    }
+    
+    @media #{$bp-tablet} { 
+        .conteudoMenu {
+            background-position: left -10px top;
+            top: 105px;
+            
+            ul { padding: 43px 20px 43px 80px; }
+
+            &::after {
+                background-size: 100%;
+                width: 160px;
+                height: 125px;
+                bottom: -20px;
+                right: -20px;
+            }
+        }
+    }
+
+    @media #{$bp-phone} {
+        top: 0;
+
+        .botaoMenu { left: 20px; }
+
+        .conteudoMenu {
+            top: 70px;
+            background-size: auto 40px;
+            background-position: left -35px top;
+            
+            ul { 
+                padding: 39px 15px 39px 10px; 
+
+                li {
+                    min-height: 40px;
+
+                    &::before { min-height: 40px; }
+        
+                    a { 
+                        font-size: 19px;
+                        line-height: 2.1;
+                    }
+                }
+            }
+
+            &::before {
+                width: 26px;
+                height: 26px;
+                top: -9px;
+                left: 5px;
+            }
+
+            &::after { display: none; }
+        }
+
+        // Abre e Fecha Menu
+        &.menu-aberto {
+            .conteudoMenu { @include animation(conteudo-onM 600ms ease-in-out forwards); }
+        }
+        &.menu-fechado {
+            .conteudoMenu { @include animation(conteudo-offM 600ms ease forwards); }
+        }
+
+        @include keyframes(conteudo-onM){
+             0% { height: 0; overflow: hidden; opacity: 1; }
+            75% { height: 280px + 15; }
+            99% { height: 280px; }
+           100% { height: auto; overflow: visible; opacity: 1; }
+        }
+        @include keyframes(conteudo-offM){
+             0% { height: 280px; overflow: hidden; opacity: 1; }
+            25% { height: 280px + 15; opacity: 1; }
+           100% { height: 0; opacity: 0; }
+        }
+    }
+}
+
+////////@at-root
+
+nav { 
+    //background: transparent url("../img/BG_Nav.svg") center bottom no-repeat;
+	background-size: 100% 100%;
+    height: 100px;
+    top: -60px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    width: 100%;
+    //z-index: 949;
+    margin: 0 auto;
+
+    &.fixedNav {
+        position: fixed;
+        top: -20px;
+        z-index: 989;
+    }
+
+    .container-fluid { 
+        width: 90%; 
+    
+        .row {
+            display: flex;
+            align-items: center;
+            height: 100%;
+
+            .pageInfo {
+                color: $corTexto;
+                font-family: 'Saira Semi Condensed', sans-serif;
+                font-size: 28px;
+                font-weight: 400;
+                margin: 0;
+                text-align: center;
+
+                span {
+                    font-weight: 600;
+                    //text-transform: uppercase;
+                    position: relative;
+
+                    &::after {
+                        content: '|';
+                        padding: 0 5px;
+                    }
+                }
+            }
+
+            .setaNavegacao {
+                background: transparent;
+                width: 100%;
+                position: relative;
+                z-index: 953;
+        
+                i { 
+                    display: block;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 60px;
+                    width: 50px;
+                    margin: 0 auto;
+        
+                    &.sR { 
+                        @include transform(scaleX(-1));
+                    }
+                }
+            }
+        }
+    }
+
+    @media #{$bp-minDesktop} { 
+        top: -40px;
+    }
+
+    @media #{$bp-tablet} { 
+        background-size: 108% 100%;
+        background-position: center;
+        
+        &.fixedNav {
+            position: fixed;
+            top: -20px;
+            z-index: 989;
+        }
+
+        &.menuAtivo {
+            @include animation(zindex-on 600ms ease-in-out forwards); 
+            
+            @keyframes zindex-on {
+                0% { z-index: inherit; }
+                100% { z-index: 940;  }
+            }
+        }
+
+        .container-fluid { 
+            width: 98%; 
+
+            .row {
+                .pageInfo { font-size: 22px; }
+
+                .setaNavegacao {
+                    left: 0;
+                    position: absolute;
+                    top: 50%;
+                    width: 50px;
+                    @include transform(translateY(-50%));
+
+                    &.dir {
+                        left: inherit;
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media #{$bp-phone} { 
+        .container-fluid { 
+            .row {
+                .pageInfo { font-size: 17px; line-height: 1.3; }
+    
+                .setaNavegacao {
+                    width: 35px;
+                    z-index: 949;
+
+                    i {
+                        background-size: 100%;
+                        height: 42px;
+                        width: 35px;
+                    }
+                }
+            }
+        }
+
+        
+    }
+}
+
+_:-ms-fullscreen, :root .menuCurso {
+    .conteudoMenu { 
+        ul {
+			padding: 44px 40px 43px 90px;
+	
+			li {
+                display: block;
+	
+				a { line-height: 1.75; }
+			}
+        }
+    }
+
+    &.menu-aberto {
+		.conteudoMenu { 
+            overflow: visible;
+        }
+	}
+
+    @include keyframes(conteudo-on){
+        0% { height: 0; overflow: hidden; opacity: 1; }
+       75% { height: 310px + 30; }
+       99% { height: 310px; }
+      100% { height: 310px; overflow: visible; opacity: 1; }
+    }
+}

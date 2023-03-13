@@ -1,0 +1,142 @@
+.collapsed{
+    color: #fff;
+}
+
+/* ACCORDION */
+/* GERAL */
+.accordion{    
+    .panel-group {
+        margin-bottom: 0;
+        
+        .panel {
+            background-color: transparent;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            &:nth-last-child(1) {
+                .panel-tab-mobile{
+                    border-bottom: 0;
+                }
+            }
+            
+            .panel-tab-mobile {
+                background: linear-gradient(90deg, rgba(36,102,147,1) 0%, rgba(24,44,69,1) 100%);
+                border-bottom: 1px solid #fff;
+                .container{
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    background: transparent; 
+                }
+                padding: 0;
+                a {
+                    color: #FFF;
+                    display: block;
+                    font-size: 17px;
+                    font-weight: 700;
+                    padding: 10px 15px;
+                    text-decoration: none;
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    /*&::after {
+                        font-family: 'Font Awesome 5 Free';
+                        font-weight: 900;
+                        content: "\f102";
+                        float: right;
+                    }*/
+
+                    
+
+                    
+
+                    /*&.collapsed {
+                        &::after { content: "\f103"; }
+                    }*/
+                }
+            }
+            
+        }
+        
+    }
+}
+.panel-group .panel-heading + .panel-collapse > .panel-body{
+    border: 0;
+}
+.panel-group {
+    .panel-body {
+        .container{
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            background: #d8e4ec;
+            //background-image: url('../img/bg_fundo.png');
+            .questoes-marcadas{display: none;}
+        }
+
+        /*p {
+            strong{
+                color: #fff;
+            }
+        }*/
+        h2{
+            margin-top: 20px;
+        }
+
+        
+        .questoes-marcadas{
+            h3 {
+                font-size: 20px;
+                font-weight: 800;
+                margin-top: 50px;
+                margin-bottom: 20px;
+                position: relative;
+                color: #4d5290;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                display: inline-block;
+                &:before{
+                    display: inline-block;
+                    content: "";
+                    position: absolute;
+                    width: 60%;
+                    height: 4px;
+                    top: -30px;
+                    background-color:#f59b3c;     
+                }
+                span{
+                    font-weight: 300;       
+                }
+            }
+        }
+        
+
+    }
+}
+.panel{
+    border:0;
+}
+.panel-group .panel + .panel{
+    margin-top: 0;
+    
+}
+
+
+/* ACCORDION SLIDER MOBILE */
+.panel-slider > .panel-heading{
+    background-image: url('../img/slider-bg-mobile.png');
+    background-size: 100%;
+}
+.panel-slider .panel-title strong{
+    display: inline-block;
+    width: 90%;
+    
+}
+.panel-slider h4{
+    text-align: left;
+}
+
+/* ACCORDION BOTOES LATERAL MOBILE */
+.tabs-tateral-mobile .panel-group .panel{
+    border:none;
+    border-radius: 0;
+}
+
