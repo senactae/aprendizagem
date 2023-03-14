@@ -14,7 +14,7 @@
 				{
 					"unidade": "1",
 					"url": "page01_01.html",
-					"titulo": "Que tal conhecer o Senac?",
+					"titulo": "Conheça o Programa Senac de Aprendizagem",
 					"template": "azul"
 				},
 				{
@@ -26,6 +26,18 @@
 				{
 					"unidade": "1",
 					"url": "page01_03.html",
+					"titulo": "",
+					"template": "azul"
+				},
+				{
+					"unidade": "1",
+					"url": "page01_04.html",
+					"titulo": "",
+					"template": "azul"
+				},
+				{
+					"unidade": "1",
+					"url": "page01_05.html",
 					"titulo": "",
 					"template": "azul"
 				},
