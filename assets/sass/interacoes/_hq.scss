@@ -11,2457 +11,2557 @@
 }*/
 
 $altCena: 540px;
-$altCena_xs: 620px; 
+$altCena_xs: 620px;
 
 .HQ {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	margin: 0 auto 30px;
-
-	.img-modelo { opacity: 0; }
-
-	.cenaHQ {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		max-height: $altCena;
-
-		.BG_Cena {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-
-			&::after {
-				background: #f3f4f8;
-				content: '';
-				height: 75%;
-				width: 100vw;
-				top: 50%;
-				left: 50%;
-				position: absolute;
-				opacity: 1;
-				z-index: -1;
-
-				@include transform(translate(-50%,-50%));
-
-				@media #{$bp-phone} {
-					height: 90%;
-				}
-			}
-		}
-
-		.cenaPeca { position: absolute; }// border: solid 1px black; }
-
-		@media #{$bp-phone} {
-			max-height: $altCena_xs;
-		}
-	}
-
-	&#cena1 {
-		@for $i from 1 through 8 {
-			#cena1_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena; 
-			}
-		}
-
-		#cena1_1 {
-			#C01_Mancha { 
-				height: 100%;
-				width: 56.14%;
-				top: 0;
-				left: 12.71%;
-				z-index: 10;
-			}
-			#C01_Post { 
-				left: 1.81%;
-    			top: 6.47%;
-				width: 31.58%; 
-				height: 48.15%;
-				z-index: 12;
-			}
-			#C01_Manu { 
-				height: 79.63%;
-				width: 70.18%;
-				top: 9.5%;
-				left: 19.5%;
-				z-index: 10;
-			}
-			#C01_Balao { 
-				width: 24.56%; 
-				height: 20.37%; 
-				left: 49.12%; 
-				top: 19.07%;
-				z-index: 14;
-			}
-			#C01_Mae { 
-				height: 81.48%;
-				width: 41.66%;
-				top: 8.6%;
-				right: -4%;
-				z-index: 13;
-			}
-		}
-
-		#cena1_2 {
-			#C02_Mancha { 
-				width: 45.61%; 
-				height: 100.00%; 
-				left: 42.54%;
-				top: 0;
-				z-index: 10;
-			}
-			#C02_Post { 
-				width: 32.46%; 
-				height: 48.15%; 
-				left: 1.93%; 
-				top: 40.74%;
-				z-index: 10;
-			}
-			#C02_Mao { 
-				width: 42.11%; 
-				height: 94.44%; 
-				left: 46.11%;
-				top: 2.78%;
-				z-index: 12;
-			}
-			#C02_Balao1 { 
-				width: 30.70%; 
-				height: 29.63%; 
-				left: 25.48%;
-				top: 11%;
-				z-index: 14;
-			}
-			#C02_Balao2 { 
-				width: 28.07%; 
-				height: 24.07%; 
-				left: 65.39%;
-				top: 18.2%;
-				z-index: 15;
-			}
-		}
-
-		#cena1_3 {
-			#C03_Mancha { 
-				width: 50.88%;
-				height: 83.33%; 
-				left: 36.84%; 
-				top: 15.74%;
-				z-index: 10;
-			}
-			#C03_Post { 
-				width: 34.21%; 
-				height: 50.00%;
-				left: 0.5%;
-				top: 33.5%;
-				z-index: 14;
-			}
-			#C03_Sofa { 
-				width: 54.39%; 
-				height: 81.48%; 
-				left: 33.32%;
-				top: 17.12%;
-				z-index: 12;
-			}
-			#C03_Balao1 { 
-				width: 23.68%; 
-				height: 29.63%; 
-				left: 47.37%; 
-				top: 5.74%;
-				z-index: 14;
-			}
-			#C03_Balao2 { 
-				width: 17.54%; 
-				height: 31.48%; 
-				left: 58.77%; 
-				top: 36.11%;
-				z-index: 15;
-			}
-		}
-
-		#cena1_4 {
-			#C04_Super { 
-				width: 93.86%; 
-				height: 83.33%; 
-				left: 4.2%;
-				top: 3.2%;
-				z-index: 10;
-			}
-			#C04_Post { 
-				width: 27.19%; 
-				height: 37.04%; 
-				left: 0.88%; 
-				top: 47.22%;
-				z-index: 10;
-			}
-			#C04_Dupla { 
-				width: 36.84%; 
-				height: 66.67%; 
-				left: 32.02%;
-				top: 28%;
-				z-index: 12;
-			}
-			#C04_Balao1 { 
-				width: 17.54%; 
-				height: 24.07%; 
-				left: 17.01%;
-				top: 20.30%;
-				z-index: 14;
-			}
-			#C04_Balao2 { 
-				width: 16.67%; 
-				height: 24.07%; 
-				left: 62.72%; 
-				top: 17.59%;
-				z-index: 15;
-			}
-		}
-
-		#cena1_5 {
-			#C05_Mancha { 
-				width: 56.14%; 
-				height: 77.78%; 
-				left: 30.70%; 
-				top: 0.93%;
-				z-index: 10;
-			}
-			#C05_Post { 
-				width: 27.19%; 
-				height: 37.04%; 
-				left: 3.07%; 
-				top: 45.37%;
-				z-index: 10;
-			}
-			#C05_Gerente { 
-				width: 53.51%; 
-				height: 87.04%; 
-				left: 32.46%; 
-				top: 7.56%;
-				z-index: 12;
-			}
-			#C05_Balao1 { 
-				width: 19.30%; 
-				height: 25.93%; 
-				left: 24.12%; 
-				top: 9.19%;
-				z-index: 14;
-			}
-			#C05_Balao2 { 
-				width: 23.68%; 
-				height: 24.07%; 
-				left: 72.27%; 
-				top: 32.33%;
-				z-index: 15;
-			}
-		}
-
-		#cena1_6 {
-			#C06_Mancha { 
-				width: 36.84%; 
-				height: 74.07%; 
-				left: 30.70%; 
-				top: 11.11%;
-				z-index: 11;
-			}
-			#C06_Post { 
-				width: 18.42%; 
-				height: 37.04%; 
-				left: 9.65%; 
-				top: 50.93%;
-				z-index: 10;
-			}
-			#C06_Manu { 
-				width: 34.21%; 
-				height: 88.89%; 
-				left: 31.7%;
-				top: 3.96%;
-				z-index: 12;
-			}
-		}
-
-		#cena1_7 {
-			#C07_Mancha { 
-				width: 54.39%; 
-				height: 64.81%; 
-				left: 24.12%; 
-				top: 22.22%;
-				z-index: 11;
-			}
-			#C07_Post { 
-				width: 23.68%; 
-				height: 40.74%; 
-				left: 3.07%; 
-				top: 17.59%;
-				z-index: 10;
-			}
-			#C07_Danca { 
-				width: 54.39%; 
-				height: 92.59%; 
-				left: 23.06%;
-				top: 3.60%;
-				z-index: 12;
-			}
-		}
-
-		#cena1_8 {
-			#C08_Mancha { 
-				width: 43.86%; 
-				height: 85.19%; 
-				left: 32.46%; 
-				top: 2.78%;
-				z-index: 11;
-			}
-			#C08_Post { 
-				width: 30.70%; 
-				height: 42.59%; 
-				left: 1.75%; 
-				top: 41.67%;
-				z-index: 10;
-			}
-			#C08_Manu { 
-				width: 33.33%; 
-				height: 83.33%; 
-				left: 32%;
-				top: 4.8%;
-				z-index: 12;
-			}
-		}
-	}
-
-	&#cena2 {
-		@for $i from 1 through 8 {
-			#cena2_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena; 
-			}
-		}
-
-		#cena2_1 {
-			#C02_01_Mancha { 
-				width: 50.00%; 
-				height: 94.44%; 
-				left: 38.60%; 
-				top: 6.48%;
-				z-index: 10;
-			}
-			#C02_01_Post { 
-				width: 30.70%; 
-				height: 44.44%; 
-				left: 7.49%; 
-				top: 22.22%;
-				z-index: 12;
-			}
-			#C02_01_Dinheiro { 
-				width: 42.11%; 
-				height: 77.78%; 
-				left: 41.65%;
-				top: 9.41%;
-				z-index: 10;
-			}
-		}
-
-		#cena2_2 {
-			#C02_02_Mancha { 
-				width: 42.98%; 
-				height: 96.30%; 
-				left: 44.84%;
-				top: 5.41%;
-				z-index: 10;
-			}
-			#C02_02_Post { 
-				width: 30.70%; 
-				height: 44.44%; 
-				left: 10.6%; 
-				top: 25.93%;
-				z-index: 10;
-			}
-			#C02_02_Celular { 
-				width: 21.05%; 
-				height: 72.22%; 
-				left: 55.61%;
-				top: 18.26%;
-				z-index: 12;
-			}
-		}
-
-		#cena2_3 {
-			#C02_03_Mancha { 
-				width: 50.00%; 
-				height: 59.26%; 
-				left: 52.63%; 
-				top: 10.19%;
-				z-index: 10;
-			}
-			#C02_03_Post { 
-				width: 32.46%; 
-				height: 44.44%; 
-				left: 12.28%; 
-				top: 29.63%;
-				z-index: 10;
-			}
-			#C02_03_Manu { 
-				width: 33.33%; 
-				height: 88.89%; 
-				left: 51.02%;
-				top: 3.66%;
-				z-index: 12;
-			}
-		}
-	}
-
-	&#cena3 {
-		@for $i from 1 through 2 {
-			#cena3_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena; 
-			}
-		}
-
-		#cena3_1 {
-			#C03_01_Mancha { 
-				width: 42.98%; 
-				height: 51.85%; 
-				left: 44.30%; 
-				top: 20.37%;
-				z-index: 10;
-			}
-			#C03_01_Post { 
-				width: 31.58%; 
-				height: 40.74%; 
-				left: 0%; 
-				top: 26.85%;
-				z-index: 12;
-			}
-			#C03_01_Trio { 
-				width: 45.61%; 
-				height: 70.37%; 
-				left: 41.39%; 
-				top: 18.52%;
-				z-index: 10;
-			}
-			#C03_01_Balao1 { 
-				width: 20.18%; 
-				height: 33.33%; 
-				left: 52.09%;
-				top: 1.78%;
-				z-index: 13;
-			}
-			#C03_01_Balao2 { 
-				width: 20.18%; 
-				height: 27.78%; 
-				left: 78.33%;
-				top: 14.51%;
-				z-index: 14;
-			}
-			#C03_01_Balao3 { 
-				width: 18.42%; 
-				height: 24.07%; 
-				left: 31.28%;
-				top: 34.72%;
-				z-index: 15;
-			}
-		}
-
-		#cena3_2 {
-			#C03_02_Mancha { 
-				width: 48.25%; 
-				height: 90.74%; 
-				left: 46.93%; 
-				top: 9.26%;
-				z-index: 10;
-			}
-			#C03_02_Post { 
-				width: 30.70%;
-				height: 40.74%; 
-				left: 1.75%; 
-				top: 29.63%;
-				z-index: 12;
-			}
-			#C03_02_Dupla { 
-				width: 49.12%; 
-				height: 75.93%; 
-				left: 48.66%;
-				top: 15.81%;
-				z-index: 10;
-			}
-			#C03_02_Balao1 { 
-				width: 25.88%; 
-				height: 31.48%; 
-				left: 30.70%; 
-				top: 5.56%;
-				z-index: 13;
-			}
-			#C03_02_Balao2 { 
-				width: 15.79%; 
-				height: 18.52%; 
-				left: 64.27%;
-				top: 30.06%;
-				z-index: 14;
-			}
-			#C03_02_Balao3 { 
-				width: 20.18%; 
-				height: 24.07%; 
-				left: 35.09%; 
-				top: 36.11%;
-				z-index: 15;
-			}
-		}
-	}
-
-	&#cena4 {
-		@for $i from 1 through 3 {
-			#cena4_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena; 
-			}
-		}
-
-		#cena4_1 {
-			#C04_01_Mancha { 
-				width: 50.00%;
-				height: 94.44%;
-				left: 44.74%;
-				top: 2.78%;
-				z-index: 10;
-			}
-			#C04_01_Post { 
-				width: 33.33%; 
-				height: 35.19%; 
-				left: 6.58%; 
-				top: 32.41%;
-				z-index: 12;
-			}
-			#C04_01_Celular { 
-				width: 43.86%; 
-				height: 90.74%; 
-				left: 49.12%; 
-				top: 7.41%;
-				z-index: 10;
-			}
-		}
-
-		#cena4_2 {
-			#C04_02_Mancha { 
-				width: 47.37%; 
-				height: 92.59%; 
-				left: 42.93%;
-				top: 3.48%;
-				z-index: 10;
-			}
-			#C04_02_Post { 
-				width: 32.89%; 
-				height: 40.74%; 
-				left: 4.39%; 
-				top: 41.04%;
-				z-index: 12;
-			}
-			#C04_02_Celular { 
-				width: 40.35%; 
-				height: 90.74%; 
-				left: 52.46%;
-				top: 4.33%;
-				z-index: 10;
-			}
-			#C04_02_Balao1 { 
-				width: 32.46%; 
-				height: 27.78%; 
-				left: 28.51%; 
-				top: 12.96%;
-				z-index: 13;
-			}
-			#C04_02_Balao2 { 
-				width: 27.19%; 
-				height: 24.07%; 
-				left: 69.30%; 
-				top: 21.30%;
-				z-index: 13;
-			}
-		}
-
-		#cena4_3 {
-			#C04_03_Mancha { 
-				width: 50.00%; 
-				height: 92.59%;
-				left: 50.88%;
-				top: 5.56%;
-				z-index: 10;
-			}
-			#C04_03_Post { 
-				width: 35.09%;
-				height: 44.44%; 
-				left: 10.09%; 
-				top: 29.63%;
-				z-index: 12;
-			}
-			#C04_03_Celular { 
-				width: 43.86%;
-				height: 90.74%;
-				left: 54.82%;
-				top: 10.19%;
-				z-index: 10;
-			}
-		}
-	}
-
-	&#cena5 {
-		@for $i from 1 through 4 {
-			#cena5_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena; 
-			}
-		}
-
-		#cena5_1 {
-			#C05_01_Cama { 
-				width: 74.56%; 
-				height: 75.93%;
-				left: 25.5%;
-				top: 10.76%;
-				z-index: 10;
-			}
-			#C05_01_Post { 
-				width: 28.95%; 
-				height: 40.74%; 
-				left: 2.19%; 
-				top: 45.37%;
-				z-index: 12;
-			}
-			#C05_01_Manu { 
-				width: 25.88%; 
-				height: 86.11%; 
-				left: 67.18%;
-				top: 8.48%;
-				z-index: 11;
-			}
-			#C05_01_Balao1 { 
-				width: 20.18%; 
-				height: 29.63%; 
-				left: 8.13%; 
-				top: 12.96%;
-				z-index: 14;
-			}
-			#C05_01_Balao2 { 
-				width: 14.04%; 
-				height: 24.07%; 
-				left: 81.38%;
-				top: 6.29%;
-				z-index: 15;
-			}
-		}
-
-		#cena5_2 {
-			#C05_02_Mulher { 
-				width: 35.09%; 
-				height: 77.78%; 
-				left: 60.02%;
-				top: 11.11%;
-				z-index: 10;
-			}
-			#C05_02_Post { 
-				width: 30.70%; 
-				height: 44.44%;
-				left: 2.25%; 
-				top: 32.93%;
-				z-index: 12;
-			}
-			#C05_02_Balao1 { 
-				width: 35.09%; 
-				height: 53.70%; 
-				left: 32.72%;
-				top: 17.27%;
-				z-index: 14;
-			}
-		}
-
-		#cena5_3 {
-			#C05_03_Mancha { 
-				width: 47.37%; 
-				height: 94.44%;
-				left: 42.47%;
-				top: 0.63%;
-				z-index: 10;
-			}
-			#C05_03_Post { 
-				width: 35.09%; 
-				height: 48.15%; 
-				left: 6.74%;
-				top: 30.16%;
-				z-index: 12;
-			}
-			#C05_03_Manu { 
-				width: 48.25%; 
-				height: 88.89%;
-				left: 45.81%;
-				top: 7.83%;
-				z-index: 10;
-			}
-		}
-
-		#cena5_4 {
-			#C05_04_Super { 
-				width: 92.98%; 
-				height: 85.19%; 
-				left: 2.15%;
-    			top: 11.96%;
-				z-index: 10;
-			}
-			#C05_04_Mancha { 
-				width: 48.25%; 
-				height: 57.41%; 
-				left: 42.37%;
-				top: 24.07%;
-				z-index: 10;
-			}
-			#C05_04_Post { 
-				width: 35.96%; 
-				height: 64.81%; 
-				left: 5.95%;
-				top: 19.81%;
-				z-index: 12;
-			}
-			#C05_04_Dupla { 
-				width: 41.23%; 
-				height: 77.78%;
-				left: 45%;
-				top: 15.11%;
-				z-index: 10;
-			}
-		}
-	}
-
-	&#cena6 {
-		@for $i from 1 through 3 {
-			#cena6_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena; 
-			}
-		}
-
-		#cena6_1 {
-			#C06_01_Mancha { 
-				width: 42.11%; 
-				height: 83.33%; 
-				left: 48.31%;
-				top: 2.48%;
-				z-index: 10;
-			}
-			#C06_01_Post { 
-				width: 36.84%; 
-				height: 59.26%; 
-				left: 3.65%;
-				top: 16.59%;
-				z-index: 12;
-			}
-			#C06_01_Manu { 
-				width: 53.51%; 
-				height: 85.19%; 
-				left: 43.86%; 
-				top: 9.26%;
-				z-index: 10;
-			}
-		}
-
-		#cena6_2 {
-			#C06_02_Mancha { 
-				width: 35.96%; 
-				height: 74.07%; 
-				left: 51.24%;
-				top: 8.41%;
-				z-index: 10;
-			}
-			#C06_02_Post { 
-				width: 37.28%; 
-				height: 67.59%; 
-				left: 4.19%; 
-				top: 17.59%;
-				z-index: 12;
-			}
-			#C06_02_Dupla { 
-				width: 41.23%; 
-				height: 87.04%; 
-				left: 50.39%;
-				top: 7.33%;
-				z-index: 10;
-			}
-			#C06_02_Balao { 
-				width: 13.16%; 
-				height: 25.93%; 
-				left: 59.31%;
-				top: 7.33%;
-				z-index: 14;
-			}
-		}
-
-		#cena6_3 {
-			#C06_03_Mancha { 
-				width: 46.49%;
-				height: 87.04%; 
-				left: 46.92%;
-				top: 12.21%;
-				z-index: 10;
-			}
-			#C06_03_Post { 
-				width: 35.09%; 
-				height: 48.15%; 
-				left: 6.72%;
-				top: 29.33%;
-				z-index: 12;
-			}
-			#C06_03_Aviao { 
-				width: 58.77%; 
-				height: 79.63%; 
-				left: 41.21%;
-				top: 10.16%;
-				z-index: 10;
-			}
-		}
-	}
-
-	&#cena7 {
-		@for $i from 1 through 4 {
-			#cena7_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena; 
-			}
-		}
-
-		#cena7_1 {
-			#C07_01_Super { 
-				width: 90.35%; 
-				height: 90.74%; 
-				left: 6.82%;
-				top: 4.96%;
-				z-index: 10;
-			}
-			#C07_01_Post { 
-				width: 28.07%; 
-				height: 48.15%; 
-				left: 2.63%; 
-				top: 8.33%;
-				z-index: 12;
-			}
-			#C07_01_Dupla { 
-				width: 72.81%; 
-				height: 82.41%; 
-				left: 16.39%;
-				top: 13.26%;
-				z-index: 11;
-			}
-			#C07_01_Balao1 { 
-				width: 14.47%; 
-				height: 25.00%; 
-				left: 57.73%;
-				top: 17.06%;
-				z-index: 14;
-			}
-		}
-
-		#cena7_2 {
-			#C07_02_Mancha { 
-				width: 67.54%; 
-				height: 74.07%; 
-				left: 32.11%;
-				top: 14.56%;
-				z-index: 10;
-			}
-			#C07_02_Post { 
-				width: 29.82%; 
-				height: 36.11%; 
-				left: 3.21%;
-				top: 27.78%;
-				z-index: 12;
-			}
-			#C07_02_Dupla { 
-				width: 54.39%; 
-				height: 77.78%; 
-				left: 39.55%;
-				top: 14.16%;
-				z-index: 12;
-			}
-			#C07_02_Balao1 { 
-				width: 21.93%; 
-				height: 25.00%; 
-				left: 58.19%;
-				top: 11.31%;
-				z-index: 14;
-			}
-		}
-
-		#cena7_3 {
-			#C07_03_Mancha { 
-				width: 56.14%; 
-				height: 87.04%; 
-				left: 38.11%;
-				top: 6.36%;
-				z-index: 10;
-			}
-			#C07_03_Post { 
-				width: 28.95%; 
-				height: 40.74%; 
-				left: 3.65%; 
-				top: 32.41%;
-				z-index: 12;
-			}
-			#C07_03_Grupo { 
-				width: 63.16%; 
-				height: 85.19%; 
-				left: 35%;
-				top: 12.96%;
-				z-index: 10;
-			}
-		}
-
-		#cena7_4 {
-			#C07_04_Mancha { 
-				width: 50%; 
-				height: 74.07%; 
-				left: 9.1%; 
-				top: 10.19%;
-				z-index: 10;
-			}
-			#C07_04_Manu { 
-				width: 34.21%; 
-				height: 94.44%; 
-				left: 14.66%;
-				top: 5.13%;	
-				z-index: 10;
-			}
-			#C07_04_Balao1 { 
-				width: 47.37%; 
-				height: 50%; 
-				left: 39.57%;
-				top: 29.33%;
-				z-index: 12;
-			}
-		}
-	}
-
-	// HQs XS
-	&#cena1_xs {
-		display: none;
-
-		@for $i from 1 through 8 {
-			#cena1_xs_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena_xs;
-			}
-		}
-
-		#cena1_xs_1 {
-			#C01_xs_Mancha { 
-				width: 86.11%; 
-				height: 77.42%; 
-				left: 0%; 
-				top: 0%;
-				z-index: 10;
-			}
-			#C01_xs_Post { 
-				width: 45.83%;
-				height: 37.10%; 
-				left: 5.56%; 
-				top: 55.65%;
-				z-index: 12;
-			}
-			#C01_xs_Manu { 
-				width: 93.06%; 
-				height: 69.35%; 
-				left: 6.94%; 
-				top: 0%;
-				z-index: 10;
-			}
-			#C01_xs_Balao { 
-				width: 38.19%; 
-				height: 38.71%; 
-				left: 42.36%; 
-				top: 0.81%;
-				z-index: 14;
-			}
-			#C01_xs_Mae { 
-				width: 50%; 
-				height: 79.03%; 
-				left: 50%; 
-				top: 21.61%;
-				z-index: 13;
-			}
-		}
-
-		#cena1_xs_2 {
-			#C02_xs_Mancha { 
-				width: 61.11%; 
-				height: 80.65%; 
-				left: 20.83%; 
-				top: 12.90%;
-				z-index: 10;
-			}
-			#C02_xs_Mao { 
-				width: 63.89%; 
-				height: 79.03%; 
-				left: 44.44%; 
-				top: 18.55%;
-				z-index: 10;
-			}
-			#C02_xs_Post { 
-				width: 52.78%;
-				height: 48.39%;
-				left: 0%;
-				top: 42.74%;
-				z-index: 12;
-			}
-			#C02_xs_Balao1 { 
-				width: 47.22%; 
-				height: 35.48%; 
-				left: 9.03%; 
-				top: 5.65%;
-				z-index: 14;
-			}
-			#C02_xs_Balao2 { 
-				width: 30.56%; 
-				height: 25.81%; 
-				left: 69.44%; 
-				top: 15.32%;
-				z-index: 15;
-			}
-		}
-
-		#cena1_xs_3 {
-			#C03_xs_Mancha { 
-				width: 66.67%;
-				height: 59.68%;
-				left: 34.03%;
-				top: 25.81%;
-				z-index: 10;
-			}
-			#C03_xs_Sofa { 
-				width: 80.56%;
-				height: 66.13%;
-				left: 25.69%;
-				top: 32.26%;
-				z-index: 14;
-			}
-			#C03_xs_Post { 
-				width: 34.72%; 
-				height: 52.42%; 
-				left: 0.69%; 
-				top: 31.45%;
-				z-index: 15;
-			}
-			#C03_xs_Balao1 { 
-				width: 35.42%; 
-				height: 38.71%;
-				left: 14.58%;
-				top: 0%;
-				z-index: 14;
-			}
-			#C03_xs_Balao2 { 
-				width: 32.64%;
-				height: 24.19%;
-				left: 54.17%;
-				top: 21.77%;
-				z-index: 15;
-			}
-		}
-
-		#cena1_xs_4 {
-			#C04_xs_Super { 
-				width: 100%; 
-				height: 84.68%; 
-				left: 0%; 
-				top: 0.81%;
-				z-index: 10;
-			}
-			#C04_xs_Dupla { 
-				width: 72.22%;
-				height: 70.97%;
-				left: 27.78%;
-				top: 23.39%;
-				z-index: 10;
-			}
-			#C04_xs_Post { 
-				width: 44.44%;
-				height: 37.90%;
-				left: 1.39%;
-				top: 55.65%;
-				z-index: 12;
-			}
-			#C04_xs_Balao1 { 
-				width: 22.92%;
-				height: 27.42%;
-				left: 34.72%;
-				top: 3.23%;
-				z-index: 14;
-			}
-			#C04_xs_Balao2 { 
-				width: 22.92%;
-				height: 27.42%;
-				left: 60.58%;
-				top: 12.81%;
-				z-index: 15;
-			}
-		}
-
-		#cena1_xs_5 {
-			#C05_xs_Mancha { 
-				width: 75%; 
-				height: 64.52%; 
-				left: 25.69%; 
-				top: 10.48%;
-				z-index: 10;
-			}
-			#C05_xs_Gerente { 
-				width: 79.17%; 
-				height: 80.65%; 
-				left: 22.22%; 
-				top: 15.32%;
-				z-index: 10;
-			}
-			#C05_xs_Post { 
-				width: 33.33%;
-				height: 41.94%;
-				left: 1.39%;
-				top: 37.10%;
-				z-index: 12;
-			}
-			#C05_xs_Balao1 { 
-				width: 29.17%; 
-				height: 29.03%; 
-				left: 10.42%; 
-				top: 4.03%;
-				z-index: 14;
-			}
-			#C05_xs_Balao2 { 
-				width: 30.56%; 
-				height: 29.03%; 
-				left: 46.53%; 
-				top: 8.06%;
-				z-index: 15;
-			}
-		}
-
-		#cena1_xs_6 {
-			#C06_xs_Mancha { 
-				width: 70.83%;
-				height: 75.81%;
-				left: 22.92%;
-				top: 10.48%;
-				z-index: 10;
-			}
-			#C06_xs_Manu { 
-				width: 66.67%;
-				height: 96.77%;
-				left: 36.11%;
-				top: 1.61%;
-				z-index: 11;
-			}
-			#C06_xs_Post { 
-				width: 30.56%;
-				height: 32.26%;
-				left: 4.17%;
-				top: 43.55%;
-				z-index: 12;
-			}
-		}
-
-		#cena1_xs_7 {
-			#C07_xs_Mancha { 
-				width: 100%;
-				height: 66.13%;
-				left: 0%;
-				top: 16.94%;
-				z-index: 10;
-			}
-			#C07_xs_Danca { 
-				width: 100%; 
-				height: 96.77%; 
-				left: 0%; 
-				top: 1.61%;
-				z-index: 11;
-			}
-			#C07_xs_Post { 
-				width: 37.50%; 
-				height: 34.68%; 
-				left: 3.47%; 
-				top: 1.61%;
-				z-index: 12;
-			}
-		}
-
-		#cena1_xs_8 {
-			#C08_xs_Mancha { 
-				width: 68.06%;
-				height: 85.48%;
-				left: 31.25%;
-				top: 2.42%;
-				z-index: 10;
-			}
-			#C08_xs_Manu { 
-				width: 59.72%; 
-				height: 83.87%; 
-				left: 37.50%; 
-				top: 17.74%;
-				z-index: 11;
-			}
-			#C08_xs_Post { 
-				width: 52.78%; 
-				height: 40.32%; 
-				left: 2.08%; 
-				top: 5.65%;
-				z-index: 12;
-			}
-		}
-	}
-
-	&#cena2_xs {
-		display: none;
-
-		@for $i from 1 through 8 {
-			#cena2_xs_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena_xs; 
-			}
-		}
-
-		#cena2_xs_1 {
-			#C02_01_xs_Mancha { 
-				width: 72.22%; 
-				height: 75.81%; 
-				left: 35.42%; 
-				top: 10.48%;
-				z-index: 10;
-			}
-			#C02_01_xs_Post { 
-				width: 47.22%; 
-				height: 56.45%; 
-				left: 0.69%; 
-				top: 32.26%;
-				z-index: 12;
-			}
-			#C02_01_xs_Dinheiro { 
-				width: 61.11%; 
-				height: 59.68%; 
-				left: 38.19%; 
-				top: 16.13%;
-				z-index: 11;
-			}
-		}
-
-		#cena2_xs_2 {
-			#C02_02_xs_Mancha { 
-				width: 75%; 
-				height: 93.55%; 
-				left: 35.42%; 
-				top: 4.84%;
-				z-index: 10;
-			}
-			#C02_02_xs_Post { 
-				width: 48.61%; 
-				height: 43.55%; 
-				left: 2.08%; 
-				top: 8.87%;
-				z-index: 12;
-			}
-			#C02_02_xs_Celular { 
-				width: 37.50%; 
-				height: 70.97%; 
-				left: 48.61%; 
-				top: 16.13%;
-				z-index: 11;
-			}
-		}
-
-		#cena2_xs_3 {
-			#C02_03_xs_Mancha { 
-				width: 87.50%; 
-				height: 74.19%; 
-				left: 9.03%; 
-				top: 19.35%;
-				z-index: 10;
-			}
-			#C02_03_xs_Post { 
-				width: 52.78%; 
-				height: 43.55%; 
-				left: 4.17%; 
-				top: 5.65%;
-				z-index: 12;
-			}
-			#C02_03_xs_Manu { 
-				width: 61.11%; 
-				height: 90.32%; 
-				left: 28.47%; 
-				top: 8.87%;
-				z-index: 11;
-			}
-		}
-	}
-
-	&#cena3_xs {
-		display: none;
-
-		@for $i from 1 through 2 {
-			#cena3_xs_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena_xs; 
-			}
-		}
-
-		#cena3_xs_1 {
-			#C03_01_xs_Mancha { 
-				width: 54.17%; 
-				height: 46.77%; 
-				left: 15.28%; 
-				top: 45.16%;
-				z-index: 10;
-			}
-			#C03_01_xs_Post { 
-				width: 81.94%; 
-				height: 32.26%; 
-				left: 1.39%; 
-				top: 0.81%;
-				z-index: 12;
-			}
-			#C03_01_xs_Trio { 
-				width: 76.39%; 
-				height: 54.84%; 
-				left: 11.11%; 
-				top: 45.97%;
-				z-index: 10;
-			}
-			#C03_01_xs_Balao1 { 
-				width: 29.17%; 
-				height: 20.97%; 
-				left: 1.39%; 
-				top: 62.90%;
-				z-index: 13;
-			}
-			#C03_01_xs_Balao2 { 
-				width: 38.89%; 
-				height: 28.23%; 
-				left: 25.69%; 
-				top: 29.84%;
-				z-index: 14;
-			}
-			#C03_01_xs_Balao3 { 
-				width: 27.08%; 
-				height: 33.87%; 
-				left: 73.61%; 
-				top: 26.61%;
-				z-index: 15;
-			}
-		}
-
-		#cena3_xs_2 {
-			#C03_02_xs_Mancha { 
-				width: 63.89%; 
-				height: 66.13%; 
-				left: 32.17%;
-				top: 38.26%;
-				z-index: 10;
-			}
-			#C03_02_xs_Post { 
-				width: 38.89%; 
-				height: 62.10%; 
-				left: 0.69%; 
-				top: 25.81%;
-				z-index: 12;
-			}
-			#C03_02_xs_Dupla { 
-				width: 78.47%; 
-				height: 66.13%; 
-				left: 31.25%; 
-				top: 34.68%;
-				z-index: 10;
-			}
-			#C03_02_xs_Balao1 { 
-				width: 39.58%; 
-				height: 44.35%; 
-				left: 30.56%; 
-				top: 2.23%;
-				z-index: 13;
-			}
-			#C03_02_xs_Balao2 { 
-				width: 25.69%; 
-				height: 30.65%; 
-				left: 70.83%; 
-				top: 14.52%;
-				z-index: 14;
-			}
-			#C03_02_xs_Balao3 { 
-				width: 26.39%; 
-				height: 22.58%; 
-				left: 50.69%; 
-				top: 58.06%;
-				z-index: 15;
-			}
-		}
-	}
-
-	&#cena4_xs {
-		display: none;
-
-		@for $i from 1 through 3 {
-			#cena4_xs_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena_xs; 
-			}
-		}
-
-		#cena4_xs_1 {
-			#C04_01_xs_Mancha { 
-				width: 81.94%; 
-				height: 85.48%; 
-				left: 25.69%; 
-				top: 11.29%;
-				z-index: 10;
-			}
-			#C04_01_xs_Post { 
-				width: 34.72%; 
-				height: 37.10%; 
-				left: 3.47%; 
-				top: 6.45%;
-				z-index: 12;
-			}
-			#C04_01_xs_Celular { 
-				width: 73.61%; 
-				height: 83.87%; 
-				left: 32.64%; 
-				top: 16.94%;
-				z-index: 10;
-			}
-		}
-
-		#cena4_xs_2 {
-			#C04_02_xs_Mancha { 
-				width: 79.17%; 
-				height: 85.48%; 
-				left: 11.11%; 
-				top: 12.90%;
-				z-index: 10;
-			}
-			#C04_02_xs_Post { 
-				width: 37.50%; 
-				height: 32.26%; 
-				left: 2.08%; 
-				top: 7.26%;
-				z-index: 12;
-			}
-			#C04_02_xs_Celular { 
-				width: 66.67%; 
-				height: 83.87%; 
-				left: 38.31%;
-				top: 15.42%;
-				z-index: 10;
-			}
-			#C04_02_xs_Balao1 { 
-				width: 43.75%; 
-				height: 29.84%; 
-				left: 56.25%; 
-				top: 5.65%;
-				z-index: 13;
-			}
-			#C04_02_xs_Balao2 { 
-				width: 43.06%; 
-				height: 20.16%; 
-				left: 11.81%; 
-				top: 39.52%;
-				z-index: 13;
-			}
-		}
-
-		#cena4_xs_3 {
-			#C04_03_xs_Mancha { 
-				width: 70.83%; 
-				height: 82.26%; 
-				left: 29.86%; 
-				top: 11.29%;
-				z-index: 10;
-			}
-			#C04_03_xs_Post { 
-				width: 41.67%; 
-				height: 53.23%; 
-				left: 2.47%; 
-				top: 7.45%;
-				z-index: 12;
-			}
-			#C04_03_xs_Celular { 
-				width: 72.22%; 
-				height: 80.65%; 
-				left: 38.41%;
-    			top: 19.94%;
-				z-index: 10;
-			}
-		}
-	}
-
-	&#cena5_xs {
-		display: none;
-
-		@for $i from 1 through 4 {
-			#cena5_xs_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena_xs; 
-			}
-		}
-
-		#cena5_xs_1 {
-			#C05_01_xs_Cama { 
-				width: 96.53%; 
-				height: 58.87%; 
-				left: 3.47%; 
-				top: 0%;
-				z-index: 10;
-			}
-			#C05_01_xs_Post { 
-				width: 52.78%; 
-				height: 33.87%; 
-				left: 2.08%; 
-				top: 55.65%;
-				z-index: 12;
-			}
-			#C05_01_xs_Manu { 
-				width: 44.44%; 
-				height: 80.65%; 
-				left: 52.78%; 
-				top: 19.35%;
-				z-index: 11;
-			}
-			#C05_01_xs_Balao1 { 
-				width: 38.89%; 
-				height: 38.71%; 
-				left: 13.89%; 
-				top: 0.81%;
-				z-index: 14;
-			}
-			#C05_01_xs_Balao2 { 
-				width: 25.69%; 
-				height: 33.06%; 
-				left: 72.92%; 
-				top: 5.65%;
-				z-index: 15;
-			}
-		}
-
-		#cena5_xs_2 {
-			#C05_02_xs_Mulher { 
-				width: 58.33%; 
-				height: 72.58%; 
-				left: 46.7%;
-    			top: 22.34%;
-				z-index: 10;
-			}
-			#C05_02_xs_Post { 
-				width: 60.42%; 
-				height: 29.84%; 
-				left: 1.58%; 
-				top: 65.32%;
-				z-index: 12;
-			}
-			#C05_02_xs_Balao1 { 
-				width: 62.50%; 
-				height: 64.52%; 
-				left: 0.19%;
-				top: 5.47%;
-				z-index: 14;
-			}
-		}
-
-		#cena5_xs_3 {
-			#C05_03_xs_Mancha { 
-				width: 77.08%; 
-				height: 84.68%; 
-				left: 22.22%; 
-				top: 11.29%;
-				z-index: 10;
-			}
-			#C05_03_xs_Post { 
-				width: 37.50%; 
-				height: 69.35%; 
-				left: 0.69%; 
-				top: 13.71%;
-				z-index: 12;
-			}
-			#C05_03_xs_Manu { 
-				width: 71.53%; 
-				height: 78.23%; 
-				left: 32.47%; 
-				top: 18.55%;
-				z-index: 10;
-			}
-		}
-
-		#cena5_xs_4 {
-			#C05_04_xs_Super { 
-				width: 100%; 
-				height: 98.39%; 
-				left: 0%; 
-				top: 1.5%;
-				z-index: 10;
-			}
-			#C05_04_xs_Post { 
-				width: 43.75%; 
-				height: 79.03%; 
-				left: 0.69%; 
-				top: 7.26%;
-				z-index: 12;
-			}
-			#C05_04_xs_Dupla { 
-				width: 66.67%; 
-				height: 74.19%; 
-				left: 34.03%; 
-				top: 25.81%;
-				z-index: 13;
-			}
-		}
-	}
-
-	&#cena6_xs {
-		display: none;
-
-		@for $i from 1 through 3 {
-			#cena6_xs_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena_xs; 
-			}
-		}
-
-		#cena6_xs_1 {
-			#C06_01_xs_Mancha { 
-				width: 75%; 
-				height: 82.26%; 
-				left: 24.13%;
-    			top: 9.26%;
-				z-index: 10;
-			}
-			#C06_01_xs_Post { 
-				width: 55.56%; 
-				height: 67.74%; 
-				left: 0.69%; 
-				top: 8.06%;
-				z-index: 12;
-			}
-			#C06_01_xs_Manu { 
-				width: 97.22%; 
-				height: 85.48%; 
-				left: 15.68%;
-				top: 15.52%;
-				z-index: 10;
-			}
-		}
-
-		#cena6_xs_2 {
-			#C06_02_xs_Mancha { 
-				width: 56.94%; 
-				height: 64.52%; 
-				left: 45.06%;
-				top: 26.95%;
-				z-index: 10;
-			}
-			#C06_02_xs_Post { 
-				width: 50%; 
-				height: 82.26%; 
-				left: 0.69%; 
-				top: 7.26%;
-				z-index: 12;
-			}
-			#C06_02_xs_Dupla { 
-				width: 65.28%; 
-				height: 74.19%; 
-				left: 44.74%;
-				top: 26.81%;
-				z-index: 10;
-			}
-			#C06_02_xs_Balao { 
-				width: 23.61%; 
-				height: 24.19%; 
-				left: 54.86%; 
-				top: 20.97%;
-				z-index: 14;
-			}
-		}
-
-		#cena6_xs_3 {
-			#C06_03_xs_Mancha { 
-				width: 77.78%; 
-				height: 79.03%; 
-				left: 14.68%;
-				top: 21.47%;
-				z-index: 10;
-			}
-			#C06_03_xs_Post { 
-				width: 54.86%; 
-				height: 41.94%; 
-				left: 1.39%; 
-				top: 7.26%;
-				z-index: 12;
-			}
-			#C06_03_xs_Aviao { 
-				width: 97.22%; 
-				height: 74.19%; 
-				left: 5.39%;
-				top: 18.75%;
-				z-index: 10;
-			}
-		}
-	}
-
-	&#cena7_xs {
-		display: none;
-
-		@for $i from 1 through 4 {
-			#cena7_xs_#{$i} { 
-				$subs: $i - 1;
-				top: $subs * $altCena_xs; 
-			}
-		}
-
-		#cena7_xs_1 {
-			#C07_01_xs_Super { 
-				width: 100%; 
-				height: 100%; 
-				left: 0%; 
-				top: 0%;
-				z-index: 10;
-			}
-			#C07_01_xs_Post { 
-				width: 36.81%; 
-				height: 56.45%; 
-				left: 0.69%; 
-				top: 5.65%;
-				z-index: 12;
-			}
-			#C07_01_xs_Dupla { 
-				width: 88.89%; 
-				height: 61.29%; 
-				left: 11.11%; 
-				top: 38.71%;
-				z-index: 11;
-			}
-			#C07_01_xs_Balao1 { 
-				width: 29.86%; 
-				height: 21.77%; 
-				left: 54.86%; 
-				top: 38.71%;
-				z-index: 14;
-			}
-		}
-
-		#cena7_xs_2 {
-			#C07_02_xs_Mancha { 
-				width: 100%; 
-				height: 59.68%; 
-				left: 0%; 
-				top: 33.06%;
-				z-index: 10;
-			}
-			#C07_02_xs_Post { 
-				width: 59.03%; 
-				height: 30.65%; 
-				left: 0.69%; 
-				top: 0.81%;
-				z-index: 12;
-			}
-			#C07_02_xs_Dupla { 
-				width: 88.89%; 
-				height: 69.35%; 
-				left: 9.72%; 
-				top: 31.45%;
-				z-index: 12;
-			}
-			#C07_02_xs_Balao1 { 
-				width: 33.33%; 
-				height: 38.71%; 
-				left: 60.42%; 
-				top: 5.65%;
-				z-index: 14;
-			}
-		}
-
-		#cena7_xs_3 {
-			#C07_03_xs_Mancha { 
-				width: 84.72%;
-				height: 70.97%; 
-				left: 5.56%; 
-				top: 18.55%;
-				z-index: 10;
-			}
-			#C07_03_xs_Post { 
-				width: 73.61%; 
-				height: 25.81%; 
-				left: 2.78%; 
-				top: 2.42%;
-				z-index: 12;
-			}
-			#C07_03_xs_Grupo { 
-				width: 100%; 
-				height: 69.35%; 
-				left: 2%; 
-				top: 31.45%;
-				z-index: 10;
-			}
-		}
-
-		#cena7_xs_4 {
-			#C07_04_xs_Mancha { 
-				width: 86.11%; 
-				height: 70.97%; 
-				left: 0%; 
-				top: 17.74%;
-				z-index: 10;
-			}
-			#C07_04_xs_Manu { 
-				width: 59.72%; 
-				height: 87.10%; 
-				left: -3%; 
-				top: 13.71%;
-				z-index: 10;
-			}
-			#C07_04_xs_Balao1 { 
-				width: 62.50%; 
-				height: 64.52%; 
-				left: 37.50%; 
-				top: 5.65%;
-				z-index: 12;
-			}
-		}
-	}
-
-	@media #{$bp-phone} {
-		&#cena1, &#cena2, &#cena3, &#cena4, &#cena5, &#cena6, &#cena7 { display: none; }
-
-		&#cena1_xs, &#cena2_xs, &#cena3_xs, &#cena4_xs, &#cena5_xs, &#cena6_xs, &#cena7_xs { display: block; }
-	}
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto 30px;
+
+  .img-modelo {
+    opacity: 0;
+  }
+
+  .cenaHQ {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: $altCena;
+
+    .BG_Cena {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      &::after {
+        background: #f3f4f8;
+        content: "";
+        height: 75%;
+        width: 100vw;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        opacity: 1;
+        z-index: -1;
+
+        @include transform(translate(-50%, -50%));
+
+        @media #{$bp-minTablet} {
+          height: 90%;
+        }
+      }
+    }
+
+    .cenaPeca {
+      position: absolute;
+    } // border: solid 1px black; }
+
+    @media #{$bp-minTablet} {
+      max-height: $altCena_xs;
+    }
+  }
+
+  &#cena1 {
+    @for $i from 1 through 8 {
+      #cena1_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena;
+      }
+    }
+
+    #cena1_1 {
+      #C01_Mancha {
+        height: 100%;
+        width: 56.14%;
+        top: 0;
+        left: 12.71%;
+        z-index: 10;
+      }
+      #C01_Post {
+        left: 1.81%;
+        top: 6.47%;
+        width: 31.58%;
+        height: 48.15%;
+        z-index: 12;
+      }
+      #C01_Manu {
+        height: 79.63%;
+        width: 70.18%;
+        top: 9.5%;
+        left: 19.5%;
+        z-index: 10;
+      }
+      #C01_Balao {
+        width: 24.56%;
+        height: 20.37%;
+        left: 49.12%;
+        top: 19.07%;
+        z-index: 14;
+      }
+      #C01_Mae {
+        height: 81.48%;
+        width: 41.66%;
+        top: 8.6%;
+        right: -4%;
+        z-index: 13;
+      }
+    }
+
+    #cena1_2 {
+      #C02_Mancha {
+        width: 45.61%;
+        height: 100%;
+        left: 42.54%;
+        top: 0;
+        z-index: 10;
+      }
+      #C02_Post {
+        width: 32.46%;
+        height: 48.15%;
+        left: 1.93%;
+        top: 40.74%;
+        z-index: 10;
+      }
+      #C02_Mao {
+        width: 42.11%;
+        height: 94.44%;
+        left: 46.11%;
+        top: 2.78%;
+        z-index: 12;
+      }
+      #C02_Balao1 {
+        width: 30.7%;
+        height: 29.63%;
+        left: 25.48%;
+        top: 11%;
+        z-index: 14;
+      }
+      #C02_Balao2 {
+        width: 28.07%;
+        height: 24.07%;
+        left: 65.39%;
+        top: 18.2%;
+        z-index: 15;
+      }
+    }
+
+    #cena1_3 {
+      #C03_Mancha {
+        width: 50.88%;
+        height: 83.33%;
+        left: 36.84%;
+        top: 15.74%;
+        z-index: 10;
+      }
+      #C03_Post {
+        width: 34.21%;
+        height: 50%;
+        left: 0.5%;
+        top: 33.5%;
+        z-index: 14;
+      }
+      #C03_Sofa {
+        width: 54.39%;
+        height: 81.48%;
+        left: 33.32%;
+        top: 17.12%;
+        z-index: 12;
+      }
+      #C03_Balao1 {
+        width: 23.68%;
+        height: 29.63%;
+        left: 47.37%;
+        top: 5.74%;
+        z-index: 14;
+      }
+      #C03_Balao2 {
+        width: 17.54%;
+        height: 31.48%;
+        left: 58.77%;
+        top: 36.11%;
+        z-index: 15;
+      }
+    }
+
+    #cena1_4 {
+      #C04_Super {
+        width: 93.86%;
+        height: 83.33%;
+        left: 4.2%;
+        top: 3.2%;
+        z-index: 10;
+      }
+      #C04_Post {
+        width: 27.19%;
+        height: 37.04%;
+        left: 0.88%;
+        top: 47.22%;
+        z-index: 10;
+      }
+      #C04_Dupla {
+        width: 36.84%;
+        height: 66.67%;
+        left: 32.02%;
+        top: 28%;
+        z-index: 12;
+      }
+      #C04_Balao1 {
+        width: 17.54%;
+        height: 24.07%;
+        left: 17.01%;
+        top: 20.3%;
+        z-index: 14;
+      }
+      #C04_Balao2 {
+        width: 16.67%;
+        height: 24.07%;
+        left: 62.72%;
+        top: 17.59%;
+        z-index: 15;
+      }
+    }
+
+    #cena1_5 {
+      #C05_Mancha {
+        width: 56.14%;
+        height: 77.78%;
+        left: 30.7%;
+        top: 0.93%;
+        z-index: 10;
+      }
+      #C05_Post {
+        width: 27.19%;
+        height: 37.04%;
+        left: 3.07%;
+        top: 45.37%;
+        z-index: 10;
+      }
+      #C05_Gerente {
+        width: 53.51%;
+        height: 87.04%;
+        left: 32.46%;
+        top: 7.56%;
+        z-index: 12;
+      }
+      #C05_Balao1 {
+        width: 19.3%;
+        height: 25.93%;
+        left: 24.12%;
+        top: 9.19%;
+        z-index: 14;
+      }
+      #C05_Balao2 {
+        width: 23.68%;
+        height: 24.07%;
+        left: 72.27%;
+        top: 32.33%;
+        z-index: 15;
+      }
+    }
+
+    #cena1_6 {
+      #C06_Mancha {
+        width: 36.84%;
+        height: 74.07%;
+        left: 30.7%;
+        top: 11.11%;
+        z-index: 11;
+      }
+      #C06_Post {
+        width: 18.42%;
+        height: 37.04%;
+        left: 9.65%;
+        top: 50.93%;
+        z-index: 10;
+      }
+      #C06_Manu {
+        width: 34.21%;
+        height: 88.89%;
+        left: 31.7%;
+        top: 3.96%;
+        z-index: 12;
+      }
+    }
+
+    #cena1_7 {
+      #C07_Mancha {
+        width: 54.39%;
+        height: 64.81%;
+        left: 24.12%;
+        top: 22.22%;
+        z-index: 11;
+      }
+      #C07_Post {
+        width: 23.68%;
+        height: 40.74%;
+        left: 3.07%;
+        top: 17.59%;
+        z-index: 10;
+      }
+      #C07_Danca {
+        width: 54.39%;
+        height: 92.59%;
+        left: 23.06%;
+        top: 3.6%;
+        z-index: 12;
+      }
+    }
+
+    #cena1_8 {
+      #C08_Mancha {
+        width: 43.86%;
+        height: 85.19%;
+        left: 32.46%;
+        top: 2.78%;
+        z-index: 11;
+      }
+      #C08_Post {
+        width: 30.7%;
+        height: 42.59%;
+        left: 1.75%;
+        top: 41.67%;
+        z-index: 10;
+      }
+      #C08_Manu {
+        width: 33.33%;
+        height: 83.33%;
+        left: 32%;
+        top: 4.8%;
+        z-index: 12;
+      }
+    }
+  }
+
+  &#cena2 {
+    @for $i from 1 through 8 {
+      #cena2_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena;
+      }
+    }
+
+    #cena2_1 {
+      #C02_01_Mancha {
+        width: 50%;
+        height: 94.44%;
+        left: 38.6%;
+        top: 6.48%;
+        z-index: 10;
+      }
+      #C02_01_Post {
+        width: 30.7%;
+        height: 44.44%;
+        left: 7.49%;
+        top: 22.22%;
+        z-index: 12;
+      }
+      #C02_01_Dinheiro {
+        width: 42.11%;
+        height: 77.78%;
+        left: 41.65%;
+        top: 9.41%;
+        z-index: 10;
+      }
+    }
+
+    #cena2_2 {
+      #C02_02_Mancha {
+        width: 42.98%;
+        height: 96.3%;
+        left: 44.84%;
+        top: 5.41%;
+        z-index: 10;
+      }
+      #C02_02_Post {
+        width: 30.7%;
+        height: 44.44%;
+        left: 10.6%;
+        top: 25.93%;
+        z-index: 10;
+      }
+      #C02_02_Celular {
+        width: 21.05%;
+        height: 72.22%;
+        left: 55.61%;
+        top: 18.26%;
+        z-index: 12;
+      }
+    }
+
+    #cena2_3 {
+      #C02_03_Mancha {
+        width: 50%;
+        height: 59.26%;
+        left: 52.63%;
+        top: 10.19%;
+        z-index: 10;
+      }
+      #C02_03_Post {
+        width: 32.46%;
+        height: 44.44%;
+        left: 12.28%;
+        top: 29.63%;
+        z-index: 10;
+      }
+      #C02_03_Manu {
+        width: 33.33%;
+        height: 88.89%;
+        left: 51.02%;
+        top: 3.66%;
+        z-index: 12;
+      }
+    }
+  }
+
+  &#cena3 {
+    @for $i from 1 through 2 {
+      #cena3_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena;
+      }
+    }
+
+    #cena3_1 {
+      #C03_01_Mancha {
+        width: 42.98%;
+        height: 51.85%;
+        left: 44.3%;
+        top: 20.37%;
+        z-index: 10;
+      }
+      #C03_01_Post {
+        width: 31.58%;
+        height: 40.74%;
+        left: 0%;
+        top: 26.85%;
+        z-index: 12;
+      }
+      #C03_01_Trio {
+        width: 45.61%;
+        height: 70.37%;
+        left: 41.39%;
+        top: 18.52%;
+        z-index: 10;
+      }
+      #C03_01_Balao1 {
+        width: 20.18%;
+        height: 33.33%;
+        left: 52.09%;
+        top: 1.78%;
+        z-index: 13;
+      }
+      #C03_01_Balao2 {
+        width: 20.18%;
+        height: 27.78%;
+        left: 78.33%;
+        top: 14.51%;
+        z-index: 14;
+      }
+      #C03_01_Balao3 {
+        width: 18.42%;
+        height: 24.07%;
+        left: 31.28%;
+        top: 34.72%;
+        z-index: 15;
+      }
+    }
+
+    #cena3_2 {
+      #C03_02_Mancha {
+        width: 48.25%;
+        height: 90.74%;
+        left: 46.93%;
+        top: 9.26%;
+        z-index: 10;
+      }
+      #C03_02_Post {
+        width: 30.7%;
+        height: 40.74%;
+        left: 1.75%;
+        top: 29.63%;
+        z-index: 12;
+      }
+      #C03_02_Dupla {
+        width: 49.12%;
+        height: 75.93%;
+        left: 48.66%;
+        top: 15.81%;
+        z-index: 10;
+      }
+      #C03_02_Balao1 {
+        width: 25.88%;
+        height: 31.48%;
+        left: 30.7%;
+        top: 5.56%;
+        z-index: 13;
+      }
+      #C03_02_Balao2 {
+        width: 15.79%;
+        height: 18.52%;
+        left: 64.27%;
+        top: 30.06%;
+        z-index: 14;
+      }
+      #C03_02_Balao3 {
+        width: 20.18%;
+        height: 24.07%;
+        left: 35.09%;
+        top: 36.11%;
+        z-index: 15;
+      }
+    }
+  }
+
+  &#cena4 {
+    @for $i from 1 through 3 {
+      #cena4_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena;
+      }
+    }
+
+    #cena4_1 {
+      #C04_01_Mancha {
+        width: 50%;
+        height: 94.44%;
+        left: 44.74%;
+        top: 2.78%;
+        z-index: 10;
+      }
+      #C04_01_Post {
+        width: 33.33%;
+        height: 35.19%;
+        left: 6.58%;
+        top: 32.41%;
+        z-index: 12;
+      }
+      #C04_01_Celular {
+        width: 43.86%;
+        height: 90.74%;
+        left: 49.12%;
+        top: 7.41%;
+        z-index: 10;
+      }
+    }
+
+    #cena4_2 {
+      #C04_02_Mancha {
+        width: 47.37%;
+        height: 92.59%;
+        left: 42.93%;
+        top: 3.48%;
+        z-index: 10;
+      }
+      #C04_02_Post {
+        width: 32.89%;
+        height: 40.74%;
+        left: 4.39%;
+        top: 41.04%;
+        z-index: 12;
+      }
+      #C04_02_Celular {
+        width: 40.35%;
+        height: 90.74%;
+        left: 52.46%;
+        top: 4.33%;
+        z-index: 10;
+      }
+      #C04_02_Balao1 {
+        width: 32.46%;
+        height: 27.78%;
+        left: 28.51%;
+        top: 12.96%;
+        z-index: 13;
+      }
+      #C04_02_Balao2 {
+        width: 27.19%;
+        height: 24.07%;
+        left: 69.3%;
+        top: 21.3%;
+        z-index: 13;
+      }
+    }
+
+    #cena4_3 {
+      #C04_03_Mancha {
+        width: 50%;
+        height: 92.59%;
+        left: 50.88%;
+        top: 5.56%;
+        z-index: 10;
+      }
+      #C04_03_Post {
+        width: 35.09%;
+        height: 44.44%;
+        left: 10.09%;
+        top: 29.63%;
+        z-index: 12;
+      }
+      #C04_03_Celular {
+        width: 43.86%;
+        height: 90.74%;
+        left: 54.82%;
+        top: 10.19%;
+        z-index: 10;
+      }
+    }
+  }
+
+  &#cena5 {
+    @for $i from 1 through 4 {
+      #cena5_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena;
+      }
+    }
+
+    #cena5_1 {
+      #C05_01_Cama {
+        width: 74.56%;
+        height: 75.93%;
+        left: 25.5%;
+        top: 10.76%;
+        z-index: 10;
+      }
+      #C05_01_Post {
+        width: 28.95%;
+        height: 40.74%;
+        left: 2.19%;
+        top: 45.37%;
+        z-index: 12;
+      }
+      #C05_01_Manu {
+        width: 25.88%;
+        height: 86.11%;
+        left: 67.18%;
+        top: 8.48%;
+        z-index: 11;
+      }
+      #C05_01_Balao1 {
+        width: 20.18%;
+        height: 29.63%;
+        left: 8.13%;
+        top: 12.96%;
+        z-index: 14;
+      }
+      #C05_01_Balao2 {
+        width: 14.04%;
+        height: 24.07%;
+        left: 81.38%;
+        top: 6.29%;
+        z-index: 15;
+      }
+    }
+
+    #cena5_2 {
+      #C05_02_Mulher {
+        width: 35.09%;
+        height: 77.78%;
+        left: 60.02%;
+        top: 11.11%;
+        z-index: 10;
+      }
+      #C05_02_Post {
+        width: 30.7%;
+        height: 44.44%;
+        left: 2.25%;
+        top: 32.93%;
+        z-index: 12;
+      }
+      #C05_02_Balao1 {
+        width: 35.09%;
+        height: 53.7%;
+        left: 32.72%;
+        top: 17.27%;
+        z-index: 14;
+      }
+    }
+
+    #cena5_3 {
+      #C05_03_Mancha {
+        width: 47.37%;
+        height: 94.44%;
+        left: 42.47%;
+        top: 0.63%;
+        z-index: 10;
+      }
+      #C05_03_Post {
+        width: 35.09%;
+        height: 48.15%;
+        left: 6.74%;
+        top: 30.16%;
+        z-index: 12;
+      }
+      #C05_03_Manu {
+        width: 48.25%;
+        height: 88.89%;
+        left: 45.81%;
+        top: 7.83%;
+        z-index: 10;
+      }
+    }
+
+    #cena5_4 {
+      #C05_04_Super {
+        width: 92.98%;
+        height: 85.19%;
+        left: 2.15%;
+        top: 11.96%;
+        z-index: 10;
+      }
+      #C05_04_Mancha {
+        width: 48.25%;
+        height: 57.41%;
+        left: 42.37%;
+        top: 24.07%;
+        z-index: 10;
+      }
+      #C05_04_Post {
+        width: 35.96%;
+        height: 64.81%;
+        left: 5.95%;
+        top: 19.81%;
+        z-index: 12;
+      }
+      #C05_04_Dupla {
+        width: 41.23%;
+        height: 77.78%;
+        left: 45%;
+        top: 15.11%;
+        z-index: 10;
+      }
+    }
+  }
+
+  &#cena6 {
+    @for $i from 1 through 3 {
+      #cena6_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena;
+      }
+    }
+
+    #cena6_1 {
+      #C06_01_Mancha {
+        width: 42.11%;
+        height: 83.33%;
+        left: 48.31%;
+        top: 2.48%;
+        z-index: 10;
+      }
+      #C06_01_Post {
+        width: 36.84%;
+        height: 59.26%;
+        left: 3.65%;
+        top: 16.59%;
+        z-index: 12;
+      }
+      #C06_01_Manu {
+        width: 53.51%;
+        height: 85.19%;
+        left: 43.86%;
+        top: 9.26%;
+        z-index: 10;
+      }
+    }
+
+    #cena6_2 {
+      #C06_02_Mancha {
+        width: 35.96%;
+        height: 74.07%;
+        left: 51.24%;
+        top: 8.41%;
+        z-index: 10;
+      }
+      #C06_02_Post {
+        width: 37.28%;
+        height: 67.59%;
+        left: 4.19%;
+        top: 17.59%;
+        z-index: 12;
+      }
+      #C06_02_Dupla {
+        width: 41.23%;
+        height: 87.04%;
+        left: 50.39%;
+        top: 7.33%;
+        z-index: 10;
+      }
+      #C06_02_Balao {
+        width: 13.16%;
+        height: 25.93%;
+        left: 59.31%;
+        top: 7.33%;
+        z-index: 14;
+      }
+    }
+
+    #cena6_3 {
+      #C06_03_Mancha {
+        width: 46.49%;
+        height: 87.04%;
+        left: 46.92%;
+        top: 12.21%;
+        z-index: 10;
+      }
+      #C06_03_Post {
+        width: 35.09%;
+        height: 48.15%;
+        left: 6.72%;
+        top: 29.33%;
+        z-index: 12;
+      }
+      #C06_03_Aviao {
+        width: 58.77%;
+        height: 79.63%;
+        left: 41.21%;
+        top: 10.16%;
+        z-index: 10;
+      }
+    }
+  }
+
+  &#cena7 {
+    @for $i from 1 through 4 {
+      #cena7_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena;
+      }
+    }
+
+    #cena7_1 {
+      #C07_01_Super {
+        width: 90.35%;
+        height: 90.74%;
+        left: 6.82%;
+        top: 4.96%;
+        z-index: 10;
+      }
+      #C07_01_Post {
+        width: 28.07%;
+        height: 48.15%;
+        left: 2.63%;
+        top: 8.33%;
+        z-index: 12;
+      }
+      #C07_01_Dupla {
+        width: 72.81%;
+        height: 82.41%;
+        left: 16.39%;
+        top: 13.26%;
+        z-index: 11;
+      }
+      #C07_01_Balao1 {
+        width: 14.47%;
+        height: 25%;
+        left: 57.73%;
+        top: 17.06%;
+        z-index: 14;
+      }
+    }
+
+    #cena7_2 {
+      #C07_02_Mancha {
+        width: 67.54%;
+        height: 74.07%;
+        left: 32.11%;
+        top: 14.56%;
+        z-index: 10;
+      }
+      #C07_02_Post {
+        width: 29.82%;
+        height: 36.11%;
+        left: 3.21%;
+        top: 27.78%;
+        z-index: 12;
+      }
+      #C07_02_Dupla {
+        width: 54.39%;
+        height: 77.78%;
+        left: 39.55%;
+        top: 14.16%;
+        z-index: 12;
+      }
+      #C07_02_Balao1 {
+        width: 21.93%;
+        height: 25%;
+        left: 58.19%;
+        top: 11.31%;
+        z-index: 14;
+      }
+    }
+
+    #cena7_3 {
+      #C07_03_Mancha {
+        width: 56.14%;
+        height: 87.04%;
+        left: 38.11%;
+        top: 6.36%;
+        z-index: 10;
+      }
+      #C07_03_Post {
+        width: 28.95%;
+        height: 40.74%;
+        left: 3.65%;
+        top: 32.41%;
+        z-index: 12;
+      }
+      #C07_03_Grupo {
+        width: 63.16%;
+        height: 85.19%;
+        left: 35%;
+        top: 12.96%;
+        z-index: 10;
+      }
+    }
+
+    #cena7_4 {
+      #C07_04_Mancha {
+        width: 50%;
+        height: 74.07%;
+        left: 9.1%;
+        top: 10.19%;
+        z-index: 10;
+      }
+      #C07_04_Manu {
+        width: 34.21%;
+        height: 94.44%;
+        left: 14.66%;
+        top: 5.13%;
+        z-index: 10;
+      }
+      #C07_04_Balao1 {
+        width: 47.37%;
+        height: 50%;
+        left: 39.57%;
+        top: 29.33%;
+        z-index: 12;
+      }
+    }
+  }
+
+  // HQs XS
+  &#cena1_xs {
+    display: none;
+
+    @for $i from 1 through 8 {
+      #cena1_xs_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena_xs;
+      }
+    }
+
+    #cena1_xs_1 {
+      #C01_xs_Mancha {
+        width: 86.11%;
+        height: 77.42%;
+        left: 0%;
+        top: 0%;
+        z-index: 10;
+      }
+      #C01_xs_Post {
+        width: 45.83%;
+        height: 37.1%;
+        left: 5.56%;
+        top: 55.65%;
+        z-index: 12;
+      }
+      #C01_xs_Manu {
+        width: 93.06%;
+        height: 69.35%;
+        left: 6.94%;
+        top: 0%;
+        z-index: 10;
+      }
+      #C01_xs_Balao {
+        width: 38.19%;
+        height: 38.71%;
+        left: 42.36%;
+        top: 0.81%;
+        z-index: 14;
+      }
+      #C01_xs_Mae {
+        width: 50%;
+        height: 79.03%;
+        left: 50%;
+        top: 21.61%;
+        z-index: 13;
+      }
+    }
+
+    #cena1_xs_2 {
+      #C02_xs_Mancha {
+        width: 61.11%;
+        height: 80.65%;
+        left: 20.83%;
+        top: 12.9%;
+        z-index: 10;
+      }
+      #C02_xs_Mao {
+        width: 63.89%;
+        height: 79.03%;
+        left: 44.44%;
+        top: 18.55%;
+        z-index: 10;
+      }
+      #C02_xs_Post {
+        width: 52.78%;
+        height: 48.39%;
+        left: 0%;
+        top: 42.74%;
+        z-index: 12;
+      }
+      #C02_xs_Balao1 {
+        width: 47.22%;
+        height: 35.48%;
+        left: 9.03%;
+        top: 5.65%;
+        z-index: 14;
+      }
+      #C02_xs_Balao2 {
+        width: 30.56%;
+        height: 25.81%;
+        left: 69.44%;
+        top: 15.32%;
+        z-index: 15;
+      }
+    }
+
+    #cena1_xs_3 {
+      #C03_xs_Mancha {
+        width: 66.67%;
+        height: 59.68%;
+        left: 34.03%;
+        top: 25.81%;
+        z-index: 10;
+      }
+      #C03_xs_Sofa {
+        width: 80.56%;
+        height: 66.13%;
+        left: 25.69%;
+        top: 32.26%;
+        z-index: 14;
+      }
+      #C03_xs_Post {
+        width: 34.72%;
+        height: 52.42%;
+        left: 0.69%;
+        top: 31.45%;
+        z-index: 15;
+      }
+      #C03_xs_Balao1 {
+        width: 35.42%;
+        height: 38.71%;
+        left: 14.58%;
+        top: 0%;
+        z-index: 14;
+      }
+      #C03_xs_Balao2 {
+        width: 32.64%;
+        height: 24.19%;
+        left: 54.17%;
+        top: 21.77%;
+        z-index: 15;
+      }
+    }
+
+    #cena1_xs_4 {
+      #C04_xs_Super {
+        width: 100%;
+        height: 84.68%;
+        left: 0%;
+        top: 0.81%;
+        z-index: 10;
+      }
+      #C04_xs_Dupla {
+        width: 72.22%;
+        height: 70.97%;
+        left: 27.78%;
+        top: 23.39%;
+        z-index: 10;
+      }
+      #C04_xs_Post {
+        width: 44.44%;
+        height: 37.9%;
+        left: 1.39%;
+        top: 55.65%;
+        z-index: 12;
+      }
+      #C04_xs_Balao1 {
+        width: 22.92%;
+        height: 27.42%;
+        left: 34.72%;
+        top: 3.23%;
+        z-index: 14;
+      }
+      #C04_xs_Balao2 {
+        width: 22.92%;
+        height: 27.42%;
+        left: 60.58%;
+        top: 12.81%;
+        z-index: 15;
+      }
+    }
+
+    #cena1_xs_5 {
+      #C05_xs_Mancha {
+        width: 75%;
+        height: 64.52%;
+        left: 25.69%;
+        top: 10.48%;
+        z-index: 10;
+      }
+      #C05_xs_Gerente {
+        width: 79.17%;
+        height: 80.65%;
+        left: 22.22%;
+        top: 15.32%;
+        z-index: 10;
+      }
+      #C05_xs_Post {
+        width: 33.33%;
+        height: 41.94%;
+        left: 1.39%;
+        top: 37.1%;
+        z-index: 12;
+      }
+      #C05_xs_Balao1 {
+        width: 29.17%;
+        height: 29.03%;
+        left: 10.42%;
+        top: 4.03%;
+        z-index: 14;
+      }
+      #C05_xs_Balao2 {
+        width: 30.56%;
+        height: 29.03%;
+        left: 46.53%;
+        top: 8.06%;
+        z-index: 15;
+      }
+    }
+
+    #cena1_xs_6 {
+      #C06_xs_Mancha {
+        width: 70.83%;
+        height: 75.81%;
+        left: 22.92%;
+        top: 10.48%;
+        z-index: 10;
+      }
+      #C06_xs_Manu {
+        width: 66.67%;
+        height: 96.77%;
+        left: 36.11%;
+        top: 1.61%;
+        z-index: 11;
+      }
+      #C06_xs_Post {
+        width: 30.56%;
+        height: 32.26%;
+        left: 4.17%;
+        top: 43.55%;
+        z-index: 12;
+      }
+    }
+
+    #cena1_xs_7 {
+      #C07_xs_Mancha {
+        width: 100%;
+        height: 66.13%;
+        left: 0%;
+        top: 16.94%;
+        z-index: 10;
+      }
+      #C07_xs_Danca {
+        width: 100%;
+        height: 96.77%;
+        left: 0%;
+        top: 1.61%;
+        z-index: 11;
+      }
+      #C07_xs_Post {
+        width: 37.5%;
+        height: 34.68%;
+        left: 3.47%;
+        top: 1.61%;
+        z-index: 12;
+      }
+    }
+
+    #cena1_xs_8 {
+      #C08_xs_Mancha {
+        width: 68.06%;
+        height: 85.48%;
+        left: 31.25%;
+        top: 2.42%;
+        z-index: 10;
+      }
+      #C08_xs_Manu {
+        width: 59.72%;
+        height: 83.87%;
+        left: 37.5%;
+        top: 17.74%;
+        z-index: 11;
+      }
+      #C08_xs_Post {
+        width: 52.78%;
+        height: 40.32%;
+        left: 2.08%;
+        top: 5.65%;
+        z-index: 12;
+      }
+    }
+  }
+
+  &#cena2_xs {
+    display: none;
+
+    @for $i from 1 through 8 {
+      #cena2_xs_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena_xs;
+      }
+    }
+
+    #cena2_xs_1 {
+      #C02_01_xs_Mancha {
+        width: 72.22%;
+        height: 75.81%;
+        left: 35.42%;
+        top: 10.48%;
+        z-index: 10;
+      }
+      #C02_01_xs_Post {
+        width: 47.22%;
+        height: 56.45%;
+        left: 0.69%;
+        top: 32.26%;
+        z-index: 12;
+      }
+      #C02_01_xs_Dinheiro {
+        width: 61.11%;
+        height: 59.68%;
+        left: 38.19%;
+        top: 16.13%;
+        z-index: 11;
+      }
+    }
+
+    #cena2_xs_2 {
+      #C02_02_xs_Mancha {
+        width: 75%;
+        height: 93.55%;
+        left: 35.42%;
+        top: 4.84%;
+        z-index: 10;
+      }
+      #C02_02_xs_Post {
+        width: 48.61%;
+        height: 43.55%;
+        left: 2.08%;
+        top: 8.87%;
+        z-index: 12;
+      }
+      #C02_02_xs_Celular {
+        width: 37.5%;
+        height: 70.97%;
+        left: 48.61%;
+        top: 16.13%;
+        z-index: 11;
+      }
+    }
+
+    #cena2_xs_3 {
+      #C02_03_xs_Mancha {
+        width: 87.5%;
+        height: 74.19%;
+        left: 9.03%;
+        top: 19.35%;
+        z-index: 10;
+      }
+      #C02_03_xs_Post {
+        width: 52.78%;
+        height: 43.55%;
+        left: 4.17%;
+        top: 5.65%;
+        z-index: 12;
+      }
+      #C02_03_xs_Manu {
+        width: 61.11%;
+        height: 90.32%;
+        left: 28.47%;
+        top: 8.87%;
+        z-index: 11;
+      }
+    }
+  }
+
+  &#cena3_xs {
+    display: none;
+
+    @for $i from 1 through 2 {
+      #cena3_xs_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena_xs;
+      }
+    }
+
+    #cena3_xs_1 {
+      #C03_01_xs_Mancha {
+        width: 54.17%;
+        height: 46.77%;
+        left: 15.28%;
+        top: 45.16%;
+        z-index: 10;
+      }
+      #C03_01_xs_Post {
+        width: 81.94%;
+        height: 32.26%;
+        left: 1.39%;
+        top: 0.81%;
+        z-index: 12;
+      }
+      #C03_01_xs_Trio {
+        width: 76.39%;
+        height: 54.84%;
+        left: 11.11%;
+        top: 45.97%;
+        z-index: 10;
+      }
+      #C03_01_xs_Balao1 {
+        width: 29.17%;
+        height: 20.97%;
+        left: 1.39%;
+        top: 62.9%;
+        z-index: 13;
+      }
+      #C03_01_xs_Balao2 {
+        width: 38.89%;
+        height: 28.23%;
+        left: 25.69%;
+        top: 29.84%;
+        z-index: 14;
+      }
+      #C03_01_xs_Balao3 {
+        width: 27.08%;
+        height: 33.87%;
+        left: 73.61%;
+        top: 26.61%;
+        z-index: 15;
+      }
+    }
+
+    #cena3_xs_2 {
+      #C03_02_xs_Mancha {
+        width: 63.89%;
+        height: 66.13%;
+        left: 32.17%;
+        top: 38.26%;
+        z-index: 10;
+      }
+      #C03_02_xs_Post {
+        width: 38.89%;
+        height: 62.1%;
+        left: 0.69%;
+        top: 25.81%;
+        z-index: 12;
+      }
+      #C03_02_xs_Dupla {
+        width: 78.47%;
+        height: 66.13%;
+        left: 31.25%;
+        top: 34.68%;
+        z-index: 10;
+      }
+      #C03_02_xs_Balao1 {
+        width: 39.58%;
+        height: 44.35%;
+        left: 30.56%;
+        top: 2.23%;
+        z-index: 13;
+      }
+      #C03_02_xs_Balao2 {
+        width: 25.69%;
+        height: 30.65%;
+        left: 70.83%;
+        top: 14.52%;
+        z-index: 14;
+      }
+      #C03_02_xs_Balao3 {
+        width: 26.39%;
+        height: 22.58%;
+        left: 50.69%;
+        top: 58.06%;
+        z-index: 15;
+      }
+    }
+  }
+
+  &#cena4_xs {
+    display: none;
+
+    @for $i from 1 through 3 {
+      #cena4_xs_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena_xs;
+      }
+    }
+
+    #cena4_xs_1 {
+      #C04_01_xs_Mancha {
+        width: 81.94%;
+        height: 85.48%;
+        left: 25.69%;
+        top: 11.29%;
+        z-index: 10;
+      }
+      #C04_01_xs_Post {
+        width: 34.72%;
+        height: 37.1%;
+        left: 3.47%;
+        top: 6.45%;
+        z-index: 12;
+      }
+      #C04_01_xs_Celular {
+        width: 73.61%;
+        height: 83.87%;
+        left: 32.64%;
+        top: 16.94%;
+        z-index: 10;
+      }
+    }
+
+    #cena4_xs_2 {
+      #C04_02_xs_Mancha {
+        width: 79.17%;
+        height: 85.48%;
+        left: 11.11%;
+        top: 12.9%;
+        z-index: 10;
+      }
+      #C04_02_xs_Post {
+        width: 37.5%;
+        height: 32.26%;
+        left: 2.08%;
+        top: 7.26%;
+        z-index: 12;
+      }
+      #C04_02_xs_Celular {
+        width: 66.67%;
+        height: 83.87%;
+        left: 38.31%;
+        top: 15.42%;
+        z-index: 10;
+      }
+      #C04_02_xs_Balao1 {
+        width: 43.75%;
+        height: 29.84%;
+        left: 56.25%;
+        top: 5.65%;
+        z-index: 13;
+      }
+      #C04_02_xs_Balao2 {
+        width: 43.06%;
+        height: 20.16%;
+        left: 11.81%;
+        top: 39.52%;
+        z-index: 13;
+      }
+    }
+
+    #cena4_xs_3 {
+      #C04_03_xs_Mancha {
+        width: 70.83%;
+        height: 82.26%;
+        left: 29.86%;
+        top: 11.29%;
+        z-index: 10;
+      }
+      #C04_03_xs_Post {
+        width: 41.67%;
+        height: 53.23%;
+        left: 2.47%;
+        top: 7.45%;
+        z-index: 12;
+      }
+      #C04_03_xs_Celular {
+        width: 72.22%;
+        height: 80.65%;
+        left: 38.41%;
+        top: 19.94%;
+        z-index: 10;
+      }
+    }
+  }
+
+  &#cena5_xs {
+    display: none;
+
+    @for $i from 1 through 4 {
+      #cena5_xs_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena_xs;
+      }
+    }
+
+    #cena5_xs_1 {
+      #C05_01_xs_Cama {
+        width: 96.53%;
+        height: 58.87%;
+        left: 3.47%;
+        top: 0%;
+        z-index: 10;
+      }
+      #C05_01_xs_Post {
+        width: 52.78%;
+        height: 33.87%;
+        left: 2.08%;
+        top: 55.65%;
+        z-index: 12;
+      }
+      #C05_01_xs_Manu {
+        width: 44.44%;
+        height: 80.65%;
+        left: 52.78%;
+        top: 19.35%;
+        z-index: 11;
+      }
+      #C05_01_xs_Balao1 {
+        width: 38.89%;
+        height: 38.71%;
+        left: 13.89%;
+        top: 0.81%;
+        z-index: 14;
+      }
+      #C05_01_xs_Balao2 {
+        width: 25.69%;
+        height: 33.06%;
+        left: 72.92%;
+        top: 5.65%;
+        z-index: 15;
+      }
+    }
+
+    #cena5_xs_2 {
+      #C05_02_xs_Mulher {
+        width: 58.33%;
+        height: 72.58%;
+        left: 46.7%;
+        top: 22.34%;
+        z-index: 10;
+      }
+      #C05_02_xs_Post {
+        width: 60.42%;
+        height: 29.84%;
+        left: 1.58%;
+        top: 65.32%;
+        z-index: 12;
+      }
+      #C05_02_xs_Balao1 {
+        width: 62.5%;
+        height: 64.52%;
+        left: 0.19%;
+        top: 5.47%;
+        z-index: 14;
+      }
+    }
+
+    #cena5_xs_3 {
+      #C05_03_xs_Mancha {
+        width: 77.08%;
+        height: 84.68%;
+        left: 22.22%;
+        top: 11.29%;
+        z-index: 10;
+      }
+      #C05_03_xs_Post {
+        width: 37.5%;
+        height: 69.35%;
+        left: 0.69%;
+        top: 13.71%;
+        z-index: 12;
+      }
+      #C05_03_xs_Manu {
+        width: 71.53%;
+        height: 78.23%;
+        left: 32.47%;
+        top: 18.55%;
+        z-index: 10;
+      }
+    }
+
+    #cena5_xs_4 {
+      #C05_04_xs_Super {
+        width: 100%;
+        height: 98.39%;
+        left: 0%;
+        top: 1.5%;
+        z-index: 10;
+      }
+      #C05_04_xs_Post {
+        width: 43.75%;
+        height: 79.03%;
+        left: 0.69%;
+        top: 7.26%;
+        z-index: 12;
+      }
+      #C05_04_xs_Dupla {
+        width: 66.67%;
+        height: 74.19%;
+        left: 34.03%;
+        top: 25.81%;
+        z-index: 13;
+      }
+    }
+  }
+
+  &#cena6_xs {
+    display: none;
+
+    @for $i from 1 through 3 {
+      #cena6_xs_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena_xs;
+      }
+    }
+
+    #cena6_xs_1 {
+      #C06_01_xs_Mancha {
+        width: 75%;
+        height: 82.26%;
+        left: 24.13%;
+        top: 9.26%;
+        z-index: 10;
+      }
+      #C06_01_xs_Post {
+        width: 55.56%;
+        height: 67.74%;
+        left: 0.69%;
+        top: 8.06%;
+        z-index: 12;
+      }
+      #C06_01_xs_Manu {
+        width: 97.22%;
+        height: 85.48%;
+        left: 15.68%;
+        top: 15.52%;
+        z-index: 10;
+      }
+    }
+
+    #cena6_xs_2 {
+      #C06_02_xs_Mancha {
+        width: 56.94%;
+        height: 64.52%;
+        left: 45.06%;
+        top: 26.95%;
+        z-index: 10;
+      }
+      #C06_02_xs_Post {
+        width: 50%;
+        height: 82.26%;
+        left: 0.69%;
+        top: 7.26%;
+        z-index: 12;
+      }
+      #C06_02_xs_Dupla {
+        width: 65.28%;
+        height: 74.19%;
+        left: 44.74%;
+        top: 26.81%;
+        z-index: 10;
+      }
+      #C06_02_xs_Balao {
+        width: 23.61%;
+        height: 24.19%;
+        left: 54.86%;
+        top: 20.97%;
+        z-index: 14;
+      }
+    }
+
+    #cena6_xs_3 {
+      #C06_03_xs_Mancha {
+        width: 77.78%;
+        height: 79.03%;
+        left: 14.68%;
+        top: 21.47%;
+        z-index: 10;
+      }
+      #C06_03_xs_Post {
+        width: 54.86%;
+        height: 41.94%;
+        left: 1.39%;
+        top: 7.26%;
+        z-index: 12;
+      }
+      #C06_03_xs_Aviao {
+        width: 97.22%;
+        height: 74.19%;
+        left: 5.39%;
+        top: 18.75%;
+        z-index: 10;
+      }
+    }
+  }
+
+  &#cena7_xs {
+    display: none;
+
+    @for $i from 1 through 4 {
+      #cena7_xs_#{$i} {
+        $subs: $i - 1;
+        top: $subs * $altCena_xs;
+      }
+    }
+
+    #cena7_xs_1 {
+      #C07_01_xs_Super {
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+        z-index: 10;
+      }
+      #C07_01_xs_Post {
+        width: 36.81%;
+        height: 56.45%;
+        left: 0.69%;
+        top: 5.65%;
+        z-index: 12;
+      }
+      #C07_01_xs_Dupla {
+        width: 88.89%;
+        height: 61.29%;
+        left: 11.11%;
+        top: 38.71%;
+        z-index: 11;
+      }
+      #C07_01_xs_Balao1 {
+        width: 29.86%;
+        height: 21.77%;
+        left: 54.86%;
+        top: 38.71%;
+        z-index: 14;
+      }
+    }
+
+    #cena7_xs_2 {
+      #C07_02_xs_Mancha {
+        width: 100%;
+        height: 59.68%;
+        left: 0%;
+        top: 33.06%;
+        z-index: 10;
+      }
+      #C07_02_xs_Post {
+        width: 59.03%;
+        height: 30.65%;
+        left: 0.69%;
+        top: 0.81%;
+        z-index: 12;
+      }
+      #C07_02_xs_Dupla {
+        width: 88.89%;
+        height: 69.35%;
+        left: 9.72%;
+        top: 31.45%;
+        z-index: 12;
+      }
+      #C07_02_xs_Balao1 {
+        width: 33.33%;
+        height: 38.71%;
+        left: 60.42%;
+        top: 5.65%;
+        z-index: 14;
+      }
+    }
+
+    #cena7_xs_3 {
+      #C07_03_xs_Mancha {
+        width: 84.72%;
+        height: 70.97%;
+        left: 5.56%;
+        top: 18.55%;
+        z-index: 10;
+      }
+      #C07_03_xs_Post {
+        width: 73.61%;
+        height: 25.81%;
+        left: 2.78%;
+        top: 2.42%;
+        z-index: 12;
+      }
+      #C07_03_xs_Grupo {
+        width: 100%;
+        height: 69.35%;
+        left: 2%;
+        top: 31.45%;
+        z-index: 10;
+      }
+    }
+
+    #cena7_xs_4 {
+      #C07_04_xs_Mancha {
+        width: 86.11%;
+        height: 70.97%;
+        left: 0%;
+        top: 17.74%;
+        z-index: 10;
+      }
+      #C07_04_xs_Manu {
+        width: 59.72%;
+        height: 87.1%;
+        left: -3%;
+        top: 13.71%;
+        z-index: 10;
+      }
+      #C07_04_xs_Balao1 {
+        width: 62.5%;
+        height: 64.52%;
+        left: 37.5%;
+        top: 5.65%;
+        z-index: 12;
+      }
+    }
+  }
+
+  @media #{$bp-minTablet} {
+    &#cena1,
+    &#cena2,
+    &#cena3,
+    &#cena4,
+    &#cena5,
+    &#cena6,
+    &#cena7 {
+      display: none;
+    }
+
+    &#cena1_xs,
+    &#cena2_xs,
+    &#cena3_xs,
+    &#cena4_xs,
+    &#cena5_xs,
+    &#cena6_xs,
+    &#cena7_xs {
+      display: block;
+    }
+  }
 }
 
 .Infografico {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	margin: 0 auto 30px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto 30px;
 
-	.img-modelo { opacity: 0; }
+  .img-modelo {
+    opacity: 0;
+  }
 
-	.infoPecas {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+  .infoPecas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-		&::after {
-			//background: #f3f4f8;
-			content: '';
-			height: 80%;
-			width: 100vw;
-			top: 50%;
-			left: 50%;
-			position: absolute;
-			z-index: -1;
+    &::after {
+      //background: #f3f4f8;
+      content: "";
+      height: 80%;
+      width: 100vw;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      z-index: -1;
 
-			@include transform(translate(-50%,-50%));
-		}
+      @include transform(translate(-50%, -50%));
+    }
 
-		.infoPeca { position: absolute; top:70%; } //border: solid 1px black; }
-	}
+    .infoPeca {
+      position: absolute;
+      top: 70%;
+    } //border: solid 1px black; }
+  }
 
-	&#Infografico_1 {
-		#Info_Pecas {
-			#Info_BG { 
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-				z-index: 10;
-			}
+  &#Infografico_1 {
+    #Info_Pecas {
+      #Info_BG {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
 
-			#Info_01 { 
-				width: 50.44%; 
-				height: 12.50%;
-				left: 12.89%;
-				top: -0.11%;
-				z-index: 10;
-			}
-			#Info_02 { 
-				width: 29.82%; 
-				height: 10.55%;
-				left: 1.51%;
-				top: 7.17%;
-				z-index: 11;
-			}
-			#Info_03 { 
-				width: 50%; 
-				height: 10.55%;
-				top: 7.17%;
-				left: 26.7%;
-				z-index: 12;
-			}
-			#Info_04 { 
-				width: 25.44%; 
-				height: 14.84%;
-				top: 7.17%;
-				left: 73%;
-				z-index: 13;
-			}
-			#Info_05 { 
-				width: 37.72%;
-				height: 10.16%;
-				top: 18.67%;
-				left: 60%;
-				z-index: 14;
-			}
-			#Info_06 { 
-				width: 40.35%; 
-				height: 10.16%;
-				top: 18.67%;
-				left: 23%;
-				z-index: 15;
-			}
-			#Info_07 { 
-				width: 27.63%; 
-				height: 14.84%;
-				top: 18.67%;
-				left: 0%;
-				z-index: 16;
-			}
+      #Info_01 {
+        width: 50.44%;
+        height: 12.5%;
+        left: 12.89%;
+        top: -0.11%;
+        z-index: 10;
+      }
+      #Info_02 {
+        width: 29.82%;
+        height: 10.55%;
+        left: 1.51%;
+        top: 7.17%;
+        z-index: 11;
+      }
+      #Info_03 {
+        width: 50%;
+        height: 10.55%;
+        top: 7.17%;
+        left: 26.7%;
+        z-index: 12;
+      }
+      #Info_04 {
+        width: 25.44%;
+        height: 14.84%;
+        top: 7.17%;
+        left: 73%;
+        z-index: 13;
+      }
+      #Info_05 {
+        width: 37.72%;
+        height: 10.16%;
+        top: 18.67%;
+        left: 60%;
+        z-index: 14;
+      }
+      #Info_06 {
+        width: 40.35%;
+        height: 10.16%;
+        top: 18.67%;
+        left: 23%;
+        z-index: 15;
+      }
+      #Info_07 {
+        width: 27.63%;
+        height: 14.84%;
+        top: 18.67%;
+        left: 0%;
+        z-index: 16;
+      }
 
-			#Info_08 { 
-				width: 38.60%; 
-				height: 9.38%;
-				top: 31.01%;
-				left: 0.6%;
-				z-index: 17;
-			}
-			#Info_09 { 
-				width: 35.96%; 
-				height: 9.38%;
-				top: 31.01%;
-				left: 36.5%;
-				z-index: 18;
-			}
-			#Info_10 { 
-				width: 28.07%; 
-				height: 13.28%;
-				top: 31.01%;
-				left: 71.5%;
-				z-index: 19;
-			}
+      #Info_08 {
+        width: 38.6%;
+        height: 9.38%;
+        top: 31.01%;
+        left: 0.6%;
+        z-index: 17;
+      }
+      #Info_09 {
+        width: 35.96%;
+        height: 9.38%;
+        top: 31.01%;
+        left: 36.5%;
+        z-index: 18;
+      }
+      #Info_10 {
+        width: 28.07%;
+        height: 13.28%;
+        top: 31.01%;
+        left: 71.5%;
+        z-index: 19;
+      }
 
-			#Info_11 { 
-				width: 39.47%; 
-				height: 9.77%;
-				top: 42.04%;
-				left: 59%;
-				z-index: 20;
-			}
-			#Info_12 { 
-				width: 39.47%; 
-				height: 9.77%;
-				top: 42.04%;
-				left: 25.5%;
-				z-index: 21;
-			}
-			#Info_13 { 
-				width: 31.58%; 
-				height: 13.67%;
-				top: 42.04%;
-				left: 0%;
-				z-index: 22;
-			}
+      #Info_11 {
+        width: 39.47%;
+        height: 9.77%;
+        top: 42.04%;
+        left: 59%;
+        z-index: 20;
+      }
+      #Info_12 {
+        width: 39.47%;
+        height: 9.77%;
+        top: 42.04%;
+        left: 25.5%;
+        z-index: 21;
+      }
+      #Info_13 {
+        width: 31.58%;
+        height: 13.67%;
+        top: 42.04%;
+        left: 0%;
+        z-index: 22;
+      }
 
-			#Info_14 { 
-				width: 34.21%; 
-				height: 10.16%;
-				top: 53.31%;
-				left: 0.4%;
-				z-index: 23;
-			}
-			#Info_15 { 
-				width: 40.35%; 
-				height: 10.16%;
-				top: 53.31%;
-				left: 32%;
-				z-index: 24;
-			}
-			#Info_16 { 
-				width: 31.58%; 
-				height: 14.84%;
-				top: 53.31%;
-				left: 68.65%;
-				z-index: 25;
-			}
+      #Info_14 {
+        width: 34.21%;
+        height: 10.16%;
+        top: 53.31%;
+        left: 0.4%;
+        z-index: 23;
+      }
+      #Info_15 {
+        width: 40.35%;
+        height: 10.16%;
+        top: 53.31%;
+        left: 32%;
+        z-index: 24;
+      }
+      #Info_16 {
+        width: 31.58%;
+        height: 14.84%;
+        top: 53.31%;
+        left: 68.65%;
+        z-index: 25;
+      }
 
-			#Info_17 { 
-				width: 39.47%; 
-				height: 8.59%;
-				top: 65%;
-				left: 60.8%;
-				z-index: 26;
-			}
-			#Info_18 { 
-				width: 37.72%; 
-				height: 10.55%;
-				top: 65%;
-				left: 26.08%;
-				z-index: 27;
-			}
-			#Info_19 { 
-				width: 33.33%; 
-				height: 13.28%;
-				top: 65%;
-				left: 0.1%;
-				z-index: 28;
-			}
+      #Info_17 {
+        width: 39.47%;
+        height: 8.59%;
+        top: 65%;
+        left: 60.8%;
+        z-index: 26;
+      }
+      #Info_18 {
+        width: 37.72%;
+        height: 10.55%;
+        top: 65%;
+        left: 26.08%;
+        z-index: 27;
+      }
+      #Info_19 {
+        width: 33.33%;
+        height: 13.28%;
+        top: 65%;
+        left: 0.1%;
+        z-index: 28;
+      }
 
-			#Info_20 { 
-				width: 35.09%; 
-				height: 10.16%;
-				top: 76.81%;
-				left: 1.1%;
-				z-index: 29;
-			}
-			#Info_21 { 
-				width: 67.54%; 
-				height: 13.67%;
-				top: 76.81%;
-				left: 32.3%;
-				z-index: 30;
-			}
+      #Info_20 {
+        width: 35.09%;
+        height: 10.16%;
+        top: 76.81%;
+        left: 1.1%;
+        z-index: 29;
+      }
+      #Info_21 {
+        width: 67.54%;
+        height: 13.67%;
+        top: 76.81%;
+        left: 32.3%;
+        z-index: 30;
+      }
 
-			#Info_22 { 
-				width: 43.86%; 
-				height: 10.94%;
-				top: 89.11%;
-				left: 56.3%;
-				z-index: 31;
-			}
-			#Info_23 { 
-				width: 58.77%; 
-				height: 9.77%;
-				top: 89.11%;
-				left: 0.3%;
-				z-index: 32;
-			}
-		}
-	}
+      #Info_22 {
+        width: 43.86%;
+        height: 10.94%;
+        top: 89.11%;
+        left: 56.3%;
+        z-index: 31;
+      }
+      #Info_23 {
+        width: 58.77%;
+        height: 9.77%;
+        top: 89.11%;
+        left: 0.3%;
+        z-index: 32;
+      }
+    }
+  }
 
-	&#Infografico_xs {
-		display: none;
+  &#Infografico_xs {
+    display: none;
 
-		#Info_xs_Pecas {
-			.infoPeca { width: 100%; left: 0%; }
+    #Info_xs_Pecas {
+      .infoPeca {
+        width: 100%;
+        left: 0%;
+      }
 
-			#Info_xs_BG { 
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-				z-index: 10;
-			}
+      #Info_xs_BG {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
 
-			#Info_xs_01 { 
-				height: 2.17%; 
-				top: 0.00%;
-				z-index: 10;
-			}
-			#Info_xs_02 { 
-				height: 2.89%; 
-				top: 2.17%;
-				z-index: 11;
-			}
-			#Info_xs_03 { 
-				height: 5.48%; 
-				top: 5.05%;
-				z-index: 12;
-			}
-			#Info_xs_04 { 
-				height: 2.89%; 
-				top: 10.54%;
-				z-index: 13;
-			}
-			#Info_xs_05 { 
-				height: 5.41%; 
-				top: 13.42%;
-				z-index: 14;
-			}
-			#Info_xs_06 { 
-				height: 3.42%; 
-				top: 18.84%;
-				z-index: 15;
-			}
-			#Info_xs_07 { 
-				height: 5.35%; 
-				top: 22.24%;
-				z-index: 16;
-			}
-			#Info_xs_08 { 
-				height: 3.52%;
-				top: 27.59%;
-				z-index: 17;
-			}
-			#Info_xs_09 { 
-				height: 5.45%; 
-				top: 31.11%;
-				z-index: 18;
-			}
-			#Info_xs_10 { 
-				height: 3.07%; 
-				top: 36.57%;
-				z-index: 19;
-			}
-			#Info_xs_11 { 
-				height: 5.66%; 
-				top: 39.64%;
-				z-index: 20;
-			}
-			#Info_xs_12 { 
-				height: 3.67%; 
-				top: 45.30%;
-				z-index: 21;
-			}
-			#Info_xs_13 { 
-				height: 2.64%; 
-				top: 48.99%;
-				z-index: 22;
-			}
-			#Info_xs_14 { 
-				height: 5.93%; 
-				top: 51.63%;
-				z-index: 23;
-			}
-			#Info_xs_15 { 
-				height: 3.73%; 
-				top: 57.56%;
-				z-index: 24;
-			}
-			#Info_xs_16 { 
-				height: 2.98%; 
-				top: 61.30%;
-				z-index: 25;
-			}
-			#Info_xs_17 { 
-				height: 2.91%; 
-				top: 64.26%;
-				z-index: 26;
-			}
-			#Info_xs_18 { 
-				height: 6.17%; 
-				top: 67.17%;
-				z-index: 27;
-			}
-			#Info_xs_19 { 
-				height: 4.44%; 
-				top: 73.34%;
-				z-index: 28;
-			}
-			#Info_xs_20 { 
-				height: 6.05%; 
-				top: 77.80%;
-				z-index: 29;
-			}
-			#Info_xs_21 { 
-				height: 5.59%; 
-				top: 83.86%;
-				z-index: 30;
-			}
-			#Info_xs_22 { 
-				height: 6.36%; 
-				top: 89.43%;
-				z-index: 31;
-			}
-			#Info_xs_23 {  
-				height: 4.20%; 
-				top: 95.78%;
-				z-index: 32;
-			}
-		}
-	}
+      #Info_xs_01 {
+        height: 2.17%;
+        top: 0%;
+        z-index: 10;
+      }
+      #Info_xs_02 {
+        height: 2.89%;
+        top: 2.17%;
+        z-index: 11;
+      }
+      #Info_xs_03 {
+        height: 5.48%;
+        top: 5.05%;
+        z-index: 12;
+      }
+      #Info_xs_04 {
+        height: 2.89%;
+        top: 10.54%;
+        z-index: 13;
+      }
+      #Info_xs_05 {
+        height: 5.41%;
+        top: 13.42%;
+        z-index: 14;
+      }
+      #Info_xs_06 {
+        height: 3.42%;
+        top: 18.84%;
+        z-index: 15;
+      }
+      #Info_xs_07 {
+        height: 5.35%;
+        top: 22.24%;
+        z-index: 16;
+      }
+      #Info_xs_08 {
+        height: 3.52%;
+        top: 27.59%;
+        z-index: 17;
+      }
+      #Info_xs_09 {
+        height: 5.45%;
+        top: 31.11%;
+        z-index: 18;
+      }
+      #Info_xs_10 {
+        height: 3.07%;
+        top: 36.57%;
+        z-index: 19;
+      }
+      #Info_xs_11 {
+        height: 5.66%;
+        top: 39.64%;
+        z-index: 20;
+      }
+      #Info_xs_12 {
+        height: 3.67%;
+        top: 45.3%;
+        z-index: 21;
+      }
+      #Info_xs_13 {
+        height: 2.64%;
+        top: 48.99%;
+        z-index: 22;
+      }
+      #Info_xs_14 {
+        height: 5.93%;
+        top: 51.63%;
+        z-index: 23;
+      }
+      #Info_xs_15 {
+        height: 3.73%;
+        top: 57.56%;
+        z-index: 24;
+      }
+      #Info_xs_16 {
+        height: 2.98%;
+        top: 61.3%;
+        z-index: 25;
+      }
+      #Info_xs_17 {
+        height: 2.91%;
+        top: 64.26%;
+        z-index: 26;
+      }
+      #Info_xs_18 {
+        height: 6.17%;
+        top: 67.17%;
+        z-index: 27;
+      }
+      #Info_xs_19 {
+        height: 4.44%;
+        top: 73.34%;
+        z-index: 28;
+      }
+      #Info_xs_20 {
+        height: 6.05%;
+        top: 77.8%;
+        z-index: 29;
+      }
+      #Info_xs_21 {
+        height: 5.59%;
+        top: 83.86%;
+        z-index: 30;
+      }
+      #Info_xs_22 {
+        height: 6.36%;
+        top: 89.43%;
+        z-index: 31;
+      }
+      #Info_xs_23 {
+        height: 4.2%;
+        top: 95.78%;
+        z-index: 32;
+      }
+    }
+  }
 
-	@media #{$bp-phone} {
-		&#Infografico_1 { display: none; }
+  @media #{$bp-minTablet} {
+    &#Infografico_1 {
+      display: none;
+    }
 
-		&#Infografico_xs { display: block; }
-	}
+    &#Infografico_xs {
+      display: block;
+    }
+  }
 }
 
 .Organograma {
-	position: relative;
-	height: 100%;
-	width: 100%;
-	margin: 0 auto 30px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto 30px;
 
-	.img-modelo { opacity: 0; }
+  .img-modelo {
+    opacity: 0;
+  }
 
-	.cenaOrg {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+  .cenaOrg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-		.pecaOrg { position: absolute; opacity: 0; }
-	}
+    .pecaOrg {
+      position: absolute;
+      opacity: 0;
+    }
+  }
 
-	&#Org1_xs {
-		#cenaOrg1 {
-			#Org01_xs_Lousa { 
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-				z-index: 10;
-			}
-			#Org01_xs_Header { 
-				width: 86.11%; height: 28.46%; left: 7.36%; top: 3.18%;
-				z-index: 12;
-			}
-			#Org01_xs_PostAm { 
-				width: 80.56%; height: 29.23%; left: 7.78%; top: 30.26%;
-				z-index: 13;
-			}
-			#Org01_xs_PostIt { 
-				width: 81.94%; height: 11.79%; left: 9.44%; top: 53.33%;
-				z-index: 14;
-			}
-			#Org01_xs_PostAz { 
-				width: 90.28%; height: 30.26%; left: 3.89%; top: 64.82%;
-				z-index: 15;
-			}
-			#Org01_xs_Stickers { 
-				width: 80.56%; height: 91.79%; left: 12.50%; top: 3.69%;
-				z-index: 11;
-			}
-		}
-	}
+  &#Org1_xs {
+    #cenaOrg1 {
+      #Org01_xs_Lousa {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+      #Org01_xs_Header {
+        width: 86.11%;
+        height: 28.46%;
+        left: 7.36%;
+        top: 3.18%;
+        z-index: 12;
+      }
+      #Org01_xs_PostAm {
+        width: 80.56%;
+        height: 29.23%;
+        left: 7.78%;
+        top: 30.26%;
+        z-index: 13;
+      }
+      #Org01_xs_PostIt {
+        width: 81.94%;
+        height: 11.79%;
+        left: 9.44%;
+        top: 53.33%;
+        z-index: 14;
+      }
+      #Org01_xs_PostAz {
+        width: 90.28%;
+        height: 30.26%;
+        left: 3.89%;
+        top: 64.82%;
+        z-index: 15;
+      }
+      #Org01_xs_Stickers {
+        width: 80.56%;
+        height: 91.79%;
+        left: 12.5%;
+        top: 3.69%;
+        z-index: 11;
+      }
+    }
+  }
 
-	&#Org2_xs {
-		#cenaOrg2 {
-			#Org02_xs_Lousa { 
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-				z-index: 10;
-			}
-			#Org02_xs_Header { 
-				width: 87.50%; height: 28.21%; left: 6.94%; top: 4.00%;
-				z-index: 12;
-			}
-			#Org02_xs_PostAm { 
-				width: 87.50%; height: 31.54%; left: 3.47%; top: 32.62%;
-				z-index: 13;
-			}
-			#Org02_xs_PostAz { 
-				width: 87.50%; height: 31.79%; left: 6.39%; top: 63.69%;
-				z-index: 15;
-			}
-			#Org02_xs_Stickers { 
-				width: 81.94%; height: 94.36%; left: 7.78%; top: 2.36%;
-				z-index: 11;
-			}
-		}
-	}
+  &#Org2_xs {
+    #cenaOrg2 {
+      #Org02_xs_Lousa {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+      #Org02_xs_Header {
+        width: 87.5%;
+        height: 28.21%;
+        left: 6.94%;
+        top: 4%;
+        z-index: 12;
+      }
+      #Org02_xs_PostAm {
+        width: 87.5%;
+        height: 31.54%;
+        left: 3.47%;
+        top: 32.62%;
+        z-index: 13;
+      }
+      #Org02_xs_PostAz {
+        width: 87.5%;
+        height: 31.79%;
+        left: 6.39%;
+        top: 63.69%;
+        z-index: 15;
+      }
+      #Org02_xs_Stickers {
+        width: 81.94%;
+        height: 94.36%;
+        left: 7.78%;
+        top: 2.36%;
+        z-index: 11;
+      }
+    }
+  }
 
-	&#Org3_xs {
-		#cenaOrg3 {
-			#Org03_xs_Lousa { 
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-				z-index: 10;
-			}
-			#Org03_xs_Header { 
-				width: 86.11%; height: 29.41%; left: 7.92%; top: 3.74%;
-				z-index: 12;
-			}
-			#Org03_xs_PostAm { 
-				width: 87.50%; height: 33.16%; left: 2.22%; top: 32.99%;
-				z-index: 13;
-			}
-			#Org03_xs_PostAz { 
-				width: 87.50%; height: 34.76%; left: 5.14%; top: 65.56%;
-				z-index: 15;
-			}
-			#Org03_xs_Stickers { 
-				width: 84.72%; height: 93.05%; left: 8.19%; top: 2.94%;
-				z-index: 11;
-			}
-		}
-	}
+  &#Org3_xs {
+    #cenaOrg3 {
+      #Org03_xs_Lousa {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+      #Org03_xs_Header {
+        width: 86.11%;
+        height: 29.41%;
+        left: 7.92%;
+        top: 3.74%;
+        z-index: 12;
+      }
+      #Org03_xs_PostAm {
+        width: 87.5%;
+        height: 33.16%;
+        left: 2.22%;
+        top: 32.99%;
+        z-index: 13;
+      }
+      #Org03_xs_PostAz {
+        width: 87.5%;
+        height: 34.76%;
+        left: 5.14%;
+        top: 65.56%;
+        z-index: 15;
+      }
+      #Org03_xs_Stickers {
+        width: 84.72%;
+        height: 93.05%;
+        left: 8.19%;
+        top: 2.94%;
+        z-index: 11;
+      }
+    }
+  }
 
-	&#Org4_xs {
-		#cenaOrg4 {
-			#Org04_xs_Lousa { 
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-				z-index: 10;
-			}
-			#Org04_xs_Quadro { 
-				width: 86.11%; height: 36.75%; left: 8.33%; top: 3.85%;
-				z-index: 13;
-			}
-			#Org04_xs_Setas { 
-				width: 87.50%; height: 21.37%; left: 5.69%; top: 32.82%;
-				z-index: 12;
-			}
-			#Org04_xs_Ilustra { 
-				width: 33.33%; height: 28.21%; left: 5.97%; top: 56.92%;
-				z-index: 15;
-			}
-			#Org04_xs_PostIt { 
-				width: 58.33%; height: 34.19%; left: 35.56%; top: 58.12%;
-				z-index: 16;
-			}
-		}
-	}
+  &#Org4_xs {
+    #cenaOrg4 {
+      #Org04_xs_Lousa {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+      #Org04_xs_Quadro {
+        width: 86.11%;
+        height: 36.75%;
+        left: 8.33%;
+        top: 3.85%;
+        z-index: 13;
+      }
+      #Org04_xs_Setas {
+        width: 87.5%;
+        height: 21.37%;
+        left: 5.69%;
+        top: 32.82%;
+        z-index: 12;
+      }
+      #Org04_xs_Ilustra {
+        width: 33.33%;
+        height: 28.21%;
+        left: 5.97%;
+        top: 56.92%;
+        z-index: 15;
+      }
+      #Org04_xs_PostIt {
+        width: 58.33%;
+        height: 34.19%;
+        left: 35.56%;
+        top: 58.12%;
+        z-index: 16;
+      }
+    }
+  }
 
-	&#Org5_xs {
-		#cenaOrg5 {
-			#Org05_xs_Lousa { 
-				height: 100%;
-				width: 100%;
-				top: 0;
-				left: 0;
-				z-index: 10;
-			}
-			#Org05_xs_Quadro { 
-				width: 87.50%; height: 36.02%; left: 6.39%; top: 2.92%;
-				z-index: 13;
-			}
-			#Org05_xs_Setas { 
-				width: 87.50%; height: 16.15%; left: 6.53%; top: 32.98%;
-				z-index: 12;
-			}
-			#Org05_xs_Ilustra { 
-				width: 56.94%; height: 15.53%; left: 18.47%; top: 50.56%;
-				z-index: 15;
-			}
-			#Org05_xs_PostIt { 
-				width: 87.50%; height: 30.43%; left: 7.08%; top: 64.10%;
-				z-index: 16;
-			}
-		}
-	}
+  &#Org5_xs {
+    #cenaOrg5 {
+      #Org05_xs_Lousa {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+      }
+      #Org05_xs_Quadro {
+        width: 87.5%;
+        height: 36.02%;
+        left: 6.39%;
+        top: 2.92%;
+        z-index: 13;
+      }
+      #Org05_xs_Setas {
+        width: 87.5%;
+        height: 16.15%;
+        left: 6.53%;
+        top: 32.98%;
+        z-index: 12;
+      }
+      #Org05_xs_Ilustra {
+        width: 56.94%;
+        height: 15.53%;
+        left: 18.47%;
+        top: 50.56%;
+        z-index: 15;
+      }
+      #Org05_xs_PostIt {
+        width: 87.5%;
+        height: 30.43%;
+        left: 7.08%;
+        top: 64.1%;
+        z-index: 16;
+      }
+    }
+  }
 
-	&.animaOrg {
-		#cenaOrg1 {
-			#Org01_xs_Lousa { 
-				@include transform-origin(center);
-            	@include animation(slideUp 0.6s ease 1s forwards);
-			}
-			#Org01_xs_Header { 
-				@include transform-origin(center 200px);
-            	@include animation(scaleObj 0.75s ease-in 1.6s forwards);
-			}
-			#Org01_xs_PostAm { 
-				@include transform-origin(center);
-                @include animation(slideUp .8s ease 2.5s forwards);
-			}
-			#Org01_xs_PostIt { 
-				@include transform-origin(center);
-                @include animation(slideLeft .6s ease 2.9s forwards);
-			}
-			#Org01_xs_PostAz { 
-				@include transform-origin(center);
-                @include animation(slideUp .8s ease 3.2s forwards);
-			}
-			#Org01_xs_Stickers { 
-				@include transform-origin(center);
-            	@include animation(alphaObj 1s ease 4s forwards);
-			}
-		}
-		#cenaOrg2 {
-			#Org02_xs_Lousa { 
-				@include transform-origin(center);
-            	@include animation(slideUp 0.6s ease 1s forwards);
-			}
-			#Org02_xs_Header { 
-				@include transform-origin(center 200px);
-            	@include animation(scaleObj 0.75s ease-in 1.6s forwards);
-			}
-			#Org02_xs_PostAm { 
-				@include transform-origin(center);
-				@include animation(slideRight .8s ease 2.5s forwards);
-			}
-			#Org02_xs_PostAz { 
-				@include transform-origin(center);
-			@include animation(slideLeft .8s ease 2.9s forwards);
-			}
-			#Org02_xs_Stickers { 
-				@include transform-origin(center);
-            	@include animation(alphaObj 1s ease 4s forwards);
-			}
-		}
-		#cenaOrg3 {
-			#Org03_xs_Lousa { 
-				@include transform-origin(center);
-            	@include animation(slideUp 0.6s ease 1s forwards);
-			}
-			#Org03_xs_Header { 
-				@include transform-origin(center 200px);
-            	@include animation(scaleObj 0.75s ease-in 1.6s forwards);
-			}
-			#Org03_xs_PostAm { 
-				@include transform-origin(center);
-				@include animation(slideRight .8s ease 2.5s forwards);
-			}
-			#Org03_xs_PostAz { 
-				@include transform-origin(center);
-				@include animation(slideLeft .8s ease 2.9s forwards);
-			}
-			#Org03_xs_Stickers { 
-				@include transform-origin(center);
-            	@include animation(alphaObj 1s ease 4s forwards);
-			}
-		}
+  &.animaOrg {
+    #cenaOrg1 {
+      #Org01_xs_Lousa {
+        @include transform-origin(center);
+        @include animation(slideUp 0.6s ease 1s forwards);
+      }
+      #Org01_xs_Header {
+        @include transform-origin(center 200px);
+        @include animation(scaleObj 0.75s ease-in 1.6s forwards);
+      }
+      #Org01_xs_PostAm {
+        @include transform-origin(center);
+        @include animation(slideUp 0.8s ease 2.5s forwards);
+      }
+      #Org01_xs_PostIt {
+        @include transform-origin(center);
+        @include animation(slideLeft 0.6s ease 2.9s forwards);
+      }
+      #Org01_xs_PostAz {
+        @include transform-origin(center);
+        @include animation(slideUp 0.8s ease 3.2s forwards);
+      }
+      #Org01_xs_Stickers {
+        @include transform-origin(center);
+        @include animation(alphaObj 1s ease 4s forwards);
+      }
+    }
+    #cenaOrg2 {
+      #Org02_xs_Lousa {
+        @include transform-origin(center);
+        @include animation(slideUp 0.6s ease 1s forwards);
+      }
+      #Org02_xs_Header {
+        @include transform-origin(center 200px);
+        @include animation(scaleObj 0.75s ease-in 1.6s forwards);
+      }
+      #Org02_xs_PostAm {
+        @include transform-origin(center);
+        @include animation(slideRight 0.8s ease 2.5s forwards);
+      }
+      #Org02_xs_PostAz {
+        @include transform-origin(center);
+        @include animation(slideLeft 0.8s ease 2.9s forwards);
+      }
+      #Org02_xs_Stickers {
+        @include transform-origin(center);
+        @include animation(alphaObj 1s ease 4s forwards);
+      }
+    }
+    #cenaOrg3 {
+      #Org03_xs_Lousa {
+        @include transform-origin(center);
+        @include animation(slideUp 0.6s ease 1s forwards);
+      }
+      #Org03_xs_Header {
+        @include transform-origin(center 200px);
+        @include animation(scaleObj 0.75s ease-in 1.6s forwards);
+      }
+      #Org03_xs_PostAm {
+        @include transform-origin(center);
+        @include animation(slideRight 0.8s ease 2.5s forwards);
+      }
+      #Org03_xs_PostAz {
+        @include transform-origin(center);
+        @include animation(slideLeft 0.8s ease 2.9s forwards);
+      }
+      #Org03_xs_Stickers {
+        @include transform-origin(center);
+        @include animation(alphaObj 1s ease 4s forwards);
+      }
+    }
 
-		#cenaOrg4 {
-			#Org04_xs_Lousa { 
-				@include transform-origin(center);
-            	@include animation(slideUp 0.6s ease 1s forwards);
-			}
-			#Org04_xs_Quadro { 
-				@include transform-origin(center);
-				@include animation(slideDown .8s ease 2s forwards);
-			}
-			#Org04_xs_Setas { 
-				@include transform-origin(center top);
-                @include animation(scaleObj .6s ease 2.6s forwards);
-			}
-			#Org04_xs_Ilustra { 
-				@include transform-origin(center);
-				@include animation(slideUp .8s ease 3s forwards);
-			}
-			#Org04_xs_PostIt { 
-				@include transform-origin(center);
-				@include animation(slideLeft .6s ease 3.4s forwards);
-			}
-		}
-		#cenaOrg5 {
-			#Org05_xs_Lousa { 
-				@include transform-origin(center);
-            	@include animation(slideUp 0.6s ease 1s forwards);
-			}
-			#Org05_xs_Quadro { 
-				@include transform-origin(center);
-				@include animation(slideDown .8s ease 2s forwards);
-			}
-			#Org05_xs_Setas { 
-				@include transform-origin(center top);
-                @include animation(scaleObj .6s ease 2.6s forwards);
-			}
-			#Org05_xs_Ilustra { 
-				@include transform-origin(center);
-				@include animation(slideUp .8s ease 3s forwards);
-			}
-			#Org05_xs_PostIt { 
-				@include transform-origin(center);
-				@include animation(slideLeft .6s ease 3.4s forwards);
-			}
-		}
-	}
+    #cenaOrg4 {
+      #Org04_xs_Lousa {
+        @include transform-origin(center);
+        @include animation(slideUp 0.6s ease 1s forwards);
+      }
+      #Org04_xs_Quadro {
+        @include transform-origin(center);
+        @include animation(slideDown 0.8s ease 2s forwards);
+      }
+      #Org04_xs_Setas {
+        @include transform-origin(center top);
+        @include animation(scaleObj 0.6s ease 2.6s forwards);
+      }
+      #Org04_xs_Ilustra {
+        @include transform-origin(center);
+        @include animation(slideUp 0.8s ease 3s forwards);
+      }
+      #Org04_xs_PostIt {
+        @include transform-origin(center);
+        @include animation(slideLeft 0.6s ease 3.4s forwards);
+      }
+    }
+    #cenaOrg5 {
+      #Org05_xs_Lousa {
+        @include transform-origin(center);
+        @include animation(slideUp 0.6s ease 1s forwards);
+      }
+      #Org05_xs_Quadro {
+        @include transform-origin(center);
+        @include animation(slideDown 0.8s ease 2s forwards);
+      }
+      #Org05_xs_Setas {
+        @include transform-origin(center top);
+        @include animation(scaleObj 0.6s ease 2.6s forwards);
+      }
+      #Org05_xs_Ilustra {
+        @include transform-origin(center);
+        @include animation(slideUp 0.8s ease 3s forwards);
+      }
+      #Org05_xs_PostIt {
+        @include transform-origin(center);
+        @include animation(slideLeft 0.6s ease 3.4s forwards);
+      }
+    }
+  }
 }

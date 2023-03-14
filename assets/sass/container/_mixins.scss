@@ -1,44 +1,49 @@
 /******************
 Configurações Tela
 *******************/
-$bp-largeDesktop: "only screen and (min-width: 1281px)";
-$bp-minDesktop: "only screen and (max-width: 1200px)";
+$bp-xlDesktop: "only screen and (min-width: 1141px)";
+$bp-desktop: "only screen and (max-width: 1140px)";
 $bp-tablet: "only screen and (max-width: 992px)";
-$bp-phone: "only screen and (max-width: 767px)";
-$bp-minPhone: "only screen and (max-width: 479px)";
+$bp-minTablet: "only screen and (max-width: 767px)";
+$bp-phone: "only screen and (max-width: 576px)";
+
+// CONFIGS
+$altura-header: 100px;
+$espaco-margin: 20px;
+$radius-padrao: 12px;
 
 /******************
 Cores
 *******************/
 $cores: (
-    Amarela: (
-        color1: #fdb94e,
-        texto : #143849
-    ),
-    Azul: (
-        color1: #286efa,
-        texto : #f5f6fa 
-    ),
-    Verde: (
-        color1: #88ebb5,
-        texto : #143849
-    ),
-    Vermelho: (
-        color1: #fd3a57,
-        texto : #f5f6fa
-    ),
-    Navy: (
-        color1: #143849,
-        texto : #f5f6fa
-    ),
-    Escura: (
-        color1: #222222,
-        texto : #f5f6fa
-    ),
-    Clara: (
-        color1: #f5f6fa,
-        texto : #143849
-    )
+  Amarela: (
+    color1: #fdb94e,
+    texto: #143849,
+  ),
+  Azul: (
+    color1: #286efa,
+    texto: #f5f6fa,
+  ),
+  Verde: (
+    color1: #88ebb5,
+    texto: #143849,
+  ),
+  Vermelho: (
+    color1: #fd3a57,
+    texto: #f5f6fa,
+  ),
+  Navy: (
+    color1: #143849,
+    texto: #f5f6fa,
+  ),
+  Escura: (
+    color1: #222222,
+    texto: #f5f6fa,
+  ),
+  Clara: (
+    color1: #f5f6fa,
+    texto: #143849,
+  ),
 );
 
 $cor1: #fdb94e;
@@ -57,63 +62,63 @@ $svg3: str_slice(#{$cor4}, 2, 7);
 $corTexto: #143849;
 
 @mixin border-box {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @mixin box-shadow($props) {
-    -webkit-box-shadow: $props;
-       -moz-box-shadow: $props;
-            box-shadow: $props;
+  -webkit-box-shadow: $props;
+  -moz-box-shadow: $props;
+  box-shadow: $props;
 }
 
 @mixin transform($props) {
   -webkit-transform: $props;
-     -moz-transform: $props;
-      -ms-transform: $props;
-          transform: $props;
+  -moz-transform: $props;
+  -ms-transform: $props;
+  transform: $props;
 }
 
 @mixin perspective($props) {
-    -webkit-perspective: $props;
-       -moz-perspective: $props;
-            perspective: $props;
+  -webkit-perspective: $props;
+  -moz-perspective: $props;
+  perspective: $props;
 }
 
 @mixin transform-origin($props) {
-    -webkit-transform-origin: $props;
-       -moz-transform-origin: $props;
-            transform-origin: $props;
+  -webkit-transform-origin: $props;
+  -moz-transform-origin: $props;
+  transform-origin: $props;
 }
 
 @mixin transition($props) {
   -webkit-transition: $props;
-     -moz-transition: $props;
-      -ms-transition: $props;
-          transition: $props;
+  -moz-transition: $props;
+  -ms-transition: $props;
+  transition: $props;
 }
 
 //animation
 @mixin animation($animation) {
-	-webkit-animation: $animation;
-	   -moz-animation: $animation;
-	    -ms-animation: $animation;
-      	 -o-animation: $animation;
-			animation: $animation;
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
 }
 
 @mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content;
-    }
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-    @-ms-keyframes #{$name} {
-        @content;
-    }
-    @keyframes #{$name} {
-        @content;
-    } 
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
 }

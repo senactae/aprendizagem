@@ -82,51 +82,42 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2>UC1 – Mundo do Trabalho</h2>
+                    <h2>A voz da experiência</h2>
+
+                    <p>Descubra mais sobre esse assunto no vídeo a seguir. #olhovivo #fiquedeolho</p>
                 </div>
             </div>
 
-            <div class="row d-none d-md-block">
-                <div class="col-12 col-md-10 offset-md-1">
-                    <img id="svg-interactive" class="interactive int1 d-none" src="img/interativo03_05.svg" data-desktop="img/interativo03_05.svg" data-tablet="img/interativo03_05.svg" data-phone="img/interativo03_05_xs.svg" />
-                    <div class="divInteractive_Container mt0" tabindex="-1">
-                        <div class="divInteractive" id="d_svg-interactive"></div>
-                    </div>
-                </div>
-            </div>
-            <p class="visuallyhidden" id="labelInfo" tabindex="0">O esquema destaca que a Unidade Curricular Mundo do Trabalho é desenvolvida concomitantemente com as Unidades Curriculares Projeto Aprendizagem e Prática Profissional. Também traz a informação de que as Unidade Curriculares Mundo do Trabalho e Projeto Aprendizagem são desenvolvidas no Senac, enquanto a Unidade Prática Profissional é desenvolvida na empresa.</p>
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
+                    <div class="player">
+                        <video id="example_video_2" class="video-js" controls preload="none" data-setup='{ "html5" : { "nativeTextTracks" : false } }' poster="videos/capaVideo_Vermelho.jpg">
 
-            <div class="row d-block d-md-none">
-                <div class="col-12">
-                    <div class="Organograma" id="Org1_xs">
-                        <img src="img/Organograma/Org01_xs.jpg" class="img-fluid d-block img-modelo" aria-labelledby="labelInfo" tabindex="0" />
+                            <source src="videos/U02_V02_Quais_Deveres_720p.mp4" type="video/mp4">
+                            <track kind="captions" src="videos/U02_V02_Quais_Deveres.vtt" srclang="pt-br" label="Portugues" default>
 
-                        <div class="cenaOrg" id="cenaOrg1" tabindex="-1">
-                            <img id="Org01_xs_Lousa" src="img/Organograma/Org1/Lousa.png" class="pecaOrg" />
-                            <img id="Org01_xs_Header" src="img/Organograma/Org1/Header.png" class="pecaOrg" />
-                            <img id="Org01_xs_PostAm" src="img/Organograma/Org1/PostAmarelo.png" class="pecaOrg" />
-                            <img id="Org01_xs_PostIt" src="img/Organograma/Org1/PostIt.png" class="pecaOrg" />
-                            <img id="Org01_xs_PostAz" src="img/Organograma/Org1/PostAzul.png" class="pecaOrg" />
-                            <img id="Org01_xs_Stickers" src="img/Organograma/Org1/Stickers.png" class="pecaOrg" />
-                        </div>
+                            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
+                        </video>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-12">
-                    <p>Agora, <strong>clique no play</strong> e ouça o que a Bianca e Letícia têm a dizer sobre essa Unidade Curricular. #vozdaexperiência</p>
-                </div>
+                <div class="col-sm-12">
+                    <div class="blocoPadrao blocoAtencao">
+                        <div class="contentBloco">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4 col-lg-3">
+                                    <img src="img/icoAtencao.png" class="img-fluid d-block img-template" />
+                                </div>
 
-                <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-                    <div class="player mv20">
-                        <video id="example_video_2" class="video-js" controls preload="none" data-setup='{ "html5" : { "nativeTextTracks" : false } }' poster="videos/capaVideo_Amarelo.jpg">
+                                <div class="col-sm-12 col-md-8 col-lg-9">
+                                    <h3>Atenção</h3>
 
-                            <source src="videos/U03_V05_UC1_720p.mp4" type="video/mp4">
-                            <track kind="captions" src="videos/U03_V05_UC1.vtt" srclang="pt-br" label="Portugues" default>
-
-                            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                        </video>
+                                    <p>É importante saber que, caso queira sair do programa, você tem esse direito.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,52 +135,19 @@
     <script src="../assets/js/libs/video-js-7.9.5/video.min.js"></script>
 
     <script src="../assets/js/libs/preloadjs.min.js"></script>
+    <script src="../assets/js/scripts/svgLoader.js"></script>
 
     <!-- script -->
     <script src="../assets/js/scripts/index.js"></script>
+    <script src="../assets/js/scripts/recursos.js"></script>
+
+    <script src="../assets/js/libs/audiojs/audio.js"></script>
+    <script src="../assets/js/scripts/audioPlayer.js"></script>
     <script>
         var indexLoad;
-        var svgLoad;
 
         $(document).ready(function (e) {
             indexLoad = new Index();
-
-            $larg = 720;
-            $alt = 1950;
-
-            coords = Array(('630,550,50,78'), ('630,615,25,636'), ('630,620,46,1242'), ('590,1840,56,46'));
-            $.each(coords, function (i, v) {
-                sC = v.split(',');
-                $x = (sC[2] / $larg) * 100;
-                $y = (sC[3] / $alt) * 100;
-                $w = (sC[0] / $larg) * 100;
-                $h = (sC[1] / $alt) * 100;
-                console.log('width: ' + $w.toFixed(2) + '%; height: ' + $h.toFixed(2) + '%; left: ' + $x.toFixed(2) + '%; top: ' + $y.toFixed(2) + '%;');
-            });
-
-            $w = $(window).width();
-            if ($w > 767) {
-                loadObj = $('.interactive');
-                svgLoad = new svgLoader();
-                svgLoad.loadContent(loadObj);
-            }
-
-            $(window).resize(function () {
-                $w = $(window).width();
-                if ($w > 767) {
-                    loadObj = $('.interactive');
-                    svgLoad = new svgLoader();
-                    svgLoad.loadContent(loadObj);
-                } else {
-                    $('.Organograma').addClass('animaOrg');
-                }
-            });
-
-            $('body').on('classChange', function () {
-                $('html, body').animate({ scrollTop: $('.wrapper').offset().top - 115 }, 800);
-
-                if ($w < 768) { $('.Organograma').addClass('animaOrg'); }
-            });
         });
     </script>
 

@@ -1,169 +1,185 @@
 /*****************************************/
 /* CAROUSEL ******************************/
 /*****************************************/
-.carousel { 
-	height: 100%;
-	margin: 0 auto 30px;
+.carousel {
+  height: 100%;
+  margin: 0 auto 30px;
 
-	@media #{$bp-phone} {
-		margin-bottom: 0;
+  @media #{$bp-minTablet} {
+    margin-bottom: 0;
 
-		@include box-shadow(none);
-	}
+    @include box-shadow(none);
+  }
 
-	.carousel-inner { 
-		height: 100%;
+  .carousel-inner {
+    height: 100%;
 
-		.item {
-			height: 100%;
-            padding: 0;
-			z-index: 10;
-			
-			&.active, &.next, &.prev { display: block; }
+    .item {
+      height: 100%;
+      padding: 0;
+      z-index: 10;
 
-			.divEtapa {
-				.titleEtapa {
-					position: relative;
-					height: 90px;
-					display: flex;
-		
-					h4 {
-						background: transparent url('../img/BG_Slider_titleL.png') left bottom no-repeat;
-						color: $cor7;
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						height: 100%;
-						width: 35%;
-						font-size: 32px;
-						text-transform: uppercase;
-					}
-					h5 {
-						background: transparent url('../img/BG_Slider_titleR.png') right bottom no-repeat;
-						color: $corTexto;
-						font-family: 'Open Sans', sans-serif;
-						font-size: 22px;
-						font-weight: 600;
-						height: 100%;
-						width: 65%;
-						display: flex;
-						align-items: center;
-						padding-left: 30px;
-						text-transform: inherit;
-					}
-				}
-		
-				.contentEtapa {
-					background: transparent url('../img/BG_Slider.png') center bottom no-repeat;
-					background-size: 100%;
-					padding: 40px 80px;
-					position: relative;
-					display: grid;
-					align-items: center;
-					min-height: 220px;
-					top: -3px;
-		
-					p {
-						&:last-child { margin: 0; }
-					}
-				}
-			}
-
-			@media #{$bp-phone} {
-				.divEtapa {
-					.titleEtapa {
-						height: 80px;
-			
-						h4 {
-							width: 40%;
-							font-size: 24px;
-						}
-						h5 {
-							font-size: 19px;
-							width: 60%;
-						}
-					}
-			
-					.contentEtapa {
-						padding: 20px 60px;
-						min-height: inherit;
-					}
-				}
-			}
-		}
-	}
-	
-	/* INDICATORS */
-	.carousel-indicators {
+      &.active,
+      &.next,
+      &.prev {
         display: block;
-		bottom: 40px;
-		width: 40%;
-    	left: 40%;
-		margin: 0;
+      }
 
-		li {
-			background-color: #316991;
-			border: solid 2px transparent;
-			height: 8px;
-			margin: 0 5px;
-			padding: 0;
-			position: relative;
-			width: 8px; 
+      .divEtapa {
+        .titleEtapa {
+          position: relative;
+          height: 90px;
+          display: flex;
 
-			&::before { display: none; }
+          h4 {
+            background: transparent url("../img/BG_Slider_titleL.png") left
+              bottom no-repeat;
+            color: $cor7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 35%;
+            font-size: 32px;
+            text-transform: uppercase;
+          }
+          h5 {
+            background: transparent url("../img/BG_Slider_titleR.png") right
+              bottom no-repeat;
+            color: $corTexto;
+            font-family: "Open Sans", sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            height: 100%;
+            width: 65%;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            text-transform: inherit;
+          }
+        }
 
-			&.active { 
-				background-color: #316991; 
+        .contentEtapa {
+          background: transparent url("../img/BG_Slider.png") center bottom
+            no-repeat;
+          background-size: 100%;
+          padding: 40px 80px;
+          position: relative;
+          display: grid;
+          align-items: center;
+          min-height: 220px;
+          top: -3px;
 
-				&::before { 
-					border: solid 2px #316991;
-					border-radius: 50%;
-					content: '';
-					display: block;
-					position: relative;
-					width: 16px;
-					height: 16px;
-					margin: -6px 0 0 -6px;
-				}
-			}
-		}
-	}
+          p {
+            &:last-child {
+              margin: 0;
+            }
+          }
+        }
+      }
 
-	/* CONTROLS */
-	.setaControle {
-		background-color: transparent;
-		display: flex;
-		align-items: center;
-		margin: 0;
-		opacity: 1;
-		padding: 0;
-		position: absolute;
-		top: 90px;
-		height: 50%;
-		height: calc(100% - 100px);
-		width: 60px;
-		z-index: 16;
+      @media #{$bp-minTablet} {
+        .divEtapa {
+          .titleEtapa {
+            height: 80px;
 
-		i { 
-			display: block; 
-			background: transparent url(../img/btnSetaSlider.png) center no-repeat;
-			height: 60px;
-			width: 40px;
-			margin: 0 auto;
+            h4 {
+              width: 40%;
+              font-size: 24px;
+            }
+            h5 {
+              font-size: 19px;
+              width: 60%;
+            }
+          }
 
-			&.sCR { @include transform(scaleX(-1)); }
-		}
+          .contentEtapa {
+            padding: 20px 60px;
+            min-height: inherit;
+          }
+        }
+      }
+    }
+  }
 
-		&.esq { left: 0; }
-		&.dir { right: 0; }
-	}
+  /* INDICATORS */
+  .carousel-indicators {
+    display: block;
+    bottom: 40px;
+    width: 40%;
+    left: 40%;
+    margin: 0;
 
+    li {
+      background-color: #316991;
+      border: solid 2px transparent;
+      height: 8px;
+      margin: 0 5px;
+      padding: 0;
+      position: relative;
+      width: 8px;
+
+      &::before {
+        display: none;
+      }
+
+      &.active {
+        background-color: #316991;
+
+        &::before {
+          border: solid 2px #316991;
+          border-radius: 50%;
+          content: "";
+          display: block;
+          position: relative;
+          width: 16px;
+          height: 16px;
+          margin: -6px 0 0 -6px;
+        }
+      }
+    }
+  }
+
+  /* CONTROLS */
+  .setaControle {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    opacity: 1;
+    padding: 0;
+    position: absolute;
+    top: 90px;
+    height: 50%;
+    height: calc(100% - 100px);
+    width: 60px;
+    z-index: 16;
+
+    i {
+      display: block;
+      background: transparent url(../img/btnSetaSlider.png) center no-repeat;
+      height: 60px;
+      width: 40px;
+      margin: 0 auto;
+
+      &.sCR {
+        @include transform(scaleX(-1));
+      }
+    }
+
+    &.esq {
+      left: 0;
+    }
+    &.dir {
+      right: 0;
+    }
+  }
 }
 
 // HACK FOR IE
-_:-ms-fullscreen, :root .carousel { 
-	.carousel-inner { 
-		height: 100%;
-	}
+_:-ms-fullscreen,
+:root .carousel {
+  .carousel-inner {
+    height: 100%;
+  }
 }
-

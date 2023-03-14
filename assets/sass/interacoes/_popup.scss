@@ -10,325 +10,348 @@ body {
 }*/
 
 .modal {
-    padding: 0!important;
+  padding: 0 !important;
+  text-align: center;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px; /* Adjusts for spacing */
+  }
+
+  .modalVertical {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    vertical-align: middle;
+    z-index: 600;
+
+    .popup {
+      border-radius: 0;
+      width: 75%;
+      height: auto;
+      position: absolute;
+      padding: 0;
+      top: 50%;
+      left: 50%;
+
+      @include transition(all 400ms ease);
+      @include transform(translate(-50%, -50%));
+
+      &::before {
+        background: #fff;
+        content: " ";
+        display: block;
+        height: 120px;
+        position: absolute;
+        width: 70%;
+        left: 5%;
+        top: -60px;
+        z-index: 7;
+      }
+
+      &::after {
+        background: #019db1;
+        content: " ";
+        display: block;
+        height: 120px;
+        position: absolute;
+        width: 40%;
+        right: -30px;
+        bottom: -50px;
+        z-index: 8;
+      }
+
+      .popup-content {
+        background-color: #ffffff;
+        height: auto;
+        display: block;
+        padding: 40px;
+        z-index: 10;
+
+        position: relative;
+        width: 100%;
+
+        &::before {
+          background: url(../images/BG_Popup.png) top left no-repeat;
+          content: " ";
+          display: block;
+          height: 200px;
+          position: absolute;
+          width: 240px;
+          left: 5%;
+          opacity: 0.5;
+          top: -60px;
+          z-index: 11;
+        }
+
+        h2,
+        h3,
+        p {
+          position: relative;
+          z-index: 20;
+        }
+
+        h2 {
+          margin-bottom: 10px;
+        }
+
+        h3 {
+          color: #009db1;
+          font-family: "Oswald", sans-serif;
+          font-size: 28px;
+          font-weight: 600;
+          margin: 0 0 15px;
+          text-transform: uppercase;
+
+          &::after {
+            display: none;
+          }
+        }
+
+        p,
+        ul li {
+          font-size: 18px;
+          font-weight: 400;
+
+          @include transform(translate(0, 0));
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .close {
+    background: #ee4570;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: "Khand", sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0 auto;
+    min-width: 70px;
+    opacity: 1;
+    padding: 10px 0;
+    position: absolute;
+    top: -20px;
+    right: -20px;
     text-align: center;
+    text-transform: uppercase;
+    z-index: 902;
+
+    @include box-shadow(-20px 20px 20px -10px rgba(0, 0, 0, 0.3));
+    @include transition(all 0.4s);
+
+    &::after {
+      border: solid 1px #ff8a41;
+      content: " ";
+      border-radius: 25px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      bottom: 3px;
+      right: 3px;
+      @include transition(all 0.4s);
+    }
 
     &::before {
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-        margin-right: -4px; /* Adjusts for spacing */
+      background: url("../img/bg_fechar.png") center no-repeat;
+      content: " ";
+      position: absolute;
+      width: 110px;
+      height: 90px;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+
+      @include transition(all 0.4s);
+      @include transform(translate(-50%, -50%));
     }
 
-    .modalVertical { 
-        display: inline-block;
-        position: relative;
-        text-align: left;
-        vertical-align: middle;
-        z-index: 600;
+    &:hover {
+      background: darken(#ee4570, 10%);
 
-        .popup {
-            border-radius: 0;
-            width: 75%;
-            height: auto;
-            position:absolute;
-            padding: 0;
-            top: 50%;
-            left: 50%;
-    
-            @include transition(all 400ms ease);
-            @include transform(translate(-50%,-50%));
+      &::after {
+        border-color: lighten(#ff8a41, 10%);
+      }
+    }
+  }
 
-            &::before {
-                background: #FFF;
-                content: " ";
-                display: block;
-                height: 120px;
-                position: absolute;
-                width: 70%;
-                left: 5%;
-                top: -60px;
-                z-index: 7;
-            }
-        
-            &::after {
-                background: #019db1;
-                content: " ";
-                display: block;
-                height: 120px;
-                position: absolute;
-                width: 40%;
-                right: -30px;
-                bottom: -50px;
-                z-index: 8;
-            }
+  &.modalCarousel {
+    .divCarousel {
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        148deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(215, 215, 214, 1) 100%
+      );
 
-            .popup-content {
-                background-color: #FFFFFF;
-                height: auto;
-                display: block;
-                padding: 40px;
-                z-index: 10;
-                
-                position:relative;
-                width: 100%;
+      border-radius: 8px;
+      min-height: 360px;
+    }
 
-                &::before {
-                    background: url(../images/BG_Popup.png) top left no-repeat;
-                    content: " ";
-                    display: block;
-                    height: 200px;
-                    position: absolute;
-                    width: 240px;
-                    left: 5%;
-                    opacity: 0.5;
-                    top: -60px;
-                    z-index: 11;
-                }
+    &::after {
+      background: url("../img/bg_video.png") center no-repeat;
+      content: " ";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
 
-                h2, h3, p { position: relative; z-index: 20; }
-    
-                h2 { margin-bottom: 10px; }
+      @include transform(translate(-50%, -50%));
+      @include transition(all 0.4s);
+    }
+  }
 
-                h3 {
-                    color: #009db1;
-                    font-family: 'Oswald', sans-serif;
-                    font-size: 28px;
-                    font-weight: 600;
-                    margin: 0 0 15px;
-                    text-transform: uppercase;
+  &.modalVideo {
+    &::after {
+      background: url("../img/bg_video.png") center no-repeat;
+      content: " ";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
 
-                    &::after { display: none; }
-                }
-    
-                p,
-                ul li {
-                    font-size:  18px;
-                    font-weight: 400;
-    
-                    @include transform(translate(0,0));
+      @include transform(translate(-50%, -50%));
+      @include transition(all 0.4s);
+    }
+  }
 
-                    &:last-child {
-                        margin-bottom: 0;
-                    }
-                }
-            }
+  &.modalAudio {
+    &::after {
+      background: url("../img/bg_audioA.png") center no-repeat;
+      content: " ";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+
+      @include transform(translate(-50%, -50%));
+      @include transition(all 0.4s);
+    }
+
+    .modalVertical {
+      .playerAudio {
+        background: url("../img/bg_audio.svg") center no-repeat;
+        min-height: 340px;
+        display: flex;
+        width: 100%;
+        padding-top: 40px;
+        align-items: center;
+
+        .row {
+          width: 100%;
+          display: flex;
+          align-items: center;
         }
+      }
     }
-    
+
     .close {
-        background: #ee4570;
-        border-radius: 25px;
-        color: #FFF;
-        cursor: pointer;
-        display: block;
-        font-family: 'Khand', sans-serif;
-        font-size: 21px; 
-        font-weight: 600;
-        line-height: 1;
-        margin: 0 auto;
-        min-width: 70px;
-        opacity: 1;        
-        padding: 10px 0;
-        position: absolute;
-        top: -20px;
-        right: -20px;
-        text-align: center;
-        text-transform: uppercase;
-        z-index: 902;
-    
-        @include box-shadow(-20px 20px 20px -10px rgba(0,0,0,0.3));
-        @include transition(all 0.4s);
-    
-        &::after {
-            border: solid 1px #ff8a41;
-            content: ' ';
-            border-radius: 25px;
-            position: absolute;
-            top: 3px;
-            left: 3px;
-            bottom: 3px;
-            right: 3px;
-            @include transition(all 0.4s);
-        }
-    
-        &::before {
-            background: url('../img/bg_fechar.png') center no-repeat;
-            content: ' ';
-            position: absolute;
-            width: 110px;
-            height: 90px;
-            top: 50%;
-            left: 50%;
-            z-index: -1;
-            
-            @include transition(all 0.4s);
-            @include transform(translate(-50%, -50%));
-        }
+      top: -10px;
+      right: 40px;
+    }
+  }
 
-        &:hover { 
-            background: darken(#ee4570, 10%);
-
-            &::after {
-                border-color: lighten(#ff8a41, 10%);
-            }
-        }
+  @media #{$bp-minTablet} {
+    &::before {
+      display: block;
+      height: auto;
+      margin-right: 0;
     }
 
-    &.modalCarousel {
-        .divCarousel {
-            background: rgb(255,255,255);
-            background: linear-gradient(148deg, rgba(255,255,255,1) 0%, rgba(215,215,214,1) 100%);
+    .modalVertical {
+      position: relative;
+      display: block;
+      height: auto;
+      width: 100%;
 
-            border-radius: 8px;
-            min-height: 360px;
-        }
+      .popup {
+        width: 85%;
+        position: relative;
+        margin: 80px auto 0;
+        top: 0;
+        left: 0;
 
-        &::after {
-            background: url('../img/bg_video.png') center no-repeat;        
-            content: ' ';
-            position: absolute;
-            top: 50%;    
-            left: 50%;
-            width: 100%;
-            height: 100%;
-    
-            @include transform(translate(-50%, -50%));
-            @include transition(all 0.4s);
-        }
+        @include transform(translate(0));
+      }
     }
 
-    &.modalVideo {
-        &::after {
-            background: url('../img/bg_video.png') center no-repeat;        
-            content: ' ';
-            position: absolute;
-            top: 50%;    
-            left: 50%;
-            width: 100%;
-            height: 100%;
-    
-            @include transform(translate(-50%, -50%));
-            @include transition(all 0.4s);
-        }
+    .close {
+      top: 15px;
+      right: 15px;
     }
-
-    &.modalAudio {
-        &::after {
-            background: url('../img/bg_audioA.png') center no-repeat;
-            content: ' ';
-            position: absolute;
-            top: 50%;    
-            left: 50%;
-            width: 100%;
-            height: 100%;
-    
-            @include transform(translate(-50%, -50%));
-            @include transition(all 0.4s);
-        }
-
-        .modalVertical {
-            .playerAudio {
-                background: url('../img/bg_audio.svg') center no-repeat;
-                min-height: 340px;
-                display: flex;
-                width: 100%;
-                padding-top: 40px;
-                align-items: center;
-
-                .row { 
-                    width: 100%;
-                    display: flex;
-                    align-items: center;
-                }
-            }
-        }
-
-        .close {
-            top: -10px;
-            right: 40px;
-        }
-    }
-    
-    @media #{$bp-phone} {
-        &::before {
-            display: block;
-            height: auto;
-            margin-right: 0;
-        }
-    
-        .modalVertical {
-            position: relative;
-            display: block;
-            height: auto;
-            width: 100%;
-
-            .popup {
-                width: 85%;
-                position: relative;
-                margin: 80px auto 0;
-                top: 0;
-                left: 0;
-
-                @include transform(translate(0));
-
-                
-            }
-        }
-
-        .close {
-            top: 15px;
-            right: 15px;
-        }
-    }
+  }
 }
 
 .modal-backdrop {
-    background-color: #231f20;
+  background-color: #231f20;
 
-    &.in {
-        filter: alpha(opacity=95);
-        opacity: .95;
-    }
+  &.in {
+    filter: alpha(opacity=95);
+    opacity: 0.95;
+  }
 }
 
 .popover {
-    background-color: #02a0a5;
-    border: 1px solid #02a0a5;
-    border-radius: 6px;
-    color: #FFFFFF;
-    font-family: 'Arimo', sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    max-width: 300px;
+  background-color: #02a0a5;
+  border: 1px solid #02a0a5;
+  border-radius: 6px;
+  color: #ffffff;
+  font-family: "Arimo", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  max-width: 300px;
 
-    strong { color: #FFF; }
+  strong {
+    color: #fff;
+  }
 
-    &.top {
-        .arrow {
-            border-top-color: #02a0a5;
-            &::after { border-top-color: #02a0a5; }
-        }
+  &.top {
+    .arrow {
+      border-top-color: #02a0a5;
+      &::after {
+        border-top-color: #02a0a5;
+      }
     }
-    &.left {
-        .arrow {
-            border-left-color: #02a0a5;
-            &::after { border-left-color: #02a0a5; }
-        }
+  }
+  &.left {
+    .arrow {
+      border-left-color: #02a0a5;
+      &::after {
+        border-left-color: #02a0a5;
+      }
     }
-    &.bottom {
-        .arrow {
-            border-bottom-color: #02a0a5;
-            &::after { border-bottom-color: #02a0a5; }
-        }
+  }
+  &.bottom {
+    .arrow {
+      border-bottom-color: #02a0a5;
+      &::after {
+        border-bottom-color: #02a0a5;
+      }
     }
-    &.right {
-        .arrow {
-            border-right-color: #02a0a5;
-            &::after { border-right-color: #02a0a5; }
-        }
+  }
+  &.right {
+    .arrow {
+      border-right-color: #02a0a5;
+      &::after {
+        border-right-color: #02a0a5;
+      }
     }
+  }
 
-    .popover-content { padding: 5px 10px; }
+  .popover-content {
+    padding: 5px 10px;
+  }
 }

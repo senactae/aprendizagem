@@ -10,7 +10,6 @@
     <!-- libs -->
     <link href="../assets/js/libs/bootstrap-5.0.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="../assets/js/libs/fontawesome-5.11.2/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="../assets/js/libs/video-js-7.9.5/video-js.min.css" rel="stylesheet">
 
     <!-- layout -->
     <link href="../assets/css/style.min.css" rel="stylesheet" type="text/css">
@@ -82,59 +81,73 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
-                    <h2>Por que nem todo o contrato de Aprendizagem é igual?</h2>
+                    <div class="blocoPadrao noPaper">
+                        <div class="contentBloco">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <img src="img/imgQuiz.png" class="img-fluid d-block" />
+                                </div>
 
-                    <p>Na sua turma, você vai perceber que os contratos de Aprendizagem podem ter diferenças em alguns aspectos, como salário, horário, ocupações de registro, atividades, benefícios... Explore e entenda essas diferenças… Assista o vídeo a seguir e conheça um pouco mais sobre as diferenças nos benefícios. #convençãocoletiva #diferenças</p>
-                </div>
-            </div>
+                                <div class="col-sm-12 col-md-8">
+                                    <h2>O curso tem material didático?</h2>
 
-            <div class="row">
-                <div class="col-sm-10 offset-sm-1 col-lg-8 offset-lg-2">
-                    <div class="player">
-                        <video id="example_video_2" class="video-js" controls preload="none" data-setup='{ "html5" : { "nativeTextTracks" : false } }' poster="videos/capaVideo_Vermelho.jpg">
+                                    <div class="quest-radio">
+                                        <input id="optionsRadio0" type="radio" class="opRadio mb0" name="optionsRadio" value="1">
+                                        <label role="radio" aria-checked="false" id="labelRadio0" for="optionsRadio0" class="labelOption">O Senac não trabalha com material didático.</label>
+                                    </div>
 
-                            <source src="videos/U02_V03_Convencao_Coletiva_720p.mp4" type="video/mp4">
-                            <track kind="captions" src="videos/U02_V03_Convencao_Coletiva.vtt" srclang="pt-br" label="Portugues" default>
+                                    <div class="quest-radio">
+                                        <input id="optionsRadio1" type="radio" class="opRadio mb0" name="optionsRadio" value="1">
+                                        <label role="radio" aria-checked="false" id="labelRadio1" for="optionsRadio1" class="labelOption">Sim, o Senac tem material didático.</label>
+                                    </div>
 
-                            <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                        </video>
+                                    <div class="quest-radio">
+                                        <input id="optionsRadio2" type="radio" class="opRadio mb0" name="optionsRadio" value="1">
+                                        <label role="radio" aria-checked="false" id="labelRadio2" for="optionsRadio2" class="labelOption">Não faço ideia!</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <p>Clique no próximo tema que gostaria de estudar.</p>
-                </div>
-            </div>
-
-            <div class="row d-none d-md-block">
-                <div class="col-sm-10 offset-sm-1">
-                    <img id="svg-interactive" class="interactive int1 d-none" src="img/interativoIndex.svg" data-desktop="img/interativoIndex.svg" data-tablet="img/interativoIndex.svg" data-phone="img/interativoIndex_xs.svg" />
-                    <div class="divInteractive_Container mv0" tabindex="-1">
-                        <div class="divInteractive" id="d_svg-interactive"></div>
-                    </div>
-
-                    <div class="visuallyhidden">
-                        <a href="page01_01.html">Que tal conhecer o Senac?</a>
-                        <a href="page02_01.html">Entenda o seu contrato de trabalho!</a>
-                        <a href="page03_01.html">Descubra como é o curso!</a>
-                        <a href="page04_01.html">Bora planejar o seu desenvolvimento?!</a>
+            <div id="feed1" class="d-none">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>O curso tem material didático que irá auxiliar na compreensão dos conceitos e dos vários temas que são desenvolvidos em aula:</p>
                     </div>
                 </div>
-            </div>
 
-            <div class="row d-block d-md-none">
-                <div class="col-12">
-                    <div class="menuInterativo" id="menuInt_1">
-                        <img src="img/menuInterativo_xs.png" class="img-fluid d-block img-modelo" tabindex="-1" />
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <h4 class="text-center">Livros</h4>
+                        <img src="img/img03_10_01.png" class="img-fluid d-block mb30" alt="A ilustração apresenta o livro Criando com Empatia, da autora Bia Lombardi." tabindex="0" />
+                    </div>
 
-                        <div class="menuBlock" id="menu_xs">
-                            <img id="menu_xs_bg" src="img/menuInterativo_xs_BG.png" class="menuLink" />
-                            <a id="menu_xs_lnk1" class="menuLink" href="page01_01.html" title="Que tal conhecer o Senac?"><img src="img/menuInterativo_xs_1.png" /></a>
-                            <a id="menu_xs_lnk2" class="menuLink" href="page02_01.html" title="Entenda seu contrato de trabalho!"><img src="img/menuInterativo_xs_2.png" /></a>
-                            <a id="menu_xs_lnk3" class="menuLink" href="page03_01.html" title="Descubra como é o curso!"><img src="img/menuInterativo_xs_3.png" /></a>
-                            <a id="menu_xs_lnk4" class="menuLink" href="page04_01.html" title="Bora planejar seu desenvolvimento?"><img src="img/menuInterativo_xs_4.png" /></a>
+                    <div class="col-sm-12 col-md-6">
+                        <h4 class="text-center">Jogos</h4>
+                        <img src="img/img03_10_02.png" class="img-fluid d-block mb30" alt="A ilustração apresenta os jogos Diário de Amanhã – o Game e Jogo das Nações." tabindex="0" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>No curso, você e seus colegas serão convidados a refletir e dialogar sobre diversos assuntos, fortalecendo sua atitude empreendedora e criativa, com visão crítica e espírito de equipe, que certamente são ferramentas importantíssimas para sua trajetória.</p>
+                    </div>
+                </div>
+
+                <div class="blocoPadrao blocoDiario">
+                    <div class="contentBloco">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-3">
+                                <img src="img/icoDiario.png" class="img-fluid d-block img-template" />
+                            </div>
+
+                            <div class="col-sm-12 col-md-9">
+                                <h3>Diário de Bordo <span>Deixe aqui outras sugestões</span></h3>
+                                <p>Veja lá na página 8 do seu diário de bordo!</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -153,28 +166,20 @@
     <script src="../assets/js/libs/video-js-7.9.5/video.min.js"></script>
 
     <script src="../assets/js/libs/preloadjs.min.js"></script>
+    <script src="../assets/js/scripts/svgLoader.js"></script>
 
     <!-- script -->
     <script src="../assets/js/scripts/index.js"></script>
+    <script src="../assets/js/scripts/recursos.js"></script>
+
+    <script src="../assets/js/libs/audiojs/audio.js"></script>
+    <script src="../assets/js/scripts/audioPlayer.js"></script>
+
     <script>
-        var svgLoad;
         var indexLoad;
 
         $(document).ready(function (e) {
             indexLoad = new Index();
-
-            loadObj = $('.interactive');
-            svgLoad = new svgLoader();
-            svgLoad.loadContent(loadObj, textoFunc);
-            function textoFunc() {
-                $('#d_svg-interactive').find('.botao').each(function (i, v) {
-                    $(this).bind('click', function () {
-                        $name = $(this).attr('id');
-                        $btn = $name.substr($name.length - 2, 2);
-                        window.location = 'page' + $btn + '_01.html';
-                    });
-                });
-            }
         });
     </script>
 
