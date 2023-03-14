@@ -194,10 +194,18 @@
 					"titulo": "",
 					"template": "amarelo"
 				},
+
+				{
+					"unidade": "4",
+					"url": "page04_13.html",
+					"titulo": "",
+					"template": "amarelo"
+				},
+				
 				{
 					"unidade": "5",
 					"url": "page05_01.html",
-					"titulo": "Bora planejar o seu desenvolvimento?",
+					"titulo": "Vou começar na empresa. E agora?",
 					"template": "verde"
 				},
 				{
@@ -213,9 +221,33 @@
 					"template": "verde"
 				},
 				{
+					"unidade": "5",
+					"url": "page05_04.html",
+					"titulo": "",
+					"template": "verde"
+				},
+				{
+					"unidade": "5",
+					"url": "page05_05.html",
+					"titulo": "",
+					"template": "verde"
+				},
+				{
+					"unidade": "5",
+					"url": "page05_06.html",
+					"titulo": "",
+					"template": "verde"
+				},
+				{
+					"unidade": "5",
+					"url": "page05_07.html",
+					"titulo": "",
+					"template": "verde"
+				},
+				{
 					"unidade": "6",
 					"url": "page06_01.html",
-					"titulo": "Vou começar na empresa. E agora?",
+					"titulo": "Comunicação: que bicho é esse?",
 					"template": "verde"
 				},
 				{
@@ -257,48 +289,6 @@
 				{
 					"unidade": "7",
 					"url": "page07_01.html",
-					"titulo": "Comunicação: que bicho é esse?",
-					"template": "verde"
-				},
-				{
-					"unidade": "7",
-					"url": "page07_02.html",
-					"titulo": "",
-					"template": "verde"
-				},
-				{
-					"unidade": "7",
-					"url": "page07_03.html",
-					"titulo": "",
-					"template": "verde"
-				},
-				{
-					"unidade": "7",
-					"url": "page07_04.html",
-					"titulo": "",
-					"template": "verde"
-				},
-				{
-					"unidade": "7",
-					"url": "page07_05.html",
-					"titulo": "",
-					"template": "verde"
-				},
-				{
-					"unidade": "7",
-					"url": "page07_06.html",
-					"titulo": "",
-					"template": "verde"
-				},
-				{
-					"unidade": "7",
-					"url": "page07_07.html",
-					"titulo": "",
-					"template": "verde"
-				},
-				{
-					"unidade": "8",
-					"url": "page08_01.html",
 					"titulo": "Referências bibliográficas",
 					"template": "verde"
 				}

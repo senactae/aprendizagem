@@ -79,86 +79,10 @@
 
     <div class="wrapper">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h2>O passo a passo do seu Plano de Desenvolvimento Pessoal e Profissional</h2>
 
-                    <p>Para auxiliar a construção do seu plano, você passará por <strong>três etapas</strong> em cada uma das Unidades Curriculares.</p>
+            page 05 02
 
-                    <p>Clique nas setas para conhecê-las.</p>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="atividadeCubo">
-                        <div class="cuboAnimado">
-                            <div class="cuboWrapper">
-                                <canvas id="cuboEstatico" width="400" height="400" class="cuboBlock center-block" style="z-index: 5;"></canvas>
-                                <canvas id="logoCubo1" width="400" height="400" class="cuboBlock center-block" style="opacity: 0; z-index: 1;"></canvas>
-                                <canvas id="logoCubo2" width="400" height="400" class="cuboBlock center-block" style="opacity: 0; z-index: 2;"></canvas>
-                                <canvas id="logoCubo3" width="400" height="400" class="cuboBlock center-block" style="opacity: 0; z-index: 3;"></canvas>
-                                <canvas id="logoCubo4" width="400" height="400" class="cuboBlock center-block" style="opacity: 0; z-index: 4;"></canvas>
-                            </div>
-                        </div>
-
-                        <div id="sliderAnimado" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    <div class="divEtapa">
-                                        <div class="titleEtapa">
-                                            <h4>Etapa 1</h4>
-                                            <h5>Desafie-se</h5>
-                                        </div>
-                                        <div class="contentEtapa">
-                                            <p>Esta fase será seu ponto de partida na definição dos desafios relacionados ao seu desenvolvimento.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="divEtapa">
-                                        <div class="titleEtapa">
-                                            <h4>Etapa 2</h4>
-                                            <h5>Desenvolva-os</h5>
-                                        </div>
-                                        <div class="contentEtapa">
-                                            <p>Nesta fase, você irá desenvolver o seu plano de ação, ou seja, quais serão as estratégias que utilizará para responder aos desafios.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="divEtapa">
-                                        <div class="titleEtapa">
-                                            <h4>Etapa 3</h4>
-                                            <h5>Organize-os</h5>
-                                        </div>
-                                        <div class="contentEtapa">
-                                            <p>E, finalmente, você irá organizar e avaliar as atividades desenvolvidas e os resultados obtidos. Resgate suas atividades em seu diário de bordo, ele será um importante portfólio.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <a class="setaControle esq" href="#sliderAnimado" role="button" data-slide="prev">
-                                <i class="sCL" aria-hidden="true"></i>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="setaControle dir" href="#sliderAnimado" role="button" data-slide="next">
-                                <i class="sCR" aria-hidden="true"></i>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12">
-                    <h3>Aproveite essa oportunidade!</h3>
-
-                    <p>Hoje você é um aprendiz. Se conversar com seus pais, tios e avós, provavelmente eles dirão a você: “Na minha época, eu não tive essa oportunidade. Trabalhar já era em período integral, na informalidade ou sem a garantia de alguns direitos trabalhistas. Até pouco tempo atrás, as empresas não davam emprego ao jovem, diziam que ele não tinha experiência.” Agora, a realidade é outra, você faz parte de uma nova fase da história! #aprendizagem #oportunidades</p>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -187,84 +111,6 @@
 
         $(document).ready(function (e) {
             indexLoad = new Index();
-
-            $('.carousel').carousel({ interval: false, wrap: false }).on("slid.bs.carousel", "", checkitem);
-            function checkitem(e) {
-                var $this;
-                $this = $("#sliderAnimado");
-                if ($this.find(".carousel-inner .item:first").hasClass("active")) {
-                    $this.children(".esq").hide();
-                    $this.children(".dir").css("display", "flex").hide().fadeIn();
-                } else if ($this.find(".carousel-inner .item:last").hasClass("active")) {
-                    $this.children(".dir").hide();
-                    $this.children(".esq").css("display", "flex").hide().fadeIn();
-                } else {
-                    $this.children(".setaControle").css("display", "flex").hide().fadeIn();
-                }
-            };
-            checkitem();
-
-            $('.setaControle').bind('click', function (e) {
-                goTo = $(this).data('slide');
-                slideIndex = $("#sliderAnimado").find('.active').index();
-
-                if (goTo == 'next' && slideIndex == 0) {
-                    firstMove();
-                } else if (goTo == 'next' && slideIndex == 1) {
-                    secondMove();
-                } else if (goTo == 'prev' && slideIndex == 1) {
-                    firstMove_Reverse();
-                } else if (goTo == 'prev' && slideIndex == 2) {
-                    secondMove_Reverse();
-                }
-            })
-
-            $('#cuboEstatico').animaCanvas({ fps: 10, framesBreak: 1, totalFrames: 1, w: 400, h: 400, img: 'img/Cubo_01.png' });
-            function firstMove() {
-                $('.setaControle').css('opacity', '0');
-                $('#cuboEstatico').css('opacity', '0').animaCanvas({ fps: 8, framesBreak: 1, totalFrames: 1, w: 400, h: 400, img: 'img/Cubo_02.png' });
-                $('.cuboBlock').not('#logoCubo1').css('opacity', '0');
-
-                $('#logoCubo1').css('opacity', '1').animaCanvas({ fps: 6, framesBreak: 7, totalFrames: 49, w: 400, h: 400, img: 'img/Cubo_01.png' });
-                $('#logoCubo1').bind('fimAnima', function () {
-                    $('.setaControle').animate({ 'opacity': '1' }, 100);
-                    $('#cuboEstatico').css('opacity', '1');
-                    $('.cuboBlock').not('#cuboEstatico').css('opacity', '0');
-                });
-            };
-
-            function firstMove_Reverse() {
-                $('.setaControle').css('opacity', '0');
-                $('#logoCubo2').css('opacity', '1').animaCanvas({ fps: 7, framesBreak: 7, totalFrames: 49, w: 400, h: 400, img: 'img/Cubo_01_Reverse.png' });
-                $('.cuboBlock').not('#logoCubo2').css('opacity', '0');
-                $('#cuboEstatico').animaCanvas({ fps: 10, framesBreak: 1, totalFrames: 1, w: 400, h: 400, img: 'img/Cubo_01.png' });
-
-                $('#logoCubo2').bind('fimAnima', function () {
-                    $('.setaControle').animate({ 'opacity': '1' }, 100);
-                    $('#cuboEstatico').css('opacity', '1');
-                    $('.cuboBlock').not('#cuboEstatico').css('opacity', '0');
-                });
-            }
-
-            function secondMove() {
-                $('.setaControle').css('opacity', '0');
-                $('#logoCubo3').css('opacity', '1').animaCanvas({ fps: 5, framesBreak: 9, totalFrames: 72, w: 400, h: 400, img: 'img/Cubo_02.png' });
-                $('.cuboBlock').not('#logoCubo3').css('opacity', '0');
-
-                $('#logoCubo3').bind('fimAnima', function () {
-                    $('.setaControle').animate({ 'opacity': '1' }, 100);
-                });
-            }
-
-            function secondMove_Reverse() {
-                $('.setaControle').css('opacity', '0');
-                $('.cuboBlock').not('#logoCubo4').css('opacity', '0');
-                $('#logoCubo4').css('opacity', '1').animaCanvas({ fps: 5, framesBreak: 9, totalFrames: 63, w: 400, h: 400, img: 'img/Cubo_02_Reverse.png' });
-
-                $('#logoCubo4').bind('fimAnima', function () {
-                    $('.setaControle').animate({ 'opacity': '1' }, 100);
-                });
-            }
         });
     </script>
 
@@ -278,13 +124,6 @@
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-PT2MQSF');</script>
     <!-- End Google Tag Manager -->
-
-    <div class="visuallyhidden" id="canvasLoader">
-        <img src="img/Cubo_01.png" />
-        <img src="img/Cubo_01_Reverse.png" />
-        <img src="img/Cubo_02.png" />
-        <img src="img/Cubo_02_Reverse.png" />
-    </div>
 </body>
 
 </html>
