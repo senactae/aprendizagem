@@ -36,6 +36,11 @@ function flipCard() {
 // FLIPCARD
 $(".card-selector .fcard").on("click", function () {
   $(this).toggleClass("active");
+  let back = this.querySelector(".content-back");
+  let backInner = this.querySelector(".content-back-inner");
+  if (backInner.clientHeight > back.clientHeight) {
+    back.classList.add("oveflowOn");
+  }
 });
 
 // SVG
