@@ -1,5 +1,6 @@
 /* CONTAINER */
 @import "container/_mixins";
+@import "container/_animacoes";
 @import "container/_fonts";
 @import "container/_producao";
 @import "container/_container";
@@ -25,6 +26,7 @@
 @import "interacoes/_quiz";
 @import "interacoes/_select";
 @import "interacoes/_tabs";
+@import "interacoes/_timeline";
 @import "interacoes/_video";
 
 @import "interacoes/_plugin_aos";

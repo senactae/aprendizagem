@@ -331,6 +331,26 @@
       }
     }
   }
+
+  /* BLOCO CITACAO */
+  &.blocoCitacao {
+    img {
+      position: absolute;
+      right: -40px;
+      top: -85px;
+    }
+    p {
+      margin-bottom: 5px;
+    }
+
+    @media #{$bp-tablet} {
+      img {
+        position: relative;
+        right: 0px;
+        top: 0px;
+      }
+    }
+  }
 }
 
 .blocoPaper {

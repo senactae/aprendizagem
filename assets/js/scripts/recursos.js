@@ -42,3 +42,15 @@ $(".card-selector .fcard").on("click", function () {
 if ($(".svgInterativo").length != 0) {
   $(".svgInterativo").svgLoader();
 }
+
+// TIMELINE VERTICAL
+$(".verticalTimeline")
+  .find("li")
+  .on("click", function () {
+    $(this).addClass("selected");
+  });
+
+// TIMELINE HORIZONTAL
+if ($(".horizontalTimeline").length != 0) {
+  $(".horizontalTimeline").timeline();
+}
