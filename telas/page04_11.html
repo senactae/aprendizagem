@@ -164,10 +164,13 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <img id="svg-interactive" class="interactive int1 d-none" src="img/interativo03_11.svg" data-desktop="img/interativo03_11.svg" data-tablet="img/interativo03_11_sm.svg" data-phone="img/interativo03_11_xs.svg" />
+
+                        <div id="Interacao_01" class="svgInterativo" data-image="img/interativo03_11" data-responsive="true"></div>
+
+                        <!-- <img id="svg-interactive" class="interactive int1 d-none" src="img/interativo03_11.svg" data-desktop="img/interativo03_11.svg" data-tablet="img/interativo03_11_sm.svg" data-phone="img/interativo03_11_xs.svg" />
                         <div class="divInteractive_Container">
                             <div class="divInteractive" id="d_svg-interactive"></div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
 
@@ -208,6 +211,7 @@
 
     <script src="../assets/js/libs/audiojs/audio.js"></script>
     <script src="../assets/js/scripts/audioPlayer.js"></script>
+    <script src="../assets/js/libs/aos.js"></script>
     <script>
         var indexLoad;
         var svgLoad;
@@ -215,21 +219,23 @@
         $(document).ready(function (e) {
             indexLoad = new Index();
 
-            loadObj = $('.interactive');
-            svgLoad = new svgLoader();
-            svgLoad.loadContent(loadObj, botaoFunc);
+            // loadObj = $('.interactive');
+            // svgLoad = new svgLoader();
+            // svgLoad.loadContent(loadObj, botaoFunc);
 
-            function botaoFunc() {
-                $('#d_svg-interactive').find('.botao').each(function (i, v) {
-                    $(this).bind('click', function () {
-                        $name = $(this).attr('id');
-                        $btn = $name.substr($name.length - 2, 2);
+            // function botaoFunc() {
+            //     $('#d_svg-interactive').find('.botao').each(function (i, v) {
+            //         $(this).bind('click', function () {
+            //             $name = $(this).attr('id');
+            //             $btn = $name.substr($name.length - 2, 2);
 
-                        $('#d_svg-interactive').find('.feedSvg').fadeOut(500);
-                        $('#d_svg-interactive').find('#Feed_' + $btn).delay(500).fadeIn(750);
-                    });
-                });
-            }
+            //             $('#d_svg-interactive').find('.feedSvg').fadeOut(500);
+            //             $('#d_svg-interactive').find('#Feed_' + $btn).delay(500).fadeIn(750);
+            //         });
+            //     });
+            // }
+
+
 
             $('.opCheck').on('change', function () {
                 $id = $(this).attr('id');
@@ -256,6 +262,18 @@
                 $('#feed1').hide().removeClass('d-none').slideToggle(600);
                 $('html, body').animate({ scrollTop: $('#feed1').offset().top - 115 }, 800);
             })
+        });
+
+        $("#Interacao_01").bind("svgFunction", function (e, d) {
+            $(this).find('.botao').each(function (i, v) {
+                $(this).bind('click', function () {
+                    $name = $(this).attr('id');
+                    $btn = $name.substr($name.length - 2, 2);
+
+                    $('#Interacao_01').find('.feedSvg').fadeOut(500);
+                    $('#Interacao_01').find('#Feed_' + $btn).delay(500).fadeIn(750);
+                });
+            });
         });
     </script>
 

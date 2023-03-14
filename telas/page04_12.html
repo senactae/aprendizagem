@@ -134,10 +134,13 @@
 
             <div class="row d-none d-md-block">
                 <div class="col-sm-10 offset-sm-1">
-                    <img id="svg-interactive" class="interactive int1 d-none" src="img/interativoIndex.svg" data-desktop="img/interativoIndex.svg" data-tablet="img/interativoIndex.svg" data-phone="img/interativoIndex_xs.svg" />
+
+                    <div id="Interacao_01" class="svgInterativo" data-image="img/interativoIndex" data-responsive="true"></div>
+
+                    <!-- <img id="svg-interactive" class="interactive int1 d-none" src="img/interativoIndex.svg" data-desktop="img/interativoIndex.svg" data-tablet="img/interativoIndex.svg" data-phone="img/interativoIndex_xs.svg" />
                     <div class="divInteractive_Container mv0" tabindex="-1">
                         <div class="divInteractive" id="d_svg-interactive"></div>
-                    </div>
+                    </div> -->
 
                     <div class="visuallyhidden">
                         <a href="page01_01.html">Que tal conhecer o Senac?</a>
@@ -185,6 +188,7 @@
 
     <script src="../assets/js/libs/audiojs/audio.js"></script>
     <script src="../assets/js/scripts/audioPlayer.js"></script>
+    <script src="../assets/js/libs/aos.js"></script>
     <script>
         var svgLoad;
         var indexLoad;
@@ -192,18 +196,28 @@
         $(document).ready(function (e) {
             indexLoad = new Index();
 
-            loadObj = $('.interactive');
-            svgLoad = new svgLoader();
-            svgLoad.loadContent(loadObj, textoFunc);
-            function textoFunc() {
-                $('#d_svg-interactive').find('.botao').each(function (i, v) {
-                    $(this).bind('click', function () {
-                        $name = $(this).attr('id');
-                        $btn = $name.substr($name.length - 2, 2);
-                        window.location = 'page' + $btn + '_01.html';
-                    });
+            // loadObj = $('.interactive');
+            // svgLoad = new svgLoader();
+            // svgLoad.loadContent(loadObj, textoFunc);
+            // function textoFunc() {
+            //     $('#d_svg-interactive').find('.botao').each(function (i, v) {
+            //         $(this).bind('click', function () {
+            //             $name = $(this).attr('id');
+            //             $btn = $name.substr($name.length - 2, 2);
+            //             window.location = 'page' + $btn + '_01.html';
+            //         });
+            //     });
+            // }
+        });
+
+        $("#Interacao_01").bind("svgFunction", function (e, d) {
+            $(this).find('.botao').each(function (i, v) {
+                $(this).bind('click', function () {
+                    $name = $(this).attr('id');
+                    $btn = $name.substr($name.length - 2, 2);
+                    window.location = 'page' + $btn + '_01.html';
                 });
-            }
+            });
         });
     </script>
 

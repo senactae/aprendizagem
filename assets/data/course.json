@@ -35,22 +35,23 @@
 					"url": "page02_02.html",
 					"titulo": "",
 					"template": "azul"
-				},
+				},				
+				
 				{
-					"unidade": "1",
-					"url": "page01_04.html",
-					"titulo": "",
-					"template": "azul"
-				},
-				{
-					"unidade": "1",
-					"url": "page01_05.html",
+					"unidade": "2",
+					"url": "page02_03.html",
 					"titulo": "",
 					"template": "azul"
 				},
 				{
 					"unidade": "2",
-					"url": "page02_03.html",
+					"url": "page02_04.html",
+					"titulo": "",
+					"template": "azul"
+				},
+				{
+					"unidade": "2",
+					"url": "page02_05.html",
 					"titulo": "",
 					"template": "azul"
 				},
@@ -88,6 +89,36 @@
 				{
 					"unidade": "3",
 					"url": "page03_06.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_07.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_08.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_09.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_10.html",
+					"titulo": "",
+					"template": "vermelho"
+				},
+				{
+					"unidade": "3",
+					"url": "page03_11.html",
 					"titulo": "",
 					"template": "vermelho"
 				},
